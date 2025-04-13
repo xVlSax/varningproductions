@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset default spacing */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+body,
+#app {
+  height: 100%;
+}
+
+.bg-texture {
+  background-image: url('/images/bg-texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
