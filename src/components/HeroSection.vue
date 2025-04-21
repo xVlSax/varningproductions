@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="w-full min-h-screen flex items-center justify-center bg-black bg-texture bg-cover bg-center px-4"
-  >
+  <section id="home" class="min-h-screen bg-black bg-texture flex justify-center items-center">
     <img
       src="/images/varningProductions.svg"
       alt="Varning Productions Logo"
