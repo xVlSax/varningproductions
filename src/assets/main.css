@@ -10,6 +10,10 @@ body {
   background-color: #000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 #app {
   height: 100%;
@@ -20,4 +24,21 @@ body,
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef4444;
+  border-radius: 6px;
+  border: 2px solid #000;
+}
+
+.section-divider {
+  height: 700px;
+  background: url('/images/ripped-edge.png') repeat-x;
+  background-size: auto 100%;
 }

@@ -1,5 +1,8 @@
 <template>
-  <section id="home" class="min-h-screen bg-black bg-texture flex justify-center items-center">
+  <section
+    id="description"
+    class="min-h-screen bg-black bg-texture flex justify-center items-center"
+  >
     <img
       src="/images/varningProductions.svg"
       alt="Varning Productions Logo"
@@ -10,6 +13,6 @@
 
 <script>
 export default {
-  name: 'HeroSection',
+  name: 'DescriptionSection',
 }
 </script>
