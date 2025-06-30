@@ -1,89 +1,128 @@
 <template>
   <nav
-    :class="{ 'opacity-0': atHeroSection, 'opacity-100': !atHeroSection }"
-    class="fixed top-0 left-0 right-0 z-50 bg-black text-white py-4 px-6 flex justify-center items-center shadow-lg transition-opacity duration-500 backdrop-blur-sm border-b border-red-500"
+    id="navbar"
+    class="fixed top-[-50px] left-0 right-0 w-full z-50 bg-[#222] text-white shadow-lg transition-all duration-300"
   >
-    <div class="flex space-x-6 md:space-x-10 max-w-6xl w-full justify-center">
-      <a
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <!-- Logo -->
+      <router-link to="/" class="font-punk text-lg"> VARNING </router-link>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6">
+        <router-link
+          v-for="item in navItems"
+          :key="item.id"
+          :to="item.path"
+          class="uppercase font-punk tracking-wider hover:text-red-400 transition text-sm md:text-base"
+        >
+          {{ item.label }}
+        </router-link>
+      </div>
+
+      <!-- Mobile Icon -->
+      <button class="md:hidden" @click="toggleMenu" aria-label="Toggle menu">
+        <i class="fa fa-bars text-xl text-white"></i>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div
+      v-if="isMenuOpen"
+      class="absolute top-full left-0 w-full bg-[#111] text-white flex flex-col items-center md:hidden"
+    >
+      <router-link
         v-for="item in navItems"
         :key="item.id"
-        :href="`#${item.id}`"
-        class="uppercase font-punk tracking-wider hover:text-red-400 transition text-sm md:text-base whitespace-nowrap"
-        :class="{ 'text-red-400': activeSection === item.id }"
+        :to="item.path"
+        class="block w-full text-center py-2 hover:bg-red-700"
+        @click="closeMenu"
       >
         {{ item.label }}
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
 
-const activeSection = ref('home')
-const atHeroSection = ref(true)
+const isMenuOpen = ref(false)
+const route = useRoute()
+
+const navItems = [
+  { id: 'home', label: 'Home', path: '/' },
+  { id: 'about', label: 'About', path: '/about' },
+  { id: 'festival', label: 'Festival', path: '/festival' },
+  { id: 'contact', label: 'Contact', path: '/contact' },
+]
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
+}
+
+// Close menu on route change
+watch(() => route.path, closeMenu)
+
+watch(
+  () => route.path,
+  () => {
+    isMenuOpen.value = false
+  },
+)
 
 const handleScroll = () => {
-  // Check if we're at hero section (first screen)
-  atHeroSection.value = window.scrollY < window.innerHeight * 0.7
-
-  // Update active nav item
-  const sections = document.querySelectorAll('section')
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect()
-    if (rect.top <= 100 && rect.bottom >= 100) {
-      activeSection.value = section.id
-    }
-  })
+  const navbar = document.getElementById('navbar')
+  if (!navbar) return
+  if (window.scrollY > 20) {
+    navbar.style.top = '0'
+  } else {
+    navbar.style.top = '-50px'
+  }
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  handleScroll() // Initialize on load
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
-const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'description', label: 'About' },
-  { id: 'why', label: 'Why Punk?' },
-  { id: 'scene', label: 'Scene' },
-  { id: 'festival', label: 'Festival' },
-  { id: 'shows', label: 'Shows' },
-  { id: 'contact', label: 'Contact' },
-]
 </script>
 
 <style scoped>
-nav {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+#navbar {
+  transition: top 0.3s;
 }
 
-a {
-  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+nav a.nav-link {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
   position: relative;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-a:hover::after {
+nav a.nav-link::after {
   content: '';
   position: absolute;
   bottom: -4px;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #ef4444;
-  animation: underlineGrow 0.3s ease-out;
+  transition: width 0.3s ease-out;
 }
 
-@keyframes underlineGrow {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+nav a.nav-link:hover::after {
+  width: 100%;
+}
+
+nav a.router-link-active {
+  color: #ef4444;
 }
 </style>

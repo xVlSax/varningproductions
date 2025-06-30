@@ -1,27 +1,53 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-black">
-    <!-- Main content that grows to push footer down -->
-    <section
-      id="contact"
-      class="flex-grow bg-texture flex flex-col justify-center items-center p-4"
-    >
-      <!-- Mega-sized logo container -->
-      <div class="flex justify-center items-center w-full px-4">
+  <div class="flex flex-col min-h-screen bg-black text-white font-punk">
+    <section id="contact" class="flex-grow w-full p-4 space-y-6">
+      <!-- Title -->
+      <div class="text-center mt-8">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-widest">CONTACT US</h1>
+        <p class="text-sm md:text-base text-blue-300 mt-2">
+          WE ARE LOOKING FORWARD TO WORKING WITH YOU!
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="flex justify-center items-center w-full">
         <img
-          src="/images/logoVarning.svg"
-          alt="VARNING PUNK LOGO"
-          class="animate-flicker w-full max-w-[320px] md:max-w-[500px] lg:max-w-[700px] xl:max-w-[800px]"
+          src="/images/contact/framtid.jpg"
+          alt="Framtid at Varning"
+          class="img-resp w-full max-w-screen-xl rounded-lg shadow-lg"
         />
       </div>
     </section>
 
+    <!-- Contact Info -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-6 max-w-screen-xl mx-auto px-4"
+    >
+      <div class="space-y-2">
+        <span class="text-xl">📞</span>
+        <p class="text-sm">+46 073 875 7797</p>
+      </div>
+      <div class="space-y-2">
+        <span class="text-xl">📧</span>
+        <p class="text-sm">janickvarning@gmail.com</p>
+      </div>
+      <div class="space-y-2">
+        <span class="text-xl">🌐</span>
+        <p class="text-sm">www.varningproductions.com</p>
+      </div>
+      <div class="space-y-2">
+        <span class="text-xl">📍</span>
+        <p class="text-sm">Hjulsta Backar 27, 163 65 Spånga, Stockholm, Sweden</p>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-black/80 py-6 border-t-2 border-red-500 w-full">
       <div class="container mx-auto px-4 text-center">
-        <p class="font-punk text-dirty-white text-sm md:text-base tracking-wider">
-          © COPYRIGHT 2025 - ALL WRONGS RESERVED • VARNING PRODUCTIONS • NO FUTURE
+        <p class="footer-font font-punk text-dirty-white text-sm md:text-base tracking-wider">
+          © VARNING PRODUCTIONS 2025 - ALL WRONGS RESERVED
         </p>
-        <p class="font-punk text-dirty-white text-xs mt-2">
+        <p class="footer-font font-punk text-dirty-white text-xs mt-2">
           Made with <span class="text-red-400 !important">♥</span> and cheap beer
         </p>
       </div>
@@ -36,45 +62,25 @@ export default {
 </script>
 
 <style>
-@keyframes flicker {
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 15px #ff000055);
-  }
-  20%,
-  22%,
-  24%,
-  55% {
-    opacity: 0.7;
-    filter: drop-shadow(0 0 12px #00ffff) drop-shadow(0 0 20px #00ffff55);
-  }
+p {
+  color: #ddd;
+  text-shadow:
+    0 0 3px #000,
+    1px 1px 0 #333;
 }
 
-.animate-flicker {
-  animation: flicker 2.5s infinite;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: center;
+h1 {
+  text-shadow:
+    0 0 5px #fff,
+    1px 1px 0 #666;
 }
 
-.animate-flicker:hover {
-  animation: flicker 0.3s infinite;
-  filter: drop-shadow(0 0 20px #ff0000) drop-shadow(0 0 30px #ff000077) !important;
-  transform: scale(1.08) rotate(-1deg);
+.img-resp {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 60vh;
 }
-
-.bg-texture {
-  background-image:
-    url('/images/bg-texture.png'), linear-gradient(45deg, #000000 25%, #1a0000 100%);
-  background-blend-mode: overlay;
-}
-
 .text-dirty-white {
   color: #f1f1f1;
   text-shadow:
