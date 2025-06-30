@@ -16,29 +16,45 @@ html {
 
 body,
 #app {
-  height: 100%;
+  min-height: 100vh;
+  font-family: 'Staatliches', sans-serif;
 }
 
 .bg-texture {
-  background-image: url('/images/bg-texture.png');
+  background-color: #000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-  background: #111;
+.festival-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #ef4444;
-  border-radius: 6px;
-  border: 2px solid #000;
+.festival-resp {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 40vh;
 }
 
-.section-divider {
-  height: 700px;
-  background: url('/images/ripped-edge.png') repeat-x;
-  background-size: auto 100%;
+.festival-font {
+  color: white;
+  font-family: 'sans-serif', sans-serif;
+}
+
+.footer-font {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'sans-serif', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: 'FestPunk';
+  src: url('/fonts/cfpunk-regular.ttf') format('ttf');
+  font-display: swap;
 }
