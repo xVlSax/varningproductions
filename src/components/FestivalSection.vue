@@ -20,6 +20,16 @@
             >here</a
           >
         </h5>
+        <h6>
+          Things to
+          <a
+            href="https://thepointofsale.com/tickets/py4250911001"
+            target="_blank"
+            class="underline hover:text-red-400"
+            >do</a
+          >
+          in Montreal
+        </h6>
       </div>
 
       <!-- Flyer Blocks -->
@@ -83,33 +93,37 @@ const festivalFlyers = [
     alt: 'Thursday Flyer',
     title: 'Thursday Show – September 11th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$35 / Doors: 7:00pm – Show: 7:30pm',
+    details: '$35 / Doors: 6:30pm – Show: 7:00pm SHARP!',
     lineup: [
-      { name: 'Traume', time: '12:00am', link: 'https://traumepunk.bandcamp.com/' },
+      { name: 'Träume', time: '00:00 - 00:00am', link: 'https://traumepunk.bandcamp.com/' },
       {
         name: 'Flower',
-        time: '11:15pm',
+        time: '00:00 - 00:00pm',
         link: 'https://flowernewyorkcity.bandcamp.com/album/hardly-a-dream',
       },
       {
-        name: 'Extensive Slauhhter',
-        time: '10:10pm',
+        name: 'Extensive Slaughter',
+        time: '00:00 - 00:00pm',
         link: 'https://extensiveslaughter.bandcamp.com/album/a-fated-demise',
       },
       {
         name: 'Warkrusher',
-        time: '9:10pm',
+        time: '00:00 - 00:00pm',
         link: 'https://inbattlethereisnosobriety.bandcamp.com/',
       },
       {
         name: 'Shooting Pain',
-        time: '8:10pm',
+        time: '00:00 - 00:00pm',
         link: 'https://shootingpain.bandcamp.com/album/demo-2024',
       },
-      { name: 'Schenectavoidz', time: '7:10pm', link: 'https://schenectavoidz.bandcamp.com/' },
+      {
+        name: 'Schenectavoidz',
+        time: '00:00 - 00:00pm',
+        link: 'https://schenectavoidz.bandcamp.com/',
+      },
       {
         name: 'Spleen',
-        time: '7:10pm',
+        time: '00:00 - 00:00pm',
         link: 'https://roachlegrecords.bandcamp.com/album/demo-14',
       },
     ],
@@ -123,18 +137,22 @@ const festivalFlyers = [
     lineup: [
       {
         name: 'Invertebrates',
-        time: '4:00pm',
+        time: '00:00 - 00:00pm',
         link: 'https://beachimpedimentrecords.bandcamp.com/album/sick-to-survive',
       },
-      { name: 'Reaktöri', time: '3:20pm', link: 'https://reaktori.bandcamp.com/album/demo' },
+      {
+        name: 'Reaktöri',
+        time: '00:00 - 00:00pm',
+        link: 'https://reaktori.bandcamp.com/album/demo',
+      },
       {
         name: 'Highanxiety',
-        time: '2:40pm',
+        time: '00:00 - 00:00pm',
         link: 'https://highanxietypunk.bandcamp.com/album/your-dreams-are-caught-in-war',
       },
       {
         name: 'Boot',
-        time: '1:00pm',
+        time: '00:00 - 00:00pm',
         link: '',
       },
     ],
@@ -144,30 +162,43 @@ const festivalFlyers = [
     alt: 'Friday Flyer',
     title: 'Friday Show – September 12th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-    details: '$35 / Doors: 7:00pm – Show: 7:30pm',
+    details: '$35 / Doors: 6:30pm – Show: 7:00pm',
     lineup: [
-      { name: 'Varukers', time: '12:30am', link: 'https://thevarukers.bandcamp.com/music' },
-      { name: 'Languid', time: '11:40pm', link: 'https://languidpunk.bandcamp.com/music' },
-      { name: 'Puffer', time: '11:10pm', link: 'https://puffpuffpuff.bandcamp.com/album/demo' },
+      { name: 'Varukers', time: '00:00 - 00:00am', link: 'https://thevarukers.bandcamp.com/music' },
+      { name: 'Languid', time: '00:00 - 00:00pm', link: 'https://languidpunk.bandcamp.com/music' },
+      {
+        name: 'Innocent',
+        time: '00:00 - 00:00am',
+        link: 'https://innocentpunk.bandcamp.com/album/architects-of-despair',
+      },
+      {
+        name: 'Puffer',
+        time: '00:00 - 00:00pm',
+        link: 'https://puffpuffpuff.bandcamp.com/album/demo',
+      },
       {
         name: 'Mirage',
-        time: '10:20pm',
+        time: '00:00 - 00:00pm',
         link: 'https://roachlegrecords.bandcamp.com/album/immagini-postume',
       },
       {
         name: 'Epaulet',
-        time: '8:00pm',
+        time: '00:00 - 00:00pm',
         link: 'https://epaulet.bandcamp.com/album/cries-from-bondage',
       },
-      { name: 'Psychic Armour', time: '8:00pm', link: 'https://psychicarmour.bandcamp.com/' },
+      {
+        name: 'Psychic Armour',
+        time: '00:00 - 00:00pm',
+        link: 'https://psychicarmour.bandcamp.com/',
+      },
       {
         name: 'Venenö',
-        time: '8:00pm',
+        time: '00:00 - 00:00pm',
         link: 'https://nofusstapes.bandcamp.com/album/venen-demo-mmxxiv',
       },
       {
         name: 'Gulogy',
-        time: '8:00pm',
+        time: '00:00 - 00:00pm',
         link: '',
       },
     ],
@@ -181,12 +212,16 @@ const festivalFlyers = [
     lineup: [
       {
         name: 'Cross',
-        time: '3:30pm',
+        time: '00:00 - 00:00pm',
         link: 'https://roachlegrecords.bandcamp.com/album/no-beginning-no-end',
       },
-      { name: 'Cell Deth', time: '2:30pm', link: 'https://celldeth.bandcamp.com/' },
-      { name: 'Endform', time: '1:40pm', link: 'https://endform.bandcamp.com/' },
-      { name: 'Pied-de-Biche', time: '1:00pm', link: 'https://pied-de-biche.bandcamp.com/' },
+      { name: 'Cell Deth', time: '00:00 - 00:00pm', link: 'https://celldeth.bandcamp.com/' },
+      { name: 'Endform', time: '00:00 - 00:00pm', link: 'https://endform.bandcamp.com/' },
+      {
+        name: 'Pied-de-Biche',
+        time: '00:00 - 00:00pm',
+        link: 'https://pied-de-biche.bandcamp.com/',
+      },
     ],
   },
   {
@@ -198,33 +233,33 @@ const festivalFlyers = [
     lineup: [
       {
         name: 'Disturd',
-        time: '12:00am',
+        time: '00:00 - 00:00am',
         link: 'https://www.youtube.com/watch?v=2tORDiudB80',
       },
-      { name: 'Lifelessdark', time: '10:50pm', link: 'https://lifelessdark.bandcamp.com/' },
+      { name: 'Lifelessdark', time: '00:00 - 00:00pm', link: 'https://lifelessdark.bandcamp.com/' },
       {
         name: 'Yellowcake',
-        time: '10:00pm',
+        time: '00:00 - 00:00pm',
         link: 'https://yellowcakephx.bandcamp.com/album/can-you-see-the-future',
       },
       {
         name: 'Metallian',
-        time: '9:10pm',
+        time: '00:00 - 00:00pm',
         link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
       },
       {
         name: 'Hedonist',
-        time: '8:20pm',
+        time: '00:00 - 00:00pm',
         link: 'https://hedonistsl.bandcamp.com/album/scapulimancy',
       },
       {
         name: 'Portal Tomb',
-        time: '7:40pm',
+        time: '00:00 - 00:00pm',
         link: 'https://portaltomb.bandcamp.com/album/last-frost-demo',
       },
       {
         name: 'Sistema de Muerte',
-        time: '7:00pm',
+        time: '00:00 - 00:00pm',
         link: 'https://sistemademuerte.bandcamp.com/album/sistema-de-muerte',
       },
     ],
@@ -238,16 +273,20 @@ const festivalFlyers = [
     lineup: [
       {
         name: 'Flores Nucleares',
-        time: '1:50pm',
+        time: '00:00 - 00:00pm',
         link: 'https://doomsdayrecords.bandcamp.com/album/flores-nucleares',
       },
       {
         name: 'Bloodied Angels',
-        time: '1:20pm',
+        time: '00:00 - 00:00pm',
         link: 'https://bloodiedangels.bandcamp.com/album/demo',
       },
-      { name: 'Trenchraid', time: '12:40am', link: 'https://trenchraid.bandcamp.com/' },
-      { name: 'xheliesinruinx', time: '12:00am', link: 'https://heliesinruin.bandcamp.com/' },
+      { name: 'Trenchraid', time: '00:00 - 00:00am', link: 'https://trenchraid.bandcamp.com/' },
+      {
+        name: 'xheliesinruinx',
+        time: '00:00 - 00:00am',
+        link: 'https://heliesinruin.bandcamp.com/',
+      },
     ],
   },
 ]
