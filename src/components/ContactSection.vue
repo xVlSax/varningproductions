@@ -1,43 +1,46 @@
 <template>
   <div class="flex flex-col min-h-screen bg-black text-white font-punk">
-    <section id="contact" class="flex-grow w-full p-4 space-y-6">
-      <!-- Title -->
-      <div class="text-center mt-8">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-widest">CONTACT US</h1>
-        <p class="text-sm md:text-base text-blue-300 mt-2">
-          WE ARE LOOKING FORWARD TO WORKING WITH YOU!
-        </p>
-      </div>
-
-      <!-- Image -->
-      <div class="flex justify-center items-center w-full">
-        <img
-          src="/images/contact/framtid.jpg"
-          alt="Framtid at Varning"
-          class="img-resp w-full max-w-screen-xl rounded-lg shadow-lg"
-        />
-      </div>
+    <!-- Title -->
+    <section class="footer-font w-full max-w-screen-xl mx-auto px-4 pt-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-widest text-white drop-shadow-xl mb-2">
+        CONTACT US
+      </h1>
+      <p class="text-base md:text-lg text-blue-300 font-semibold">
+        WE ARE LOOKING FORWARD TO WORKING WITH YOU!
+      </p>
     </section>
 
-    <!-- Contact Info -->
+    <!-- Image -->
+    <div class="w-full flex justify-center items-center my-8">
+      <img
+        src="/images/contact/framtid.jpg"
+        alt="Framtid at Varning"
+        class="w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
+      />
+    </div>
+
+    <!-- Contact Info Grid -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-6 max-w-screen-xl mx-auto px-4"
+      class="footer-font w-full max-w-screen-xl mx-auto px-4 mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 text-center"
     >
       <div class="space-y-2">
-        <span class="text-xl">📞</span>
-        <p class="text-sm">+46 073 875 7797</p>
+        <span class="text-2xl">📞</span>
+        <p class="text-base">+46 073 875 7797</p>
       </div>
       <div class="space-y-2">
-        <span class="text-xl">📧</span>
-        <p class="text-sm">janickvarning@gmail.com</p>
+        <span class="text-2xl">📧</span>
+        <p class="text-base">janick@varningproductions.com</p>
       </div>
       <div class="space-y-2">
-        <span class="text-xl">🌐</span>
-        <p class="text-sm">www.varningproductions.com</p>
+        <span class="text-2xl">🌐</span>
+        <p class="text-base">www.varningproductions.com</p>
       </div>
       <div class="space-y-2">
-        <span class="text-xl">📍</span>
-        <p class="text-sm">Hjulsta Backar 27, 163 65 Spånga, Stockholm, Sweden</p>
+        <span class="text-2xl">📍</span>
+        <p class="text-base">
+          Montreal, Canda<br />
+          Stockholm, Sweden
+        </p>
       </div>
     </div>
 
@@ -48,38 +51,17 @@
           © VARNING PRODUCTIONS 2025 - ALL WRONGS RESERVED
         </p>
         <p class="footer-font font-punk text-dirty-white text-xs mt-2">
-          Made with <span class="text-red-400 !important">♥</span> and cheap beer
+          MADE WITH <span class="text-red-400">♥</span> AND CHEAP BEER
         </p>
       </div>
     </footer>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ContactSection',
-}
-</script>
-
-<style>
-p {
-  color: #ddd;
-  text-shadow:
-    0 0 3px #000,
-    1px 1px 0 #333;
-}
-
-h1 {
-  text-shadow:
-    0 0 5px #fff,
-    1px 1px 0 #666;
-}
-
-.img-resp {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-  max-height: 60vh;
+<style scoped>
+.footer-font {
+  color: white;
+  font-family: 'sans-serif', sans-serif;
 }
 .text-dirty-white {
   color: #f1f1f1;
@@ -106,6 +88,10 @@ footer p {
     0 0 5px #000;
 }
 
+footer:hover p {
+  animation: footer-flicker 0.8s infinite;
+}
+
 @keyframes footer-flicker {
   0%,
   100% {
@@ -116,30 +102,21 @@ footer p {
   }
 }
 
-footer:hover p {
-  animation: footer-flicker 0.8s infinite;
-}
-
 footer .font-punk span.text-red-400 {
-  color: #f87171 !important;
+  color: #f87171;
   animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
-  0% {
+  0%,
+  100% {
     transform: scale(1);
   }
   25% {
     transform: scale(1.1);
   }
-  50% {
-    transform: scale(1);
-  }
   75% {
     transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 </style>
