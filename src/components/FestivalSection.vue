@@ -11,7 +11,7 @@
       <!-- Intro Text -->
       <div class="festival-font text-center text-gray-200 space-y-2">
         <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2025</h3>
-        <h5 class="text-lg md:text-xl">
+        <h4 class="text-lg md:text-xl">
           Tickets/passes are available
           <a
             href="https://thepointofsale.com/tickets/py4250911001"
@@ -19,17 +19,7 @@
             class="underline hover:text-red-400"
             >here</a
           >
-        </h5>
-        <h6>
-          Things to
-          <a
-            href="https://thepointofsale.com/tickets/py4250911001"
-            target="_blank"
-            class="underline hover:text-red-400"
-            >do</a
-          >
-          in Montreal
-        </h6>
+        </h4>
       </div>
 
       <!-- Flyer Blocks -->
@@ -73,6 +63,15 @@
             <span class="festival-font text-gray-400">{{ band.time }}</span>
           </li>
         </ul>
+      </div>
+      <div class="festival-font text-center text-gray-200 space-y-2">
+        <h4 class="text-lg md:text-xl">
+          Things to
+          <router-link to="/things">
+            <a target="_blank" class="underline hover:text-red-400">do </a>
+          </router-link>
+          in Montreal
+        </h4>
       </div>
     </div>
   </section>

@@ -5,7 +5,7 @@
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
       <!-- Logo -->
-      <router-link to="/" class="font-punk text-lg"> VARNING </router-link>
+      <router-link to="/" class="font-punk text-lg"> VARNING PRODUCTIONS </router-link>
 
       <!-- Desktop Links -->
       <div class="hidden md:flex space-x-6">
@@ -54,6 +54,7 @@ const navItems = [
   { id: 'home', label: 'Home', path: '/' },
   { id: 'about', label: 'About', path: '/about' },
   { id: 'festival', label: 'Festival', path: '/festival' },
+  { id: 'things', label: 'ThingsToDo', path: '/things' },
   { id: 'contact', label: 'Contact', path: '/contact' },
 ]
 
@@ -104,7 +105,7 @@ nav a.nav-link {
   display: inline-block;
   color: white;
   position: relative;
-  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  text-shadow: 0 0 5px rgba(38, 192, 66, 0.5);
 }
 
 nav a.nav-link::after {
@@ -114,7 +115,7 @@ nav a.nav-link::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #ef4444;
+  background: #9f9f9fb5;
   transition: width 0.3s ease-out;
 }
 
@@ -123,6 +124,6 @@ nav a.nav-link:hover::after {
 }
 
 nav a.router-link-active {
-  color: #ef4444;
+  color: #9f9f9fb5;
 }
 </style>
