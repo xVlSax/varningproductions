@@ -20,6 +20,13 @@
             >here</a
           >
         </h4>
+        <h4 class="text-lg md:text-xl">
+          Things to
+          <router-link to="/things">
+            <a target="_blank" class="underline hover:text-red-400">do</a>
+          </router-link>
+          in Montreal
+        </h4>
       </div>
 
       <!-- Flyer Blocks -->
@@ -32,6 +39,7 @@
         <img
           :src="flyer.src"
           :alt="flyer.alt"
+          loading="lazy"
           class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
         />
 
@@ -63,15 +71,6 @@
             <span class="festival-font text-gray-400">{{ band.time }}</span>
           </li>
         </ul>
-      </div>
-      <div class="festival-font text-center text-gray-200 space-y-2">
-        <h4 class="text-lg md:text-xl">
-          Things to
-          <router-link to="/things">
-            <a target="_blank" class="underline hover:text-red-400">do </a>
-          </router-link>
-          in Montreal
-        </h4>
       </div>
     </div>
   </section>
@@ -207,7 +206,7 @@ const festivalFlyers = [
     alt: 'Saturday Matine Show Flyer',
     title: 'Saturday Matine Show + DIY Punk Market – September 13th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 1:00pm',
+    details: '$20 / Doors: 12:30pm – Show: 1:00pm SHARP!',
     lineup: [
       {
         name: 'Cross',
@@ -228,7 +227,7 @@ const festivalFlyers = [
     alt: 'Saturday Flyer',
     title: 'Saturday Show – September 13th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-    details: '$35 / Doors: 6:30pm – Show: 7:00pm',
+    details: '$35 / Doors: 6:00pm – Show: 6:30pm SHARP!',
     lineup: [
       {
         name: 'Disturd',

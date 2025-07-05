@@ -42,12 +42,16 @@
       <div class="space-y-1">
         <span class="material-icons text-red-400 text-base">facebook</span>
         <p class="text-base">
-          <a href="https://www.facebook.com/varningproductions">facebook.com/varningproductions</a>
+          <a href="https://www.facebook.com/varningproductions" target="_blank"
+            >facebook.com/varningproductions</a
+          >
         </p>
       </div>
       <div class="space-y-1">
         <span class="material-icons text-red-400 text-base">instagram</span>
-        <p class="text-base">@varningproductions</p>
+        <p class="text-base">
+          <a href="https://www.instagram.com/varningfest/?hl=en" target="_blank">@varningfest</a>
+        </p>
       </div>
     </section>
   </div>

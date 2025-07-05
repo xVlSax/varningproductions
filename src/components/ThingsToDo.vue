@@ -13,7 +13,14 @@
           class="bg-zinc-900 p-4 rounded-lg shadow-lg border border-zinc-700"
         >
           <h3 class="font-things text-xl text-white mb-1">{{ place.name }}</h3>
-          <p class="font-things text-sm text-gray-300 italic mb-1">{{ place.address }}</p>
+          <a
+            class="font-things text-sm text-blue-400 hover:underline italic mb-1 block"
+            :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.address)}`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ place.address }}
+          </a>
           <p class="font-things text-sm text-gray-400">{{ place.description }}</p>
         </div>
       </div>
@@ -59,7 +66,12 @@ const categories = [
       },
       {
         name: 'Shawarmaz',
-        address: '1340 St-Catherine W / 277 St-Catherine E',
+        address: '1340 St-Catherine W',
+        description: 'Best Shawarmas/Falafel',
+      },
+      {
+        name: 'Shawarmaz',
+        address: '277 St-Catherine E',
         description: 'Best Shawarmas/Falafel',
       },
       {
@@ -68,10 +80,15 @@ const categories = [
         description: 'Vegan brunch available Sat/Sun',
       },
       { name: 'Resto-Bar Le Pick-Up', address: '29 Avenue Laurier', description: 'Burger/Fries' },
-      { name: 'Lafleur', address: '2620 St-Denis / 2120 Ontario E', description: 'Poutine' },
+      { name: 'Lafleur', address: '2120 Ontario St E', description: 'Poutine' },
       {
         name: 'Boustan',
         address: '819 Ste-Catherine E / 3417 Ontario E',
+        description: 'Classic Lebanese',
+      },
+      {
+        name: 'Boustan',
+        address: '3417 Ontario E',
         description: 'Classic Lebanese',
       },
       {
@@ -133,5 +150,13 @@ h1 {
 .font-things {
   color: rgb(149, 149, 149);
   font-family: 'sans-serif', sans-serif;
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #f87171;
 }
 </style>

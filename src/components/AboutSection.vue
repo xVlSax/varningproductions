@@ -6,14 +6,9 @@
       class="w-10/12 sm:w-3/4 md:w-[500px] max-w-full animate-fade-in"
     />
   </section>
-  <!-- <section class="min-h-screen px-6 py-20 bg-black text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-punk mb-6">About Varning</h1>
-      <p class="text-lg leading-relaxed">
-        Varning Productions is a key pillar in Montreal’s underground music scene.
-      </p>
-    </div>
-  </section> -->
+  <div class="festival-font text-center text-gray-200 space-y-2">
+    <h4 class="festival-font text-2xl md:text-4xl">Under construction...</h4>
+  </div>
 </template>
 
 <script>
