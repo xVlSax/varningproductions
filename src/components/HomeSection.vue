@@ -16,5 +16,20 @@
 <script>
 export default {
   name: 'HomeSection',
+  mounted() {
+    const flyerImages = [
+      '/images/festival/flyers/MainPoster.jpg',
+      '/images/festival/flyers/thursday-flyer.jpg',
+      '/images/festival/flyers/matine-friday-flyer.jpg',
+      '/images/festival/flyers/VarningFlyer-Friday.jpg',
+      '/images/festival/flyers/MatineShow.png',
+      '/images/festival/flyers/VarningFlyer -Sat.jpg',
+      '/images/festival/flyers/saturday-aftershow-flyer.jpg',
+    ]
+    flyerImages.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  },
 }
 </script>
