@@ -10,9 +10,10 @@
     <!-- Image -->
     <div class="w-full flex justify-center items-center my-8">
       <img
-        src="/images/contact/framtid.jpg"
+        src="/images/contact/framtid.svg"
+        loading="lazy"
         alt="Framtid at Varning"
-        class="w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
+        class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
       />
     </div>
 
@@ -116,6 +117,13 @@ footer:hover p {
 footer .font-punk span.text-red-400 {
   color: #f87171;
   animation: heartbeat 1.5s infinite;
+}
+
+.picture-resp {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 90vh;
 }
 
 @keyframes heartbeat {
