@@ -64,7 +64,7 @@
             <a
               :href="band.link"
               target="_blank"
-              class="underline hover:text-red-400 transition-colors"
+              class="band-font underline hover:text-red-400 transition-colors"
             >
               {{ band.name }}
             </a>
@@ -195,7 +195,7 @@ const festivalFlyers = [
         link: 'https://nofusstapes.bandcamp.com/album/venen-demo-mmxxiv',
       },
       {
-        name: 'Gulogy',
+        name: 'Eulogy',
         time: '00:00 - 00:00pm',
         link: '',
       },
@@ -308,5 +308,9 @@ const festivalFlyers = [
 
 .festival-lineup {
   background-color: rgba(75, 85, 99, 0.3);
+}
+
+.band-font {
+  color: #9d2828;
 }
 </style>

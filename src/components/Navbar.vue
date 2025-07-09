@@ -5,7 +5,7 @@
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
       <!-- Logo -->
-      <router-link to="/" class="font-punk text-lg"> VARNING PRODUCTIONS </router-link>
+      <router-link to="/" class="logo-v font-punk text-lg"> VARNING PRODUCTIONS </router-link>
 
       <!-- Desktop Links -->
       <div class="hidden md:flex space-x-6">
@@ -124,6 +124,10 @@ nav a.nav-link:hover::after {
 }
 
 nav a.router-link-active {
-  color: #9f9f9fb5;
+  color: #fffffff3;
+}
+
+.logo-v {
+  color: #fffffff3;
 }
 </style>
