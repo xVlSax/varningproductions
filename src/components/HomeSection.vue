@@ -25,7 +25,7 @@ export default {
       '/images/festival/flyers/MatineShow.png',
       '/images/festival/flyers/VarningFlyer -Sat.jpg',
       '/images/festival/flyers/saturday-aftershow-flyer.jpg',
-      '/images/contact/framtid.svg',
+      '/images/contact/framtid.png',
     ]
     flyerImages.forEach((src) => {
       const img = new Image()
