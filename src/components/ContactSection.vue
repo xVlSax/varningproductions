@@ -10,7 +10,7 @@
     <!-- Image -->
     <div class="w-full flex justify-center items-center my-8">
       <img
-        src="/images/contact/framtid.svg"
+        src="/images/contact/framtid.png"
         loading="lazy"
         alt="Framtid at Varning"
         class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
@@ -60,7 +60,7 @@
   <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center">
     <div class="container mx-auto px-4">
       <p class="footer-font font-punk text-dirty-white text-sm md:text-base tracking-wider">
-        © VARNING PRODUCTIONS 2025 - ALL WRONGS RESERVED
+        © VARNING PRODUCTIONS 2025 - ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
       </p>
       <p class="footer-font font-punk text-dirty-white text-xs mt-2">
         MADE WITH <span class="text-red-400">♥</span> AND CHEAP BEER
