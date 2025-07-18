@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center">
     <div class="container mx-auto px-4">
-      <p class="footer-font">
+      <p class="footer-font font-punk text-dirty-white text-sm md:text-base tracking-wider">
         © VARNING PRODUCTIONS 2025 — ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
       </p>
     </div>

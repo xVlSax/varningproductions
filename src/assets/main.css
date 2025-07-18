@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* Reset default spacing */
 html,
@@ -55,6 +55,6 @@ body,
 
 @font-face {
   font-family: 'FestPunk';
-  src: url('/fonts/cfpunk-regular.ttf') format('ttf');
+  src: url('/fonts/cfpunk-regular.ttf') format('truetype');
   font-display: swap;
 }

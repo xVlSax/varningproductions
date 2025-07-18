@@ -1,14 +1,12 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-black text-white font-punk">
+  <div class="flex flex-col min-h-screen bg-black font-punk">
     <!-- Title -->
-    <section class="footer-font w-full max-w-screen-xl mx-auto px-4 pt-16 text-center">
-      <h1 class="text-8xl md:text-8xl font-bold tracking-widest text-white drop-shadow-xl mb-2">
-        CONTACT US
-      </h1>
+    <section class="contact-header footer-font w-full max-w-screen-xl mx-auto px-4 text-center">
+      <h1 class="text-8xl md:text-8xl tracking-widest drop-shadow-xl mb-2">CONTACT US</h1>
     </section>
 
     <!-- Image -->
-    <div class="w-full flex justify-center items-center my-8">
+    <div class="contact-image-wrapper w-full flex justify-center items-center">
       <img
         src="/images/contact/framtid.png"
         loading="lazy"
@@ -19,29 +17,33 @@
 
     <!-- Contact Info Grid -->
     <section
-      class="footer-font w-full max-w-screen-md mx-auto px-4 mb-16 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 text-center"
+      class="ffooter-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center"
     >
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">phone</span>
+        <span class="material-icons text-base">phone</span>
         <p class="text-base">+46 073 875 7797</p>
       </div>
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">email</span>
-        <p class="text-base">janick@varningproductions.com</p>
+        <span class="material-icons text-base">email</span>
+        <p class="text-base">
+          <a href="mailto:janick@varningproductions.com">janick@varningproductions.com</a>
+        </p>
       </div>
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">public</span>
-        <p class="text-base">www.varningproductions.com</p>
+        <span class="material-icons text-base">public</span>
+        <p class="text-base">
+          <a href="www.varningproductions.com" target="_blank">www.varningproductions.com</a>
+        </p>
       </div>
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">location_on</span>
+        <span class="material-icons text-base">location_on</span>
         <p class="text-base leading-snug">
           Montreal, Canada<br />
           Stockholm, Sweden
         </p>
       </div>
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">facebook</span>
+        <span class="material-icons text-base">facebook</span>
         <p class="text-base">
           <a href="https://www.facebook.com/varningproductions" target="_blank"
             >facebook.com/varningproductions</a
@@ -49,7 +51,7 @@
         </p>
       </div>
       <div class="space-y-1">
-        <span class="material-icons text-red-400 text-base">instagram</span>
+        <i class="fa fa-instagram" style="font-size: 24px"></i>
         <p class="text-base">
           <a href="https://www.instagram.com/varningfest/?hl=en" target="_blank">@varningfest</a>
         </p>
@@ -59,10 +61,10 @@
   <!-- Footer -->
   <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center">
     <div class="container mx-auto px-4">
-      <p class="footer-font font-punk text-dirty-white text-sm md:text-base tracking-wider">
-        © VARNING PRODUCTIONS 2025 - ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
+      <p class="footer-font font-punk text-sm md:text-base tracking-wider">
+        © VARNING PRODUCTIONS 2025 — ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
       </p>
-      <p class="footer-font font-punk text-dirty-white text-xs mt-2">
+      <p class="footer-font font-punk text-xs mt-2">
         MADE WITH <span class="text-red-400">♥</span> AND CHEAP BEER
       </p>
     </div>
@@ -70,17 +72,23 @@
 </template>
 
 <style scoped>
+h1 {
+  color: #c4c4c4a1;
+  font-size: 1.8rem;
+  font-family: 'Defused', serif;
+}
+.contact-header {
+  padding-top: 2rem;
+}
+
+.contact-image-wrapper {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .footer-font {
   font-family: 'sans-serif', sans-serif;
   color: white;
-}
-
-.text-dirty-white {
-  color: #f1f1f1;
-  text-shadow:
-    0 0 3px #000,
-    1px 1px 0 #666,
-    -1px -1px 0 #333;
 }
 
 footer {
@@ -126,6 +134,25 @@ footer .font-punk span.text-red-400 {
   max-height: 90vh;
 }
 
+.contact-grid a {
+  color: #c4c4c4a1;
+  text-decoration: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 1.5rem; /* row-gap, column-gap */
+  color: #c4c4c4a1;
+}
+
+/* From medium screens up, two equal columns */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @keyframes heartbeat {
   0%,
   100% {
@@ -137,5 +164,17 @@ footer .font-punk span.text-red-400 {
   75% {
     transform: scale(1.2);
   }
+}
+
+@font-face {
+  font-family: 'Defused';
+  src: url('/fonts/defused.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soulmission';
+  src: url('/fonts/soulmission.ttf') format('truetype');
+  font-display: swap;
 }
 </style>

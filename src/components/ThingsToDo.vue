@@ -140,6 +140,7 @@ const categories = [
 <style scoped>
 h1 {
   text-shadow: 0 0 5px #bdbdbd;
+  font-family: 'Defused', sans-serif;
 }
 
 .font-h2 {
@@ -158,5 +159,11 @@ a {
 
 a:hover {
   color: #f87171;
+}
+
+@font-face {
+  font-family: 'Defused';
+  src: url('/fonts/defused.ttf') format('truetype');
+  font-display: swap;
 }
 </style>
