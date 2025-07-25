@@ -91,7 +91,7 @@ const festivalFlyers = [
     alt: 'Thursday Flyer',
     title: 'Thursday Show – September 11th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$35 / Doors: 7:00pm – Show: 7:30pm SHARP!',
+    details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP!',
     lineup: [
       { name: 'Träume', time: '12:00 - 12:40am', link: 'https://traumepunk.bandcamp.com/' },
       {
@@ -162,27 +162,22 @@ const festivalFlyers = [
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
     details: '$35 / Doors: 7:00pm – Show: 7:30pm SHARP! Dance party after the show!',
     lineup: [
-      { name: 'Varukers', time: '01:55 - 02:35am', link: 'https://thevarukers.bandcamp.com/music' },
-      { name: 'Languid', time: '12:55 - 01:40am', link: 'https://languidpunk.bandcamp.com/music' },
+      { name: 'Varukers', time: '12:55 - 01:45am', link: 'https://thevarukers.bandcamp.com/music' },
+      { name: 'Languid', time: '12:00 - 12:40am', link: 'https://languidpunk.bandcamp.com/music' },
       {
         name: 'Innocent',
-        time: '12:00 - 12:40am',
+        time: '11:10 - 11:40pm',
         link: 'https://innocentpunk.bandcamp.com/album/architects-of-despair',
       },
       {
         name: 'Puffer',
-        time: '11:10 - 11:45pm',
+        time: '10:25 - 10:55pm',
         link: 'https://puffpuffpuff.bandcamp.com/album/demo',
       },
       {
         name: 'Epaulet',
-        time: '10:25 - 10:55pm',
-        link: 'https://epaulet.bandcamp.com/album/cries-from-bondage',
-      },
-      {
-        name: 'Mirage',
         time: '9:40 - 10:10pm',
-        link: 'https://roachlegrecords.bandcamp.com/album/immagini-postume',
+        link: 'https://epaulet.bandcamp.com/album/cries-from-bondage',
       },
       {
         name: 'Venenö',
@@ -208,10 +203,15 @@ const festivalFlyers = [
     details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
     lineup: [
       {
-        name: 'Cross',
+        name: 'Mirage',
         time: '3:35 - 4:15pm',
-        link: 'https://roachlegrecords.bandcamp.com/album/no-beginning-no-end',
+        link: 'https://roachlegrecords.bandcamp.com/album/immagini-postume',
       },
+      // {
+      //   name: 'Cross',
+      //   time: '3:35 - 4:15pm',
+      //   link: 'https://roachlegrecords.bandcamp.com/album/no-beginning-no-end',
+      // },
       { name: 'Cell Deth', time: '2:50 - 3:10pm', link: 'https://celldeth.bandcamp.com/' },
       { name: 'Endform', time: '2:05 - 2:35pm', link: 'https://endform.bandcamp.com/' },
       {
@@ -235,12 +235,12 @@ const festivalFlyers = [
       },
       { name: 'Lifelessdark', time: '10:20 - 10:55pm', link: 'https://lifelessdark.bandcamp.com/' },
       {
-        name: 'Yellowcake',
+        name: 'Alement',
         time: '9:25 - 10:05pm',
-        link: 'https://yellowcakephx.bandcamp.com/album/can-you-see-the-future',
+        link: 'https://alement.bandcamp.com/album/banished-sphere',
       },
       {
-        name: 'Metallian',
+        name: 'Metalian',
         time: '8:40 - 9:10pm',
         link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
       },
