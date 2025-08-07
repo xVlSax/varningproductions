@@ -16,14 +16,14 @@
           <a
             href="https://thepointofsale.com/tickets/py4250911001"
             target="_blank"
-            class="underline hover:text-red-400"
+            class="underline"
             >here</a
           >
         </h4>
         <h4 class="text-lg md:text-xl">
           Things to
           <router-link to="/things">
-            <a target="_blank" class="underline hover:text-red-400">do</a>
+            <a target="_blank" class="underline">do</a>
           </router-link>
           in Montreal
         </h4>
@@ -61,11 +61,7 @@
             :key="i"
             class="flex justify-between items-center border-b border-gray-700 py-1 last:border-none"
           >
-            <a
-              :href="band.link"
-              target="_blank"
-              class="band-font underline hover:text-red-400 transition-colors"
-            >
+            <a :href="band.link" target="_blank" class="band-font">
               {{ band.name }}
             </a>
             <span class="festival-font text-gray-400">{{ band.time }}</span>
@@ -306,10 +302,15 @@ const festivalFlyers = [
 }
 
 .festival-lineup {
-  background-color: rgba(75, 85, 99, 0.3);
+  background-color: rgba(35, 35, 35, 0.5);
 }
 
-.band-font {
-  color: #9d2828;
+.band-font,
+.underline {
+  color: #fbfbfb;
+}
+
+.festival-lineup a {
+  text-decoration: none;
 }
 </style>

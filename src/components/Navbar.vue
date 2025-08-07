@@ -1,44 +1,42 @@
 <template>
-  <nav
-    id="navbar"
-    class="fixed top-[-50px] left-0 right-0 w-full z-50 bg-[#222] text-white shadow-lg transition-all duration-300"
-  >
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-      <!-- Logo -->
-      <router-link to="/" class="logo-v font-punk text-lg"> VARNING PRODUCTIONS </router-link>
-
-      <!-- Desktop Links -->
-      <div class="hidden md:flex space-x-6">
-        <router-link
-          v-for="item in navItems"
-          :key="item.id"
-          :to="item.path"
-          class="uppercase font-punk tracking-wider hover:text-red-400 transition text-sm md:text-base"
-        >
-          {{ item.label }}
-        </router-link>
-      </div>
-
-      <!-- Mobile Icon -->
-      <button class="md:hidden" @click="toggleMenu" aria-label="Toggle menu">
-        <i class="fa fa-bars text-xl text-white"></i>
+  <nav id="navbar" class="nav-root">
+    <!-- Mobile top bar -->
+    <div class="bar-mobile">
+      <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
+      <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile dropdown menu -->
-    <div
-      v-if="isMenuOpen"
-      class="absolute top-full left-0 w-full bg-[#111] text-white flex flex-col items-center md:hidden"
-    >
+    <!-- Mobile dropdown -->
+    <div v-if="isMenuOpen" class="mobile-menu">
       <router-link
         v-for="item in navItems"
         :key="item.id"
         :to="item.path"
-        class="block w-full text-center py-2 hover:bg-red-700"
+        class="mobile-link"
         @click="closeMenu"
       >
         {{ item.label }}
       </router-link>
+    </div>
+
+    <!-- Desktop horizontal bar -->
+    <div class="bar-desktop">
+      <div class="desktop-container">
+        <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
+        <div class="desktop-links">
+          <router-link
+            v-for="item in navItems"
+            :key="item.id"
+            :to="item.path"
+            class="nav-item"
+            active-class="nav-item-active"
+          >
+            {{ item.label }}
+          </router-link>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
@@ -58,76 +56,143 @@ const navItems = [
   { id: 'contact', label: 'Contact', path: '/contact' },
 ]
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
-
-const closeMenu = () => {
-  isMenuOpen.value = false
-}
+const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value)
+const closeMenu = () => (isMenuOpen.value = false)
 
 // Close menu on route change
 watch(() => route.path, closeMenu)
 
-watch(
-  () => route.path,
-  () => {
-    isMenuOpen.value = false
-  },
-)
-
+// Slide-in on scroll
 const handleScroll = () => {
   const navbar = document.getElementById('navbar')
   if (!navbar) return
-  if (window.scrollY > 20) {
-    navbar.style.top = '0'
-  } else {
-    navbar.style.top = '-50px'
-  }
+  navbar.style.top = window.scrollY > 20 ? '0' : '-50px'
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped>
-#navbar {
-  transition: top 0.3s;
-}
-
-nav a.nav-link {
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  position: relative;
-  text-shadow: 0 0 5px rgba(38, 192, 66, 0.5);
-}
-
-nav a.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
+.nav-root {
+  position: fixed;
   left: 0;
-  width: 0;
-  height: 2px;
-  background: #9f9f9fb5;
-  transition: width 0.3s ease-out;
+  right: 0;
+  top: -50px;
+  z-index: 50;
+  color: #fff;
+  transition: top 0.3s ease;
+  pointer-events: none;
 }
 
-nav a.nav-link:hover::after {
-  width: 100%;
-}
-
-nav a.router-link-active {
-  color: #fffffff3;
+.bar-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 72rem; /* ~max-w-7xl */
+  margin: 0 auto;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  background: rgba(34, 34, 34, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
 }
 
 .logo-v {
-  color: #fffffff3;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: transparent;
+  border: 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+.mobile-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+.mobile-link:hover {
+  background: #b91c1c;
+}
+
+.bar-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .bar-mobile,
+  .mobile-menu {
+    display: none;
+  }
+
+  .bar-desktop {
+    display: block;
+    pointer-events: auto;
+    background: rgba(34, 34, 34, 0.95);
+  }
+
+  .desktop-container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    /* backdrop-filter: blur(4px); */
+  }
+
+  .desktop-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .nav-item {
+    text-transform: uppercase;
+    font-family: 'Staatliches', sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.15s ease;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom-color: #9f9f9f;
+  }
+
+  .nav-item-active {
+    color: #ef4444;
+    border-bottom-color: #ef4444;
+  }
 }
 </style>
