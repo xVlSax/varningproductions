@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const isMenuOpen = ref(false)
@@ -59,18 +59,8 @@ const navItems = [
 const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value)
 const closeMenu = () => (isMenuOpen.value = false)
 
-// Close menu on route change
+// Close mobile menu on route change
 watch(() => route.path, closeMenu)
-
-// Slide-in on scroll
-const handleScroll = () => {
-  const navbar = document.getElementById('navbar')
-  if (!navbar) return
-  navbar.style.top = window.scrollY > 20 ? '0' : '-50px'
-}
-
-onMounted(() => window.addEventListener('scroll', handleScroll))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped>
@@ -78,10 +68,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   position: fixed;
   left: 0;
   right: 0;
-  top: -50px;
+  top: 0;
   z-index: 50;
   color: #fff;
-  transition: top 0.3s ease;
   pointer-events: none;
 }
 
@@ -89,9 +78,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 72rem; /* ~max-w-7xl */
+  max-width: 72rem;
   margin: 0 auto;
-  padding: 0.75rem 1rem; /* px-4 py-3 */
+  padding: 0.75rem 1rem;
   background: rgba(34, 34, 34, 0.95);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
@@ -118,7 +107,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 }
 
 .mobile-menu {
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(34, 34, 34, 0.95);
   backdrop-filter: blur(4px);
   pointer-events: auto;
 }
@@ -135,6 +124,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   background: #b91c1c;
 }
 
+/* ---------- Desktop (md+) ---------- */
 .bar-desktop {
   display: none;
 }
@@ -159,7 +149,6 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 1rem;
-    /* backdrop-filter: blur(4px); */
   }
 
   .desktop-links {

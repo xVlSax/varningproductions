@@ -286,6 +286,10 @@ const festivalFlyers = [
 </script>
 
 <style scoped>
+.festival-container {
+  padding-top: calc(50px + 1rem);
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
   opacity: 0;

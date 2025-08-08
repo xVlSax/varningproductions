@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-black font-punk">
+  <div class="flex flex-col min-h-screen font-punk">
     <!-- Title -->
     <section class="contact-header footer-font w-full max-w-screen-xl mx-auto px-4 text-center">
       <h1 class="text-8xl md:text-8xl tracking-widest drop-shadow-xl mb-2">CONTACT US</h1>
@@ -16,17 +16,16 @@
     </div>
 
     <!-- Contact Info Grid -->
-    <section
-      class="ffooter-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center"
-    >
+    <section class="footer-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center">
       <div class="space-y-1">
         <span class="material-icons text-base">phone</span>
+        <p class="text-base">+1 (514) 462-9317</p>
         <p class="text-base">+46 073 875 7797</p>
       </div>
       <div class="space-y-1">
         <span class="material-icons text-base">email</span>
         <p class="text-base">
-          <a href="mailto:janick@varningproductions.com">janick@varningproductions.com</a>
+          <a href="mailto:booking@varningproductions.com">booking@varningproductions.com</a>
         </p>
       </div>
       <div class="space-y-1">
@@ -59,7 +58,7 @@
     </section>
   </div>
   <!-- Footer -->
-  <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center">
+  <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center footer-container">
     <div class="container mx-auto px-4">
       <p class="footer-font font-punk text-sm md:text-base tracking-wider">
         © VARNING PRODUCTIONS 2025 — ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
@@ -73,12 +72,13 @@
 
 <style scoped>
 h1 {
-  color: #c4c4c4a1;
+  color: #e1e1e1f5;
   font-size: 1.8rem;
   font-family: 'Defused', serif;
 }
+
 .contact-header {
-  padding-top: 2rem;
+  padding-top: calc(50px + 1rem);
 }
 
 .contact-image-wrapper {
@@ -135,18 +135,21 @@ footer .font-punk span.text-red-400 {
 }
 
 .contact-grid a {
-  color: #c4c4c4a1;
+  color: #e1e1e1f5;
   text-decoration: none;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem 1.5rem; /* row-gap, column-gap */
-  color: #c4c4c4a1;
+  gap: 2rem 1.5rem;
+  color: #e1e1e1f5;
 }
 
-/* From medium screens up, two equal columns */
+.footer-container {
+  padding-top: 4rem;
+}
+
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white min-h-screen font-punk px-4 py-8">
+  <div class="things-container text-white min-h-screen font-punk px-4 py-8">
     <h1 class="text-3xl md:text-5xl text-center mb-8 tracking-widest">Things To Do in Montreal</h1>
 
     <div v-for="section in categories" :key="section.title" class="font-things mb-12">
@@ -138,8 +138,12 @@ const categories = [
 </script>
 
 <style scoped>
+.things-container {
+  padding-top: calc(40px + 1rem);
+}
+
 h1 {
-  text-shadow: 0 0 5px #bdbdbd;
+  text-shadow: 0 0 5px #f4f4f4e8;
   font-family: 'Defused', sans-serif;
 }
 
