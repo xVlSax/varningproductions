@@ -51,6 +51,7 @@ const route = useRoute()
 const navItems = [
   { id: 'home', label: 'Home', path: '/' },
   { id: 'about', label: 'About', path: '/about' },
+  { id: 'services', label: 'Services', path: '/services' },
   { id: 'festival', label: 'Festival', path: '/festival' },
   { id: 'things', label: 'ThingsToDo', path: '/things' },
   { id: 'contact', label: 'Contact', path: '/contact' },
@@ -124,7 +125,6 @@ watch(() => route.path, closeMenu)
   background: #b91c1c;
 }
 
-/* ---------- Desktop (md+) ---------- */
 .bar-desktop {
   display: none;
 }

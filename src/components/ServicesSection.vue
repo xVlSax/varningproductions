@@ -1,6 +1,6 @@
 <template>
   <section
-    id="about"
+    id="services"
     class="min-h-screen bg-black bg-texture flex flex-col justify-center items-center text-center p-4"
   >
     <img
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'AboutSection',
+  name: 'ServicesSection',
 }
 </script>
 
