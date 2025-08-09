@@ -53,8 +53,6 @@
             loading="lazy"
             decoding="async"
             fetchpriority="low"
-            width="900"
-            height="1200"
             class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
           />
         </picture>
