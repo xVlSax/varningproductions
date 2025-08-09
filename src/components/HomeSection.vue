@@ -2,15 +2,20 @@
   <section class="hero-full">
     <video
       class="bgvid"
+      :class="{ 'is-ready': videoReady }"
       autoplay
       muted
       loop
       playsinline
       preload="metadata"
-      poster="/images/festival/VarningFestLogo.svg"
+      @loadeddata="onVideoReady"
+      @error="onVideoReady"
     >
       <source src="/videos/varningprod.mp4" type="video/mp4" />
     </video>
+
+    <!-- freepalestine svg overlay  -->
+    <img class="side-art side-art--right" src="/images/free-pal.svg" alt="" aria-hidden="true" />
 
     <div class="overlay">
       <router-link to="/festival" class="cta-link">
@@ -24,21 +29,33 @@
 <script>
 export default {
   name: 'HomeSection',
+  data() {
+    return { videoReady: false, fallbackTimer: null }
+  },
   mounted() {
-    // Preload only the most critical flyers
-    const flyers = [
+    // Preload a couple of critical images
+    ;[
       '/images/festival/flyers/MainPoster.webp',
       '/images/festival/flyers/thursday-flyer.webp',
-      '/images/festival/flyers/VarningFlyer-Flyer.webp',
       '/images/contact/framtid.webp',
-    ]
-
-    flyers.forEach((src) => {
+    ].forEach((src) => {
       const img = new Image()
       img.decoding = 'async'
       img.loading = 'eager'
       img.src = src
     })
+
+    // Safety: if the browser never fires loadeddata, fade in after ~1.5s
+    this.fallbackTimer = setTimeout(() => (this.videoReady = true), 1500)
+  },
+  beforeUnmount() {
+    clearTimeout(this.fallbackTimer)
+  },
+  methods: {
+    onVideoReady() {
+      this.videoReady = true
+      clearTimeout(this.fallbackTimer)
+    },
   },
 }
 </script>
@@ -48,11 +65,14 @@ export default {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #000;
   margin: 0;
   padding: 0;
+
+  /* svg fallback, it will "fade out" visually as the video fades in */
+  background: #000 url('/images/festival/VarningFestLogo.svg') center / contain no-repeat;
 }
 
+/* Video covers the section but starts transparent */
 .bgvid {
   position: absolute;
   inset: 0;
@@ -60,11 +80,17 @@ export default {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.75);
+
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+.bgvid.is-ready {
+  opacity: 1;
 }
 
 .overlay {
   position: absolute;
-  bottom: 8%; /* slightly closer to bottom */
+  bottom: 8%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -75,13 +101,13 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.4rem 0.9rem; /* smaller size */
+  padding: 0.4rem 0.9rem;
   border: 2px solid #fff;
   border-radius: 9999px;
   text-decoration: none;
   color: #fff;
   font-family: 'Staatliches', sans-serif;
-  font-size: clamp(0.75rem, 1.3vw, 1.1rem); /* smaller font */
+  font-size: clamp(0.75rem, 1.3vw, 1.1rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.3);
@@ -89,7 +115,6 @@ export default {
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-  animation: fadeInUp 1.2s ease forwards;
 }
 
 .cta-link:hover {
@@ -101,8 +126,6 @@ export default {
   display: inline-block;
   animation: arrowMove 1s ease-in-out infinite;
 }
-
-/* Arrow pulsing */
 @keyframes arrowMove {
   0%,
   100% {
@@ -113,20 +136,38 @@ export default {
   }
 }
 
-/* Fade in + slide up */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
+/* Free Palestine SVG overlay */
+.side-art {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  height: auto;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
+  opacity: 0.85;
+}
+.side-art--right {
+  right: 2rem;
+  bottom: 1%;
+  max-width: clamp(100px, 18vw, 220px);
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    bottom: 16%;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .side-art--right {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4%;
+    max-width: clamp(90px, 50vw, 150px);
   }
 }
 
-/* Accessibility: no motion */
 @media (prefers-reduced-motion: reduce) {
+  .bgvid {
+    transition: none;
+  }
   .cta-arrow {
     animation: none;
   }
