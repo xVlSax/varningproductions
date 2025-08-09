@@ -9,7 +9,7 @@
       preload="metadata"
       poster="/images/festival/VarningFestLogo.svg"
     >
-      <source src="/videos/varningprod.mp4" type="video/mp4" />
+      <!-- <source src="/videos/varningprod.mp4" type="video/mp4" /> -->
     </video>
 
     <div class="overlay">
