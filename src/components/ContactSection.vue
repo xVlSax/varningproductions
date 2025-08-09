@@ -6,13 +6,30 @@
     </section>
 
     <!-- Image -->
-    <div class="contact-image-wrapper w-full flex justify-center items-center">
+    <!-- <div class="contact-image-wrapper w-full flex justify-center items-center">
       <img
         src="/images/contact/framtid.png"
         loading="lazy"
         alt="Framtid at Varning"
         class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
       />
+    </div> -->
+    <div class="contact-image-wrapper w-full flex justify-center items-center">
+      <picture>
+        <!-- Modern formats -->
+        <source srcset="/images/contact/framtid.avif" type="image/avif" />
+        <source srcset="/images/contact/framtid.webp" type="image/webp" />
+        <!-- Fallback -->
+        <img
+          src="/images/contact/framtid.png"
+          alt="Framtid at Varning"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="1066"
+          class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
+        />
+      </picture>
     </div>
 
     <!-- Contact Info Grid -->
@@ -31,7 +48,7 @@
       <div class="space-y-1">
         <span class="material-icons text-base">public</span>
         <p class="text-base">
-          <a href="www.varningproductions.com" target="_blank">www.varningproductions.com</a>
+          <a href="/">www.varningproductions.com</a>
         </p>
       </div>
       <div class="space-y-1">

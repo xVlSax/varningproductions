@@ -36,12 +36,28 @@
         class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
       >
         <!-- Flyer Image -->
-        <img
+        <!-- <img
           :src="flyer.src"
           :alt="flyer.alt"
           loading="lazy"
           class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
-        />
+        /> -->
+
+        <!-- Flyer Image with modern format fallbacks -->
+        <picture>
+          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
+          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+          <img
+            :src="flyer.src"
+            :alt="flyer.alt"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+            width="900"
+            height="1200"
+            class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
+          />
+        </picture>
 
         <!-- Event Info -->
         <div class="festival-font text-sm md:text-base leading-relaxed">
@@ -203,11 +219,6 @@ const festivalFlyers = [
         time: '3:35 - 4:15pm',
         link: 'https://roachlegrecords.bandcamp.com/album/immagini-postume',
       },
-      // {
-      //   name: 'Cross',
-      //   time: '3:35 - 4:15pm',
-      //   link: 'https://roachlegrecords.bandcamp.com/album/no-beginning-no-end',
-      // },
       { name: 'Cell Deth', time: '2:50 - 3:10pm', link: 'https://celldeth.bandcamp.com/' },
       { name: 'Endform', time: '2:05 - 2:35pm', link: 'https://endform.bandcamp.com/' },
       {
@@ -218,7 +229,7 @@ const festivalFlyers = [
     ],
   },
   {
-    src: '/images/festival/flyers/VarningFlyer -Sat.jpg',
+    src: '/images/festival/flyers/VarningFlyer-Sat.jpg',
     alt: 'Saturday Flyer',
     title: 'Saturday Show – September 13th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
