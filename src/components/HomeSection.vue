@@ -11,7 +11,7 @@
       @loadeddata="onVideoReady"
       @error="onVideoReady"
     >
-      <source src="/videos/varningprod.mp4" type="video/mp4" />
+      <!-- <source src="/videos/varningprod.mp4" type="video/mp4" /> -->
     </video>
 
     <!-- freepalestine svg overlay  -->
