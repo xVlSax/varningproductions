@@ -17,6 +17,9 @@
     <!-- freepalestine svg overlay  -->
     <img class="side-art side-art--right" src="/images/free-pal.svg" alt="" aria-hidden="true" />
 
+    <!-- Varning logo bottom-left overlay -->
+    <img class="side-art side-art--left" src="/images/logoVarning.svg" alt="" aria-hidden="true" />
+
     <div class="overlay">
       <router-link to="/festival" class="cta-link">
         <span class="cta-text">ENTER THE FESTIVAL</span>
@@ -45,7 +48,6 @@ export default {
       img.src = src
     })
 
-    // Safety: if the browser never fires loadeddata, fade in after ~1.5s
     this.fallbackTimer = setTimeout(() => (this.videoReady = true), 1500)
   },
   beforeUnmount() {
@@ -136,7 +138,7 @@ export default {
   }
 }
 
-/* Free Palestine SVG overlay */
+/* Base style for overlays */
 .side-art {
   position: absolute;
   z-index: 2;
@@ -145,12 +147,22 @@ export default {
   filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
   opacity: 0.85;
 }
+
+/* Right-bottom overlay */
 .side-art--right {
   right: 2rem;
   bottom: 1%;
   max-width: clamp(100px, 18vw, 220px);
 }
 
+/* Left-bottom overlay */
+.side-art--left {
+  left: 1rem;
+  bottom: 3%;
+  max-width: clamp(65px, 7vw, 165px);
+}
+
+/* Mobile adjustments */
 @media (max-width: 640px) {
   .overlay {
     bottom: 16%;
@@ -161,6 +173,9 @@ export default {
     transform: translateX(-50%);
     bottom: 4%;
     max-width: clamp(90px, 50vw, 150px);
+  }
+  .side-art--left {
+    display: none;
   }
 }
 
