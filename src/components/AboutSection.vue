@@ -13,7 +13,7 @@
 
     <!-- Text Right side: About us -->
     <div class="about-text fade-in-right">
-      <h4 class="title">About us</h4>
+      <h4 class="title">ABOUT US</h4>
       <p class="copy">
         Varning Productions is a booking event project founded by Janick in 2006 with the opening of
         her co-managed venue The Katacombes in Montreal, Canada. Since then, Varning Productions has
@@ -35,37 +35,42 @@
   </section>
 
   <!-- Page 2: Why we do it + world map -->
-  <section
+  <!-- <section
     id="why"
     class="why-root min-h-screen relative flex flex-col md:flex-row items-center justify-center p-4"
-  >
-    <!-- world map bottom right-->
-    <img
+  > -->
+  <!-- world map bottom right-->
+  <!-- <img
       src="/images/about/world-map.svg"
       alt="world map"
       class="world-img float-slow fade-in-right"
-    />
-    <!-- Left side text -->
-    <div class="why-text fade-in-left">
-      <h4 class="title">Why we do it</h4>
-      <h5 class="sub-title">Promoting bands internationally</h5>
+    /> -->
+  <!-- Left side text -->
+  <!-- <div class="why-text fade-in-left">
+      <h4 class="title">WHY WE DO IT</h4>
+      <h5 class="sub-title">PROMOTING BANDS INTERNATIONALLY</h5>
       <p class="copy">
         VARNING PRODUCTION is focused on both uncovering emerging talent and creating opportunities
         for collaboration between new and established bands within the underground music scene. That
         way, it can foster creative synergy and help develop the next wave of artists while also
-        supporting those with a larger following. The genres —punk metal, post-punk, pop punk, synth
-        punk—are all part of the broader underground scene that often values authenticity and
-        experimentation. By connecting new bands with more established acts, VARNING PRODUCTION can
-        create a space where both groups can influence and inspire each other, leading to fresh
+        supporting those with a larger following. The genres - punk, metal, post-punk, pop punk,
+        synth punk — are all part of the broader underground scene that often values authenticity
+        and experimentation. By connecting new bands with more established acts, VARNING PRODUCTION
+        can create a space where both groups can influence and inspire each other, leading to fresh
         sounds and innovative musical expressions.
       </p>
-      <h5 class="sub-title">Creating a underground network</h5>
+      <h5 class="sub-title">NEW DIRECTIONS FOR VARNING PRODUCTIONS</h5>
       <p class="copy">
-        VARNING PRODUCTIONS has some exciting ambitions to grow its underground network and expand
-        internationally, which can provide a lot of opportunities for both bands and promoters.
+        We are growing our underground network and expanding internationally and we want to provide
+        more opportunities for promoting bands that we like and we have decided to add a
+        touring/driving service for bands that don’t have time nor the contacts to organize their
+        tour themselves. As of 2025, VARNING PRODUCTIONS is offering a turnkey service of organizing
+        and driving bands on tour in Northern Europe (comes with a 9 seater van, a driver and a full
+        backline). The itinerary will bring bands to Scandinavia, the Baltics, northern Poland and
+        northern Germany. We will provide a second itinerary option in the year to come.
       </p>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script>

@@ -198,6 +198,14 @@ const festivalFlyers = [
     ],
   },
   {
+    src: '/images/festival/flyers/punkmarket.jpg',
+    alt: 'Saturday Punk Market Flyer',
+    title: 'Saturday Matine DIY Punk Market – September 13th',
+    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Outside)',
+    details: 'FREE / All ages / 1:00pm',
+    lineup: [],
+  },
+  {
     src: '/images/festival/flyers/MatineShow.png',
     alt: 'Saturday Matine Show Flyer',
     title: 'Saturday Matine Show + DIY Punk Market – September 13th',
