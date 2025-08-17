@@ -52,6 +52,7 @@ const navItems = [
   { id: 'home', label: 'Home', path: '/' },
   { id: 'about', label: 'About', path: '/about' },
   { id: 'services', label: 'Services', path: '/services' },
+  { id: 'events', label: 'Events', path: '/events' },
   { id: 'festival', label: 'Festival', path: '/festival' },
   { id: 'things', label: 'ThingsToDo', path: '/things' },
   { id: 'contact', label: 'Contact', path: '/contact' },

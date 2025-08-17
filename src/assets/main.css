@@ -54,7 +54,25 @@ body,
 }
 
 @font-face {
-  font-family: 'FestPunk';
-  src: url('/fonts/cfpunk-regular.ttf') format('truetype');
+  font-family: 'TypeWriter1';
+  src: url('/fonts/type-writer-1.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VeteranTypewriter';
+  src: url('/fonts/veteran-typewriter-1.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Defused';
+  src: url('/fonts/defused.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lucky';
+  src: url('/fonts/luckytypewriter.ttf') format('truetype');
   font-display: swap;
 }

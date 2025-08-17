@@ -5,15 +5,7 @@
       <h1 class="text-8xl md:text-8xl tracking-widest drop-shadow-xl mb-2">CONTACT US</h1>
     </section>
 
-    <!-- Image -->
-    <!-- <div class="contact-image-wrapper w-full flex justify-center items-center">
-      <img
-        src="/images/contact/framtid.png"
-        loading="lazy"
-        alt="Framtid at Varning"
-        class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
-      />
-    </div> -->
+    <!-- Framtid image -->
     <div class="contact-image-wrapper w-full flex justify-center items-center">
       <picture>
         <!-- Modern formats -->
@@ -184,17 +176,5 @@ footer .font-punk span.text-red-400 {
   75% {
     transform: scale(1.2);
   }
-}
-
-@font-face {
-  font-family: 'Defused';
-  src: url('/fonts/defused.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Soulmission';
-  src: url('/fonts/soulmission.ttf') format('truetype');
-  font-display: swap;
 }
 </style>

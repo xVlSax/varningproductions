@@ -35,14 +35,6 @@
         :key="index"
         class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
       >
-        <!-- Flyer Image -->
-        <!-- <img
-          :src="flyer.src"
-          :alt="flyer.alt"
-          loading="lazy"
-          class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
-        /> -->
-
         <!-- Flyer Image with modern format fallbacks -->
         <picture>
           <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -316,6 +308,7 @@ const festivalFlyers = [
 
 .festival-lineup {
   background-color: rgba(35, 35, 35, 0.5);
+  margin-right: 2rem;
 }
 
 .band-font,

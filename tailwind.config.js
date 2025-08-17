@@ -5,9 +5,10 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        punk: ['Staatliches', 'sans-serif'],
-        fest: ['FestPunk', 'sans-serif'],
         defused: ['Defused', 'sans-serif'],
+        typewriter1: ['TypeWriter1', 'sans-serif'],
+        veterantype: ['VeteranTypewriter', 'sans-serif'],
+        luckytypewriter: ['Lucky', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 1.5s ease-out forwards',

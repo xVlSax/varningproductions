@@ -40,7 +40,7 @@ const categories = [
       },
       {
         name: "L'Espace Public",
-        address: '3632 Ontario E',
+        address: '3632 Ontario St E',
         description: 'Neighbourhood brew pub in Hochelaga Village',
       },
       {
@@ -48,10 +48,14 @@ const categories = [
         address: '29 Avenue Laurier',
         description: 'Arguably the best/most famous brew pub',
       },
-      { name: "L'Amère A Boire", address: '2049 St-Denis', description: 'Euro style brew pub' },
+      {
+        name: "L'Amère A Boire",
+        address: '2049 Saint Denis St',
+        description: 'Euro style brew pub',
+      },
       {
         name: 'Street Drinking',
-        address: 'Everywhere',
+        address: 'Montreal',
         description: 'Cheaper option but be discreet',
       },
     ],
@@ -65,43 +69,59 @@ const categories = [
         description: 'Great Indian restaurant in Hochelaga',
       },
       {
-        name: 'Shawarmaz',
-        address: '1340 St-Catherine W',
-        description: 'Best Shawarmas/Falafel',
+        name: 'Copper Branch',
+        address: '1180, W. Boul. de Maisonneuve',
+        description: 'Vegan & vegetarian food (not far from where the festival is held)',
       },
       {
         name: 'Shawarmaz',
-        address: '277 St-Catherine E',
-        description: 'Best Shawarmas/Falafel',
+        address: '1340 St-Catherine W',
+        description: 'Best Shawarmas/Falafel (not far from where the festival is held)',
       },
       {
         name: 'Le Trèfle Hochelaga',
-        address: '3632 Ontario E',
-        description: 'Vegan brunch available Sat/Sun',
+        address: '3971 Ontario St E',
+        description: 'Vegan brunch available Sat/Sun before 2pm',
       },
-      { name: 'Resto-Bar Le Pick-Up', address: '29 Avenue Laurier', description: 'Burger/Fries' },
+      {
+        name: 'Resto-Bar Le Pick-Up',
+        address: '3739 Ontario St E',
+        description: 'Burger/Fries/Tacos -Punk Latinos Friends work there',
+      },
       { name: 'Lafleur', address: '2120 Ontario St E', description: 'Poutine' },
       {
-        name: 'Boustan',
-        address: '819 Ste-Catherine E / 3417 Ontario E',
-        description: 'Classic Lebanese',
+        name: 'Gerry’s',
+        address: '3982 Rue Ontario E',
+        description: 'Old dinner (breakfast, pizzas, poutine) in Hochelaga borough',
+      },
+      {
+        name: 'La Belle Place',
+        address: '3251 Rue Ontario E',
+        description:
+          'Cheap fast food with Poutine, vegetarian pitas and jumbo veggie dogs + cheap breakfast',
+      },
+      {
+        name: 'Bloom Sushi',
+        address: '288 Saint-Catherine St W',
+        description: 'Vegetariand & vegan sushis',
       },
       {
         name: 'Boustan',
-        address: '3417 Ontario E',
-        description: 'Classic Lebanese',
+        address: '3417 Ontario St E',
+        description: 'Classic Lebanese food',
       },
       {
-        name: 'Aux Vivres',
-        address: '4631 St Laurent',
-        description: 'World famous vegan restaurant',
+        name: 'Pizzeria Zac',
+        address: '8 Duluth Ave E',
+        description:
+          'Vegan pizza place (on the Plateau Mont-Royal, a bit far from the venue where the fest is held)',
       },
     ],
   },
   {
     title: 'Record Stores',
     places: [
-      { name: 'Sonik', address: '4050 Berri', description: 'THE punk record store' },
+      { name: 'Sonik', address: '4050 Rue Berri', description: 'THE punk record store' },
       {
         name: 'Cheap Thrills',
         address: '2044 Metcalfe',
@@ -109,13 +129,13 @@ const categories = [
       },
       {
         name: 'Beatnick Records',
-        address: '3770 Saint Denis',
+        address: '3770 Saint Denis St',
         description: 'Oldschool store with knowledgeable staff',
       },
       {
         name: 'Le Pick-up / LeBackstore',
-        address: '169 Pins Ave E',
-        description: 'Two great stores under one roof',
+        address: '169 Ave des Pins',
+        description: 'Two great stores under one roof, lots of rare punk rock',
       },
       {
         name: 'Pump Up the Volume (Marche Noir)',
@@ -124,7 +144,7 @@ const categories = [
       },
       {
         name: 'Sound Central',
-        address: '486 Coloniale Ave',
+        address: '4486 Coloniale Ave',
         description: 'Run by Sean (Dopethrone), big selection',
       },
       {
@@ -163,11 +183,5 @@ a {
 
 a:hover {
   color: #f87171;
-}
-
-@font-face {
-  font-family: 'Defused';
-  src: url('/fonts/defused.ttf') format('truetype');
-  font-display: swap;
 }
 </style>
