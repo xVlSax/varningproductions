@@ -71,6 +71,60 @@
       </p>
     </div>
   </section> -->
+
+  <!-- Page 3: About us profile -->
+  <section id="profile" class="profile-root min-h-screen relative p-4">
+    <h2 class="title">IN THE SCENE / FOR THE SCENE</h2>
+    <div class="profile-grid">
+      <!-- LEFT: Janick -->
+      <article class="profile-card fade-in-left">
+        <img
+          src="/images/about/janick.jpg"
+          alt="Janick Varning"
+          class="profile-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="profile-text">
+          <h5 class="sub-title">JANICK VARNING</h5>
+          <p class="profile-info">
+            From Montreal, Canada, Janick is a passionate music lover and has been in the punk scene
+            for the past 30 years. She has played in numerous bands since she was 18years old
+            (Fierce, Hellbound, After The Bombs, Parasytes, Fractured, etc.). In 1998 she started a
+            live music venue called L’X and started booking shows and organizing tours. In 2006, she
+            opened another venue that ended up being one of the most established and influential
+            punk metal venues in Canada: The Katacombes (2006-2020) that led her to putting up one
+            of the longest lasting punk festivals in the world: A Varning from Montreal Festival
+            (2007 - present).
+          </p>
+        </div>
+      </article>
+
+      <!-- RIGHT: Vlad -->
+      <article class="profile-card fade-in-right">
+        <img
+          src="/images/about/vlad.jpg"
+          alt="Vlad Sant"
+          class="profile-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="profile-text">
+          <h5 class="sub-title">VLAD SANT</h5>
+          <p class="profile-info">
+            From Lima, Peru, Vlad has been involved in the punk scene since his early teens, playing
+            in bands, organizing shows and touring across South America. He moved to Stockholm over
+            many years ago, where he continued playing and supporting the DIY punk community while
+            also expanding his technical expertise. Vlad has developed strong IT skills, working
+            with coding, internet platforms, and IT solutions for companies. He has recently joined
+            the Varning Productions team and his skills makes him a particularly great asset and
+            will ensure its presence on the net as well as taking care of the technical and
+            logistical aspects of management.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -78,9 +132,7 @@ export default { name: 'AboutSection' }
 </script>
 
 <style scoped>
-/* Desktop-first layout */
 .about-root {
-  /* reserve left space for skull image so text doesn’t overlap */
   padding-left: clamp(320px, 28vw, 420px);
 }
 
@@ -106,13 +158,10 @@ export default { name: 'AboutSection' }
   text-align: right;
 }
 
-/* ---------------- Page 2 (Why) ---------------- */
 .why-root {
-  /* reserve right space for world map */
   padding-right: clamp(320px, 28vw, 420px);
 }
 
-/* World map bottom-right */
 .world-img {
   position: absolute;
   bottom: 1.25rem;
@@ -123,7 +172,6 @@ export default { name: 'AboutSection' }
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
 }
 
-/* Left column: Why we do it (vertically centered, left-ish) */
 .why-text {
   margin-top: -5rem;
   margin-left: 3rem;
@@ -143,9 +191,11 @@ export default { name: 'AboutSection' }
 .sub-title {
   color: #e9e9e9;
   margin: 0.75rem 0 0.25rem 0;
-  font-weight: 700;
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2vw, 1.15rem);
   font-family: 'TypeWriter1', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .copy {
@@ -156,7 +206,24 @@ export default { name: 'AboutSection' }
   font-family: 'Lucky', sans-serif;
 }
 
-/* Tablet “in-between” fix (avoid overlap before mobile) */
+.profile-root {
+  background: #000;
+  color: #e9e9e9;
+  display: grid;
+  place-items: center;
+  padding: 5rem 1rem;
+}
+
+.profile-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  gap: 2rem; /* space between cards */
+  grid-template-columns: 1fr;
+  align-items: start;
+  padding: 0 1rem; /* default small margin on mobile */
+}
+
 @media (max-width: 1100px) {
   .about-root {
     padding-left: clamp(160px, 22vw, 300px);
@@ -172,7 +239,6 @@ export default { name: 'AboutSection' }
   }
 }
 
-/* Switch to stacked layout earlier (tablet) to guarantee no collisions */
 @media (max-width: 900px) {
   .about-root {
     padding-left: 0;
@@ -192,6 +258,9 @@ export default { name: 'AboutSection' }
     text-align: center;
     max-width: 720px;
     order: 1;
+  }
+  .title {
+    font-size: 2rem;
   }
 
   .why-root {
@@ -213,6 +282,67 @@ export default { name: 'AboutSection' }
     width: clamp(260px, 70vw, 520px);
     opacity: 0.95;
   }
+}
+
+@media (min-width: 900px) {
+  .title {
+    font-size: 2rem;
+  }
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem; /* bigger gap between Janick + Vlad */
+    padding: 0 3rem; /* keep cards away from edges */
+    /* max-width: 1200px; */
+    align-items: stretch; /* stretch both columns equally */
+  }
+  .profile-root .title {
+    margin-bottom: 2rem; /* a bit more space above the grid on desktop */
+  }
+
+  .profile-root {
+    padding: 3rem 2rem; /* comfortable desktop padding */
+  }
+}
+
+/* Cards themselves */
+.profile-card {
+  background: rgba(25, 25, 25, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image */
+.profile-img {
+  width: 100%;
+  aspect-ratio: 8 / 8;
+  /* object-fit: cover;
+  object-position: 50% 60%; */
+}
+
+/* Text grows and keeps equal balance */
+.profile-text {
+  flex: 1; /* ensures text area stretches */
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* add space between the title and the cards */
+.profile-root .title {
+  margin: 0 0 3rem 0; /* space under "IN THE SCENE / FOR THE SCENE" */
+  text-align: center; /* optional: keep it centered */
+}
+
+.profile-info {
+  color: #d7d7d7;
+  line-height: 1.7;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-family: 'Lucky', sans-serif;
 }
 
 /* Mobile */
@@ -241,9 +371,22 @@ export default { name: 'AboutSection' }
   .world-img {
     width: clamp(240px, 105vw, 360px);
   }
+  .profile-root {
+    padding: 5rem 1rem; /* was 5rem — this is why cards were narrow */
+  }
+  .profile-grid {
+    padding: 0 0.5rem; /* tighter margin on sides */
+    max-width: 100%; /* full width */
+    gap: 2rem;
+  }
+  .profile-card {
+    width: 100%; /* stretch card to grid column */
+  }
+  .profile-text {
+    padding: 0.9rem 0.95rem 1.1rem;
+  }
 }
 
-/* Subtle motion */
 .float-slow {
   animation: floatY 5.5s ease-in-out infinite;
 }
