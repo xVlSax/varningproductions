@@ -49,7 +49,7 @@ const isMenuOpen = ref(false)
 const route = useRoute()
 
 const navItems = [
-  { id: 'home', label: 'Home', path: '/' },
+  // { id: 'home', label: 'Home', path: '/' },
   { id: 'about', label: 'About', path: '/about' },
   { id: 'services', label: 'Services', path: '/services' },
   { id: 'events', label: 'Events', path: '/events' },

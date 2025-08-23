@@ -78,13 +78,24 @@
     <div class="profile-grid">
       <!-- LEFT: Janick -->
       <article class="profile-card fade-in-left">
-        <img
+        <!-- <img
           src="/images/about/janick.jpg"
           alt="Janick Varning"
           class="profile-img"
           loading="lazy"
           decoding="async"
-        />
+        /> -->
+        <picture class="profile-img">
+          <source srcset="/images/about/janick.avif" type="image/avif" />
+          <source srcset="/images/about/janick.webp" type="image/webp" />
+          <img
+            src="/images/about/janick.jpg"
+            class="profile-img"
+            alt="Janick Varning"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <div class="profile-text">
           <h5 class="sub-title">JANICK VARNING</h5>
           <p class="profile-info">
@@ -102,13 +113,24 @@
 
       <!-- RIGHT: Vlad -->
       <article class="profile-card fade-in-right">
-        <img
+        <!-- <img
           src="/images/about/vlad.jpg"
           alt="Vlad Sant"
           class="profile-img"
           loading="lazy"
           decoding="async"
-        />
+        /> -->
+        <picture class="profile-img">
+          <source srcset="/images/about/vlad.avif" type="image/avif" />
+          <source srcset="/images/about/vlad.webp" type="image/webp" />
+          <img
+            src="/images/about/vlad.jpg"
+            class="profile-img"
+            alt="Vlad Sant"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <div class="profile-text">
           <h5 class="sub-title">VLAD SANT</h5>
           <p class="profile-info">
@@ -218,10 +240,10 @@ export default { name: 'AboutSection' }
   width: 100%;
   max-width: 1200px;
   display: grid;
-  gap: 2rem; /* space between cards */
+  gap: 2rem;
   grid-template-columns: 1fr;
   align-items: start;
-  padding: 0 1rem; /* default small margin on mobile */
+  padding: 0 1rem;
 }
 
 @media (max-width: 1100px) {
@@ -236,6 +258,19 @@ export default { name: 'AboutSection' }
   .about-text {
     margin-right: 1.25rem;
     max-width: 640px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-root {
+    padding-left: clamp(200px, 22vw, 300px);
+  }
+  .about-img {
+    width: clamp(220px, 34vw, 360px);
+  }
+  .about-text {
+    margin-right: 1.25rem;
+    max-width: 540px;
   }
 }
 
@@ -284,27 +319,39 @@ export default { name: 'AboutSection' }
   }
 }
 
+@media (max-height: 700px) {
+  .about-text {
+    margin-top: 4rem;
+    max-width: 640px;
+  }
+  .copy {
+    font-size: 0.9rem;
+  }
+  .about-img {
+    width: clamp(220px, 34vw, 330px);
+  }
+}
+
 @media (min-width: 900px) {
   .title {
     font-size: 2rem;
   }
   .profile-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem; /* bigger gap between Janick + Vlad */
-    padding: 0 3rem; /* keep cards away from edges */
+    gap: 3rem;
+    padding: 0 3rem;
     /* max-width: 1200px; */
-    align-items: stretch; /* stretch both columns equally */
+    align-items: stretch;
   }
   .profile-root .title {
-    margin-bottom: 2rem; /* a bit more space above the grid on desktop */
+    margin-bottom: 2rem;
   }
 
   .profile-root {
-    padding: 3rem 2rem; /* comfortable desktop padding */
+    padding: 3rem 2rem;
   }
 }
 
-/* Cards themselves */
 .profile-card {
   background: rgba(25, 25, 25, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -315,7 +362,6 @@ export default { name: 'AboutSection' }
   flex-direction: column;
 }
 
-/* Image */
 .profile-img {
   width: 100%;
   aspect-ratio: 8 / 8;
@@ -323,19 +369,17 @@ export default { name: 'AboutSection' }
   object-position: 50% 60%; */
 }
 
-/* Text grows and keeps equal balance */
 .profile-text {
-  flex: 1; /* ensures text area stretches */
+  flex: 1;
   padding: 1rem 1.1rem 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* add space between the title and the cards */
 .profile-root .title {
-  margin: 0 0 3rem 0; /* space under "IN THE SCENE / FOR THE SCENE" */
-  text-align: center; /* optional: keep it centered */
+  margin: 0 0 3rem 0;
+  text-align: center;
 }
 
 .profile-info {
@@ -372,15 +416,15 @@ export default { name: 'AboutSection' }
     width: clamp(240px, 105vw, 360px);
   }
   .profile-root {
-    padding: 5rem 1rem; /* was 5rem — this is why cards were narrow */
+    padding: 5rem 1rem;
   }
   .profile-grid {
-    padding: 0 0.5rem; /* tighter margin on sides */
-    max-width: 100%; /* full width */
+    padding: 0 0.5rem;
+    max-width: 100%;
     gap: 2rem;
   }
   .profile-card {
-    width: 100%; /* stretch card to grid column */
+    width: 100%;
   }
   .profile-text {
     padding: 0.9rem 0.95rem 1.1rem;
