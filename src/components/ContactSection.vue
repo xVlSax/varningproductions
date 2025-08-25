@@ -28,7 +28,7 @@
     <section class="footer-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center">
       <div class="space-y-1">
         <span class="material-icons text-base">phone</span>
-        <p class="text-base">+1 (514) 462-9317</p>
+        <p class="text-base">+1 (514) 755-9317</p>
         <p class="text-base">+46 073 875 7797</p>
       </div>
       <div class="space-y-1">
@@ -70,7 +70,7 @@
   <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center footer-container">
     <div class="container mx-auto px-4">
       <p class="footer-font font-punk text-sm md:text-base tracking-wider">
-        © VARNING PRODUCTIONS 2025 — ALL WRONGS RESERVED — UP THE PUNX TABARNAC!!
+        © VARNING PRODUCTIONS 2025 — ALL WRONGS RESERVED — UP THE PUNX TABARNAK!!
       </p>
       <p class="footer-font font-punk text-xs mt-2">
         MADE WITH <span class="text-red-400">♥</span> AND CHEAP BEER

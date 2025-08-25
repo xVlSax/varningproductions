@@ -160,11 +160,13 @@ const categories = [
 <style scoped>
 .things-container {
   padding-top: calc(40px + 1rem);
+  margin-bottom: 5rem;
 }
 
 h1 {
   text-shadow: 0 0 5px #f4f4f4e8;
   font-family: 'Defused', sans-serif;
+  margin-bottom: 4rem;
 }
 
 .font-h2 {
@@ -175,6 +177,8 @@ h1 {
 .font-things {
   color: rgb(149, 149, 149);
   font-family: 'sans-serif', sans-serif;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
 }
 
 a {
