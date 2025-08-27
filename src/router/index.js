@@ -8,23 +8,13 @@ import FestivalSection from '@/components/FestivalSection.vue'
 import ThingsToDo from '@/components/ThingsToDo.vue'
 import ContactSection from '@/components/ContactSection.vue'
 
-// const routes = [
-//   { path: '/', name: 'Home', component: HomeSection },
-//   { path: '/about', name: 'About', component: AboutSection },
-//   { path: '/services', name: 'Services', component: ServicesSection },
-//   { path: '/events', name: 'Events', component: EventSection },
-//   { path: '/festival', name: 'Festival', component: FestivalSection },
-//   { path: '/things', name: 'Things To Do', component: ThingsToDo },
-//   { path: '/contact', name: 'Contact', component: ContactSection },
-// ]
-
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: HomeSection,
     meta: {
-      title: 'Varning Productions – DIY Punk Shows & Festival',
+      title: 'Varning Productions – DIY Punk Shows, Bookings, Tour & Festival',
       description:
         'Varning Productions is a DIY punk collective booking shows, tours and A Varning From Montreal Festival since 2007.',
       canonical: 'https://www.varningproductions.com/',
