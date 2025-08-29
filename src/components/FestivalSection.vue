@@ -210,15 +210,19 @@ const festivalFlyers = [
     alt: 'Saturday Matine Show Flyer',
     title: 'Saturday Matine Show + DIY Punk Market – September 13th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
+    details: '$20 / Doors: 12:00pm – Show: 1:00pm SHARP!',
     lineup: [
       {
-        name: 'Mirage',
+        name: 'Cell Deth',
         time: '3:35 - 4:15pm',
-        link: 'https://roachlegrecords.bandcamp.com/album/immagini-postume',
+        link: 'https://celldeth.bandcamp.com/',
       },
-      { name: 'Cell Deth', time: '2:50 - 3:10pm', link: 'https://celldeth.bandcamp.com/' },
-      { name: 'Endform', time: '2:05 - 2:35pm', link: 'https://endform.bandcamp.com/' },
+      { name: 'Endform', time: '2:50 - 3:10pm', link: 'https://endform.bandcamp.com/' },
+      {
+        name: 'Poison Spear',
+        time: '2:05 - 2:35pm',
+        link: 'https://poisonspear514.bandcamp.com/album/institutional-trust',
+      },
       {
         name: 'Pied-de-Biche',
         time: '1:30 - 1:50pm',
@@ -274,14 +278,14 @@ const festivalFlyers = [
     details: '$20 / Doors: 12:00am – Show: 12:30am SHARP!',
     lineup: [
       {
-        name: 'Flores Nucleares',
+        name: 'Bloodied Angels',
         time: '02:40 - 03:15am',
-        link: 'https://doomsdayrecords.bandcamp.com/album/flores-nucleares',
+        link: 'https://bloodiedangels.bandcamp.com/album/demo',
       },
       {
-        name: 'Bloodied Angels',
+        name: 'Total Nada',
         time: '01:55 - 02:25am',
-        link: 'https://bloodiedangels.bandcamp.com/album/demo',
+        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
       },
       { name: 'Trenchraid', time: '01:10 - 01:40am', link: 'https://trenchraid.bandcamp.com/' },
       {
