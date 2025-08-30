@@ -162,7 +162,7 @@ const festivalFlyers = [
     alt: 'Friday Flyer',
     title: 'Friday Show – September 12th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-    details: '$35 / Doors: 7:00pm – Show: 7:30pm SHARP! Dance party after the show!',
+    details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP! Dance party after the show!',
     lineup: [
       { name: 'Varukers', time: '12:55 - 01:45am', link: 'https://thevarukers.bandcamp.com/music' },
       { name: 'Languid', time: '12:00 - 12:40am', link: 'https://languidpunk.bandcamp.com/music' },
@@ -210,7 +210,7 @@ const festivalFlyers = [
     alt: 'Saturday Matine Show Flyer',
     title: 'Saturday Matine Show + DIY Punk Market – September 13th',
     location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 12:00pm – Show: 1:00pm SHARP!',
+    details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
     lineup: [
       {
         name: 'Cell Deth',
@@ -242,21 +242,25 @@ const festivalFlyers = [
         time: '11:10 - 11:50pm',
         link: 'https://www.youtube.com/watch?v=2tORDiudB80',
       },
-      { name: 'Lifelessdark', time: '10:20 - 10:55pm', link: 'https://lifelessdark.bandcamp.com/' },
+      {
+        name: 'Lifeless dark',
+        time: '10:20 - 10:55pm',
+        link: 'https://lifelessdark.bandcamp.com/',
+      },
+      {
+        name: 'Hedonist',
+        time: '9:25 - 10:05pm',
+        link: 'https://hedonistsl.bandcamp.com/album/scapulimancy',
+      },
       {
         name: 'Alement',
-        time: '9:25 - 10:05pm',
+        time: '8:40 - 9:10pm',
         link: 'https://alement.bandcamp.com/album/banished-sphere',
       },
       {
         name: 'Metalian',
-        time: '8:40 - 9:10pm',
-        link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
-      },
-      {
-        name: 'Hedonist',
         time: '7:55 - 8:25pm',
-        link: 'https://hedonistsl.bandcamp.com/album/scapulimancy',
+        link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
       },
       {
         name: 'Portal Tomb',
@@ -278,14 +282,14 @@ const festivalFlyers = [
     details: '$20 / Doors: 12:00am – Show: 12:30am SHARP!',
     lineup: [
       {
-        name: 'Bloodied Angels',
+        name: 'Total Nada',
         time: '02:40 - 03:15am',
-        link: 'https://bloodiedangels.bandcamp.com/album/demo',
+        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
       },
       {
-        name: 'Total Nada',
+        name: 'Bloodied Angels',
         time: '01:55 - 02:25am',
-        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
+        link: 'https://bloodiedangels.bandcamp.com/album/demo',
       },
       { name: 'Trenchraid', time: '01:10 - 01:40am', link: 'https://trenchraid.bandcamp.com/' },
       {
