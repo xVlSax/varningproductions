@@ -8,19 +8,10 @@
         class="logo-varning"
       />
 
-      <!-- title -->
-      <h2 class="events-title">Events</h2>
-      <!-- Main poster -->
-      <picture class="main-poster">
-        <source srcset="/images/festival/flyers/MainPoster.avif" type="image/avif" />
-        <source srcset="/images/festival/flyers/MainPoster.webp" type="image/webp" />
-        <img src="/images/festival/flyers/MainPoster.jpg" alt="Main Event Poster" loading="lazy" />
-      </picture>
-
-      <!-- Upcoming -->
-      <h3 class="events-subtitle">Upcoming Events</h3>
+      <!-- Past Events -->
+      <h2 class="events-title">Past Events</h2>
       <div class="flyers-grid">
-        <article v-for="(f, i) in upcomingFlyers" :key="i" class="flyer-card">
+        <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -31,10 +22,10 @@
         </article>
       </div>
 
-      <!-- Tours -->
-      <h3 class="events-subtitle">Tours</h3>
+      <!-- Past Tours -->
+      <h2 class="events-title">Past Tours</h2>
       <div class="flyers-grid">
-        <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card">
+        <article v-for="(f, i) in pastTourFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -77,13 +68,22 @@ export default {
   name: 'EventSection',
   data() {
     return {
-      upcomingFlyers: [
+      pastEventsFlyers: [
         // { src: '/images/events/upcoming/traume.jpg', alt: 'Traume' },
         // { src: '/images/events/upcoming/warkrusher.jpg', alt: 'Warkrusher' },
       ],
-      tourFlyers: [
-        { src: '/images/events/upcoming/tours/traume.jpg', alt: 'traume-na-tour' },
-        { src: '/images/events/upcoming/tours/warkrusher.jpg', alt: 'warkrusher-euro-tour' },
+      pastTourFlyers: [
+        { src: '/images/events/upcoming/tours/traume.jpg', alt: 'Traume-Tour-NA' },
+        { src: '/images/events/upcoming/tours/Traume-Albany.jpg', alt: 'Traume-Albany' },
+        { src: '/images/events/upcoming/tours/Traume-Boston.jpg', alt: 'Traume-Boston' },
+        { src: '/images/events/upcoming/tours/Traume-NYC.jpg', alt: 'Traume-NYC' },
+        { src: '/images/events/upcoming/tours/Traume-Philly.jpg', alt: 'Traume-Philly' },
+        { src: '/images/events/upcoming/tours/Traume-Baltimore.jpg', alt: 'Traume-Baltimore' },
+        { src: '/images/events/upcoming/tours/Traume-Pittsburgh.jpg', alt: 'Traume-Pittsburgh' },
+        { src: '/images/events/upcoming/tours/Traume-Cincinati.jpg', alt: 'Traume-Cincinnati' },
+        { src: '/images/events/upcoming/tours/Traume-Chicago.jpg', alt: 'Traume-Chicago' },
+        { src: '/images/events/upcoming/tours/Traume-Toronto.jpg', alt: 'Traume-Toronto' },
+        { src: '/images/events/upcoming/tours/warkrusher.jpg', alt: 'Warkrusher' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },

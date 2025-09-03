@@ -7,6 +7,7 @@ import EventSection from '@/components/EventSection.vue'
 import FestivalSection from '@/components/FestivalSection.vue'
 import ThingsToDo from '@/components/ThingsToDo.vue'
 import ContactSection from '@/components/ContactSection.vue'
+import PastEventsSection from '@/components/PastEventsSection.vue'
 
 const routes = [
   {
@@ -83,6 +84,16 @@ const routes = [
       description:
         'Get in touch with Varning Productions for bookings, collaborations, and festival info.',
       canonical: 'https://www.varningproductions.com/#/contact',
+    },
+  },
+  {
+    path: '/past-events',
+    name: 'Past Events',
+    component: PastEventsSection,
+    meta: {
+      title: 'PastEvents – Varning Productions',
+      description: '',
+      canonical: 'https://www.varningproductions.com/#/past-events',
     },
   },
 ]
