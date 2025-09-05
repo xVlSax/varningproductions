@@ -44,6 +44,12 @@
           </button>
         </article>
       </div>
+
+      <!-- Link to PastEvents -->
+      <router-link to="/past-events" class="past-events-link">
+        <span>Past Events</span>
+        <img src="/images/events/knife.svg" alt="Past Events" class="past-events-icon" />
+      </router-link>
     </div>
 
     <!-- Lightbox modal -->
@@ -77,10 +83,7 @@ export default {
   name: 'EventSection',
   data() {
     return {
-      upcomingFlyers: [
-        // { src: '/images/events/upcoming/traume.jpg', alt: 'Traume' },
-        // { src: '/images/events/upcoming/warkrusher.jpg', alt: 'Warkrusher' },
-      ],
+      upcomingFlyers: [],
       tourFlyers: [
         { src: '/images/events/upcoming/tours/traume.jpg', alt: 'traume-na-tour' },
         { src: '/images/events/upcoming/tours/warkrusher.jpg', alt: 'warkrusher-euro-tour' },
@@ -179,6 +182,45 @@ export default {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+}
+
+/* Past Events Link */
+.past-events-link {
+  margin-top: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #e9e9e9;
+  font-family: 'TypeWriter1', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.past-events-link:hover {
+  color: #ef4444;
+  transform: translateY(-2px);
+}
+
+.past-events-icon {
+  width: 50px;
+  height: 50px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.past-events-icon {
+  width: 8rem;
+  height: 8rem;
+}
+
+.past-events-link:hover .past-events-icon {
+  filter: brightness(1.4);
+  transform: scale(1.1);
 }
 @media (min-width: 768px) {
   .flyers-grid {

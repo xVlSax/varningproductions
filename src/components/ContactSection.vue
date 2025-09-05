@@ -61,7 +61,9 @@
       <div class="space-y-1">
         <i class="fa fa-instagram" style="font-size: 24px"></i>
         <p class="text-base">
-          <a href="https://www.instagram.com/varningfest/?hl=en" target="_blank">@varningfest</a>
+          <a href="https://www.instagram.com/varningproductions/" target="_blank"
+            >@varningproductions</a
+          >
         </p>
       </div>
     </section>
