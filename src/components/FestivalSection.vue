@@ -282,14 +282,14 @@ const festivalFlyers = [
     details: '$20 / Doors: 12:00am – Show: 12:30am SHARP!',
     lineup: [
       {
-        name: 'Total Nada',
-        time: '02:40 - 03:15am',
-        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
-      },
-      {
         name: 'Bloodied Angels',
         time: '01:55 - 02:25am',
         link: 'https://bloodiedangels.bandcamp.com/album/demo',
+      },
+      {
+        name: 'Total Nada',
+        time: '02:40 - 03:15am',
+        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
       },
       { name: 'Trenchraid', time: '01:10 - 01:40am', link: 'https://trenchraid.bandcamp.com/' },
       {
