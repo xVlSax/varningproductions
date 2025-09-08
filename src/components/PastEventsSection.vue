@@ -69,12 +69,34 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
-        // { src: '/images/events/upcoming/traume.jpg', alt: 'Traume' },
-        // { src: '/images/events/upcoming/warkrusher.jpg', alt: 'Warkrusher' },
+        { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
+        { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
+        { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
+        { src: '/images/events/past/events/varukers-june22-2019.jpg', alt: 'The Varukers' },
+        { src: '/images/events/past/events/decomp-april16-2019.jpg', alt: 'Decomp' },
+        { src: '/images/events/past/events/oipolloi-nov17-2018.jpg', alt: 'OiPolloi' },
+        { src: '/images/events/past/events/subhumanz-nov24-2017.jpg', alt: 'Subhumanz' },
+        { src: '/images/events/past/events/nye-dec31-2016.jpg', alt: 'NYE' },
+        { src: '/images/events/past/events/doa-sept22-2015.jpg', alt: 'DOA' },
+        {
+          src: '/images/events/past/events/bellicoseminds-sept13-2014.jpg',
+          alt: 'The Bellicose Minds',
+        },
+        { src: '/images/events/past/events/anasazi-june28-2014.jpg', alt: 'Anasazi' },
+        { src: '/images/events/past/events/dclone-oct13-2012.jpg', alt: 'D-clone' },
+        { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
       ],
       pastTourFlyers: [
-        // { src: '/images/events/upcoming/tours/traume.jpg', alt: 'Traume-Tour-NA' },
-        // { src: '/images/events/upcoming/tours/warkrusher.jpg', alt: 'Warkrusher' },
+        { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },
+        {
+          src: '/images/events/past/tours/gs-agust-tour-2018.jpg',
+          alt: 'Generacion Suicida Tour',
+        },
+        {
+          src: '/images/events/past/tours/ryuketsublizzard-sep-tour-2016.jpg',
+          alt: 'Ryuketsu Blizzard Tour',
+        },
+        { src: '/images/events/past/tours/deadhero-july-tour-2016.jpg', alt: 'Dead Hero Tour' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
@@ -130,14 +152,13 @@ export default {
   height: auto;
   margin-inline: auto;
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: -1rem;
 }
-.events-title,
-.events-subtitle {
+.events-title {
   font-family: 'TypeWriter1', sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0.25rem 0 0.75rem;
+  margin: 1.5rem 0 1.5rem;
 }
 .events-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
