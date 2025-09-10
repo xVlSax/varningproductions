@@ -97,9 +97,9 @@ const festivalFlyers = [
     lineup: [
       { name: 'Träume', time: '12:00 - 12:40am', link: 'https://traumepunk.bandcamp.com/' },
       {
-        name: 'Flower',
+        name: 'Beton Arme',
         time: '11:10 - 11:45pm',
-        link: 'https://flowernewyorkcity.bandcamp.com/album/hardly-a-dream',
+        link: 'https://betonarmeoimtl.bandcamp.com/album/renaissance-2',
       },
       {
         name: 'Extensive Slaughter',
@@ -172,9 +172,9 @@ const festivalFlyers = [
         link: 'https://innocentpunk.bandcamp.com/album/architects-of-despair',
       },
       {
-        name: 'Puffer',
+        name: 'Ultrarat',
         time: '10:25 - 10:55pm',
-        link: 'https://puffpuffpuff.bandcamp.com/album/demo',
+        link: 'https://ultrarat.bandcamp.com/album/s-t-ep',
       },
       {
         name: 'Epaulet',
