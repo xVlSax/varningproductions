@@ -20,12 +20,12 @@
     <!-- Varning logo bottom-left overlay -->
     <img class="side-art side-art--left" src="/images/logoVarning.svg" alt="" aria-hidden="true" />
 
-    <div class="overlay">
+    <!-- <div class="overlay">
       <router-link to="/festival" class="cta-link">
         <span class="cta-text">ENTER THE FESTIVAL</span>
         <span class="cta-arrow">➜</span>
       </router-link>
-    </div>
+    </div> -->
   </section>
 </template>
 
