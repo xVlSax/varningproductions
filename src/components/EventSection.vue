@@ -12,13 +12,9 @@
       <h2 class="events-title">Events</h2>
       <!-- Main poster -->
       <picture class="main-poster">
-        <source srcset="/images/events/upcoming/tours/warkrusher.avif" type="image/avif" />
-        <source srcset="/images/events/upcoming/tours/warkrusher.webp" type="image/webp" />
-        <img
-          src="/images/events/upcoming/tours/warkrusher.jpg"
-          alt="Warkrusher Tour Poster"
-          loading="lazy"
-        />
+        <!-- <source srcset="/images/events/upcoming/tours/.avif" type="image/avif" />
+        <source srcset="/images/events/upcoming/tours/.webp" type="image/webp" /> -->
+        <img src="" alt="" loading="lazy" />
       </picture>
 
       <!-- Upcoming -->
@@ -89,21 +85,21 @@ export default {
     return {
       upcomingFlyers: [],
       tourFlyers: [
-        { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
-        { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
-        { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
-        { src: '/images/events/upcoming/tours/gothemburg.jpg', alt: 'warkrusher-gothemburg' },
-        { src: '/images/events/upcoming/tours/oslo.jpg', alt: 'warkrusher-oslo' },
-        { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
-        { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
-        { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
-        { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
-        { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-        { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
-        { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
-        { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
-        { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
-        { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
+        // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
+        // { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
+        // { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
+        // { src: '/images/events/upcoming/tours/gothemburg.jpg', alt: 'warkrusher-gothemburg' },
+        // { src: '/images/events/upcoming/tours/oslo.jpg', alt: 'warkrusher-oslo' },
+        // { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
+        // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
+        // { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
+        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
+        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
+        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
+        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
+        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
+        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
+        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },

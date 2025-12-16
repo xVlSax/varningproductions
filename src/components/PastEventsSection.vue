@@ -87,6 +87,7 @@ export default {
         { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
       ],
       pastTourFlyers: [
+        { src: '/images/events/past/tours/warkrusher.jpg', alt: 'warkrusher-eu-tour' },
         { src: '/images/events/past/tours/traume.jpg', alt: 'traume-na-tour' },
         { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },
         {
