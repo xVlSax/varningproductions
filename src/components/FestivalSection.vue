@@ -70,13 +70,13 @@
           <!-- to="/current-festival" -->
           <router-link class="festival-flyer-card" aria-label="Current festival">
             <div class="festival-flyer-label">Festival 2026</div>
-            <div class="festival-coming"><h2>Coming Soon!</h2></div>
+            <!-- <div class="festival-coming"><h2>Coming Soon!</h2></div> -->
 
-            <!-- <picture class="festival-flyer-picture">
-              <source srcset="/images/festival/flyers/MainPoster.avif" type="image/avif" />
-              <source srcset="/images/festival/flyers/MainPoster.webp" type="image/webp" />
-              <img src="/images/festival/flyers/MainPoster.jpg" alt="Current Festival Poster" />
-            </picture> -->
+            <picture class="festival-flyer-picture">
+              <source srcset="/images/festival/current/comin.avif" type="image/avif" />
+              <source srcset="/images/festival/current/comin.webp" type="image/webp" />
+              <img src="/images/festival/current/comin.jpg" alt="Current Festival Poster" />
+            </picture>
           </router-link>
 
           <!-- Past festival -->
