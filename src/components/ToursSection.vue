@@ -1,10 +1,10 @@
 <template>
-  <section id="events" class="events-root">
-    <div class="events-wrap">
-      <!-- Past Events -->
-      <h2 class="events-title">Past Events</h2>
+  <section id="tours" class="tours-root">
+    <div class="tours-wrap">
+      <!-- Tours -->
+      <h2 class="tours-title">Tours</h2>
       <div class="flyers-grid">
-        <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
+        <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -14,6 +14,26 @@
           </button>
         </article>
       </div>
+
+      <!-- Upcoming Tours -->
+      <h3 class="tours-subtitle">Upcoming Tours</h3>
+      <div class="flyers-grid">
+        <article v-for="(f, i) in upcomingFlyers" :key="i" class="flyer-card">
+          <button class="flyer-btn" @click="openModal(f)">
+            <picture>
+              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
+            </picture>
+          </button>
+        </article>
+      </div>
+
+      <!-- Link to Past Tours -->
+      <router-link to="/past-tours" class="past-tours-link">
+        <span>Past Tours</span>
+        <img src="/images/events/knife.svg" alt="Past tours" class="past-tours-icon" />
+      </router-link>
     </div>
 
     <!-- Lightbox modal -->
@@ -44,26 +64,27 @@
 
 <script>
 export default {
-  name: 'EventSection',
+  name: 'ToursSection',
   data() {
     return {
-      pastEventsFlyers: [
-        { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
-        { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
-        { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
-        { src: '/images/events/past/events/varukers-june22-2019.jpg', alt: 'The Varukers' },
-        { src: '/images/events/past/events/decomp-april16-2019.jpg', alt: 'Decomp' },
-        { src: '/images/events/past/events/oipolloi-nov17-2018.jpg', alt: 'OiPolloi' },
-        { src: '/images/events/past/events/subhumanz-nov24-2017.jpg', alt: 'Subhumanz' },
-        { src: '/images/events/past/events/nye-dec31-2016.jpg', alt: 'NYE' },
-        { src: '/images/events/past/events/doa-sept22-2015.jpg', alt: 'DOA' },
-        {
-          src: '/images/events/past/events/bellicoseminds-sept13-2014.jpg',
-          alt: 'The Bellicose Minds',
-        },
-        { src: '/images/events/past/events/anasazi-june28-2014.jpg', alt: 'Anasazi' },
-        { src: '/images/events/past/events/dclone-oct13-2012.jpg', alt: 'D-clone' },
-        { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
+      tourFlyers: [
+        // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
+        // { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
+        // { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
+        // { src: '/images/events/upcoming/tours/gothemburg.jpg', alt: 'warkrusher-gothemburg' },
+        // { src: '/images/events/upcoming/tours/oslo.jpg', alt: 'warkrusher-oslo' },
+        // { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
+        // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
+      ],
+      upcomingFlyers: [
+        // { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
+        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
+        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
+        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
+        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
+        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
+        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
+        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
@@ -98,7 +119,7 @@ export default {
 }
 
 /* page layout */
-.events-root {
+.tours-root {
   min-height: 100vh;
   background: #000;
   color: #e9e9e9;
@@ -106,7 +127,7 @@ export default {
   margin-top: 5rem;
   scroll-margin-top: var(--header-h);
 }
-.events-wrap {
+.tours-wrap {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -119,18 +140,19 @@ export default {
   height: auto;
   margin-inline: auto;
   display: block;
-  margin-bottom: -1rem;
+  margin-bottom: 0.75rem;
 }
-.events-title {
+.tours-title,
+.tours-subtitle {
   font-family: 'TypeWriter1', sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 1.5rem 0 1.5rem;
+  padding: 1.5rem;
 }
-.events-title {
+.tours-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
 }
-.events-subtitle {
+.tours-subtitle {
   font-size: clamp(1rem, 2vw, 1.35rem);
   margin-top: 1.5rem;
 }
@@ -158,6 +180,45 @@ export default {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+}
+
+/* Past Events Link */
+.past-tours-link {
+  margin-top: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #e9e9e9;
+  font-family: 'TypeWriter1', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.past-tours-link:hover {
+  color: #ef4444;
+  transform: translateY(-2px);
+}
+
+.past-tours-icon {
+  width: 50px;
+  height: 50px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.past-tours-icon {
+  width: 8rem;
+  height: 8rem;
+}
+
+.past-tours-link:hover .past-tours-icon {
+  filter: brightness(1.4);
+  transform: scale(1.1);
 }
 @media (min-width: 768px) {
   .flyers-grid {

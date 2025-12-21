@@ -1,90 +1,43 @@
 <template>
   <!-- Page 1: About us -->
-  <section
-    id="about"
-    class="about-root min-h-screen relative flex flex-col md:flex-row items-center justify-center p-4"
-  >
-    <!-- Bottom-left skulls -->
-    <img
-      src="/images/about/AboutImage.svg"
-      alt="skull punks"
-      class="about-img float-slow fade-in-left"
-    />
-
+  <section id="about" class="about-root min-h-screen p-4">
     <!-- Text Right side: About us -->
-    <div class="about-text fade-in-right">
-      <h4 class="title">ABOUT US</h4>
-      <p class="copy">
-        Varning Productions is a booking event project founded by Janick in 2006 with the opening of
-        her co-managed venue The Katacombes in Montreal, Canada. Since then, Varning Productions has
-        organized over 250 punk shows, tours and its own festival: A VARNING FROM MONTREAL FESTIVAL
-        that has been bringing bands from across the globe since 2007. VARNING FESTIVAL is more than
-        just a punk festival—it’s a gathering of passionate people from around the world, united by
-        loud music, D.I.Y. spirit, and a shared love for underground culture. The festival was
-        launched in 2007 to celebrate the first anniversary of Katacombes, a legendary cooperative
-        venue in Montreal that became a home for countless artists, outsiders, and communities.
-        Though Katacombes closed in 2020, its legacy lives on through every edition of A VARNING
-        FROM MONTREAL FESTIVAL.
-        <br /><br />
-        We believe punk is more than music—it’s about community and is a space where everyone is
-        welcome. We stand firmly against racism, fascism, sexism, homophobia, and all forms of
-        exclusion. It’s a place to connect, create, express, built on solidarity, noise, and
-        respect. UP THE PUNX TABARNAK!
-      </p>
+    <div class="about-inner">
+      <div class="about-text fade-in-right">
+        <h4 class="title">ABOUT US</h4>
+        <p class="copy">
+          Varning Productions is a booking event project founded by Janick in 2006 with the opening
+          of her co-managed venue The Katacombes in Montreal, Canada. Since then, Varning
+          Productions has organized over 250 punk shows, tours and its own festival: A VARNING FROM
+          MONTREAL FESTIVAL that has been bringing bands from across the globe since 2007. VARNING
+          FESTIVAL is more than just a punk festival—it’s a gathering of passionate people from
+          around the world, united by loud music, D.I.Y. spirit, and a shared love for underground
+          culture. The festival was launched in 2007 to celebrate the first anniversary of
+          Katacombes, a legendary cooperative venue in Montreal that became a home for countless
+          artists, outsiders, and communities. Though Katacombes closed in 2020, its legacy lives on
+          through every edition of A VARNING FROM MONTREAL FESTIVAL.
+          <br /><br />
+          We believe punk is more than music—it’s about community and is a space where everyone is
+          welcome. We stand firmly against racism, fascism, sexism, homophobia, and all forms of
+          exclusion. It’s a place to connect, create, express, built on solidarity, noise, and
+          respect. UP THE PUNX TABARNAK!
+        </p>
+      </div>
+      <!-- Bottom-left skulls -->
+      <img
+        src="/images/about/AboutImage.svg"
+        alt="skull punks"
+        class="about-img float-slow fade-in-left"
+      />
     </div>
   </section>
 
-  <!-- Page 2: Why we do it + world map -->
-  <!-- <section
-    id="why"
-    class="why-root min-h-screen relative flex flex-col md:flex-row items-center justify-center p-4"
-  > -->
-  <!-- world map bottom right-->
-  <!-- <img
-      src="/images/about/world-map.svg"
-      alt="world map"
-      class="world-img float-slow fade-in-right"
-    /> -->
-  <!-- Left side text -->
-  <!-- <div class="why-text fade-in-left">
-      <h4 class="title">WHY WE DO IT</h4>
-      <h5 class="sub-title">PROMOTING BANDS INTERNATIONALLY</h5>
-      <p class="copy">
-        VARNING PRODUCTION is focused on both uncovering emerging talent and creating opportunities
-        for collaboration between new and established bands within the underground music scene. That
-        way, it can foster creative synergy and help develop the next wave of artists while also
-        supporting those with a larger following. The genres - punk, metal, post-punk, pop punk,
-        synth punk — are all part of the broader underground scene that often values authenticity
-        and experimentation. By connecting new bands with more established acts, VARNING PRODUCTION
-        can create a space where both groups can influence and inspire each other, leading to fresh
-        sounds and innovative musical expressions.
-      </p>
-      <h5 class="sub-title">NEW DIRECTIONS FOR VARNING PRODUCTIONS</h5>
-      <p class="copy">
-        We are growing our underground network and expanding internationally and we want to provide
-        more opportunities for promoting bands that we like and we have decided to add a
-        touring/driving service for bands that don’t have time nor the contacts to organize their
-        tour themselves. As of 2025, VARNING PRODUCTIONS is offering a turnkey service of organizing
-        and driving bands on tour in Northern Europe (comes with a 9 seater van, a driver and a full
-        backline). The itinerary will bring bands to Scandinavia, the Baltics, northern Poland and
-        northern Germany. We will provide a second itinerary option in the year to come.
-      </p>
-    </div>
-  </section> -->
-
-  <!-- Page 3: About us profile -->
+  <!-- Page 2: About us profile -->
   <section id="profile" class="profile-root min-h-screen relative p-4">
     <h2 class="title">IN THE SCENE / FOR THE SCENE</h2>
     <div class="profile-grid">
       <!-- LEFT: Janick -->
       <article class="profile-card fade-in-left">
-        <!-- <img
-          src="/images/about/janick.jpg"
-          alt="Janick Varning"
-          class="profile-img"
-          loading="lazy"
-          decoding="async"
-        /> -->
         <picture class="profile-img">
           <source srcset="/images/about/janick.avif" type="image/avif" />
           <source srcset="/images/about/janick.webp" type="image/webp" />
@@ -113,13 +66,6 @@
 
       <!-- RIGHT: Vlad -->
       <article class="profile-card fade-in-right">
-        <!-- <img
-          src="/images/about/vlad.jpg"
-          alt="Vlad Sant"
-          class="profile-img"
-          loading="lazy"
-          decoding="async"
-        /> -->
         <picture class="profile-img">
           <source srcset="/images/about/vlad.avif" type="image/avif" />
           <source srcset="/images/about/vlad.webp" type="image/webp" />
@@ -154,28 +100,45 @@ export default { name: 'AboutSection' }
 </script>
 
 <style scoped>
-.about-root {
+/* .about-root {
   padding-left: clamp(320px, 28vw, 420px);
-}
-
-.about-img {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  width: clamp(275px, 51vw, 570px);
-  height: auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+} */
+.about-root {
+  background: #000;
+  color: #e9e9e9;
+  display: grid;
+  place-items: center;
+  padding: clamp(2.5rem, 6vw, 5rem) 1rem;
 }
 
 .about-text {
-  margin-top: -5rem;
-  margin-left: auto;
-  margin-right: clamp(1rem, 4vw, 3rem);
-  max-width: 750px;
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
   text-align: justify;
 }
 
+.about-text .title {
+  text-align: left;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  opacity: 0.95;
+  margin-inline: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+}
+
+.about-inner {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
 .about-text .title {
   text-align: right;
 }
@@ -236,7 +199,7 @@ export default { name: 'AboutSection' }
   padding: 5rem 1rem;
 }
 
-.profile-grid {
+/* .profile-grid {
   width: 100%;
   max-width: 1200px;
   display: grid;
@@ -244,115 +207,120 @@ export default { name: 'AboutSection' }
   grid-template-columns: 1fr;
   align-items: start;
   padding: 0 1rem;
+} */
+.profile-grid {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+  padding: 0 1rem;
 }
 
-@media (max-width: 1100px) {
-  .about-root {
-    padding-left: clamp(160px, 22vw, 300px);
-  }
-  .about-img {
-    width: clamp(220px, 32vw, 380px);
-    bottom: 1rem;
-    left: 1rem;
-  }
-  .about-text {
-    margin-right: 1.25rem;
-    max-width: 640px;
-  }
+.about-root {
+  background: #000;
+  color: #e9e9e9;
+  display: grid;
+  place-items: center;
+  padding: clamp(2.5rem, 6vw, 5rem) 1rem;
 }
 
-@media (max-width: 1200px) {
-  .about-root {
-    padding-left: clamp(200px, 22vw, 300px);
-  }
-  .about-img {
-    width: clamp(220px, 34vw, 360px);
-  }
-  .about-text {
-    margin-right: 1.25rem;
-    max-width: 540px;
-  }
-}
-
-@media (max-width: 900px) {
-  .about-root {
-    padding-left: 0;
-  }
-
-  .about-img {
-    position: static;
-    order: 2;
-    margin-top: 1.25rem;
-    align-self: center;
-    width: clamp(260px, 70vw, 520px);
-    opacity: 0.95;
-  }
-
-  .about-text {
-    margin: 0 auto;
-    text-align: center;
-    max-width: 720px;
-    order: 1;
-  }
-  .title {
-    font-size: 2rem;
-  }
-
-  .why-root {
-    padding-right: 0;
-  }
-
-  .why-text {
-    margin: 0 auto;
-    max-width: 720px;
-    text-align: center;
-    order: 1;
-  }
-
-  .world-img {
-    position: static;
-    order: 2;
-    align-self: center;
-    margin-top: 1.25rem;
-    width: clamp(260px, 70vw, 520px);
-    opacity: 0.95;
-  }
-}
-
-@media (max-height: 700px) {
-  .about-text {
-    margin-top: 4rem;
-    max-width: 640px;
-  }
-  .copy {
-    font-size: 0.9rem;
-  }
-  .about-img {
-    width: clamp(220px, 34vw, 330px);
-  }
+.about-inner {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
 }
 
 @media (min-width: 900px) {
-  .title {
-    font-size: 2rem;
+  .about-inner {
+    grid-template-columns: minmax(320px, 520px) minmax(320px, 1fr);
+  }
+  .about-img {
+    order: 1;
+  }
+  .about-text {
+    order: 2;
   }
   .profile-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    padding: 0 3rem;
-    /* max-width: 1200px; */
-    align-items: stretch;
-  }
-  .profile-root .title {
-    margin-bottom: 2rem;
-  }
-
-  .profile-root {
-    padding: 3rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: center;
+    gap: 2rem;
   }
 }
 
+/* Text block */
+.about-text {
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: justify;
+}
+
+.about-text .title {
+  text-align: left;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  opacity: 0.95;
+  margin-inline: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+}
+
+@media (max-width: 1024px) and (min-width: 900px) {
+  .about-img {
+    max-width: 420px;
+  }
+  .about-text {
+    max-width: 600px;
+  }
+  .copy {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 899px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+    max-width: 720px;
+  }
+
+  .about-text .title {
+    text-align: center;
+  }
+
+  .about-img {
+    max-width: 360px;
+    margin-top: 1rem;
+  }
+}
+
+/* .profile-card {
+  background: rgba(25, 25, 25, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+} */
 .profile-card {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+
   background: rgba(25, 25, 25, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
@@ -365,9 +333,16 @@ export default { name: 'AboutSection' }
 .profile-img {
   width: 100%;
   aspect-ratio: 8 / 8;
-  /* object-fit: cover;
-  object-position: 50% 60%; */
+  object-fit: cover;
+  display: block;
 }
+
+/* .profile-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+} */
 
 .profile-text {
   flex: 1;

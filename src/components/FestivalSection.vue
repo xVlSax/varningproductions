@@ -1,17 +1,98 @@
 <template>
   <section id="festival" class="festival-container snap-start min-h-screen bg-black text-white">
-    <div class="container mx-auto py-20 px-4 flex flex-col items-center gap-20">
-      <!-- Festival Logo -->
+    <div class="container mx-auto py-20 px-4 flex flex-col items-center gap-12">
+      <!-- Festival Logo (smaller on desktop) -->
       <img
-        src="/images/festival/VarningFestLogoPartXVII.svg"
+        src="/images/festival/VarningFestLogo.svg"
         alt="Varning Fest Logo"
-        class="festival-resp w-full max-w-xl mb-10"
+        class="festival-logo"
       />
 
       <!-- Intro Text -->
-      <div class="festival-font text-center text-gray-200 space-y-2">
-        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2025</h3>
-        <h4 class="text-lg md:text-xl">
+      <div class="festival-font text-center text-gray-200 space-y-4 festival-text-wrap">
+        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival</h3>
+
+        <!-- Description text -->
+        <div class="festival-description">
+          <p :class="['festival-paragraph', { 'is-collapsed': !expanded }]">
+            <strong>A VARNING</strong> isn’t just another punk festival — it’s one of the
+            longest-running international gatherings for underground punk, D.I.Y. culture, and
+            community connection. Since its first edition in 2007, the festival has brought together
+            punks, friends, and music lovers from across the globe to celebrate what kept the scene
+            alive: raw sound, shared values, and real friendships. <br /><br />
+            Each edition of<strong>A VARNING FROM MONTREAL FESTIVAL</strong> lasts multiple days and
+            features <strong>bands from across the globe</strong> — past lineups have included
+            artists from
+            <strong
+              >Japan, Russia, Sweden, Norway, Mexico, Cuba, Panama, Colombia, Chile, France, Spain,
+              Italy, Germany, Portugal, Poland, UK, Australia, USA, and Canada.</strong
+            >
+            <br /><br />
+            The festival is organized by <strong>Varning Productions</strong>, which was put
+            together by Janick with the festival’s launch in November 2007 and has since put on
+            <strong>over 300 punk shows worldwide</strong>, building a network of artists and
+            organizers rooted in D.I.Y. practice. <br /><br />
+            A VARNING FESTIVAL is proudly <strong>inclusive</strong>. Respect, equality, and
+            openness are at its core — it’s a space where punks and people who identify with this
+            scene and who love loud music can feel welcome. The festival stands firmly
+            <strong>against racism, fascism, sexism, homophobia, transphobia and exclusion</strong>
+            of any kind, and works to make the scene safer and more accessible for everyone.
+            <br /><br />
+            <strong>Marking its 18th edition in 2026</strong>, the festival will once again bring
+            together international bands for three days of music, including matinee shows, a D.I.Y.
+            punk market, main shows, and aftershows — continuing a long-standing community tradition
+            within Montreal’s underground scene. <br /><br />
+            Here’s some bands that have played A VARNING FROM MONTREAL FESTIVAL:
+            <br /><br />
+            Meanwhile, Framtid, Tragedy, Disturd, Moderat Likvidation, Warcry, End of Pollution,
+            Varukers, Life, Regulations, Ferocious X, Primer Regimen, Slowmotions, Fatum, System
+            Fucker, Dissekerad, DSB, Lifeless Dark, Languid, Lebenden Toten, Zyanose, Bombardement,
+            Hellshock, Institution, Horror Vacui, Criminal Damage, No Fucker, Sex Dwarf, Peligro
+            Social, Guided Cracle, Mob 47, Age, Terminal Filth, Träume, Generacion Suicida, Napalm
+            Raid, Tarrega 91, Cuir, Flash, World Burns to Death, Irreal, Spectres, Secta, Coupe
+            Gorge, Dead Hero, Lathe of Heaven, Ignorantes, Nukke, Final, Inepsy, After the Bombs,
+            Flower, Extended Hell, Glorious, Perdition, Aspects of War, Crazy Spirit, Los Monjo,
+            Savageheads, Fucking Lovers, Paa Kii, Vaxine, Salvaje Punx, Question, Hez, Devil Master,
+            Subversive Rite, Äpärä, Ruleta Rusa, Innocent, No Problem, Secret Prostitutes,
+            Narcoestado, Phane, Green Beret, Blockade, Thought Crime, Béton Armé, Career Suicide,
+            Born Dead icons, Absolut, Mueco, Ultrarat, Total Nada, Parasytes, Complications and way
+            more..
+          </p>
+
+          <button class="read-more" type="button" @click="expanded = !expanded">
+            {{ expanded ? 'Read less' : 'Read more' }}
+          </button>
+        </div>
+
+        <!-- Festival navigation flyers -->
+        <div class="festival-flyer-grid">
+          <!-- Current festival -->
+          <!-- to="/current-festival" -->
+          <router-link class="festival-flyer-card" aria-label="Current festival">
+            <div class="festival-flyer-label">Festival 2026</div>
+            <div class="festival-coming"><h2>Coming Soon!</h2></div>
+
+            <!-- <picture class="festival-flyer-picture">
+              <source srcset="/images/festival/flyers/MainPoster.avif" type="image/avif" />
+              <source srcset="/images/festival/flyers/MainPoster.webp" type="image/webp" />
+              <img src="/images/festival/flyers/MainPoster.jpg" alt="Current Festival Poster" />
+            </picture> -->
+          </router-link>
+
+          <!-- Past festival -->
+          <router-link to="/past-festival" class="festival-flyer-card" aria-label="Past festivals">
+            <div class="festival-flyer-label">Past Festivals</div>
+
+            <picture class="festival-flyer-picture">
+              <source srcset="/images/festival/flyers/MainPoster.avif" type="image/avif" />
+              <source srcset="/images/festival/flyers/MainPoster.webp" type="image/webp" />
+              <img src="/images/festival/flyers/MainPoster.jpg" alt="Past Festivals Poster" />
+            </picture>
+          </router-link>
+        </div>
+
+        <!-- Tickets -->
+        <!-- <h4 class="text-lg md:text-xl">
           Tickets/passes are available
           <a
             href="https://thepointofsale.com/tickets/py4250911001"
@@ -19,287 +100,23 @@
             class="underline"
             >here</a
           >
-        </h4>
+        </h4> -->
+
+        <!-- Things to do -->
         <h4 class="text-lg md:text-xl">
           Things to
-          <router-link to="/things">
-            <a target="_blank" class="underline">do</a>
-          </router-link>
+          <router-link to="/things" class="underline">do</router-link>
           in Montreal
         </h4>
-      </div>
-
-      <!-- Flyer Blocks -->
-      <div
-        v-for="(flyer, index) in festivalFlyers"
-        :key="index"
-        class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
-      >
-        <!-- Flyer Image with modern format fallbacks -->
-        <picture>
-          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
-          <img
-            :src="flyer.src"
-            :alt="flyer.alt"
-            loading="lazy"
-            decoding="async"
-            fetchpriority="low"
-            class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
-          />
-        </picture>
-
-        <!-- Event Info -->
-        <div class="festival-font text-sm md:text-base leading-relaxed">
-          <h3 class="text-xl md:text-2xl font-bold">
-            {{ flyer.title }}
-          </h3>
-          <p>{{ flyer.location }}</p>
-          <p>{{ flyer.details }}</p>
-        </div>
-
-        <!-- Band Lineup -->
-        <ul
-          class="festival-lineup text-left w-full max-w-[900px] text-sm md:text-base text-gray-300 p-4 shadow-md rounded-lg"
-        >
-          <li
-            v-for="(band, i) in flyer.lineup"
-            :key="i"
-            class="flex justify-between items-center border-b border-gray-700 py-1 last:border-none"
-          >
-            <a :href="band.link" target="_blank" class="band-font">
-              {{ band.name }}
-            </a>
-            <span class="festival-font text-gray-400">{{ band.time }}</span>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const festivalFlyers = [
-  {
-    src: '/images/festival/flyers/MainPoster.jpg',
-    alt: 'Main Flyer',
-    title: '',
-    location: '',
-    details: '',
-    lineup: [],
-  },
-  {
-    src: '/images/festival/flyers/thursday-flyer.jpg',
-    alt: 'Thursday Flyer',
-    title: 'Thursday Show – September 11th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP!',
-    lineup: [
-      { name: 'Träume', time: '12:00 - 12:40am', link: 'https://traumepunk.bandcamp.com/' },
-      {
-        name: 'Beton Arme',
-        time: '11:10 - 11:45pm',
-        link: 'https://betonarmeoimtl.bandcamp.com/album/renaissance-2',
-      },
-      {
-        name: 'Extensive Slaughter',
-        time: '10:25 - 10:55pm',
-        link: 'https://extensiveslaughter.bandcamp.com/album/a-fated-demise',
-      },
-      {
-        name: 'Warkrusher',
-        time: '9:40 - 10:10pm',
-        link: 'https://inbattlethereisnosobriety.bandcamp.com/',
-      },
-      {
-        name: 'Shooting Pain',
-        time: '8:55 - 9:25pm',
-        link: 'https://shootingpain.bandcamp.com/album/demo-2024',
-      },
-      {
-        name: 'Schenectavoidz',
-        time: '8:10 - 8:40pm',
-        link: 'https://schenectavoidz.bandcamp.com/',
-      },
-      {
-        name: 'Spleen',
-        time: '7:30 - 7:55pm',
-        link: 'https://roachlegrecords.bandcamp.com/album/demo-14',
-      },
-    ],
-  },
-  {
-    src: '/images/festival/flyers/matine-friday-flyer.jpg',
-    alt: 'Friday Matine Show Flyer',
-    title: 'Friday Matine Show – September 12th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
-    lineup: [
-      {
-        name: 'Invertebrates',
-        time: '3:30 - 4:10pm',
-        link: 'https://beachimpedimentrecords.bandcamp.com/album/sick-to-survive',
-      },
-      {
-        name: 'Reaktöri',
-        time: '2:45 - 3:15pm',
-        link: 'https://reaktori.bandcamp.com/album/demo',
-      },
-      {
-        name: 'Highanxiety',
-        time: '2:05 - 2:30pm',
-        link: 'https://highanxietypunk.bandcamp.com/album/your-dreams-are-caught-in-war',
-      },
-      {
-        name: 'Boot',
-        time: '1:30 - 1:50pm',
-        link: '',
-      },
-    ],
-  },
-  {
-    src: '/images/festival/flyers/VarningFlyer-Friday.jpg',
-    alt: 'Friday Flyer',
-    title: 'Friday Show – September 12th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-    details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP! Dance party after the show!',
-    lineup: [
-      { name: 'Varukers', time: '12:55 - 01:45am', link: 'https://thevarukers.bandcamp.com/music' },
-      { name: 'Languid', time: '12:00 - 12:40am', link: 'https://languidpunk.bandcamp.com/music' },
-      {
-        name: 'Innocent',
-        time: '11:10 - 11:40pm',
-        link: 'https://innocentpunk.bandcamp.com/album/architects-of-despair',
-      },
-      {
-        name: 'Ultrarat',
-        time: '10:25 - 10:55pm',
-        link: 'https://ultrarat.bandcamp.com/album/s-t-ep',
-      },
-      {
-        name: 'Epaulet',
-        time: '9:40 - 10:10pm',
-        link: 'https://epaulet.bandcamp.com/album/cries-from-bondage',
-      },
-      {
-        name: 'Venenö',
-        time: '8:55 - 9:25pm',
-        link: 'https://nofusstapes.bandcamp.com/album/venen-demo-mmxxiv',
-      },
-      {
-        name: 'Psychic Armour',
-        time: '8:10 - 8:40pm',
-        link: 'https://psychicarmour.bandcamp.com/',
-      },
-      {
-        name: 'Eulogy',
-        time: '7:30 - 7:55pm',
-      },
-    ],
-  },
-  {
-    src: '/images/festival/flyers/punkmarket.jpg',
-    alt: 'Saturday Punk Market Flyer',
-    title: 'Saturday Matine DIY Punk Market – September 13th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Outside)',
-    details: 'FREE / All ages / 1:00pm',
-    lineup: [],
-  },
-  {
-    src: '/images/festival/flyers/MatineShow.png',
-    alt: 'Saturday Matine Show Flyer',
-    title: 'Saturday Matine Show + DIY Punk Market – September 13th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
-    lineup: [
-      {
-        name: 'Cell Deth',
-        time: '3:35 - 4:15pm',
-        link: 'https://celldeth.bandcamp.com/',
-      },
-      { name: 'Endform', time: '2:50 - 3:10pm', link: 'https://endform.bandcamp.com/' },
-      {
-        name: 'Poison Spear',
-        time: '2:05 - 2:35pm',
-        link: 'https://poisonspear514.bandcamp.com/album/institutional-trust',
-      },
-      {
-        name: 'Pied-de-Biche',
-        time: '1:30 - 1:50pm',
-        link: 'https://pied-de-biche.bandcamp.com/',
-      },
-    ],
-  },
-  {
-    src: '/images/festival/flyers/VarningFlyer-Sat.jpg',
-    alt: 'Saturday Flyer',
-    title: 'Saturday Show – September 13th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-    details: '$35 / Doors: 6:00pm – Show: 6:30pm SHARP!',
-    lineup: [
-      {
-        name: 'Disturd',
-        time: '11:10 - 11:50pm',
-        link: 'https://www.youtube.com/watch?v=2tORDiudB80',
-      },
-      {
-        name: 'Lifeless dark',
-        time: '10:20 - 10:55pm',
-        link: 'https://lifelessdark.bandcamp.com/',
-      },
-      {
-        name: 'Hedonist',
-        time: '9:25 - 10:05pm',
-        link: 'https://hedonistsl.bandcamp.com/album/scapulimancy',
-      },
-      {
-        name: 'Alement',
-        time: '8:40 - 9:10pm',
-        link: 'https://alement.bandcamp.com/album/banished-sphere',
-      },
-      {
-        name: 'Metalian',
-        time: '7:55 - 8:25pm',
-        link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
-      },
-      {
-        name: 'Portal Tomb',
-        time: '7:10 - 7:40pm',
-        link: 'https://portaltomb.bandcamp.com/album/last-frost-demo',
-      },
-      {
-        name: 'Sistema de Muerte',
-        time: '6:30 - 6:55pm',
-        link: 'https://sistemademuerte.bandcamp.com/album/sistema-de-muerte',
-      },
-    ],
-  },
-  {
-    src: '/images/festival/flyers/saturday-aftershow-flyer.jpg',
-    alt: 'Saturday After Show Flyer',
-    title: 'Saturday After Show – September 13th',
-    location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-    details: '$20 / Doors: 12:00am – Show: 12:30am SHARP!',
-    lineup: [
-      {
-        name: 'Bloodied Angels',
-        time: '01:55 - 02:25am',
-        link: 'https://bloodiedangels.bandcamp.com/album/demo',
-      },
-      {
-        name: 'Total Nada',
-        time: '02:40 - 03:15am',
-        link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
-      },
-      { name: 'Trenchraid', time: '01:10 - 01:40am', link: 'https://trenchraid.bandcamp.com/' },
-      {
-        name: 'xheliesinruinx',
-        time: '12:30 - 12:55am',
-        link: 'https://heliesinruin.bandcamp.com/',
-      },
-    ],
-  },
-]
+import { ref } from 'vue'
+
+const expanded = ref(false)
 </script>
 
 <style scoped>
@@ -307,32 +124,124 @@ const festivalFlyers = [
   padding-top: calc(50px + 1rem);
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0;
+.festival-logo {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (min-width: 1024px) {
+  .festival-logo {
+    max-width: 360px;
   }
 }
 
-.festival-lineup {
-  background-color: rgba(35, 35, 35, 0.5);
-  margin-right: 2rem;
+.festival-text-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
-.band-font,
+.festival-description {
+  text-align: center;
+  font-family: 'Lucky', sans-serif;
+}
+
+.festival-coming {
+  text-align: center;
+  font-family: 'TypeWriter1', sans-serif;
+}
+
+.festival-paragraph {
+  line-height: 1.85;
+}
+
+.festival-paragraph.is-collapsed {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden;
+}
+
+.read-more {
+  margin-top: 0.75rem;
+  font-family: 'TypeWriter1', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #e9e9e9;
+  text-decoration: underline;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+.read-more:hover {
+  opacity: 0.85;
+}
+
 .underline {
   color: #fbfbfb;
 }
 
-.festival-lineup a {
+.festival-flyer-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .festival-flyer-grid {
+    max-width: 560px;
+    gap: 1.25rem;
+  }
+}
+
+.festival-flyer-card {
+  display: block;
   text-decoration: none;
+  color: inherit;
+  background: rgba(20, 20, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.festival-flyer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.55);
+  opacity: 0.95;
+}
+
+.festival-flyer-label {
+  font-family: 'TypeWriter1', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 0.9rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.festival-flyer-picture {
+  display: block;
+  width: 100%;
+}
+
+.festival-flyer-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 </style>

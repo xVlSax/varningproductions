@@ -1,26 +1,24 @@
 <template>
   <section id="events" class="events-root">
     <div class="events-wrap">
-      <!-- Logo -->
-      <img
-        src="/images/events/varning-font.svg"
-        alt="Varning Productions Logo Font"
-        class="logo-varning"
-      />
-
-      <!-- title -->
+      <!-- Events -->
       <h2 class="events-title">Events</h2>
-      <!-- Main poster -->
-      <picture class="main-poster">
-        <!-- <source srcset="/images/events/upcoming/tours/.avif" type="image/avif" />
-        <source srcset="/images/events/upcoming/tours/.webp" type="image/webp" /> -->
-        <img src="" alt="" loading="lazy" />
-      </picture>
+      <div class="flyers-grid">
+        <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card">
+          <button class="flyer-btn" @click="openModal(f)">
+            <picture>
+              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
+            </picture>
+          </button>
+        </article>
+      </div>
 
-      <!-- Upcoming -->
+      <!-- Upcoming Events-->
       <h3 class="events-subtitle">Upcoming Events</h3>
       <div class="flyers-grid">
-        <article v-for="(f, i) in upcomingFlyers" :key="i" class="flyer-card">
+        <article v-for="(f, i) in upcomingEventsFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -31,21 +29,7 @@
         </article>
       </div>
 
-      <!-- Tours -->
-      <h3 class="events-subtitle">Tours</h3>
-      <div class="flyers-grid">
-        <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card">
-          <button class="flyer-btn" @click="openModal(f)">
-            <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
-              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
-            </picture>
-          </button>
-        </article>
-      </div>
-
-      <!-- Link to PastEvents -->
+      <!-- Link to Past Events -->
       <router-link to="/past-events" class="past-events-link">
         <span>Past Events</span>
         <img src="/images/events/knife.svg" alt="Past Events" class="past-events-icon" />
@@ -83,8 +67,16 @@ export default {
   name: 'EventSection',
   data() {
     return {
-      upcomingFlyers: [],
-      tourFlyers: [
+      eventsFlyers: [
+        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
+        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
+        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
+        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
+        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
+        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
+        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
+      ],
+      upcomingEventsFlyers: [
         // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
         // { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
         // { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
@@ -93,13 +85,6 @@ export default {
         // { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
         // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
         // { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
-        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
-        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
-        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
-        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
-        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
-        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
@@ -139,7 +124,7 @@ export default {
   background: #000;
   color: #e9e9e9;
   padding: calc(var(--header-h) + 3rem) 1rem 3rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
   scroll-margin-top: var(--header-h);
 }
 .events-wrap {
@@ -162,7 +147,7 @@ export default {
   font-family: 'TypeWriter1', sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0.25rem 0 0.75rem;
+  padding: 1.5rem;
 }
 .events-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);

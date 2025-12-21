@@ -2,7 +2,7 @@
   <section id="events" class="events-root">
     <div class="events-wrap">
       <!-- Past Events -->
-      <h2 class="events-title">Past Events</h2>
+      <h2 class="events-title">Past Festivals</h2>
       <div class="flyers-grid">
         <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
@@ -48,22 +48,8 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
-        { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
-        { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
-        { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
-        { src: '/images/events/past/events/varukers-june22-2019.jpg', alt: 'The Varukers' },
-        { src: '/images/events/past/events/decomp-april16-2019.jpg', alt: 'Decomp' },
-        { src: '/images/events/past/events/oipolloi-nov17-2018.jpg', alt: 'OiPolloi' },
-        { src: '/images/events/past/events/subhumanz-nov24-2017.jpg', alt: 'Subhumanz' },
-        { src: '/images/events/past/events/nye-dec31-2016.jpg', alt: 'NYE' },
-        { src: '/images/events/past/events/doa-sept22-2015.jpg', alt: 'DOA' },
-        {
-          src: '/images/events/past/events/bellicoseminds-sept13-2014.jpg',
-          alt: 'The Bellicose Minds',
-        },
-        { src: '/images/events/past/events/anasazi-june28-2014.jpg', alt: 'Anasazi' },
-        { src: '/images/events/past/events/dclone-oct13-2012.jpg', alt: 'D-clone' },
-        { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
+        { src: '/images/festival/past/avfmf2026XVII.jpg', alt: 'XVII-2026' },
+        { src: '/images/festival/past/avfmf2024.jpg', alt: 'XV-2024' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },

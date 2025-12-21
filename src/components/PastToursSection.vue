@@ -1,10 +1,10 @@
 <template>
   <section id="events" class="events-root">
     <div class="events-wrap">
-      <!-- Past Events -->
-      <h2 class="events-title">Past Events</h2>
+      <!-- Past Tours -->
+      <h2 class="events-title">Past Tours</h2>
       <div class="flyers-grid">
-        <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
+        <article v-for="(f, i) in pastTourFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -47,23 +47,19 @@ export default {
   name: 'EventSection',
   data() {
     return {
-      pastEventsFlyers: [
-        { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
-        { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
-        { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
-        { src: '/images/events/past/events/varukers-june22-2019.jpg', alt: 'The Varukers' },
-        { src: '/images/events/past/events/decomp-april16-2019.jpg', alt: 'Decomp' },
-        { src: '/images/events/past/events/oipolloi-nov17-2018.jpg', alt: 'OiPolloi' },
-        { src: '/images/events/past/events/subhumanz-nov24-2017.jpg', alt: 'Subhumanz' },
-        { src: '/images/events/past/events/nye-dec31-2016.jpg', alt: 'NYE' },
-        { src: '/images/events/past/events/doa-sept22-2015.jpg', alt: 'DOA' },
+      pastTourFlyers: [
+        { src: '/images/events/past/tours/warkrusher.jpg', alt: 'warkrusher-eu-tour' },
+        { src: '/images/events/past/tours/traume.jpg', alt: 'traume-na-tour' },
+        { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },
         {
-          src: '/images/events/past/events/bellicoseminds-sept13-2014.jpg',
-          alt: 'The Bellicose Minds',
+          src: '/images/events/past/tours/gs-agust-tour-2018.jpg',
+          alt: 'Generacion Suicida Tour',
         },
-        { src: '/images/events/past/events/anasazi-june28-2014.jpg', alt: 'Anasazi' },
-        { src: '/images/events/past/events/dclone-oct13-2012.jpg', alt: 'D-clone' },
-        { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
+        {
+          src: '/images/events/past/tours/ryuketsublizzard-sep-tour-2016.jpg',
+          alt: 'Ryuketsu Blizzard Tour',
+        },
+        { src: '/images/events/past/tours/deadhero-july-tour-2016.jpg', alt: 'Dead Hero Tour' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
@@ -103,7 +99,7 @@ export default {
   background: #000;
   color: #e9e9e9;
   padding: calc(var(--header-h) + 3rem) 1rem 3rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   scroll-margin-top: var(--header-h);
 }
 .events-wrap {
@@ -126,6 +122,7 @@ export default {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 1.5rem 0 1.5rem;
+  padding-top: 1.5rem;
 }
 .events-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
