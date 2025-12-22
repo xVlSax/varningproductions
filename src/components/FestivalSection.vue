@@ -67,10 +67,12 @@
         <!-- Festival navigation flyers -->
         <div class="festival-flyer-grid">
           <!-- Current festival -->
-          <!-- to="/current-festival" -->
-          <router-link class="festival-flyer-card" aria-label="Current festival">
+          <router-link
+            to="/current-festival"
+            class="festival-flyer-card"
+            aria-label="Current festival"
+          >
             <div class="festival-flyer-label">Festival 2026</div>
-            <!-- <div class="festival-coming"><h2>Coming Soon!</h2></div> -->
 
             <picture class="festival-flyer-picture">
               <source srcset="/images/festival/current/comin.avif" type="image/avif" />
