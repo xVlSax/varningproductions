@@ -102,11 +102,11 @@
         </h4> -->
 
         <!-- Things to do -->
-        <h4 class="text-lg md:text-xl">
+        <!-- <h4 class="text-lg md:text-xl">
           Things to
           <router-link to="/things" class="underline">do</router-link>
           in Montreal
-        </h4>
+        </h4> -->
       </div>
     </div>
   </section>
