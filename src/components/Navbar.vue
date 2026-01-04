@@ -55,7 +55,7 @@ const navItems = [
   { id: 'tours', label: 'Tours', path: '/tours' },
   { id: 'events', label: 'Events', path: '/events' },
   { id: 'services', label: 'Services', path: '/services' },
-  { id: 'artist', label: 'Artist', path: '/artist' },
+  //{ id: 'artist', label: 'Artist', path: '/artist' },
   // { id: 'things', label: 'ThingsToDo', path: '/things' },
   { id: 'contact', label: 'Contact', path: '/contact' },
 ]
