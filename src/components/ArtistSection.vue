@@ -32,11 +32,6 @@
 <script setup>
 const artists = [
   { slug: 'abysmal-grief', name: 'ABYSMAL GRIEF', image: '/images/artists/abysmal-grief.jpg' },
-  { slug: 'abyssal', name: 'ABYSSAL', image: '/images/artists/abyssal.jpg' },
-  { slug: 'altars', name: 'ALTARS', image: '/images/artists/altars.jpg' },
-  { slug: 'anatomia', name: 'ANATOMIA', image: '/images/artists/anatomia.jpg' },
-  { slug: 'antediluvian', name: 'ANTEDILUVIAN', image: '/images/artists/antediluvian.jpg' },
-  { slug: 'aphotic', name: 'APHOTIC', image: '/images/artists/aphotic.jpg' },
 ]
 </script>
 
