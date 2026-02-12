@@ -68,23 +68,14 @@ export default {
   data() {
     return {
       eventsFlyers: [
-        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
         // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
-        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
-        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
-        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
-        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
       ],
       upcomingEventsFlyers: [
+        {
+          src: '/images/events/upcoming/events/dishonor-stockholm-2026.jpg',
+          alt: 'dishonor-stockholm',
+        },
         // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
-        // { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
-        // { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
-        // { src: '/images/events/upcoming/tours/gothemburg.jpg', alt: 'warkrusher-gothemburg' },
-        // { src: '/images/events/upcoming/tours/oslo.jpg', alt: 'warkrusher-oslo' },
-        // { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
-        // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
-        // { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
