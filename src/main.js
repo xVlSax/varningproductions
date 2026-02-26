@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import './assets/main.css'
 import './index.css'
+import { initGA } from './plugins/analytics'
+
+initGA()
 
 function setMeta(selector, attrName, attrValue) {
   let el = document.querySelector(selector)
