@@ -77,7 +77,7 @@ export default {
         // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
       ],
       upcomingFlyers: [
-        // { src: '/images/events/upcoming/tours/tampere.jpg', alt: 'warkrusher-tampere' },
+        { src: '/images/events/upcoming/tours/dhk-tour.jpg', alt: 'dhk-tour' },
         // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
         // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
         // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
