@@ -249,7 +249,7 @@ export default {
 .flyer-img {
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -281,11 +281,13 @@ export default {
   background: rgba(20, 20, 20, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  overflow: hidden;
-  width: min(50vw, 555px);
+  overflow: auto;
+  width: min(90vw, 555px);
   max-height: 90vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 1rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 .modal-close {
@@ -304,17 +306,22 @@ export default {
 }
 .modal-picture {
   width: 100%;
-  flex: 1 1 auto;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modal-img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(90vh - 7rem);
   object-fit: contain;
   display: block;
 }
+
 .modal-caption {
-  margin: 0.5rem 0.9rem 0.9rem;
+  width: 100%;
+  margin: 0.75rem 0 0;
   color: #d8d8d8;
   font-size: 0.95rem;
   text-align: center;
@@ -323,14 +330,18 @@ export default {
 /* mobile tweaks */
 @media (max-width: 640px) {
   .modal-content {
-    width: 90vw;
+    width: 92vw;
     margin: auto;
-    max-height: 80vh;
+    max-height: 85vh;
+    padding: 2.75rem 0.75rem 0.75rem;
   }
   .modal-close {
     width: 34px;
     height: 34px;
     font-size: 1rem;
+  }
+  .modal-img {
+    max-height: calc(85vh - 6.5rem);
   }
   .modal-caption {
     font-size: 0.9rem;
