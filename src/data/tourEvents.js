@@ -1,0 +1,178 @@
+const TOUR_DETAILS = {
+  'dhk-tour': {
+    slug: 'dhk-tour',
+    title: 'DHK',
+    subtitle: 'PUNK ES PROTESTA - EUROPEAN TOUR',
+    date: 'MAY-JUNE 2026',
+    alt: 'DHK Tour flyer',
+    image: '/images/events/upcoming/tours/dhk/new-dhk.jpg',
+    intro:
+      'Varning Productions is super stoked to announce its next tour with ferocious d-beat hardcore band from Lima, Peru DHK!',
+    paragraphs: [
+      'We would like to thank all promoters that is helping out.',
+      'It’s gonna be another fucking rager so share it, invite your friends and see you there!',
+    ],
+    routing: [
+      {
+        date: '26.05.2026',
+        city: 'Zaragoza, Spain',
+        // flyer: '/images/events/upcoming/tours/wk/berlin.jpg',
+      },
+      {
+        date: '27.05.2026',
+        city: 'Bilbao, Basque Country',
+        // flyer: '/images/events/upcoming/tours/wk/hamburg.jpg',
+      },
+      {
+        date: '28.05.2026',
+        city: 'Madrid, Spain',
+        // flyer: '/images/events/upcoming/tours/wk/copenhagen.jpg',
+      },
+      {
+        date: '29.05.2026',
+        city: 'Denia, Spain',
+        // flyer: '/images/events/upcoming/tours/wk/malmo.jpg',
+      },
+      {
+        date: '30.05.2026',
+        city: 'Barcelona, Cataluna',
+        // flyer: '/images/events/upcoming/tours/wk/gothemburg.jpg',
+      },
+      {
+        date: '31.05.2026',
+        city: 'Lleida, Spain',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '02.06.2026',
+        city: 'Dresden, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '03.06.2026',
+        city: 'Brno, Czech',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '04.06.2026',
+        city: 'Vienna, Austria',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '05.06.2026',
+        city: 'Wroclaw, Poland',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '06.06.2026',
+        city: 'Warsaw, Poland',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '07.06.2026',
+        city: 'Bialystok, Poland',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '09.06.2026',
+        city: 'Kaunas, Lithuania',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '11.06.2026',
+        city: 'Vilnius, Lithuania',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '12.06.2026',
+        city: 'Riga, Latvia',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '13.06.2026',
+        city: 'Tallin, Estonia',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '14.06.2026',
+        city: 'Helsinki, Finland',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '16.06.2026',
+        city: 'Stockholm, Sweden',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '17.06.2026',
+        city: 'Jönköping, Sweden',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '18.06.2026',
+        city: 'Göteborg, Sweden',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '20.06.2026',
+        city: 'Berlin, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '23.06.2026',
+        city: 'Hamburg, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '24.06.2026',
+        city: 'Bremen, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '25.06.2026',
+        city: 'Hannover, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '26.06.2026',
+        city: 'Leipzig, Germany',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+      {
+        date: '27.06.2026',
+        city: 'Izero Fest - Pobiedna, Poland',
+        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+      },
+    ],
+    footnoteParts: [
+      { type: 'text', text: 'Check more about ' },
+      { type: 'band', label: 'DHK', slug: 'dhk' },
+      { type: 'text', text: '.' },
+    ],
+  },
+}
+
+const toCard = (slug) => {
+  const tour = TOUR_DETAILS[slug]
+
+  if (!tour) {
+    return null
+  }
+
+  return {
+    slug: tour.slug,
+    src: tour.image,
+    alt: tour.alt,
+    title: tour.title,
+    subtitle: tour.subtitle,
+    date: tour.date,
+  }
+}
+
+const TOUR_HERO_SLUGS = ['dhk-tour']
+const UPCOMING_TOUR_SLUGS = ['dhk-tour']
+
+export const TOUR_HEROES = TOUR_HERO_SLUGS.map(toCard).filter(Boolean)
+export const UPCOMING_TOURS = UPCOMING_TOUR_SLUGS.map(toCard).filter(Boolean)
+
+export const getTourBySlug = (slug) => TOUR_DETAILS[slug]

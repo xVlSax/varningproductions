@@ -3,29 +3,46 @@
     <div class="tours-wrap">
       <!-- Tours -->
       <h2 class="tours-title">Tours</h2>
-      <div class="flyers-grid">
-        <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card">
-          <button class="flyer-btn" @click="openModal(f)">
+      <!-- <div class="flyers-grid tours-grid">
+        <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card tours-card">
+          <router-link
+            class="flyer-frame tours-frame flyer-link"
+            :to="{ name: 'Event Description', params: { slug: f.slug } }"
+          >
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
-          </button>
+          </router-link>
         </article>
-      </div>
+      </div> -->
 
       <!-- Upcoming Tours -->
       <h3 class="tours-subtitle">Upcoming Tours</h3>
-      <div class="flyers-grid">
-        <article v-for="(f, i) in upcomingFlyers" :key="i" class="flyer-card">
-          <button class="flyer-btn" @click="openModal(f)">
+      <div class="upcoming-tours-grid">
+        <article v-for="(f, i) in upcomingFlyers" :key="i" class="upcoming-tour-card">
+          <router-link
+            class="flyer-frame upcoming-tour-frame flyer-link"
+            :to="{ name: 'Event Description', params: { slug: f.slug } }"
+          >
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
-              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
+              <img
+                :src="f.src"
+                :alt="f.alt"
+                loading="lazy"
+                decoding="async"
+                class="flyer-img upcoming-tour-img"
+              />
             </picture>
-          </button>
+          </router-link>
+
+          <div class="upcoming-tour-meta">
+            <h4 class="upcoming-tour-name">{{ f.title }}</h4>
+            <p v-if="f.date" class="upcoming-tour-date">{{ f.date }}</p>
+          </div>
         </article>
       </div>
 
@@ -35,80 +52,19 @@
         <img src="/images/events/knife.svg" alt="Past tours" class="past-tours-icon" />
       </router-link>
     </div>
-
-    <!-- Lightbox modal -->
-    <transition name="fade">
-      <div
-        v-if="isModalOpen"
-        class="modal-overlay"
-        role="dialog"
-        aria-modal="true"
-        :aria-label="active.alt || 'Flyer preview'"
-        @click.self="closeModal"
-      >
-        <div class="modal-content">
-          <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
-
-          <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
-            <img :src="active.src" :alt="active.alt" class="modal-img" />
-          </picture>
-
-          <p class="modal-caption">{{ active.alt }}</p>
-        </div>
-      </div>
-    </transition>
   </section>
 </template>
 
 <script>
+import { TOUR_HEROES, UPCOMING_TOURS } from '@/data/tourEvents'
+
 export default {
   name: 'ToursSection',
   data() {
     return {
-      tourFlyers: [
-        // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
-        // { src: '/images/events/upcoming/tours/copenhagen.jpg', alt: 'warkrusher-copenhagen' },
-        // { src: '/images/events/upcoming/tours/malmo.jpg', alt: 'warkrusher-malmo' },
-        // { src: '/images/events/upcoming/tours/gothemburg.jpg', alt: 'warkrusher-gothemburg' },
-        // { src: '/images/events/upcoming/tours/oslo.jpg', alt: 'warkrusher-oslo' },
-        // { src: '/images/events/upcoming/tours/stockholm.jpg', alt: 'warkrusher-stockholm' },
-        // { src: '/images/events/upcoming/tours/turku.jpg', alt: 'warkrusher-turku' },
-      ],
-      upcomingFlyers: [
-        { src: '/images/events/upcoming/tours/dhk-tour.jpg', alt: 'dhk-tour' },
-        // { src: '/images/events/upcoming/tours/helsinki.jpg', alt: 'warkrusher-helsinki' },
-        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-        // { src: '/images/events/upcoming/tours/riga.jpg', alt: 'warkrusher-riga' },
-        // { src: '/images/events/upcoming/tours/vilnus.jpg', alt: 'warkrusher-vilnus' },
-        // { src: '/images/events/upcoming/tours/warsaw.jpg', alt: 'warkrusher-warsaw' },
-        // { src: '/images/events/upcoming/tours/gdynia.jpg', alt: 'warkrusher-gdynia' },
-        // { src: '/images/events/upcoming/tours/berlin.jpg', alt: 'warkrusher-berlin' },
-      ],
-      isModalOpen: false,
-      active: { src: '', alt: '' },
+      tourFlyers: TOUR_HEROES,
+      upcomingFlyers: UPCOMING_TOURS,
     }
-  },
-  methods: {
-    openModal(f) {
-      this.active = f
-      this.isModalOpen = true
-      document.documentElement.classList.add('no-scroll')
-      window.addEventListener('keydown', this.onKey)
-    },
-    closeModal() {
-      this.isModalOpen = false
-      document.documentElement.classList.remove('no-scroll')
-      window.removeEventListener('keydown', this.onKey)
-    },
-    onKey(e) {
-      if (e.key === 'Escape') this.closeModal()
-    },
-  },
-  beforeUnmount() {
-    window.removeEventListener('keydown', this.onKey)
-    document.documentElement.classList.remove('no-scroll')
   },
 }
 </script>
@@ -129,7 +85,7 @@ export default {
 }
 .tours-wrap {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1640px;
   margin: 0 auto;
   text-align: center;
 }
@@ -182,6 +138,80 @@ export default {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.tours-grid {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+.tours-card {
+  width: 100%;
+  max-width: 560px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.upcoming-tours-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2.25rem 1.75rem;
+  justify-items: center;
+}
+
+.upcoming-tour-card {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.flyer-frame {
+  width: 100%;
+  display: block;
+}
+
+.flyer-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.upcoming-tour-img {
+  aspect-ratio: 3 / 4.6;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+}
+
+.upcoming-tour-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.upcoming-tour-name {
+  margin: 0;
+  color: #f5f5f5;
+  font-family: 'Staatliches', sans-serif;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-align: center;
+}
+
+.upcoming-tour-date {
+  margin: 0;
+  color: rgba(233, 233, 233, 0.82);
+  font-family: 'Staatliches', sans-serif;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 /* Past Events Link */
 .past-tours-link {
   margin-top: 3rem;
@@ -225,11 +255,27 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
+  .tours-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .upcoming-tours-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.75rem 2.25rem;
+  }
 }
 @media (min-width: 1024px) {
   .flyers-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+  }
+  .tours-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .upcoming-tours-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.75rem 1.15rem;
+    padding-inline: clamp(2.5rem, 4.5vw, 5rem);
+    align-items: start;
   }
 }
 
@@ -249,110 +295,15 @@ export default {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
-.flyer-btn {
-  all: unset;
-  cursor: zoom-in;
-  display: block;
-  width: 100%;
+.tours-card:hover {
+  transform: none;
+  box-shadow: none;
 }
+
 .flyer-img {
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: contain;
   display: block;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.18s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  background: rgba(0, 0, 0, 0.75);
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-}
-
-.modal-content {
-  position: relative;
-  background: rgba(20, 20, 20, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow: auto;
-  width: min(90vw, 555px);
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 1rem 1rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-}
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  width: 38px;
-  height: 38px;
-  border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 1.1rem;
-  line-height: 1;
-  cursor: pointer;
-}
-.modal-picture {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal-img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: calc(90vh - 7rem);
-  object-fit: contain;
-  display: block;
-}
-.modal-caption {
-  width: 100%;
-  margin: 0.75rem 0 0;
-  color: #d8d8d8;
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-/* mobile tweaks */
-@media (max-width: 640px) {
-  .modal-content {
-    width: 92vw;
-    margin: auto;
-    max-height: 85vh;
-    padding: 2.75rem 0.75rem 0.75rem;
-  }
-  .modal-close {
-    width: 34px;
-    height: 34px;
-    font-size: 1rem;
-  }
-  .modal-img {
-    max-height: calc(85vh - 6.5rem);
-  }
-  .modal-caption {
-    font-size: 0.9rem;
-  }
 }
 </style>

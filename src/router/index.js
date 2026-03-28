@@ -8,6 +8,8 @@ import PastFestivalSection from '@/components/PastFestivalSection.vue'
 import ToursSection from '@/components/ToursSection.vue'
 import PastToursSection from '@/components/PastToursSection.vue'
 import EventSection from '@/components/EventSection.vue'
+import EventDescription from '@/components/EventDescription.vue'
+import BandProfile from '@/components/BandProfile.vue'
 import PastEventsSection from '@/components/PastEventsSection.vue'
 import ServicesSection from '@/components/ServicesSection.vue'
 import ArtistSection from '@/components/ArtistSection.vue'
@@ -87,6 +89,26 @@ const routes = [
       description:
         'Upcoming punk shows, flyers and festival events organized by Varning Productions.',
       canonical: 'https://www.varningproductions.com/#/events',
+    },
+  },
+  {
+    path: '/event-description/:slug',
+    name: 'Event Description',
+    component: EventDescription,
+    meta: {
+      title: 'Event Description – Varning Productions',
+      description: 'Tour routing, flyer details and booking notes from Varning Productions.',
+      canonical: 'https://www.varningproductions.com/#/event-description',
+    },
+  },
+  {
+    path: '/band-profile/:slug',
+    name: 'Band Profile',
+    component: BandProfile,
+    meta: {
+      title: 'Band Profile – Varning Productions',
+      description: 'Band profile, links, booking details, and bio.',
+      canonical: 'https://www.varningproductions.com/#/band-profile',
     },
   },
   {
