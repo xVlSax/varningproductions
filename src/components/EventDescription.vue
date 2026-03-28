@@ -211,6 +211,7 @@ onBeforeUnmount(() => {
   color: rgba(239, 239, 239, 0.82);
   font-size: 0.98rem;
   line-height: 1.8;
+  font-family: 'Lucky', sans-serif;
 }
 
 .event-intro,

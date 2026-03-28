@@ -20,8 +20,8 @@
             community connection. Since its first edition in 2007, the festival has brought together
             punks, friends, and music lovers from across the globe to celebrate what kept the scene
             alive: raw sound, shared values, and real friendships. <br /><br />
-            Each edition of<strong>A VARNING FROM MONTREAL FESTIVAL</strong> lasts multiple days and
-            features <strong>bands from across the globe</strong> — past lineups have included
+            Each edition of<strong> A VARNING FROM MONTREAL FESTIVAL</strong> lasts multiple days
+            and features <strong>bands from across the globe</strong> — past lineups have included
             artists from
             <strong
               >Japan, Russia, Sweden, Norway, Mexico, Cuba, Panama, Colombia, Chile, France, Spain,
@@ -72,9 +72,9 @@
             <div class="festival-flyer-label">Festival 2026</div>
 
             <picture class="festival-flyer-picture">
-              <source srcset="/images/festival/current/comin.avif" type="image/avif" />
-              <source srcset="/images/festival/current/comin.webp" type="image/webp" />
-              <img src="/images/festival/current/comin.jpg" alt="Current Festival Poster" />
+              <source srcset="/images/festival/current/coming-soon.avif" type="image/avif" />
+              <source srcset="/images/festival/current/coming-soon.webp" type="image/webp" />
+              <img src="/images/festival/current/coming-soon.jpg" alt="Current Festival Poster" />
             </picture>
           </router-link>
 
@@ -240,7 +240,7 @@ const expanded = ref(false)
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 </style>

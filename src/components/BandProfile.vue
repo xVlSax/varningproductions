@@ -199,6 +199,7 @@ const band = computed(() => {
   color: rgba(240, 240, 240, 0.86);
   font-size: 1rem;
   line-height: 1.85;
+  font-family: 'Lucky', sans-serif;
 }
 
 .band-bio-paragraph {

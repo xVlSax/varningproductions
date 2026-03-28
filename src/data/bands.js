@@ -8,7 +8,11 @@ const BAND_PROFILES = {
     socials: [
       { label: 'Facebook', icon: 'fa fa-facebook', href: '' },
       { label: 'Instagram', icon: 'fa fa-instagram', href: '' },
-      { label: 'Spotify', icon: 'fa fa-spotify', href: '' },
+      {
+        label: 'Spotify',
+        icon: 'fa fa-spotify',
+        href: 'https://open.spotify.com/album/1hkN9rA2DnWXIKjk08DbqG?si=odyrYGG-RY68azPtUdH6kw',
+      },
       {
         label: 'Bandcamp',
         icon: 'fa fa-bandcamp',
