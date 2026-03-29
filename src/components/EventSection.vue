@@ -55,7 +55,12 @@
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
-          <p class="modal-caption">{{ active.alt }}</p>
+          <ModalEventDescriptionSection
+            v-if="active.modalDetails"
+            :details="active.modalDetails"
+            class="modal-description"
+          />
+          <p v-else class="modal-caption">{{ active.alt }}</p>
         </div>
       </div>
     </transition>
@@ -63,20 +68,18 @@
 </template>
 
 <script>
+import ModalEventDescriptionSection from '@/components/ModalEventDescriptionSection.vue'
+import { EVENTS_FLYERS, UPCOMING_EVENTS_FLYERS } from '@/data/eventFlyers'
+
 export default {
   name: 'EventSection',
+  components: {
+    ModalEventDescriptionSection,
+  },
   data() {
     return {
-      eventsFlyers: [
-        // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-      ],
-      upcomingEventsFlyers: [
-        {
-          src: '/images/events/upcoming/events/dishonor-stockholm-2026.jpg',
-          alt: 'dishonor-stockholm',
-        },
-        // { src: '/images/events/upcoming/tours/hamburg.jpg', alt: 'warkrusher-hamburg' },
-      ],
+      eventsFlyers: EVENTS_FLYERS,
+      upcomingEventsFlyers: UPCOMING_EVENTS_FLYERS,
       isModalOpen: false,
       active: { src: '', alt: '' },
     }
@@ -120,7 +123,7 @@ export default {
 }
 .events-wrap {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1640px;
   margin: 0 auto;
   text-align: center;
 }
@@ -171,6 +174,7 @@ export default {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
 }
 
 /* Past Events Link */
@@ -220,24 +224,24 @@ export default {
 @media (min-width: 1024px) {
   .flyers-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 2.75rem 1.15rem;
+    padding-inline: clamp(2.5rem, 4.5vw, 5rem);
   }
 }
 
 /* cards */
 .flyer-card {
-  background: rgba(25, 25, 25, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+  width: 100%;
+  max-width: 430px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
 }
 .flyer-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transform: none;
+  box-shadow: none;
 }
 
 .flyer-btn {
@@ -248,9 +252,11 @@ export default {
 }
 .flyer-img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3 / 4.6;
   object-fit: contain;
   display: block;
+  background: #050505;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
 }
 
 .no-scroll {
@@ -282,12 +288,12 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   overflow: auto;
-  width: min(90vw, 555px);
-  max-height: 90vh;
+  width: min(90vw, 700px);
+  max-height: 92vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 3rem 1rem 1rem;
+  align-items: stretch;
+  padding: 3rem 1.1rem 1.1rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 .modal-close {
@@ -309,14 +315,19 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.1rem;
 }
 .modal-img {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  max-height: calc(90vh - 7rem);
+  max-height: none;
   object-fit: contain;
   display: block;
+}
+
+.modal-description {
+  padding: 0 0.2rem;
 }
 
 .modal-caption {
@@ -339,9 +350,6 @@ export default {
     width: 34px;
     height: 34px;
     font-size: 1rem;
-  }
-  .modal-img {
-    max-height: calc(85vh - 6.5rem);
   }
   .modal-caption {
     font-size: 0.9rem;

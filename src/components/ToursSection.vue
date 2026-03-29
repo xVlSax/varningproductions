@@ -181,7 +181,6 @@ export default {
 .upcoming-tour-img {
   aspect-ratio: 3 / 4.6;
   background: #050505;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
 }
 
@@ -282,7 +281,6 @@ export default {
 /* cards */
 .flyer-card {
   background: rgba(25, 25, 25, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
