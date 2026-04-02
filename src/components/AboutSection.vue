@@ -3,6 +3,12 @@
   <section id="about" class="about-root min-h-screen p-4">
     <!-- Text Right side: About us -->
     <div class="about-inner">
+      <!-- Bottom-left skulls -->
+      <img
+        src="/images/about/AboutImage.svg"
+        alt="skull punks"
+        class="about-img float-slow fade-in-left"
+      />
       <div class="about-text fade-in-right">
         <h4 class="title">ABOUT US</h4>
         <p class="copy">
@@ -23,12 +29,6 @@
           respect. UP THE PUNX TABARNAK!
         </p>
       </div>
-      <!-- Bottom-left skulls -->
-      <img
-        src="/images/about/AboutImage.svg"
-        alt="skull punks"
-        class="about-img float-slow fade-in-left"
-      />
     </div>
   </section>
 
@@ -111,17 +111,6 @@ export default { name: 'AboutSection' }
   padding: clamp(2.5rem, 6vw, 5rem) 1rem;
 }
 
-.about-text {
-  width: 100%;
-  max-width: 680px;
-  margin-inline: auto;
-  text-align: justify;
-}
-
-.about-text .title {
-  text-align: left;
-}
-
 .about-img {
   width: 100%;
   max-width: 520px;
@@ -139,10 +128,6 @@ export default { name: 'AboutSection' }
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
 }
-.about-text .title {
-  text-align: right;
-}
-
 .why-root {
   padding-right: clamp(320px, 28vw, 420px);
 }
@@ -236,13 +221,21 @@ export default { name: 'AboutSection' }
 
 @media (min-width: 900px) {
   .about-inner {
-    grid-template-columns: minmax(320px, 520px) minmax(320px, 1fr);
+    display: flow-root;
+    max-width: 1340px;
   }
   .about-img {
-    order: 1;
+    float: left;
+    width: min(30vw, 360px);
+    max-width: none;
+    margin: 0 1rem 0.75rem -4.5rem;
   }
   .about-text {
-    order: 2;
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+    padding-right: 0;
+    padding-top: 0.25rem;
   }
   .profile-grid {
     grid-template-columns: repeat(2, minmax(0, 420px));
@@ -275,10 +268,12 @@ export default { name: 'AboutSection' }
 
 @media (max-width: 1024px) and (min-width: 900px) {
   .about-img {
-    max-width: 420px;
+    width: min(28vw, 290px);
+    margin-right: 0.9rem;
+    margin-left: -2rem;
   }
   .about-text {
-    max-width: 600px;
+    max-width: none;
   }
   .copy {
     font-size: 0.95rem;
@@ -290,6 +285,14 @@ export default { name: 'AboutSection' }
   .about-inner {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .about-text {
+    order: 1;
+  }
+
+  .about-img {
+    order: 2;
   }
 
   .about-text {
@@ -403,6 +406,20 @@ export default { name: 'AboutSection' }
   }
   .profile-text {
     padding: 0.9rem 0.95rem 1.1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-text {
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+    padding-right: 0;
+    margin-top: -0.75rem;
+  }
+
+  .about-text .title {
+    text-align: left;
   }
 }
 

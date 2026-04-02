@@ -70,18 +70,17 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  --header-h: 64px;
-}
-
 /* page layout */
 .tours-root {
-  min-height: 100vh;
+  --header-h: 64px;
+  min-height: calc(100vh - 56px);
   background: #000;
   color: #e9e9e9;
-  padding: calc(var(--header-h) + 3rem) 1rem 3rem;
-  margin-top: 5rem;
+  padding: calc(var(--header-h) + 1rem) 1rem 1.75rem;
+  margin-top: 0;
   scroll-margin-top: var(--header-h);
+  display: flex;
+  align-items: center;
 }
 .tours-wrap {
   width: 100%;
@@ -103,14 +102,14 @@ export default {
   font-family: 'TypeWriter1', sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 1.5rem;
+  padding: 0.6rem;
 }
 .tours-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
 }
 .tours-subtitle {
   font-size: clamp(1rem, 2vw, 1.35rem);
-  margin-top: 1.5rem;
+  margin-top: 0.45rem;
 }
 
 /* main poster */
@@ -152,10 +151,10 @@ export default {
 }
 
 .upcoming-tours-grid {
-  margin-top: 1.5rem;
+  margin-top: 0.85rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2.25rem 1.75rem;
+  gap: 1.35rem 1rem;
   justify-items: center;
 }
 
@@ -213,7 +212,7 @@ export default {
 
 /* Past Events Link */
 .past-tours-link {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
@@ -241,8 +240,8 @@ export default {
 }
 
 .past-tours-icon {
-  width: 8rem;
-  height: 8rem;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .past-tours-link:hover .past-tours-icon {
@@ -259,7 +258,7 @@ export default {
   }
   .upcoming-tours-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.75rem 2.25rem;
+    gap: 1.75rem 1.5rem;
   }
 }
 @media (min-width: 1024px) {
@@ -272,7 +271,7 @@ export default {
   }
   .upcoming-tours-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2.75rem 1.15rem;
+    gap: 1.85rem 1rem;
     padding-inline: clamp(2.5rem, 4.5vw, 5rem);
     align-items: start;
   }
