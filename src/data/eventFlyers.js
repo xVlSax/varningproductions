@@ -1,8 +1,4 @@
 export const EVENTS_FLYERS = [
-  // { src: '/images/events/upcoming/tours/tallin.jpg', alt: 'warkrusher-tallin' },
-]
-
-export const UPCOMING_EVENTS_FLYERS = [
   {
     src: '/images/events/upcoming/events/dishonor-stockholm-2026.jpg',
     alt: 'dishonor-stockholm',
@@ -66,6 +62,93 @@ export const UPCOMING_EVENTS_FLYERS = [
             'ALLA ÅLDRAR',
             'NO FASCISTS * NO RACISTS * NO SEXISTS * NO TRANSPHOBES * NO BULLSHIT!',
             'UP THE PUNX!',
+          ],
+        },
+      ],
+    },
+  },
+]
+
+export const UPCOMING_EVENTS_FLYERS = [
+  {
+    src: '/images/events/upcoming/events/varning-benefit-may.jpg',
+    alt: 'varning-benefit-show-montreal',
+    modalDetails: {
+      title:
+        'PORTAL TOMB + HIGH ANXIETY + SYNAPTIC ISOLATION SYNDROME + MUSCLE MEMORY + ARMISTIX + TRENCHCOAT',
+      subtitle: '@CABARET FOUFS - MAY 1st 2026',
+      sections: [
+        {
+          // title: 'Event Description',
+          paragraphs: [
+            'YOUTHOFNAUSEA & VARNING PRODUCTIONS PRESENT!',
+            'BENEFIT GIG FOR VARNING XVIII VOL. I',
+          ],
+        },
+        {
+          // title: 'Bands + Links',
+          groups: [
+            {
+              heading: '',
+              items: [
+                {
+                  name: 'PORTAL TOMB ',
+                  meta: 'Morbid Stenchcore for the unwashed and the depraved',
+                  href: 'https://portaltomb.bandcamp.com/',
+                },
+                {
+                  name: 'HIGH ANXIETY',
+                  meta: 'D-beat/crust Raiders from the Wasteland of Stone Mills',
+                  href: 'https://highanxietypunk.bandcamp.com/album/your-dreams-are-caught-in-war',
+                },
+                {
+                  name: 'SYNAPTIC ISOLATION SYNDROME',
+                  meta: 'Relentless Crashing disbeat Noize)',
+                  href: 'https://2025.demo-fest.org/synaptic-isolation-syndrome-consuming-mental-isolation/',
+                },
+                {
+                  name: 'MUSCLE MEMORY',
+                  meta: 'Crushing Fastcore ffo smoking wax & stealing catalytic converters',
+                  href: 'https://www.instagram.com/reels/DTnTPKxjURj/',
+                },
+                {
+                  name: 'ARMISTIX',
+                  meta: 'Raw Crust bastards from the gutter of the Shlag',
+                  href: 'https://www.instagram.com/p/DUjcWzNjwCC/',
+                },
+                {
+                  name: 'TRENCHCOAT',
+                  meta: 'Cloak-and-dagger Hardcore currently under investigation',
+                  href: 'https://trenchcoat514.bandcamp.com/album/trenchcoat-demo',
+                },
+                {},
+              ],
+            },
+            {
+              heading: '',
+              items: [{}],
+            },
+            {
+              heading: 'FACEBOOK EVENT:',
+              items: [
+                {
+                  name: 'https://fb.me/e/6vjOaZfbf',
+                  // meta: ' crust punk ',
+                  href: 'https://fb.me/e/6vjOaZfbf',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          // title: 'Location + Price + More Info',
+          paragraphs: [
+            '----------------------------------',
+            'CABARET FOUFS | 87 Rue Sainte-Catherine E',
+            'DOORS: AT 7',
+            '20 $',
+            'FIRST BAND AT 8',
+            'FLYER BY @ghastly_mcnasty',
           ],
         },
       ],

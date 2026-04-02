@@ -3,8 +3,8 @@
     <div class="events-wrap">
       <!-- Events -->
       <h2 class="events-title">Events</h2>
-      <div class="flyers-grid">
-        <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card">
+      <div class="flyers-grid events-main-grid">
+        <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card events-main-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -177,6 +177,14 @@ export default {
   justify-items: center;
 }
 
+.events-main-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.events-main-card {
+  max-width: 560px;
+}
+
 /* Past Events Link */
 .past-events-link {
   margin-top: 3rem;
@@ -220,12 +228,19 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
+  .events-main-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 @media (min-width: 1024px) {
   .flyers-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.75rem 1.15rem;
     padding-inline: clamp(2.5rem, 4.5vw, 5rem);
+  }
+  .events-main-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 0;
   }
 }
 
