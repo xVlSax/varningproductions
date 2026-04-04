@@ -72,9 +72,12 @@
             <div class="festival-flyer-label">Festival 2026</div>
 
             <picture class="festival-flyer-picture">
-              <source srcset="/images/festival/current/coming-soon.avif" type="image/avif" />
-              <source srcset="/images/festival/current/coming-soon.webp" type="image/webp" />
-              <img src="/images/festival/current/coming-soon.jpg" alt="Current Festival Poster" />
+              <source srcset="/images/festival/current/varning-fest-soon.avif" type="image/avif" />
+              <source srcset="/images/festival/current/varning-fest-soon.webp" type="image/webp" />
+              <img
+                src="/images/festival/current/varning-fest-soon.jpg"
+                alt="Current Festival Poster"
+              />
             </picture>
           </router-link>
 

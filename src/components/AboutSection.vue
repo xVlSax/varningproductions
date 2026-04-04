@@ -1,6 +1,29 @@
 <template>
   <!-- Page 1: About us -->
   <section id="about" class="about-root min-h-screen p-4">
+    <div v-if="aboutMusic" :class="['about-music', { 'about-music-open': isMobilePlayerOpen }]">
+      <button
+        type="button"
+        class="about-music-toggle"
+        :aria-expanded="isMobilePlayerOpen ? 'true' : 'false'"
+        aria-label="Toggle Bandcamp player"
+        @click="isMobilePlayerOpen = !isMobilePlayerOpen"
+      >
+        {{ isMobilePlayerOpen ? '×' : '▶' }}
+      </button>
+      <iframe
+        v-if="aboutMusic.embedUrl"
+        :class="['about-music-embed', { 'about-music-embed-open': isMobilePlayerOpen }]"
+        :src="aboutMusic.embedUrl"
+        title="Bandcamp player"
+        loading="lazy"
+        seamless
+      >
+        <a :href="aboutMusic.bandcampUrl" target="_blank" rel="noopener noreferrer">
+          {{ aboutMusic.fallbackText }}
+        </a>
+      </iframe>
+    </div>
     <!-- Text Right side: About us -->
     <div class="about-inner">
       <!-- Bottom-left skulls -->
@@ -96,19 +119,27 @@
 </template>
 
 <script>
-export default { name: 'AboutSection' }
+import { ABOUT_SECTION_MUSIC } from '@/data/aboutSection'
+
+export default {
+  name: 'AboutSection',
+  data() {
+    return {
+      aboutMusic: ABOUT_SECTION_MUSIC,
+      isMobilePlayerOpen: false,
+    }
+  },
+}
 </script>
 
 <style scoped>
-/* .about-root {
-  padding-left: clamp(320px, 28vw, 420px);
-} */
 .about-root {
   background: #000;
   color: #e9e9e9;
   display: grid;
   place-items: center;
   padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+  position: relative;
 }
 
 .about-img {
@@ -176,6 +207,27 @@ export default { name: 'AboutSection' }
   font-family: 'Lucky', sans-serif;
 }
 
+.about-music {
+  position: absolute;
+  top: clamp(4.8rem, 6.2vw, 6rem);
+  right: clamp(0.8rem, 4vw, 4.2rem);
+  width: clamp(220px, 22vw, 300px);
+  max-width: none;
+  margin-top: 0;
+  z-index: 2;
+}
+
+.about-music-embed {
+  width: 100%;
+  height: 42px;
+  border: 0;
+  background: #333;
+}
+
+.about-music-toggle {
+  display: none;
+}
+
 .profile-root {
   background: #000;
   color: #e9e9e9;
@@ -184,15 +236,6 @@ export default { name: 'AboutSection' }
   padding: 5rem 1rem;
 }
 
-/* .profile-grid {
-  width: 100%;
-  max-width: 1200px;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
-  align-items: start;
-  padding: 0 1rem;
-} */
 .profile-grid {
   width: 100%;
   max-width: 980px;
@@ -217,6 +260,7 @@ export default { name: 'AboutSection' }
   display: grid;
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
+  position: relative;
 }
 
 @media (min-width: 900px) {
@@ -236,6 +280,11 @@ export default { name: 'AboutSection' }
     margin-inline: 0;
     padding-right: 0;
     padding-top: 0.25rem;
+  }
+  .about-music {
+    top: clamp(4.8rem, 6.2vw, 6rem);
+    right: clamp(0.8rem, 4vw, 4.2rem);
+    width: clamp(220px, 22vw, 300px);
   }
   .profile-grid {
     grid-template-columns: repeat(2, minmax(0, 420px));
@@ -298,10 +347,17 @@ export default { name: 'AboutSection' }
   .about-text {
     text-align: center;
     max-width: 720px;
+    padding-top: 0;
   }
 
   .about-text .title {
     text-align: center;
+  }
+
+  .about-music {
+    top: 4.1rem;
+    right: 0.75rem;
+    width: clamp(185px, 52vw, 250px);
   }
 
   .about-img {
@@ -310,15 +366,18 @@ export default { name: 'AboutSection' }
   }
 }
 
-/* .profile-card {
-  background: rgba(25, 25, 25, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
-  display: flex;
-  flex-direction: column;
-} */
+@media (min-width: 641px) and (max-width: 899px) {
+  .about-music {
+    top: 2.6rem;
+    right: 0.95rem;
+    width: clamp(205px, 36vw, 260px);
+  }
+
+  .about-text {
+    padding-top: 7.2rem;
+  }
+}
+
 .profile-card {
   width: 100%;
   max-width: 420px;
@@ -339,13 +398,6 @@ export default { name: 'AboutSection' }
   object-fit: cover;
   display: block;
 }
-
-/* .profile-img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
-} */
 
 .profile-text {
   flex: 1;
@@ -375,6 +427,60 @@ export default { name: 'AboutSection' }
 
   .about-text .title {
     text-align: center;
+  }
+
+  .about-music {
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(15, 15, 15, 0.95);
+    transition:
+      width 0.22s ease,
+      border-radius 0.22s ease;
+  }
+
+  .about-music-toggle {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f0f0f0;
+    font-size: 1rem;
+    line-height: 1;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .about-music-embed {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .about-music.about-music-open,
+  .about-music:hover,
+  .about-music:focus-within {
+    width: min(250px, calc(100vw - 1.5rem));
+    border-radius: 8px;
+  }
+
+  .about-music.about-music-open .about-music-embed,
+  .about-music:hover .about-music-embed,
+  .about-music:focus-within .about-music-embed,
+  .about-music-embed-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .about-music.about-music-open .about-music-toggle {
+    color: #e32c14;
   }
 
   .about-text,

@@ -154,4 +154,73 @@ export const UPCOMING_EVENTS_FLYERS = [
       ],
     },
   },
+  {
+    src: '/images/events/upcoming/events/dhk-sthlm-june.jpg',
+    alt: 'dhk-tour-show-stockholm',
+    modalDetails: {
+      title: 'DHK + SEX DWARF + SØNDRA',
+      subtitle: '@BROTHER TUCK - JUNE 16th 2026',
+      sections: [
+        {
+          // title: 'Event Description',
+          paragraphs: [
+            'VARNING PRODUCTIONS PRESENTS!',
+            'DHK - PUNK ES PROTESTA EUROPEAN TOUR - SUMMER 2026',
+          ],
+        },
+        {
+          // title: 'Bands + Links',
+          groups: [
+            {
+              heading: 'FROM LIMA-PERU',
+              items: [
+                {
+                  name: 'DHK',
+                  meta: 'Plays ferocious d-beat hardcore ',
+                  href: 'https://dhk-hcpunk.bandcamp.com/album/haz-sentir-tu-odio',
+                },
+                {},
+              ],
+            },
+            {
+              heading: 'FROM STHLM',
+              items: [
+                {
+                  name: 'SEX DWARF',
+                  meta: 'Swedish Raw Punk/Kängpunk veterans',
+                  href: 'https://sexdwarf.bandcamp.com/album/p-hittad-v-rld-lp',
+                },
+                {
+                  name: 'SØNDRA',
+                  meta: 'Sthlm d-takt',
+                  href: 'https://sondrapunks.bandcamp.com/',
+                },
+                { name: '', meta: '', href: '' },
+              ],
+            },
+            {
+              heading: 'FACEBOOK EVENT:',
+              items: [
+                {
+                  name: 'https://fb.me/e/eq29wo84Y',
+                  href: 'https://fb.me/e/eq29wo84Y',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          // title: 'Location + Price + More Info',
+          paragraphs: [
+            '----------------------------------',
+            'BROTHER TUCK | Götgatan 85',
+            'DOORS: 7:00pm',
+            '150 KR',
+            'SHOW: 8:00pm',
+            'FLYER BY @limalofi',
+          ],
+        },
+      ],
+    },
+  },
 ]

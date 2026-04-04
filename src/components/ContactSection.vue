@@ -19,7 +19,7 @@
           decoding="async"
           width="1600"
           height="1066"
-          class="picture-resp w-full max-w-screen-2xl h-auto object-cover shadow-2xl"
+          class="picture-resp shadow-2xl"
         />
       </picture>
     </div>
@@ -97,6 +97,10 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.contact-image-wrapper picture {
+  width: min(96vw, 1900px);
+}
+
 .footer-font {
   font-family: 'sans-serif', sans-serif;
   color: white;
@@ -139,10 +143,12 @@ footer .font-punk span.text-red-400 {
 }
 
 .picture-resp {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  width: auto;
-  max-height: 90vh;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .contact-grid a {
@@ -164,6 +170,24 @@ footer .font-punk span.text-red-400 {
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-image-wrapper {
+    margin-top: 1.1rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .contact-image-wrapper picture {
+    width: min(98vw, 2050px);
+  }
+
+  .picture-resp {
+    height: auto;
+    max-height: min(72vh, 760px);
+    object-fit: contain;
+    object-position: center;
   }
 }
 

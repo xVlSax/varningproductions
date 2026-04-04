@@ -1,44 +1,46 @@
 <template>
-  <nav id="navbar" class="nav-root">
-    <!-- Mobile top bar -->
-    <div class="bar-mobile">
-      <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
-      <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
-        <i class="fa fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div v-if="isMenuOpen" class="mobile-menu">
-      <router-link
-        v-for="item in navItems"
-        :key="item.id"
-        :to="item.path"
-        class="mobile-link"
-        @click="closeMenu"
-      >
-        {{ item.label }}
-      </router-link>
-    </div>
-
-    <!-- Desktop horizontal bar -->
-    <div class="bar-desktop">
-      <div class="desktop-container">
+  <teleport to="body">
+    <nav id="navbar" class="nav-root">
+      <!-- Mobile top bar -->
+      <div class="bar-mobile">
         <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
-        <div class="desktop-links">
-          <router-link
-            v-for="item in navItems"
-            :key="item.id"
-            :to="item.path"
-            class="nav-item"
-            active-class="nav-item-active"
-          >
-            {{ item.label }}
-          </router-link>
+        <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div v-if="isMenuOpen" class="mobile-menu">
+        <router-link
+          v-for="item in navItems"
+          :key="item.id"
+          :to="item.path"
+          class="mobile-link"
+          @click="closeMenu"
+        >
+          {{ item.label }}
+        </router-link>
+      </div>
+
+      <!-- Desktop horizontal bar -->
+      <div class="bar-desktop">
+        <div class="desktop-container">
+          <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
+          <div class="desktop-links">
+            <router-link
+              v-for="item in navItems"
+              :key="item.id"
+              :to="item.path"
+              class="nav-item"
+              active-class="nav-item-active"
+            >
+              {{ item.label }}
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </teleport>
 </template>
 
 <script setup>
@@ -70,11 +72,23 @@ watch(() => route.path, closeMenu)
 <style scoped>
 .nav-root {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
-  z-index: 50;
+  z-index: 1000;
   color: #fff;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.nav-root::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(34, 34, 34, 0.95);
   pointer-events: none;
 }
 
@@ -84,7 +98,7 @@ watch(() => route.path, closeMenu)
   justify-content: space-between;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   background: rgba(34, 34, 34, 0.95);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
@@ -187,4 +201,5 @@ watch(() => route.path, closeMenu)
     border-bottom-color: #ef4444;
   }
 }
+
 </style>
