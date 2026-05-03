@@ -18,7 +18,12 @@
     <img class="side-art side-art--right" src="/images/free-pal.svg" alt="" aria-hidden="true" />
 
     <!-- Varning logo bottom-left overlay -->
-    <img class="side-art side-art--left" src="/images/logoVarning.svg" alt="" aria-hidden="true" />
+    <img
+      class="side-art side-art--left"
+      src="/images/logoVarning1.svg"
+      alt="logo-varning"
+      aria-hidden="true"
+    />
 
     <!-- <div class="overlay">
       <router-link to="/festival" class="cta-link">

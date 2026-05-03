@@ -101,7 +101,7 @@ const TOUR_DETAILS = {
       {
         date: '16.06.2026',
         city: 'Stockholm, Sweden',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-sthlm-june.jpg',
       },
       {
         date: '17.06.2026',
@@ -111,7 +111,7 @@ const TOUR_DETAILS = {
       {
         date: '18.06.2026',
         city: 'Göteborg, Sweden',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-gothemburg.jpg',
       },
       {
         date: '20.06.2026',
@@ -121,12 +121,12 @@ const TOUR_DETAILS = {
       {
         date: '23.06.2026',
         city: 'Hamburg, Germany',
-        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-hamburg.jpg',
       },
       {
         date: '24.06.2026',
         city: 'Bremen, Germany',
-        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-bremmen.jpg',
       },
       {
         date: '25.06.2026',

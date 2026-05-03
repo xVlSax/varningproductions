@@ -3,7 +3,7 @@
     <div class="events-wrap">
       <!-- Events -->
       <h2 class="events-title">Events</h2>
-      <div class="flyers-grid events-main-grid">
+      <!-- <div class="flyers-grid events-main-grid">
         <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card events-main-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
@@ -13,7 +13,7 @@
             </picture>
           </button>
         </article>
-      </div>
+      </div> -->
 
       <!-- Upcoming Events-->
       <h3 class="events-subtitle">Upcoming Events</h3>

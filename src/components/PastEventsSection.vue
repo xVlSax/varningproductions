@@ -48,6 +48,8 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
+        { src: '/images/events/past/events/varning-benefit-may.jpg', alt: 'varning benefit show' },
+        { src: '/images/events/past/events/dishonor-stockholm-2026.jpg', alt: 'Dishonor' },
         { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
         { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
         { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
