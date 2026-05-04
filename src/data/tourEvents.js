@@ -86,7 +86,7 @@ const TOUR_DETAILS = {
       {
         date: '12.06.2026',
         city: 'Riga, Latvia',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-riga.jpg',
       },
       {
         date: '13.06.2026',
@@ -150,6 +150,52 @@ const TOUR_DETAILS = {
       { type: 'text', text: '.' },
     ],
   },
+  'languid-tour': {
+    slug: 'languid-tour',
+    title: 'LANGUID',
+    subtitle: 'THE ROAD TO HELL STARTS WITH BEER - SCANDINAVIA/GERMANY TOUR',
+    date: 'OCTOBER 2026',
+    alt: 'Languid Tour flyer',
+    image: '/images/events/upcoming/tours/languid/languid-tour-poster.jpg',
+    intro:
+      'Varning Productions is super stoked to announce its next tour with D-beat/hardcore punk band from Edmonton, Canada LANGUID!',
+    paragraphs: [
+      'Do not miss them in your city they will blow your brains out!!',
+      'It’s gonna be another fucking rager so share it, invite your friends and see you there!!',
+    ],
+    routing: [
+      {
+        date: '15.10.2026',
+        city: 'Uppsala, Sweden',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+      },
+      {
+        date: '16.10.2026',
+        city: 'Stockholm, Sweden',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+      },
+      {
+        date: '17.10.2026',
+        city: 'Gothemburg, Sweden',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+      },
+      {
+        date: '18.10.2026',
+        city: 'Copenhagen, Denmark',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
+      },
+      {
+        date: '20.10.2026',
+        city: 'Berlin, Germany',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+      },
+    ],
+    footnoteParts: [
+      { type: 'text', text: 'Check more about ' },
+      { type: 'band', label: 'Languid', slug: 'languid' },
+      { type: 'text', text: '.' },
+    ],
+  },
 }
 
 const toCard = (slug) => {
@@ -170,7 +216,7 @@ const toCard = (slug) => {
 }
 
 const TOUR_HERO_SLUGS = ['dhk-tour']
-const UPCOMING_TOUR_SLUGS = ['dhk-tour']
+const UPCOMING_TOUR_SLUGS = ['dhk-tour', 'languid-tour']
 
 export const TOUR_HEROES = TOUR_HERO_SLUGS.map(toCard).filter(Boolean)
 export const UPCOMING_TOURS = UPCOMING_TOUR_SLUGS.map(toCard).filter(Boolean)
