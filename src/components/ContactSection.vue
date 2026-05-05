@@ -29,7 +29,6 @@
       <div class="space-y-1">
         <span class="material-icons text-base">phone</span>
         <p class="text-base">+1 (514) 755-9317</p>
-        <p class="text-base">+46 073 875 7797</p>
       </div>
       <div class="space-y-1">
         <span class="material-icons text-base">email</span>

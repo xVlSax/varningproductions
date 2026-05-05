@@ -29,21 +29,6 @@ const TOUR_DETAILS = {
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
       },
       {
-        date: '29.05.2026',
-        city: 'Denia, Spain',
-        flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
-      },
-      {
-        date: '30.05.2026',
-        city: 'Barcelona, Cataluna',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
-      },
-      {
-        date: '31.05.2026',
-        city: 'Lleida, Spain',
-        flyer: '/images/events/upcoming/tours/dhk/events/dhk-lleida.jpg',
-      },
-      {
         date: '02.06.2026',
         city: 'Dresden, Germany',
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
@@ -74,7 +59,7 @@ const TOUR_DETAILS = {
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
       },
       {
-        date: '09.06.2026',
+        date: '10.06.2026',
         city: 'Kaunas, Lithuania',
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
       },
@@ -96,7 +81,7 @@ const TOUR_DETAILS = {
       {
         date: '14.06.2026',
         city: 'Helsinki, Finland',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-helsinki.jpg',
       },
       {
         date: '16.06.2026',
@@ -106,7 +91,7 @@ const TOUR_DETAILS = {
       {
         date: '17.06.2026',
         city: 'Oslo, Norway',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-oslo.jpg',
       },
       {
         date: '18.06.2026',
@@ -116,7 +101,7 @@ const TOUR_DETAILS = {
       {
         date: '20.06.2026',
         city: 'Berlin, Germany',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-berlin.jpg',
       },
       {
         date: '23.06.2026',
