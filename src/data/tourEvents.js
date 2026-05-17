@@ -16,7 +16,7 @@ const TOUR_DETAILS = {
       {
         date: '26.05.2026',
         city: 'Zaragoza, Spain',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-zaragoza.jpg',
       },
       {
         date: '27.05.2026',
@@ -27,6 +27,16 @@ const TOUR_DETAILS = {
         date: '28.05.2026',
         city: 'Madrid, Spain',
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+      },
+      {
+        date: '29.05.2026',
+        city: 'Vigo, Spain',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-vigo.jpg',
+      },
+      {
+        date: '30.05.2026',
+        city: 'Lisbon, Portugal',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-lisbon.jpg',
       },
       {
         date: '02.06.2026',
@@ -41,7 +51,7 @@ const TOUR_DETAILS = {
       {
         date: '04.06.2026',
         city: 'Vienna, Austria',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-vienna.jpg',
       },
       {
         date: '05.06.2026',
@@ -66,7 +76,7 @@ const TOUR_DETAILS = {
       {
         date: '11.06.2026',
         city: 'Vilnius, Lithuania',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-vilnus.jpg',
       },
       {
         date: '12.06.2026',
