@@ -35,6 +35,7 @@ const BAND_PROFILES = {
     name: 'Languid',
     heroImage: '/images/artists/languid/languid.jpg',
     heroAlt: 'Languid tour artwork',
+    heroObjectPosition: 'center 28%',
     meta: ['RAW FEROCIOUS D-BEAT HARDCORE PUNK', 'EDMONTON-CANADA'],
     socials: [
       { label: 'Facebook', icon: 'fa fa-facebook', href: '' },

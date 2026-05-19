@@ -20,8 +20,8 @@ const TOUR_DETAILS = {
       },
       {
         date: '27.05.2026',
-        city: 'Bilbao, Basque Country',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        city: 'Santander, Spain',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-santander.jpg',
       },
       {
         date: '28.05.2026',
@@ -39,14 +39,19 @@ const TOUR_DETAILS = {
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-lisbon.jpg',
       },
       {
+        date: '31.05.2026',
+        city: 'Valladolid, Spain',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-vallodolid.jpg',
+      },
+      {
         date: '02.06.2026',
         city: 'Dresden, Germany',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-dresden.jpg',
       },
       {
         date: '03.06.2026',
         city: 'Brno, Czech',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-brno.jpg',
       },
       {
         date: '04.06.2026',
@@ -65,7 +70,7 @@ const TOUR_DETAILS = {
       },
       {
         date: '07.06.2026',
-        city: 'Bialystok, Poland',
+        city: 'Lublin, Poland',
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
       },
       {

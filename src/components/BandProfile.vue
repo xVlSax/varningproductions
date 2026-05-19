@@ -7,6 +7,7 @@
         <img
           :src="band.heroImage"
           :alt="band.heroAlt || band.name"
+          :style="{ objectPosition: band.heroObjectPosition || 'center center' }"
           loading="lazy"
           decoding="async"
         />
