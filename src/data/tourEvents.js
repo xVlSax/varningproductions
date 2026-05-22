@@ -71,7 +71,7 @@ const TOUR_DETAILS = {
       {
         date: '07.06.2026',
         city: 'Lublin, Poland',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-lublin.jpg',
       },
       {
         date: '10.06.2026',
@@ -91,7 +91,7 @@ const TOUR_DETAILS = {
       {
         date: '13.06.2026',
         city: 'Tallin, Estonia',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-tallin.jpg',
       },
       {
         date: '14.06.2026',
@@ -131,7 +131,7 @@ const TOUR_DETAILS = {
       {
         date: '25.06.2026',
         city: 'Hannover, Germany',
-        // flyer: '/images/events/upcoming/tours/wk/stockholm.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-hannover.jpg',
       },
       {
         date: '26.06.2026',
