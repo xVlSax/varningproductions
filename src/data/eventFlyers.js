@@ -222,9 +222,9 @@ export const UPCOMING_EVENTS_FLYERS = [
               heading: 'FACEBOOK EVENT:',
               items: [
                 {
-                  // name: 'https://fb.me/e/1YKuINmgo3',
+                  name: 'https://fb.me/e/4APoq2Gip',
                   // meta: ' crust punk ',
-                  // href: 'https://fb.me/e/1YKuINmgo3',
+                  href: 'https://fb.me/e/4APoq2Gip',
                 },
               ],
             },

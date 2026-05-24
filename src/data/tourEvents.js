@@ -74,6 +74,11 @@ const TOUR_DETAILS = {
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-lublin.jpg',
       },
       {
+        date: '08.06.2026',
+        city: 'Białystok, Poland',
+        //flyer: '/images/events/upcoming/tours/dhk/events/dhk-lublin.jpg',
+      },
+      {
         date: '09.06.2026',
         city: 'Kaunas, Lithuania',
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-kaunas.jpg',
