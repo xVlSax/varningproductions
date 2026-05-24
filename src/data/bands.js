@@ -30,6 +30,7 @@ const BAND_PROFILES = {
       'With political lyrics and songs, they have had the chance to tour and experience different punk scenes around the world. With several independent releases under their belt, today they are more alive than ever!',
     ],
   },
+  // laguid band
   languid: {
     slug: 'languid',
     name: 'Languid',
