@@ -1,75 +1,4 @@
 export const EVENTS_FLYERS = [
-  // {
-  //   src: '/images/events/upcoming/events/dishonor-stockholm-2026.jpg',
-  //   alt: 'dishonor-stockholm',
-  //   modalDetails: {
-  //     title: 'DISHÖNOR + DOWNWINDER + SEKATÖR',
-  //     subtitle: '@KAFE 44 - 21 April 2026',
-  //     sections: [
-  //       {
-  //         // title: 'Event Description',
-  //         paragraphs: ['VARNING PRODUCTIONS PRESENTERAR!'],
-  //       },
-  //       {
-  //         // title: 'Bands + Links',
-  //         groups: [
-  //           {
-  //             heading: 'FRÅN GREKLAND:',
-  //             items: [
-  //               {
-  //                 name: 'DISHÖNOR',
-  //                 meta: 'd-beat crust',
-  //                 href: 'https://dishonorcrust.bandcamp.com/album/s-t',
-  //               },
-  //               {
-  //                 name: 'DOWNWINDER',
-  //                 meta: 'crust death',
-  //                 href: 'https://downwinder.bandcamp.com/album/claws-of-despair-2',
-  //               },
-  //               {},
-  //             ],
-  //           },
-  //           {
-  //             heading: 'MED LOKALA:',
-  //             items: [
-  //               {
-  //                 name: 'SEKATÖR',
-  //                 meta: 'crust punk',
-  //                 href: 'https://sekateur.bandcamp.com/album/evigt-f-rd-md',
-  //               },
-  //               {},
-  //             ],
-  //           },
-  //           {
-  //             heading: 'FACEBOOK EVENT:',
-  //             items: [
-  //               {
-  //                 name: 'https://fb.me/e/4fdSFMlzF',
-  //                 // meta: ' crust punk ',
-  //                 href: 'https://fb.me/e/4fdSFMlzF',
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         // title: 'Location + Price + More Info',
-  //         paragraphs: [
-  //           '----------------------------------',
-  //           'KAFÉ 44 | TJÄRHOVSGATAN 46',
-  //           'DÖRRAR: 19:00 ',
-  //           '100 KR (SWISH/KONTANTER)',
-  //           'ALLA ÅLDRAR',
-  //           'NO FASCISTS * NO RACISTS * NO SEXISTS * NO TRANSPHOBES * NO BULLSHIT!',
-  //           'UP THE PUNX!',
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // },
-]
-
-export const UPCOMING_EVENTS_FLYERS = [
   {
     src: '/images/events/upcoming/events/dhk-sthlm-june.jpg',
     alt: 'dhk-tour-show-stockholm',
@@ -139,6 +68,9 @@ export const UPCOMING_EVENTS_FLYERS = [
       ],
     },
   },
+]
+
+export const UPCOMING_EVENTS_FLYERS = [
   {
     src: '/images/events/upcoming/events/varning-benefit-july.jpg',
     alt: 'varning-benefit-show-montreal',
@@ -217,6 +149,95 @@ export const UPCOMING_EVENTS_FLYERS = [
             '20 $',
             'FIRST BAND AT 8',
             'FLYER BY @ghastly_mcnasty',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    slug: 'd-beat-massacre-over-stockholm',
+    src: '/images/events/upcoming/events/languid-sthml.jpg',
+    alt: 'languid-meanwhile-paranoid-dissekerad-svaveldioxid-nagasaki-stockholm-show',
+    modalDetails: {
+      title: 'D-BEAT MASSACRE OVER STOCKHOLM',
+      subtitle: '@HUS 7 - OCTOBER 16TH 2026',
+      ticketLink: {
+        label: 'BUY TICKET',
+        href: 'https://thepointofsale.com/tickets/py4261016001/',
+      },
+      sections: [
+        {
+          // title: 'Event Description',
+          paragraphs: [
+            `VARNING PRODUCTIONS PRESENT! D-BEAT MASSACRE OVER STOCKHOLM`,
+            `Varning Productions is extremely stoked to announce this kick ass Stockholm show with this killer line up!!`,
+            `LANGUID's first show of their "The Road to Hell starts with Beer" tour! LANGUID will only be playing 4 shows in Scandinavia and one in Berlin, don't miss them! Other shows will be announced soon.`,
+            `Also, first MEANWHILE show in Stockholm in 10 years, don't miss them!`,
+          ],
+        },
+        {
+          // title: 'Bands + Links',
+          groups: [
+            {
+              heading: '',
+              items: [
+                {
+                  name: 'MEANWHILE',
+                  meta: '',
+                  href: 'https://www.youtube.com/watch?v=qxgtYj-g1II&list=RDqxgtYj-g1II&start_radio=1',
+                },
+                {
+                  name: 'LANGUID',
+                  meta: '',
+                  href: 'https://languidpunk.bandcamp.com/album/shove-their-system-up-their-ass-lp',
+                },
+                {
+                  name: 'PARANOID',
+                  meta: '',
+                  href: 'https://pndftw.bandcamp.com/album/destroy-future-less-system-ep',
+                },
+                {
+                  name: 'DISSEKERAD',
+                  meta: '',
+                  href: 'https://phobiarecords.bandcamp.com/album/dissekerad-inre-strid-lp',
+                },
+                {
+                  name: 'SVAVELDIOXID',
+                  meta: '',
+                  href: 'https://svaveldioxid.bandcamp.com/album/mis-r-o-d-3',
+                },
+                {
+                  name: 'NAGASAKI',
+                  meta: '',
+                  href: 'https://nagasakirapunk.bandcamp.com/album/e-p',
+                },
+                {},
+              ],
+            },
+            {
+              heading: '',
+              items: [{}],
+            },
+            {
+              heading: 'FACEBOOK EVENT:',
+              items: [
+                {
+                  // name: 'https://fb.me/e/1YKuINmgo3',
+                  // meta: ' crust punk ',
+                  // href: 'https://fb.me/e/1YKuINmgo3',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          // title: 'Location + Price + More Info',
+          paragraphs: [
+            '----------------------------------',
+            'HUS 7 | Styckmästargatan 10, 12162 Stockholm',
+            'DOORS: 18:00',
+            '350 kr',
+            'SHOW 19:00',
           ],
         },
       ],

@@ -39,6 +39,16 @@
                 {{ stop.city }}
               </button>
               <span v-else>{{ stop.city }}</span>
+              <template v-if="stop.links?.length">
+                <RouterLink
+                  v-for="link in stop.links"
+                  :key="link.label"
+                  class="routing-event-link"
+                  :to="link.route"
+                >
+                  {{ link.label }}
+                </RouterLink>
+              </template>
             </template>
           </li>
         </ul>
@@ -244,6 +254,22 @@ onBeforeUnmount(() => {
 
 .routing-city-button:hover {
   color: #ef4444;
+}
+
+.routing-event-link {
+  display: inline-block;
+  margin-left: 0.75rem;
+  color: #ef4444;
+  font-family: 'Staatliches', sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.routing-event-link:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .event-footnote-link {

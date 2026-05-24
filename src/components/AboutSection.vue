@@ -104,13 +104,13 @@
           <h5 class="sub-title">VLAD SANT</h5>
           <p class="profile-info">
             From Lima, Peru, Vlad has been involved in the punk scene since his early teens, playing
-            in bands, organizing shows and touring across South America. He moved to Stockholm over
-            many years ago, where he continued playing and supporting the DIY punk community while
-            also expanding his technical expertise. Vlad has developed strong IT skills, working
-            with coding, internet platforms, and IT solutions for companies. He has recently joined
-            the Varning Productions team and his skills makes him a particularly great asset and
-            will ensure its presence on the net as well as taking care of the technical and
-            logistical aspects of management.
+            in bands, organizing shows, booking and touring across South America. He moved to
+            Stockholm over many years ago, where he continued playing and supporting the DIY punk
+            community while also expanding his technical expertise. Vlad has developed strong IT
+            skills, working with coding, web platforms, and IT solutions. He has joined the Varning
+            Productions team and his skills makes him a particularly great asset and will ensure its
+            presence on the net as well as taking care of the technical and logistical aspects of
+            management.
           </p>
         </div>
       </article>

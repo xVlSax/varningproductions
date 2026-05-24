@@ -74,9 +74,9 @@ const TOUR_DETAILS = {
         flyer: '/images/events/upcoming/tours/dhk/events/dhk-lublin.jpg',
       },
       {
-        date: '10.06.2026',
+        date: '09.06.2026',
         city: 'Kaunas, Lithuania',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/dhk/events/dhk-kaunas.jpg',
       },
       {
         date: '11.06.2026',
@@ -172,7 +172,16 @@ const TOUR_DETAILS = {
       {
         date: '16.10.2026',
         city: 'Stockholm, Sweden',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/languid/events/languid-sthml.jpg',
+        links: [
+          {
+            label: 'Event Ticket',
+            route: {
+              path: '/events',
+              query: { event: 'd-beat-massacre-over-stockholm' },
+            },
+          },
+        ],
       },
       {
         date: '17.10.2026',

@@ -3,6 +3,15 @@
     <header class="modal-event-header">
       <h2 class="modal-event-title">{{ details.title }}</h2>
       <h3 v-if="details.subtitle" class="modal-event-subtitle">{{ details.subtitle }}</h3>
+      <a
+        v-if="details.ticketLink"
+        class="modal-event-ticket-link"
+        :href="details.ticketLink.href"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {{ details.ticketLink.label }}
+      </a>
     </header>
 
     <div class="modal-event-body">
@@ -91,6 +100,28 @@ defineProps({
   letter-spacing: 0.14em;
   line-height: 1.1;
   text-transform: uppercase;
+}
+
+.modal-event-ticket-link {
+  display: inline-block;
+  margin-top: 0.95rem;
+  padding: 0.62rem 1rem;
+  background: #ef4444;
+  color: #050505;
+  border: 1px solid #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.22);
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.modal-event-ticket-link:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #050505;
 }
 
 .modal-event-body {

@@ -3,7 +3,7 @@
     <div class="events-wrap">
       <!-- Events -->
       <h2 class="events-title">Events</h2>
-      <!-- <div class="flyers-grid events-main-grid">
+      <div class="flyers-grid events-main-grid">
         <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card events-main-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
@@ -13,7 +13,7 @@
             </picture>
           </button>
         </article>
-      </div> -->
+      </div>
 
       <!-- Upcoming Events-->
       <h3 class="events-subtitle">Upcoming Events</h3>
@@ -91,13 +91,38 @@ export default {
       document.documentElement.classList.add('no-scroll')
       window.addEventListener('keydown', this.onKey)
     },
+    openModalBySlug(slug) {
+      if (!slug) return
+
+      const event = [...this.eventsFlyers, ...this.upcomingEventsFlyers].find((flyer) => {
+        return flyer.slug === slug
+      })
+
+      if (event) {
+        this.openModal(event)
+      }
+    },
     closeModal() {
       this.isModalOpen = false
       document.documentElement.classList.remove('no-scroll')
       window.removeEventListener('keydown', this.onKey)
+
+      if (this.$route.query.event) {
+        const query = { ...this.$route.query }
+        delete query.event
+        this.$router.replace({ path: this.$route.path, query })
+      }
     },
     onKey(e) {
       if (e.key === 'Escape') this.closeModal()
+    },
+  },
+  mounted() {
+    this.openModalBySlug(this.$route.query.event)
+  },
+  watch: {
+    '$route.query.event'(slug) {
+      this.openModalBySlug(slug)
     },
   },
   beforeUnmount() {
