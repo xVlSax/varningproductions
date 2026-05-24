@@ -190,7 +190,7 @@ const TOUR_DETAILS = {
       },
       {
         date: '17.10.2026',
-        city: 'Gothemburg, Sweden',
+        city: 'Göteborg, Sweden',
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
       },
       {
