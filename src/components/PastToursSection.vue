@@ -48,6 +48,7 @@ export default {
   data() {
     return {
       pastTourFlyers: [
+        { src: '/images/events/past/tours/new-dhk.jpg', alt: 'dhk-eu-tour' },
         { src: '/images/events/past/tours/warkrusher.jpg', alt: 'warkrusher-eu-tour' },
         { src: '/images/events/past/tours/traume.jpg', alt: 'traume-na-tour' },
         { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },

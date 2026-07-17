@@ -10,7 +10,7 @@
 
       <!-- Intro Text -->
       <div class="festival-font text-center text-gray-200 space-y-2">
-        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2025</h3>
+        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2026</h3>
         <h4 class="text-lg md:text-xl">
           Tickets/passes are available
           <a

@@ -92,24 +92,6 @@
             </picture>
           </router-link>
         </div>
-
-        <!-- Tickets -->
-        <!-- <h4 class="text-lg md:text-xl">
-          Tickets/passes are available
-          <a
-            href="https://thepointofsale.com/tickets/py4250911001"
-            target="_blank"
-            class="underline"
-            >here</a
-          >
-        </h4> -->
-
-        <!-- Things to do -->
-        <!-- <h4 class="text-lg md:text-xl">
-          Things to
-          <router-link to="/things" class="underline">do</router-link>
-          in Montreal
-        </h4> -->
       </div>
     </div>
   </section>

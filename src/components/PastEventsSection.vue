@@ -48,6 +48,8 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
+        { src: '/images/events/past/events/varning-benefit-july.jpg', alt: 'varning benefit show' },
+        { src: '/images/events/past/events/dhk-sthlm-june.jpg', alt: 'dhk stockholm show' },
         { src: '/images/events/past/events/varning-benefit-may.jpg', alt: 'varning benefit show' },
         { src: '/images/events/past/events/dishonor-stockholm-2026.jpg', alt: 'Dishonor' },
         { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },

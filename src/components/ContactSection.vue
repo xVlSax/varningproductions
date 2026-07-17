@@ -28,7 +28,7 @@
     <section class="footer-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center">
       <div class="space-y-1">
         <span class="material-icons text-base">phone</span>
-        <p class="text-base">+1 (514) 755-9317</p>
+        <p class="text-base"></p>
       </div>
       <div class="space-y-1">
         <span class="material-icons text-base">email</span>

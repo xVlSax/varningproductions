@@ -1,88 +1,25 @@
-export const EVENTS_FLYERS = [
-  {
-    src: '/images/events/upcoming/events/dhk-sthlm-june.jpg',
-    alt: 'dhk-tour-show-stockholm',
-    modalDetails: {
-      title: 'DHK + SEX DWARF + SØNDRA',
-      subtitle: '@BROTHER TUCK - JUNE 16th 2026',
-      sections: [
-        {
-          // title: 'Event Description',
-          paragraphs: [
-            'VARNING PRODUCTIONS PRESENTS!',
-            'DHK - PUNK ES PROTESTA EUROPEAN TOUR - SUMMER 2026',
-          ],
-        },
-        {
-          // title: 'Bands + Links',
-          groups: [
-            {
-              heading: 'FROM LIMA-PERU',
-              items: [
-                {
-                  name: 'DHK',
-                  meta: 'Plays ferocious d-beat hardcore ',
-                  href: 'https://dhk-hcpunk.bandcamp.com/album/haz-sentir-tu-odio',
-                },
-                {},
-              ],
-            },
-            {
-              heading: 'FROM STHLM',
-              items: [
-                {
-                  name: 'SEX DWARF',
-                  meta: 'Swedish Raw Punk/Kängpunk veterans',
-                  href: 'https://sexdwarf.bandcamp.com/album/p-hittad-v-rld-lp',
-                },
-                {
-                  name: 'SØNDRA',
-                  meta: 'Sthlm d-takt',
-                  href: 'https://sondrapunks.bandcamp.com/',
-                },
-                { name: '', meta: '', href: '' },
-              ],
-            },
-            {
-              heading: 'FACEBOOK EVENT:',
-              items: [
-                {
-                  name: 'https://fb.me/e/eq29wo84Y',
-                  href: 'https://fb.me/e/eq29wo84Y',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          // title: 'Location + Price + More Info',
-          paragraphs: [
-            '----------------------------------',
-            'BROTHER TUCK | Götgatan 85',
-            'DOORS: 7:00pm',
-            '150 KR',
-            'SHOW: 8:00pm',
-            'FLYER BY @limalofi',
-          ],
-        },
-      ],
-    },
-  },
-]
+export const EVENTS_FLYERS = []
 
 export const UPCOMING_EVENTS_FLYERS = [
+  //INDIANNIGHTMARE-NAGASAKI-STHLM
   {
-    src: '/images/events/upcoming/events/varning-benefit-july.jpg',
-    alt: 'varning-benefit-show-montreal',
+    slug: 'metal-punk-indian-nightmare-nagasaki-sunrise',
+    src: '/images/events/upcoming/events/indian-nagasaki-sthlm.jpg',
+    alt: 'indian-nightmare-nagasaki-sunrise-crutches-sex-dwarf-stockholm-show',
     modalDetails: {
-      title: 'BENEFIT GIG FOR VARNING XVIII VOL. II',
-      subtitle: '@FOUFOUNES ELECTRIQUES - JULY 4th 2026',
+      title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE NAGASAKI SUNRISE',
+      subtitle: '@HUS 7 - OCTOBER 2ND 2026',
+      // ticketLink: {
+      //   label: 'BUY TICKET',
+      //   href: 'https://thepointofsale.com/tickets/py4261016001/',
+      // },
       sections: [
         {
           // title: 'Event Description',
           paragraphs: [
-            'YOUTHOFNAUSEA & VARNING PRODUCTIONS PRESENT!',
-            'BENEFIT GIG FOR VARNING XVIII VOL. II',
+            `VARNING PRODUCTIONS PRESENT! METAL PUNK NIGHT`,
+            `Varning Productions is super stoked to announce the Stockholm show for Indian Nightmare and Nagasaki Sunrise!!`,
+            `Tickets will be on sale on August 15th 2026`,
           ],
         },
         {
@@ -92,34 +29,24 @@ export const UPCOMING_EVENTS_FLYERS = [
               heading: '',
               items: [
                 {
-                  name: 'WARKRUSHER',
+                  name: 'INDIAN NIGHTMARE (BERLIN)',
                   meta: '',
-                  href: 'https://inbattlethereisnosobriety.bandcamp.com/',
+                  href: 'https://indiannightmare.bandcamp.com/',
                 },
                 {
-                  name: 'EULOGY',
+                  name: 'NAGASAKI SUNRISE (PORTUGAL)',
                   meta: '',
-                  href: 'https://eulogy-crust.bandcamp.com/album/eulogy-demo-25',
+                  href: 'https://nagasakisunrise.bandcamp.com/album/distroyer',
                 },
                 {
-                  name: 'JAHANNAM',
+                  name: 'CRUTCHES (MALMÖ)',
                   meta: '',
-                  href: '',
+                  href: 'https://crutches666.bandcamp.com/',
                 },
                 {
-                  name: 'WILLFULL NEGLECT',
+                  name: 'SEX DWARF (STOCKHOLM)',
                   meta: '',
-                  href: 'https://2025.demo-fest.org/neglect-keychain/',
-                },
-                {
-                  name: 'TRAUMATIC STATE',
-                  meta: '',
-                  href: 'https://youtu.be/prUxnQ1e1-I?si=OCrk2r-IzpDeyDec',
-                },
-                {
-                  name: 'BOWLER',
-                  meta: '',
-                  href: 'https://bowlerbowler.bandcamp.com/album/demo',
+                  href: 'https://sexdwarf.bandcamp.com/',
                 },
                 {},
               ],
@@ -128,32 +55,33 @@ export const UPCOMING_EVENTS_FLYERS = [
               heading: '',
               items: [{}],
             },
-            {
-              heading: 'FACEBOOK EVENT:',
-              items: [
-                {
-                  name: 'https://fb.me/e/1YKuINmgo3',
-                  // meta: ' crust punk ',
-                  href: 'https://fb.me/e/1YKuINmgo3',
-                },
-              ],
-            },
+            // {
+            //   heading: 'FACEBOOK EVENT:',
+            //   items: [
+            //     {
+            //       name: 'https://fb.me/e/4APoq2Gip',
+            //       // meta: ' crust punk ',
+            //       href: 'https://fb.me/e/4APoq2Gip',
+            //     },
+            //   ],
+            // },
           ],
         },
         {
           // title: 'Location + Price + More Info',
           paragraphs: [
             '----------------------------------',
-            'CABARET FOUFS | 87 Rue Sainte-Catherine E',
-            'DOORS: AT 7',
-            '20 $',
-            'FIRST BAND AT 8',
-            'FLYER BY @ghastly_mcnasty',
+            'HUS 7 | Styckmästargatan 10, 12162 Stockholm',
+            'DOORS: 7PM',
+            '350 kr',
+            'SHOW 8PM',
           ],
         },
       ],
     },
   },
+
+  //LANGUID-MEANWHILE-STHLM
   {
     slug: 'd-beat-massacre-over-stockholm',
     src: '/images/events/upcoming/events/languid-sthml.jpg',
