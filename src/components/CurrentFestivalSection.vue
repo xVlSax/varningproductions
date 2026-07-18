@@ -1,24 +1,26 @@
 <template>
   <section id="festival" class="festival-container snap-start min-h-screen bg-black text-white">
     <div class="container mx-auto py-20 px-4 flex flex-col items-center gap-20">
-      <!-- Festival Logo -->
-      <img
-        src="/images/festival/VarningFestLogoPartXVIII.svg"
-        alt="Varning Fest Logo"
-        class="festival-resp w-full max-w-xl mb-10"
-      />
+      <div class="festival-countdown-hero">
+        <!-- Festival Logo -->
+        <img
+          src="/images/festival/VarningFestLogoPartXVIII.svg"
+          alt="Varning Fest Logo"
+          class="festival-logo"
+        />
 
-      <!-- Festival countdown -->
-      <section class="festival-countdown" :aria-label="countdownAriaLabel">
-        <p class="countdown-heading">Festival starts in</p>
-        <div class="countdown-grid">
-          <div v-for="unit in countdownUnits" :key="unit.label" class="countdown-unit">
-            <span class="countdown-value">{{ unit.value }}</span>
-            <span class="countdown-label">{{ unit.label }}</span>
+        <!-- Festival countdown -->
+        <section class="festival-countdown" :aria-label="countdownAriaLabel">
+          <p class="countdown-heading">Festival starts in</p>
+          <div class="countdown-grid">
+            <div v-for="unit in countdownUnits" :key="unit.label" class="countdown-unit">
+              <span class="countdown-value">{{ unit.value }}</span>
+              <span class="countdown-label">{{ unit.label }}</span>
+            </div>
           </div>
-        </div>
-        <p class="countdown-date">September 17, 2026 · 6:00 PM · Montreal</p>
-      </section>
+          <p class="countdown-date">September 17, 2026 · 6:00 PM · Montreal</p>
+        </section>
+      </div>
 
       <!-- Intro Text -->
       <div class="festival-font text-center text-gray-200 space-y-2">
@@ -362,8 +364,22 @@ const festivalFlyers = [
   padding-top: calc(50px + 1rem);
 }
 
+.festival-countdown-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 760px);
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.festival-logo {
+  display: block;
+  width: min(76vw, 630px);
+  height: auto;
+}
+
 .festival-countdown {
-  width: min(100%, 900px);
+  width: min(100%, 680px);
   text-align: center;
 }
 
@@ -401,7 +417,7 @@ const festivalFlyers = [
   right: calc(clamp(0.75rem, 3vw, 2.5rem) / -2 - 0.13em);
   color: #ff9800;
   font-family: 'Courier New', monospace;
-  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-size: clamp(2.1rem, 5.5vw, 4.5rem);
   font-weight: 700;
   line-height: 1;
 }
@@ -409,7 +425,7 @@ const festivalFlyers = [
 .countdown-value {
   color: #ff9800;
   font-family: 'Courier New', monospace;
-  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-size: clamp(2.1rem, 5.5vw, 4.5rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   line-height: 0.95;
@@ -433,17 +449,25 @@ const festivalFlyers = [
 }
 
 @media (max-width: 640px) {
+  .festival-countdown-hero {
+    gap: 2.25rem;
+  }
+
+  .festival-logo {
+    width: min(72vw, 310px);
+  }
+
   .countdown-grid {
     gap: 0.45rem;
   }
 
   .countdown-unit:not(:last-child)::after {
     right: -0.27em;
-    font-size: clamp(2rem, 11vw, 3.2rem);
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
   }
 
   .countdown-value {
-    font-size: clamp(2rem, 11vw, 3.2rem);
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
   }
 
   .countdown-label {

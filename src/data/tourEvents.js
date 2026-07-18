@@ -43,6 +43,11 @@ const TOUR_DETAILS = {
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
       },
       {
+        date: '19.10.2026',
+        city: 'Bremmen, Germany',
+        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
+      },
+      {
         date: '20.10.2026',
         city: 'Berlin, Germany',
         // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',

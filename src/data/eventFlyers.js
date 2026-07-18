@@ -7,7 +7,7 @@ export const UPCOMING_EVENTS_FLYERS = [
     src: '/images/events/upcoming/events/indian-nagasaki-sthlm.jpg',
     alt: 'indian-nightmare-nagasaki-sunrise-crutches-sex-dwarf-stockholm-show',
     modalDetails: {
-      title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE NAGASAKI SUNRISE',
+      title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE + NAGASAKI SUNRISE + CRUTCHES + SEX DWARF',
       subtitle: '@HUS 7 - OCTOBER 2ND 2026',
       // ticketLink: {
       //   label: 'BUY TICKET',
@@ -18,7 +18,7 @@ export const UPCOMING_EVENTS_FLYERS = [
           // title: 'Event Description',
           paragraphs: [
             `VARNING PRODUCTIONS PRESENT! METAL PUNK NIGHT`,
-            `Varning Productions is super stoked to announce the Stockholm show for Indian Nightmare and Nagasaki Sunrise!!`,
+            `Varning Productions is super stoked to announce the Stockholm show for Indian Nightmare and Nagasaki Sunrise with Crutches and Sex Dwarf!!`,
             `Tickets will be on sale on August 15th 2026`,
           ],
         },
@@ -55,16 +55,16 @@ export const UPCOMING_EVENTS_FLYERS = [
               heading: '',
               items: [{}],
             },
-            // {
-            //   heading: 'FACEBOOK EVENT:',
-            //   items: [
-            //     {
-            //       name: 'https://fb.me/e/4APoq2Gip',
-            //       // meta: ' crust punk ',
-            //       href: 'https://fb.me/e/4APoq2Gip',
-            //     },
-            //   ],
-            // },
+            {
+              heading: 'FACEBOOK EVENT:',
+              items: [
+                {
+                  name: 'https://fb.me/e/3CB36TqGe',
+                  // meta: ' metal punk ',
+                  href: 'https://fb.me/e/3CB36TqGe',
+                },
+              ],
+            },
           ],
         },
         {
@@ -73,7 +73,7 @@ export const UPCOMING_EVENTS_FLYERS = [
             '----------------------------------',
             'HUS 7 | Styckmästargatan 10, 12162 Stockholm',
             'DOORS: 7PM',
-            '350 kr',
+            '250 kr',
             'SHOW 8PM',
           ],
         },
@@ -151,7 +151,7 @@ export const UPCOMING_EVENTS_FLYERS = [
               items: [
                 {
                   name: 'https://fb.me/e/4APoq2Gip',
-                  // meta: ' crust punk ',
+                  // meta: ' d-beat crust raw punk ',
                   href: 'https://fb.me/e/4APoq2Gip',
                 },
               ],
