@@ -2,14 +2,14 @@
   <section id="artists" class="artists-root">
     <div class="artists-wrap">
       <div class="artists-title-wrap">
-        <h3 class="artists-title">Artists</h3>
+        <h3 class="artists-title">Bands</h3>
       </div>
 
       <div class="artists-grid">
         <RouterLink
           v-for="a in artists"
           :key="a.slug"
-          :to="`/artists/${a.slug}`"
+          :to="`/band-profile/${a.slug}`"
           class="artist-card"
           :aria-label="`Open artist page: ${a.name}`"
         >
@@ -31,7 +31,11 @@
 
 <script setup>
 const artists = [
-  { slug: 'abysmal-grief', name: 'ABYSMAL GRIEF', image: '/images/artists/abysmal-grief.jpg' },
+  {
+    slug: 'abysmal-grief',
+    name: 'ABYSMAL GRIEF',
+    image: '/images/bands/festival/bandname/dhk-profile.jpeg',
+  },
 ]
 </script>
 
@@ -70,7 +74,7 @@ const artists = [
 }
 
 .artists-title {
-  font-family: 'TypeWriter1', sans-serif;
+  font-family: 'VarningFromMtlWide', 'TypeWriter1', sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -102,18 +106,29 @@ const artists = [
 .artist-card {
   position: relative;
   display: block;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   background: rgba(20, 20, 20, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 0;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
   transform: translateZ(0);
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
     border-color 0.18s ease;
+}
+
+.artist-card::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background: url('/images/bands/Chain.svg') center / 100% 100% no-repeat;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.35));
+  pointer-events: none;
 }
 
 .artist-bg {
@@ -129,6 +144,7 @@ const artists = [
 
 .artist-overlay {
   position: absolute;
+  z-index: 2;
   inset: 0;
   display: grid;
   place-items: center;

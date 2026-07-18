@@ -77,3 +77,11 @@ body,
   src: url('/fonts/luckytypewriter.ttf') format('truetype');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'VarningFromMtlWide';
+  src: url('/fonts/VarningFromMtlWide.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

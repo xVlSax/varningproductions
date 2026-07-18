@@ -1,4 +1,14 @@
 const BAND_PROFILES = {
+  'abysmal-grief': {
+    slug: 'abysmal-grief',
+    name: 'Abysmal Grief',
+    heroImage: '/images/bands/festival/bandname/dhk-profile.jpeg',
+    heroAlt: 'Abysmal Grief band profile',
+    meta: [],
+    socials: [],
+    details: [],
+    bio: ['Band profile information coming soon.'],
+  },
   dhk: {
     slug: 'dhk',
     name: 'DHK',

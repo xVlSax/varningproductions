@@ -45,11 +45,12 @@
       <!-- COUNTDOWN -->
 
       <!-- Flyer Blocks -->
-      <div
-        v-for="(flyer, index) in festivalFlyers"
-        :key="index"
-        class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
-      >
+      <div id="lineup" class="festival-lineup-section">
+        <div
+          v-for="(flyer, index) in festivalFlyers"
+          :key="index"
+          class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
+        >
         <!-- Flyer Image with modern format fallbacks -->
         <picture>
           <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -74,20 +75,21 @@
         </div>
 
         <!-- Band Lineup -->
-        <ul
-          class="festival-lineup text-left w-full max-w-[900px] text-sm md:text-base text-gray-300 p-4 shadow-md rounded-lg"
-        >
-          <li
-            v-for="(band, i) in flyer.lineup"
-            :key="i"
-            class="flex justify-between items-center border-b border-gray-700 py-1 last:border-none"
+          <ul
+            class="festival-lineup text-left w-full max-w-[900px] text-sm md:text-base text-gray-300 p-4 shadow-md rounded-lg"
           >
-            <a :href="band.link" target="_blank" class="band-font">
-              {{ band.name }}
-            </a>
-            <span class="festival-font text-gray-400">{{ band.time }}</span>
-          </li>
-        </ul>
+            <li
+              v-for="(band, i) in flyer.lineup"
+              :key="i"
+              class="flex justify-between items-center border-b border-gray-700 py-1 last:border-none"
+            >
+              <a :href="band.link" target="_blank" class="band-font">
+                {{ band.name }}
+              </a>
+              <span class="festival-font text-gray-400">{{ band.time }}</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -381,6 +383,15 @@ const festivalFlyers = [
 .festival-countdown {
   width: min(100%, 680px);
   text-align: center;
+}
+
+.festival-lineup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5rem;
+  scroll-margin-top: 72px;
 }
 
 .countdown-heading,

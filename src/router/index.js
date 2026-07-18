@@ -4,6 +4,7 @@ import HomeSection from '@/components/HomeSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import FestivalSection from '@/components/FestivalSection.vue'
 import CurrentFestivalSection from '@/components/CurrentFestivalSection.vue'
+import FestivalLineupSection from '@/components/FestivalLineupSection.vue'
 import PastFestivalSection from '@/components/PastFestivalSection.vue'
 import ToursSection from '@/components/ToursSection.vue'
 import PastToursSection from '@/components/PastToursSection.vue'
@@ -57,6 +58,16 @@ const routes = [
       title: 'A Varning From Montreal Festival – Varning Productions',
       description: 'Official lineup, flyers, and ticket info for A Varning From Montreal Festival.',
       canonical: 'https://www.varningproductions.com/#/festival',
+    },
+  },
+  {
+    path: '/festival-lineup',
+    name: 'Festival Lineup',
+    component: FestivalLineupSection,
+    meta: {
+      title: 'Festival 2026 Lineup – Varning Productions',
+      description: 'The 2026 A Varning From Montreal Festival lineup and band information.',
+      canonical: 'https://www.varningproductions.com/#/festival-lineup',
     },
   },
   {
@@ -123,14 +134,14 @@ const routes = [
     },
   },
   {
-    path: '/artist',
-    name: 'Artist',
+    path: '/bands',
+    name: 'Bands',
     component: ArtistSection,
     meta: {
-      title: 'Artist – Varning Productions',
+      title: 'Bands – Varning Productions',
       description:
         'Get in touch with Varning Productions for bookings, collaborations, and festival info.',
-      canonical: 'https://www.varningproductions.com/#/artist',
+      canonical: 'https://www.varningproductions.com/#/bands',
     },
   },
   {
@@ -180,6 +191,13 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, top: 72, behavior: 'smooth' }
+    }
+
+    return { top: 0 }
+  },
 })
 
 export default router
