@@ -10,37 +10,37 @@
 
       <!-- Intro Text -->
       <div class="festival-font text-center text-gray-200 space-y-4 festival-text-wrap">
-        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival</h3>
+        <!-- <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival</h3> -->
 
         <!-- Description text -->
         <div class="festival-description">
           <p :class="['festival-paragraph', { 'is-collapsed': !expanded }]">
-            <strong>A VARNING</strong> isn’t just another punk festival — it’s one of the
-            longest-running international gatherings for underground punk, D.I.Y. culture, and
-            community connection. Since its first edition in 2007, the festival has brought together
-            punks, friends, and music lovers from across the globe to celebrate what kept the scene
-            alive: raw sound, shared values, and real friendships. <br /><br />
+            <strong>A VARNING FROM MONTREAL FESTIVAL</strong> isn’t just another punk festival, it’s
+            one of the longest-running international gatherings for underground punk, D.I.Y culture,
+            and community connection. Since its first edition in 2007, the festival has brought
+            together punks, friends, and music lovers from across the globe to celebrate what kept
+            the scene alive: raw sound, shared values, and real friendships. <br /><br />
             Each edition of<strong> A VARNING FROM MONTREAL FESTIVAL</strong> lasts multiple days
-            and features <strong>bands from across the globe</strong> — past lineups have included
+            and features <strong>bands from across the globe</strong>, past lineups have included
             artists from
             <strong
               >Japan, Russia, Sweden, Norway, Mexico, Cuba, Panama, Colombia, Chile, France, Spain,
-              Italy, Germany, Portugal, Poland, UK, Australia, USA, and Canada.</strong
+              Italy, Germany, Portugal, Poland, Finland, UK, Australia, USA, and Canada.</strong
             >
             <br /><br />
             The festival is organized by <strong>Varning Productions</strong>, which was put
             together by Janick with the festival’s launch in November 2007 and has since put on
             <strong>over 300 punk shows worldwide</strong>, building a network of artists and
-            organizers rooted in D.I.Y. practice. <br /><br />
+            organizers rooted in D.I.Y practice. <br /><br />
             A VARNING FESTIVAL is proudly <strong>inclusive</strong>. Respect, equality, and
-            openness are at its core — it’s a space where punks and people who identify with this
+            openness are at its core, it’s a space where punks and people who identify with this
             scene and who love loud music can feel welcome. The festival stands firmly
             <strong>against racism, fascism, sexism, homophobia, transphobia and exclusion</strong>
             of any kind, and works to make the scene safer and more accessible for everyone.
             <br /><br />
             <strong>Marking its 18th edition in 2026</strong>, the festival will once again bring
-            together international bands for three days of music, including matinee shows, a D.I.Y.
-            punk market, main shows, and aftershows — continuing a long-standing community tradition
+            together international bands for three days of music, including matinee shows, a D.I.Y
+            punk market, main shows, and aftershows, continuing a long-standing community tradition
             within Montreal’s underground scene. <br /><br />
             Here’s some bands that have played A VARNING FROM MONTREAL FESTIVAL:
             <br /><br />

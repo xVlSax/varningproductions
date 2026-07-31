@@ -3,12 +3,17 @@
     <nav id="navbar" class="nav-root">
       <!-- Mobile top bar -->
       <div class="bar-mobile">
-        <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
+        <router-link to="/" class="logo-v" aria-label="Varning Productions home">
+          <svg class="navbar-wordmark" viewBox="0 0 1500 173" aria-hidden="true" focusable="false">
+            <text class="navbar-wordmark-text" transform="matrix(1.185 0 0 1.185 19.394 131.813)">
+              <tspan x="0" y="0">Varning Productions</tspan>
+            </text>
+          </svg>
+        </router-link>
         <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
           <i class="fa fa-bars"></i>
         </button>
       </div>
-
       <!-- Mobile dropdown -->
       <div v-if="isMenuOpen" class="mobile-menu">
         <div v-for="item in navItems" :key="item.id" class="mobile-nav-group">
@@ -47,18 +52,34 @@
       <!-- Desktop horizontal bar -->
       <div class="bar-desktop">
         <div class="desktop-container">
-          <router-link to="/" class="logo-v">VARNING PRODUCTIONS</router-link>
+          <router-link to="/" class="logo-v" aria-label="Varning Productions home">
+            <svg
+              class="navbar-wordmark"
+              viewBox="0 0 1500 173"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <text class="navbar-wordmark-text" transform="matrix(1.185 0 0 1.185 19.394 131.813)">
+                <tspan x="0" y="0">Varning Productions</tspan>
+              </text>
+            </svg>
+          </router-link>
           <div class="desktop-links">
             <div
               v-for="item in navItems"
               :key="item.id"
               class="desktop-nav-group"
-              :class="{ 'has-submenu': item.children }"
+              :class="{
+                'has-submenu': item.children,
+                'submenu-suppressed': closedDesktopSubmenu === item.id,
+              }"
+              @mouseleave="resetDesktopSubmenu(item.id)"
             >
               <router-link
                 :to="item.path"
                 class="nav-item"
                 :class="{ 'nav-item-active': isNavItemActive(item) }"
+                @click="item.children && closeDesktopSubmenu(item.id, $event)"
               >
                 <span>{{ item.label }}</span>
                 <i
@@ -74,6 +95,7 @@
                   :key="child.id"
                   :to="child.path"
                   class="desktop-submenu-link"
+                  @click="closeDesktopSubmenu(item.id, $event)"
                 >
                   {{ child.label }}
                 </router-link>
@@ -92,6 +114,7 @@ import { useRoute } from 'vue-router'
 
 const isMenuOpen = ref(false)
 const openMobileSubmenu = ref(null)
+const closedDesktopSubmenu = ref(null)
 const route = useRoute()
 
 const navItems = [
@@ -104,19 +127,18 @@ const navItems = [
     children: [
       { id: 'festival-overview', label: 'Festival', path: '/festival' },
       { id: 'festival-2026', label: 'Festival 2026', path: '/current-festival' },
-      {
-        id: 'festival-lineup',
-        label: 'Lineup',
-        path: '/festival-lineup',
-      },
+      // {
+      //   id: 'festival-lineup',
+      //   label: 'Lineup',
+      //   path: '/festival-lineup',
+      // },
       // { id: 'festival-bands', label: 'Bands', path: '/bands' },
+      { id: 'festival-things', label: 'Things To Do', path: '/things' },
     ],
   },
   { id: 'tours', label: 'Tours', path: '/tours' },
   { id: 'events', label: 'Events', path: '/events' },
   { id: 'services', label: 'Services', path: '/services' },
-  //{ id: 'artist', label: 'Artist', path: '/artist' },
-  // { id: 'things', label: 'ThingsToDo', path: '/things' },
   { id: 'contact', label: 'Contact', path: '/contact' },
 ]
 
@@ -127,6 +149,15 @@ const toggleMobileSubmenu = (id) => {
 const closeMenu = () => {
   isMenuOpen.value = false
   openMobileSubmenu.value = null
+}
+const closeDesktopSubmenu = (id, event) => {
+  closedDesktopSubmenu.value = id
+  event?.currentTarget?.blur()
+}
+const resetDesktopSubmenu = (id) => {
+  if (closedDesktopSubmenu.value === id) {
+    closedDesktopSubmenu.value = null
+  }
 }
 const isNavItemActive = (item) => {
   if (route.path === item.path) return true
@@ -139,6 +170,8 @@ watch(() => route.fullPath, closeMenu)
 
 <style scoped>
 .nav-root {
+  --nav-accent: #b6f500;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -173,12 +206,27 @@ watch(() => route.fullPath, closeMenu)
 }
 
 .logo-v {
-  font-family: 'Staatliches', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 1rem;
+}
+
+.navbar-wordmark {
+  display: block;
+  width: 10rem;
+  height: auto;
+}
+
+.navbar-wordmark-text {
+  fill: #000;
+  stroke: #fff;
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  font-family: 'VarningFromMtlWide', sans-serif;
+  font-size: 122px;
+  font-weight: 800;
+  paint-order: stroke fill;
 }
 
 .hamburger {
@@ -207,7 +255,8 @@ watch(() => route.fullPath, closeMenu)
   text-decoration: none;
 }
 .mobile-link:hover {
-  background: #b91c1c;
+  color: #101010;
+  background: var(--nav-accent);
 }
 
 .mobile-submenu-toggle {
@@ -250,7 +299,7 @@ watch(() => route.fullPath, closeMenu)
 
 .mobile-submenu-link:hover,
 .mobile-submenu-link.router-link-active {
-  color: #ef4444;
+  color: var(--nav-accent);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -278,6 +327,10 @@ watch(() => route.fullPath, closeMenu)
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 1rem;
+  }
+
+  .navbar-wordmark {
+    width: 10.75rem;
   }
 
   .desktop-links {
@@ -325,8 +378,8 @@ watch(() => route.fullPath, closeMenu)
   }
 
   .nav-item-active {
-    color: #ef4444;
-    border-bottom-color: #ef4444;
+    color: var(--nav-accent);
+    border-bottom-color: var(--nav-accent);
   }
 
   .desktop-chevron {
@@ -342,7 +395,7 @@ watch(() => route.fullPath, closeMenu)
     padding: 0.45rem;
     background: rgba(24, 24, 24, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 2px solid #ef4444;
+    border-top: 2px solid var(--nav-accent);
     border-radius: 0 0 0.35rem 0.35rem;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
     opacity: 0;
@@ -370,6 +423,13 @@ watch(() => route.fullPath, closeMenu)
     transform: translate(-50%, 0);
   }
 
+  .desktop-nav-group.submenu-suppressed .desktop-submenu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -0.35rem);
+    pointer-events: none;
+  }
+
   .desktop-nav-group:hover .desktop-chevron,
   .desktop-nav-group:focus-within .desktop-chevron {
     transform: rotate(180deg);
@@ -390,7 +450,7 @@ watch(() => route.fullPath, closeMenu)
 
   .desktop-submenu-link:hover,
   .desktop-submenu-link.router-link-active {
-    color: #ef4444;
+    color: var(--nav-accent);
     background: rgba(255, 255, 255, 0.06);
   }
 }

@@ -4,7 +4,6 @@
       <div class="artists-title-wrap">
         <h3 class="artists-title">Bands</h3>
       </div>
-
       <div class="artists-grid">
         <RouterLink
           v-for="a in artists"
@@ -15,7 +14,7 @@
         >
           <div
             class="artist-bg"
-            :style="{ backgroundImage: `url(${a.image})` }"
+            :style="a.image ? { backgroundImage: `url(${a.image})` } : undefined"
             role="img"
             :aria-label="a.name"
           />
@@ -30,13 +29,7 @@
 </template>
 
 <script setup>
-const artists = [
-  {
-    slug: 'abysmal-grief',
-    name: 'ABYSMAL GRIEF',
-    image: '/images/bands/festival/bandname/dhk-profile.jpeg',
-  },
-]
+import { festivalArtists as artists } from '@/data/bands'
 </script>
 
 <style scoped>
@@ -75,10 +68,22 @@ const artists = [
 
 .artists-title {
   font-family: 'VarningFromMtlWide', 'TypeWriter1', sans-serif;
+  font-weight: 800;
   letter-spacing: 0.08em;
+  line-height: 0.9;
   text-transform: uppercase;
   font-size: clamp(2.2rem, 5vw, 4rem);
+  color: #050505;
+  -webkit-text-fill-color: #050505;
+  -webkit-text-stroke: 5px #fff;
+  paint-order: stroke fill;
   margin: 0 0 1rem;
+}
+
+@media (max-width: 760px) {
+  .artists-title {
+    -webkit-text-stroke-width: 2px;
+  }
 }
 
 .artists-intro {
@@ -134,6 +139,9 @@ const artists = [
 .artist-bg {
   width: 100%;
   aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.11), transparent 42%),
+    repeating-linear-gradient(135deg, #181818 0 2px, #0b0b0b 2px 7px);
   background-size: cover;
   background-position: center;
   filter: grayscale(1) contrast(1.08) brightness(0.85);

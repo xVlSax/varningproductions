@@ -3,7 +3,7 @@
     <div class="band-profile-wrap">
       <!-- <RouterLink to="/tours" class="back-link">← Back to tours</RouterLink> -->
 
-      <picture class="band-hero">
+      <picture v-if="band.heroImage" class="band-hero">
         <img
           :src="band.heroImage"
           :alt="band.heroAlt || band.name"
@@ -14,7 +14,17 @@
       </picture>
 
       <header class="band-header">
-        <h1 class="band-title">{{ band.name }}</h1>
+        <h1 class="band-title">
+          <img
+            v-if="band.logoImage"
+            :src="band.logoImage"
+            :alt="band.logoAlt || `${band.name} logo`"
+            class="band-logo"
+            loading="eager"
+            decoding="async"
+          />
+          <span v-else>{{ band.name }}</span>
+        </h1>
         <p v-if="band.meta?.length" class="band-meta">
           <span v-for="(item, index) in band.meta" :key="`${item}-${index}`">
             <span v-if="index" class="band-meta-separator">|</span>{{ item }}
@@ -133,6 +143,14 @@ const band = computed(() => {
   letter-spacing: 0.05em;
   line-height: 0.95;
   text-transform: uppercase;
+}
+
+.band-logo {
+  display: block;
+  width: min(82vw, 650px);
+  max-height: 180px;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .band-meta {

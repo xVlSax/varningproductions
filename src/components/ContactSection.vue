@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen font-punk">
     <!-- Title -->
     <section class="contact-header footer-font w-full max-w-screen-xl mx-auto px-4 text-center">
-      <h1 class="text-8xl md:text-8xl tracking-widest drop-shadow-xl mb-2">CONTACT US</h1>
+      <h1 class="contact-title mb-2">CONTACT US</h1>
     </section>
 
     <!-- Framtid image -->
@@ -81,10 +81,26 @@
 </template>
 
 <style scoped>
-h1 {
-  color: #e1e1e1f5;
-  font-size: 1.8rem;
-  font-family: 'Defused', serif;
+.contact-title {
+  color: #050505;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-family: 'VarningFromMtlWide', 'Defused', serif;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  -webkit-text-fill-color: #050505;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 6px;
+  paint-order: stroke fill;
+  text-shadow: none;
+  filter: none;
+}
+
+@media (max-width: 760px) {
+  .contact-title {
+    font-size: clamp(2.25rem, 11vw, 4.5rem);
+    -webkit-text-stroke-width: 5px;
+  }
 }
 
 .contact-header {
@@ -92,7 +108,7 @@ h1 {
 }
 
 .contact-image-wrapper {
-  margin-top: 1.5rem;
+  margin-top: -1rem;
   margin-bottom: 2rem;
 }
 
@@ -174,7 +190,7 @@ footer .font-punk span.text-red-400 {
 
 @media (min-width: 1024px) {
   .contact-image-wrapper {
-    margin-top: 1.1rem;
+    margin-top: 0;
     margin-bottom: 1.35rem;
   }
 

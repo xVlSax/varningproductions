@@ -14,7 +14,23 @@
           <p class="countdown-heading">Festival starts in</p>
           <div class="countdown-grid">
             <div v-for="unit in countdownUnits" :key="unit.label" class="countdown-unit">
-              <span class="countdown-value">{{ unit.value }}</span>
+              <div class="countdown-value" aria-hidden="true">
+                <span
+                  v-for="(digit, digitIndex) in unit.value.split('')"
+                  :key="`${unit.label}-${digitIndex}`"
+                  class="digital-digit"
+                >
+                  <span
+                    v-for="segment in digitalSegments"
+                    :key="segment"
+                    class="digital-segment"
+                    :class="[
+                      `digital-segment--${segment}`,
+                      { 'is-active': isSegmentActive(digit, segment) },
+                    ]"
+                  ></span>
+                </span>
+              </div>
               <span class="countdown-label">{{ unit.label }}</span>
             </div>
           </div>
@@ -41,6 +57,11 @@
           </router-link>
           in Montreal
         </h4>
+        <!-- <h4 class="text-lg md:text-xl">
+          <router-link to="/festival-lineup" class="underline">Lineup</router-link>
+          <span aria-hidden="true"> · </span>
+          <router-link to="/bands" class="underline">Bands</router-link>
+        </h4> -->
       </div>
       <!-- COUNTDOWN -->
 
@@ -51,30 +72,30 @@
           :key="index"
           class="w-full max-w-4xl flex flex-col items-center text-center gap-4 animate-fade-in"
         >
-        <!-- Flyer Image with modern format fallbacks -->
-        <picture>
-          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-          <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
-          <img
-            :src="flyer.src"
-            :alt="flyer.alt"
-            loading="lazy"
-            decoding="async"
-            fetchpriority="low"
-            class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
-          />
-        </picture>
+          <!-- Flyer Image with modern format fallbacks -->
+          <picture>
+            <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
+            <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+            <img
+              :src="flyer.src"
+              :alt="flyer.alt"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+              class="w-full max-w-[900px] lg:max-h-[900px] object-contain rounded shadow"
+            />
+          </picture>
 
-        <!-- Event Info -->
-        <div class="festival-font text-sm md:text-base leading-relaxed">
-          <h3 class="text-xl md:text-2xl font-bold">
-            {{ flyer.title }}
-          </h3>
-          <p>{{ flyer.location }}</p>
-          <p>{{ flyer.details }}</p>
-        </div>
+          <!-- Event Info -->
+          <div class="festival-font text-sm md:text-base leading-relaxed">
+            <h3 class="text-xl md:text-2xl font-bold">
+              {{ flyer.title }}
+            </h3>
+            <p>{{ flyer.location }}</p>
+            <p>{{ flyer.details }}</p>
+          </div>
 
-        <!-- Band Lineup -->
+          <!-- Band Lineup -->
           <ul
             class="festival-lineup text-left w-full max-w-[900px] text-sm md:text-base text-gray-300 p-4 shadow-md rounded-lg"
           >
@@ -101,6 +122,22 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 const FESTIVAL_START = new Date('2026-09-17T18:00:00-04:00').getTime()
 const remainingTime = ref(Math.max(0, FESTIVAL_START - Date.now()))
 let countdownInterval
+
+const digitalSegments = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+const digitSegmentMap = {
+  0: ['a', 'b', 'c', 'd', 'e', 'f'],
+  1: ['b', 'c'],
+  2: ['a', 'b', 'd', 'e', 'g'],
+  3: ['a', 'b', 'c', 'd', 'g'],
+  4: ['b', 'c', 'f', 'g'],
+  5: ['a', 'c', 'd', 'f', 'g'],
+  6: ['a', 'c', 'd', 'e', 'f', 'g'],
+  7: ['a', 'b', 'c'],
+  8: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+  9: ['a', 'b', 'c', 'd', 'f', 'g'],
+}
+
+const isSegmentActive = (digit, segment) => digitSegmentMap[digit]?.includes(segment)
 
 const countdown = computed(() => {
   const totalSeconds = Math.floor(remainingTime.value / 1000)
@@ -138,227 +175,7 @@ onBeforeUnmount(() => {
   window.clearInterval(countdownInterval)
 })
 
-const festivalFlyers = [
-  // {
-  //   src: '/images/festival/flyers/MainPoster.jpg',
-  //   alt: 'Main Flyer',
-  //   title: '',
-  //   location: '',
-  //   details: '',
-  //   lineup: [],
-  // },
-  // {
-  //   src: '/images/festival/flyers/thursday-flyer.jpg',
-  //   alt: 'Thursday Flyer',
-  //   title: 'Thursday Show – September 11th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-  //   details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP!',
-  //   lineup: [
-  //     { name: 'Träume', time: '12:00 - 12:40am', link: 'https://traumepunk.bandcamp.com/' },
-  //     {
-  //       name: 'Beton Arme',
-  //       time: '11:10 - 11:45pm',
-  //       link: 'https://betonarmeoimtl.bandcamp.com/album/renaissance-2',
-  //     },
-  //     {
-  //       name: 'Extensive Slaughter',
-  //       time: '10:25 - 10:55pm',
-  //       link: 'https://extensiveslaughter.bandcamp.com/album/a-fated-demise',
-  //     },
-  //     {
-  //       name: 'Warkrusher',
-  //       time: '9:40 - 10:10pm',
-  //       link: 'https://inbattlethereisnosobriety.bandcamp.com/',
-  //     },
-  //     {
-  //       name: 'Shooting Pain',
-  //       time: '8:55 - 9:25pm',
-  //       link: 'https://shootingpain.bandcamp.com/album/demo-2024',
-  //     },
-  //     {
-  //       name: 'Schenectavoidz',
-  //       time: '8:10 - 8:40pm',
-  //       link: 'https://schenectavoidz.bandcamp.com/',
-  //     },
-  //     {
-  //       name: 'Spleen',
-  //       time: '7:30 - 7:55pm',
-  //       link: 'https://roachlegrecords.bandcamp.com/album/demo-14',
-  //     },
-  //   ],
-  // },
-  // {
-  //   src: '/images/festival/flyers/matine-friday-flyer.jpg',
-  //   alt: 'Friday Matine Show Flyer',
-  //   title: 'Friday Matine Show – September 12th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-  //   details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
-  //   lineup: [
-  //     {
-  //       name: 'Invertebrates',
-  //       time: '3:30 - 4:10pm',
-  //       link: 'https://beachimpedimentrecords.bandcamp.com/album/sick-to-survive',
-  //     },
-  //     {
-  //       name: 'Reaktöri',
-  //       time: '2:45 - 3:15pm',
-  //       link: 'https://reaktori.bandcamp.com/album/demo',
-  //     },
-  //     {
-  //       name: 'Highanxiety',
-  //       time: '2:05 - 2:30pm',
-  //       link: 'https://highanxietypunk.bandcamp.com/album/your-dreams-are-caught-in-war',
-  //     },
-  //     {
-  //       name: 'Boot',
-  //       time: '1:30 - 1:50pm',
-  //       link: '',
-  //     },
-  //   ],
-  // },
-  // {
-  //   src: '/images/festival/flyers/VarningFlyer-Friday.jpg',
-  //   alt: 'Friday Flyer',
-  //   title: 'Friday Show – September 12th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-  //   details: '$35 / Doors: 6:30pm – Show: 7:30pm SHARP! Dance party after the show!',
-  //   lineup: [
-  //     { name: 'Varukers', time: '12:55 - 01:45am', link: 'https://thevarukers.bandcamp.com/music' },
-  //     { name: 'Languid', time: '12:00 - 12:40am', link: 'https://languidpunk.bandcamp.com/music' },
-  //     {
-  //       name: 'Innocent',
-  //       time: '11:10 - 11:40pm',
-  //       link: 'https://innocentpunk.bandcamp.com/album/architects-of-despair',
-  //     },
-  //     {
-  //       name: 'Ultrarat',
-  //       time: '10:25 - 10:55pm',
-  //       link: 'https://ultrarat.bandcamp.com/album/s-t-ep',
-  //     },
-  //     {
-  //       name: 'Epaulet',
-  //       time: '9:40 - 10:10pm',
-  //       link: 'https://epaulet.bandcamp.com/album/cries-from-bondage',
-  //     },
-  //     {
-  //       name: 'Venenö',
-  //       time: '8:55 - 9:25pm',
-  //       link: 'https://nofusstapes.bandcamp.com/album/venen-demo-mmxxiv',
-  //     },
-  //     {
-  //       name: 'Psychic Armour',
-  //       time: '8:10 - 8:40pm',
-  //       link: 'https://psychicarmour.bandcamp.com/',
-  //     },
-  //     {
-  //       name: 'Eulogy',
-  //       time: '7:30 - 7:55pm',
-  //     },
-  //   ],
-  // },
-  // {
-  //   src: '/images/festival/flyers/punkmarket.jpg',
-  //   alt: 'Saturday Punk Market Flyer',
-  //   title: 'Saturday Matine DIY Punk Market – September 13th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (Outside)',
-  //   details: 'FREE / All ages / 1:00pm',
-  //   lineup: [],
-  // },
-  // {
-  //   src: '/images/festival/flyers/MatineShow.png',
-  //   alt: 'Saturday Matine Show Flyer',
-  //   title: 'Saturday Matine Show + DIY Punk Market – September 13th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-  //   details: '$20 / Doors: 12:30pm – Show: 1:30pm SHARP!',
-  //   lineup: [
-  //     {
-  //       name: 'Cell Deth',
-  //       time: '3:35 - 4:15pm',
-  //       link: 'https://celldeth.bandcamp.com/',
-  //     },
-  //     { name: 'Endform', time: '2:50 - 3:10pm', link: 'https://endform.bandcamp.com/' },
-  //     {
-  //       name: 'Poison Spear',
-  //       time: '2:05 - 2:35pm',
-  //       link: 'https://poisonspear514.bandcamp.com/album/institutional-trust',
-  //     },
-  //     {
-  //       name: 'Pied-de-Biche',
-  //       time: '1:30 - 1:50pm',
-  //       link: 'https://pied-de-biche.bandcamp.com/',
-  //     },
-  //   ],
-  // },
-  // {
-  //   src: '/images/festival/flyers/VarningFlyer-Sat.jpg',
-  //   alt: 'Saturday Flyer',
-  //   title: 'Saturday Show – September 13th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (2nd floor)',
-  //   details: '$35 / Doors: 6:00pm – Show: 6:30pm SHARP!',
-  //   lineup: [
-  //     {
-  //       name: 'Disturd',
-  //       time: '11:10 - 11:50pm',
-  //       link: 'https://www.youtube.com/watch?v=2tORDiudB80',
-  //     },
-  //     {
-  //       name: 'Lifeless dark',
-  //       time: '10:20 - 10:55pm',
-  //       link: 'https://lifelessdark.bandcamp.com/',
-  //     },
-  //     {
-  //       name: 'Hedonist',
-  //       time: '9:25 - 10:05pm',
-  //       link: 'https://hedonistsl.bandcamp.com/album/scapulimancy',
-  //     },
-  //     {
-  //       name: 'Alement',
-  //       time: '8:40 - 9:10pm',
-  //       link: 'https://alement.bandcamp.com/album/banished-sphere',
-  //     },
-  //     {
-  //       name: 'Metalian',
-  //       time: '7:55 - 8:25pm',
-  //       link: 'https://metalian.bandcamp.com/album/beyond-the-wall',
-  //     },
-  //     {
-  //       name: 'Portal Tomb',
-  //       time: '7:10 - 7:40pm',
-  //       link: 'https://portaltomb.bandcamp.com/album/last-frost-demo',
-  //     },
-  //     {
-  //       name: 'Sistema de Muerte',
-  //       time: '6:30 - 6:55pm',
-  //       link: 'https://sistemademuerte.bandcamp.com/album/sistema-de-muerte',
-  //     },
-  //   ],
-  // },
-  // {
-  //   src: '/images/festival/flyers/saturday-aftershow-flyer.jpg',
-  //   alt: 'Saturday After Show Flyer',
-  //   title: 'Saturday After Show – September 13th',
-  //   location: 'Piranha Bar - 680 W. Saint-Catherine St. (Basement)',
-  //   details: '$20 / Doors: 12:00am – Show: 12:30am SHARP!',
-  //   lineup: [
-  //     {
-  //       name: 'Bloodied Angels',
-  //       time: '01:55 - 02:25am',
-  //       link: 'https://bloodiedangels.bandcamp.com/album/demo',
-  //     },
-  //     {
-  //       name: 'Total Nada',
-  //       time: '02:40 - 03:15am',
-  //       link: 'https://totalnada.bandcamp.com/album/aqu-y-ahora',
-  //     },
-  //     { name: 'Trenchraid', time: '01:10 - 01:40am', link: 'https://trenchraid.bandcamp.com/' },
-  //     {
-  //       name: 'xheliesinruinx',
-  //       time: '12:30 - 12:55am',
-  //       link: 'https://heliesinruin.bandcamp.com/',
-  //     },
-  //   ],
-  // },
-]
+const festivalFlyers = []
 </script>
 
 <style scoped>
@@ -381,6 +198,8 @@ const festivalFlyers = [
 }
 
 .festival-countdown {
+  --countdown-color: #b6f500;
+
   width: min(100%, 680px);
   text-align: center;
 }
@@ -408,41 +227,134 @@ const festivalFlyers = [
 }
 
 .countdown-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(0.75rem, 3vw, 2.5rem);
   align-items: start;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(0.75rem, 2.5vw, 1.4rem) 0.9rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 24%), #070a05;
+  border: 0;
+  border-radius: 0.4rem;
+  box-shadow:
+    inset 0 0 24px rgba(0, 0, 0, 0.95),
+    0 0 20px rgba(182, 245, 0, 0.12);
+}
+
+.countdown-grid::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 3px,
+    rgba(182, 245, 0, 0.025) 3px 4px
+  );
+  pointer-events: none;
 }
 
 .countdown-unit {
   position: relative;
+  z-index: 1;
   display: grid;
   justify-items: center;
   min-width: 0;
 }
 
 .countdown-unit:not(:last-child)::after {
-  content: ':';
+  content: '';
   position: absolute;
-  top: 0.03em;
-  right: calc(clamp(0.75rem, 3vw, 2.5rem) / -2 - 0.13em);
-  color: #ff9800;
-  font-family: 'Courier New', monospace;
-  font-size: clamp(2.1rem, 5.5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1;
+  top: 26%;
+  right: calc(clamp(0.75rem, 3vw, 2.5rem) / -2 - 0.18rem);
+  width: 0.36rem;
+  height: 1.6rem;
+  background:
+    radial-gradient(circle, var(--countdown-color) 0 38%, transparent 43%) center top / 100% 50%
+      no-repeat,
+    radial-gradient(circle, var(--countdown-color) 0 38%, transparent 43%) center bottom / 100% 50%
+      no-repeat;
+  filter: drop-shadow(0 0 5px rgba(182, 245, 0, 0.8));
 }
 
 .countdown-value {
-  color: #ff9800;
-  font-family: 'Courier New', monospace;
-  font-size: clamp(2.1rem, 5.5vw, 4.5rem);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  line-height: 0.95;
-  letter-spacing: 0;
-  text-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
-  transform: skewX(-3deg) scaleY(1.08);
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.12rem, 0.45vw, 0.3rem);
+}
+
+.digital-digit {
+  position: relative;
+  display: block;
+  width: clamp(1.25rem, 3.8vw, 2.8rem);
+  aspect-ratio: 0.56;
+}
+
+.digital-segment {
+  position: absolute;
+  display: block;
+  background: rgba(182, 245, 0, 0.065);
+  transition:
+    background-color 120ms linear,
+    box-shadow 120ms linear;
+}
+
+.digital-segment.is-active {
+  background: var(--countdown-color);
+  box-shadow:
+    0 0 5px rgba(182, 245, 0, 0.9),
+    0 0 12px rgba(182, 245, 0, 0.48);
+}
+
+.digital-segment--a,
+.digital-segment--d,
+.digital-segment--g {
+  left: 17%;
+  width: 66%;
+  height: 8%;
+  clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%);
+}
+
+.digital-segment--a {
+  top: 1%;
+}
+
+.digital-segment--g {
+  top: 46%;
+}
+
+.digital-segment--d {
+  bottom: 1%;
+}
+
+.digital-segment--b,
+.digital-segment--c,
+.digital-segment--e,
+.digital-segment--f {
+  width: 11%;
+  height: 40%;
+  clip-path: polygon(50% 0, 100% 9%, 100% 91%, 50% 100%, 0 91%, 0 9%);
+}
+
+.digital-segment--b,
+.digital-segment--c {
+  right: 3%;
+}
+
+.digital-segment--e,
+.digital-segment--f {
+  left: 3%;
+}
+
+.digital-segment--b,
+.digital-segment--f {
+  top: 5%;
+}
+
+.digital-segment--c,
+.digital-segment--e {
+  bottom: 5%;
 }
 
 .countdown-label {
@@ -470,15 +382,17 @@ const festivalFlyers = [
 
   .countdown-grid {
     gap: 0.45rem;
+    padding: 0.9rem 0.35rem 0.7rem;
   }
 
   .countdown-unit:not(:last-child)::after {
-    right: -0.27em;
-    font-size: clamp(1.8rem, 10vw, 2.8rem);
+    right: -0.4rem;
+    width: 0.25rem;
+    height: 1.15rem;
   }
 
-  .countdown-value {
-    font-size: clamp(1.8rem, 10vw, 2.8rem);
+  .digital-digit {
+    width: clamp(0.95rem, 4.7vw, 1.45rem);
   }
 
   .countdown-label {
