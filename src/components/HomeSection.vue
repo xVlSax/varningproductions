@@ -1,27 +1,39 @@
 <template>
   <section class="hero-full">
     <video
+      ref="heroVideo"
       class="bgvid"
       :class="{ 'is-ready': videoReady }"
+      :src="videoSrc || undefined"
+      poster="/images/VarningFestLogo-home.webp"
       autoplay
       muted
       loop
       playsinline
-      preload="metadata"
+      preload="none"
       @loadeddata="onVideoReady"
       @error="onVideoReady"
-    >
-      <source src="/videos/varningprod.mp4" type="video/mp4" />
-    </video>
+    ></video>
 
     <!-- freepalestine svg overlay  -->
-    <img class="side-art side-art--right" src="/images/free-pal.svg" alt="" aria-hidden="true" />
+    <img
+      class="side-art side-art--right"
+      src="/images/free-pal.webp"
+      width="440"
+      height="178"
+      alt=""
+      decoding="async"
+      aria-hidden="true"
+    />
 
     <!-- Varning logo bottom-left overlay -->
     <img
       class="side-art side-art--left"
-      src="/images/logoVarning1.svg"
+      src="/images/logoVarning1.webp"
+      width="330"
+      height="326"
       alt="logo-varning"
+      decoding="async"
       aria-hidden="true"
     />
 
@@ -38,30 +50,58 @@
 export default {
   name: 'HomeSection',
   data() {
-    return { videoReady: false, fallbackTimer: null }
+    return {
+      videoReady: false,
+      videoSrc: '',
+      fallbackTimer: null,
+      videoStartHandle: null,
+      videoStartUsesIdleCallback: false,
+    }
   },
   mounted() {
-    // Preload a couple of critical images
-    ;[
-      '/images/festival/flyers/MainPoster.webp',
-      '/images/festival/flyers/thursday-flyer.webp',
-      '/images/contact/framtid.webp',
-    ].forEach((src) => {
-      const img = new Image()
-      img.decoding = 'async'
-      img.loading = 'eager'
-      img.src = src
-    })
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const saveDataEnabled = navigator.connection?.saveData
 
-    this.fallbackTimer = setTimeout(() => (this.videoReady = true), 1500)
+    if (prefersReducedMotion || saveDataEnabled) {
+      this.videoReady = true
+      return
+    }
+
+    const startVideo = () => {
+      this.videoStartHandle = null
+      this.videoSrc = '/videos/varningprod-720p.mp4'
+
+      this.$nextTick(() => {
+        const video = this.$refs.heroVideo
+        video?.load()
+        video?.play().catch(() => {})
+      })
+    }
+
+    if ('requestIdleCallback' in window) {
+      this.videoStartUsesIdleCallback = true
+      this.videoStartHandle = window.requestIdleCallback(startVideo, { timeout: 600 })
+    } else {
+      this.videoStartHandle = window.setTimeout(startVideo, 100)
+    }
+
+    this.fallbackTimer = window.setTimeout(() => (this.videoReady = true), 1800)
   },
   beforeUnmount() {
-    clearTimeout(this.fallbackTimer)
+    window.clearTimeout(this.fallbackTimer)
+
+    if (this.videoStartHandle === null) return
+
+    if (this.videoStartUsesIdleCallback) {
+      window.cancelIdleCallback(this.videoStartHandle)
+    } else {
+      window.clearTimeout(this.videoStartHandle)
+    }
   },
   methods: {
     onVideoReady() {
       this.videoReady = true
-      clearTimeout(this.fallbackTimer)
+      window.clearTimeout(this.fallbackTimer)
     },
   },
 }
@@ -80,7 +120,7 @@ export default {
   padding: 0;
 
   /* svg fallback, it will "fade out" visually as the video fades in */
-  background: #000 url('/images/festival/VarningFestLogo.svg') center / contain no-repeat;
+  background: #000 url('/images/VarningFestLogo-home.webp') center / contain no-repeat;
 }
 
 @media (min-width: 768px) {

@@ -264,6 +264,15 @@ export default {
 }
 
 @media (min-width: 900px) {
+  .profile-root {
+    padding: 0.5rem 0.5rem 7rem;
+  }
+
+  .profile-root > .title,
+  .profile-root > .profile-grid {
+    transform: translateY(-4rem);
+  }
+
   .about-inner {
     display: flow-root;
     max-width: 1340px;
@@ -287,9 +296,10 @@ export default {
     width: clamp(220px, 22vw, 300px);
   }
   .profile-grid {
-    grid-template-columns: repeat(2, minmax(0, 420px));
+    max-width: 1180px;
+    grid-template-columns: repeat(2, minmax(0, 520px));
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 }
 
@@ -516,6 +526,14 @@ export default {
 }
 
 @media (min-width: 900px) {
+  .profile-card {
+    max-width: 520px;
+  }
+
+  .profile-img {
+    aspect-ratio: 16 / 10;
+  }
+
   .about-text {
     width: auto;
     max-width: none;

@@ -4,8 +4,12 @@
       <div class="festival-countdown-hero">
         <!-- Festival Logo -->
         <img
-          src="/images/festival/VarningFestLogoPartXVIII.svg"
+          src="/images/festival/VarningFestLogoPartXVIII.webp"
           alt="Varning Fest Logo"
+          width="1260"
+          height="678"
+          decoding="async"
+          fetchpriority="high"
           class="festival-logo"
         />
 

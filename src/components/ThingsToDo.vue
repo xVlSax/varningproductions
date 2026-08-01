@@ -78,7 +78,10 @@
                 <p v-if="place.description" class="place-description">{{ place.description }}</p>
               </div>
 
-              <span class="map-action" aria-hidden="true">Map <b>↗</b></span>
+              <span class="map-action" aria-hidden="true">
+                Map
+                <span class="material-icons map-action-icon">open_in_new</span>
+              </span>
             </a>
           </template>
         </div>
@@ -403,7 +406,8 @@ const visibleCategories = computed(() =>
 
 .things-hero {
   position: relative;
-  margin-bottom: 2.25rem;
+  width: min(100%, 960px);
+  margin-bottom: clamp(1.2rem, 2.5vw, 1.75rem);
 }
 
 .things-kicker {
@@ -434,7 +438,7 @@ const visibleCategories = computed(() =>
   z-index: 1;
   margin-left: clamp(0rem, 7vw, 6rem);
   font-family: 'TypeWriter1', monospace;
-  font-size: clamp(1.2rem, 2.8vw, 2.6rem);
+  font-size: clamp(1rem, 2vw, 1.8rem);
   letter-spacing: 0.16em;
   transform: translateY(-0.75rem);
 }
@@ -442,7 +446,7 @@ const visibleCategories = computed(() =>
 .things-title strong {
   align-self: flex-start;
   display: block;
-  width: min(calc(100% - 2rem), 58rem);
+  width: min(calc(100% - 2rem), 40rem);
   margin-left: clamp(0.65rem, 2.4vw, 2rem);
   margin-right: 1rem;
   line-height: 0;
@@ -459,8 +463,8 @@ const visibleCategories = computed(() =>
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
-  width: min(100%, 920px);
-  margin: 1.8rem 0 0 auto;
+  width: min(100%, 720px);
+  margin: 1.1rem 0 0 auto;
   border-top: 2px solid rgba(255, 255, 255, 0.55);
   padding-top: 0.8rem;
   font-family: 'TypeWriter1', monospace;
@@ -769,9 +773,12 @@ const visibleCategories = computed(() =>
   writing-mode: vertical-rl;
 }
 
-.map-action b {
+.map-action-icon {
+  display: inline-block;
   color: var(--signal);
-  font-size: 1.2em;
+  font-size: 1.15rem;
+  line-height: 1;
+  writing-mode: horizontal-tb;
 }
 
 .things-signoff {
@@ -822,14 +829,18 @@ const visibleCategories = computed(() =>
     padding: calc(var(--header-h, 54px) + 2.5rem) 0.85rem 3.5rem;
   }
 
+  .things-hero {
+    margin-bottom: 1rem;
+  }
+
   .things-title span {
     margin-left: 0;
-    font-size: clamp(0.95rem, 4.8vw, 1.45rem);
+    font-size: clamp(0.78rem, 3.7vw, 1.05rem);
     transform: translateY(-0.5rem);
   }
 
   .things-title strong {
-    width: 88%;
+    width: 64%;
     margin-left: clamp(0.55rem, 2.5vw, 0.85rem);
   }
 
@@ -837,6 +848,7 @@ const visibleCategories = computed(() =>
     align-items: flex-start;
     flex-direction: column;
     gap: 0.75rem;
+    margin-top: 0.8rem;
   }
 
   .category-switcher {
@@ -896,7 +908,7 @@ const visibleCategories = computed(() =>
 
   .places-grid {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 0.2rem;
     padding: 0 0.2rem;
   }
 
@@ -908,6 +920,10 @@ const visibleCategories = computed(() =>
 
   .place-copy {
     transform: translateY(1.35rem);
+  }
+
+  .map-action {
+    transform: translateY(-1.5rem);
   }
 
   .place-index {
