@@ -21,7 +21,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'friday-matinee',
-    flyer: '',
+    flyer: '/images/festival/current/varning-fest-matine-friday.jpg',
     flyerAlt: 'Friday matinee festival show flyer',
     day: 'Friday · September 18',
     event: 'Friday Matinee Show',
@@ -68,7 +68,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'saturday-matinee',
-    flyer: '',
+    flyer: '/images/festival/current/varning-fest-matine-saturday.jpg',
     flyerAlt: 'Saturday matinee festival show flyer',
     day: 'Saturday · September 19',
     event: 'Saturday Matinee Show + DIY Punk Market',

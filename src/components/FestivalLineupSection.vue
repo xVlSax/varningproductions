@@ -79,7 +79,6 @@ import { festivalLineupShows } from '@/data/festivalLineup'
   align-items: center;
   width: min(100%, 78rem);
   margin: 0 auto;
-  margin-top: auto;
   text-align: center;
 }
 
@@ -90,7 +89,7 @@ import { festivalLineupShows } from '@/data/festivalLineup'
 }
 
 .lineup-heading {
-  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .lineup-kicker,

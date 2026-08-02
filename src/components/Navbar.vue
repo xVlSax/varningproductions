@@ -127,12 +127,12 @@ const navItems = [
     children: [
       { id: 'festival-overview', label: 'Festival', path: '/festival' },
       { id: 'festival-2026', label: 'Festival 2026', path: '/current-festival' },
-      // {
-      //   id: 'festival-lineup',
-      //   label: 'Lineup',
-      //   path: '/festival-lineup',
-      // },
-      // { id: 'festival-bands', label: 'Bands', path: '/bands' },
+      {
+        id: 'festival-lineup',
+        label: 'Lineup',
+        path: '/festival-lineup',
+      },
+      { id: 'festival-bands', label: 'Bands', path: '/bands' },
       { id: 'festival-things', label: 'Things To Do', path: '/things' },
     ],
   },
