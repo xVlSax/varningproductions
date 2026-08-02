@@ -10,7 +10,7 @@
         </strong>
       </h1>
       <div class="things-intro">
-        <span aria-hidden="true">Eat // Drink // Dig // See</span>
+        <span aria-hidden="true">Eat // Drink // Music // See</span>
       </div>
     </header>
     <nav class="category-switcher" aria-label="Filter Montreal recommendations">
@@ -262,7 +262,7 @@ const categories = [
   {
     id: 'records',
     number: '03',
-    shortTitle: 'Dig',
+    shortTitle: 'Music',
     title: 'Record Stores',
     tagline: 'Crates / noise / rare finds',
     places: [

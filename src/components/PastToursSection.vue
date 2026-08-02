@@ -5,7 +5,7 @@
       <h2 class="events-title">Past Tours</h2>
       <div class="flyers-grid">
         <article v-for="(f, i) in pastTourFlyers" :key="i" class="flyer-card">
-          <button class="flyer-btn" @click="openModal(f)">
+          <button type="button" class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
@@ -35,21 +35,41 @@
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
-          <p class="modal-caption">{{ active.alt }}</p>
+          <p class="modal-caption">
+            <span v-if="active.bandSlug" class="modal-caption-content">
+              <RouterLink
+                :to="`/band-profile/${active.bandSlug}`"
+                class="modal-caption-link"
+                :aria-label="`Open ${active.bandSlug} band profile`"
+                @click="closeModal"
+              >
+                {{ active.bandSlug }}
+              </RouterLink>
+              <span>{{ active.alt.slice(active.bandSlug.length) }}</span>
+            </span>
+            <span v-else>{{ active.alt }}</span>
+          </p>
         </div>
       </div>
     </transition>
   </section>
 </template>
-
 <script>
 export default {
   name: 'EventSection',
   data() {
     return {
       pastTourFlyers: [
-        { src: '/images/events/past/tours/new-dhk.jpg', alt: 'dhk-eu-tour' },
-        { src: '/images/events/past/tours/warkrusher.jpg', alt: 'warkrusher-eu-tour' },
+        {
+          src: '/images/events/past/tours/new-dhk.jpg',
+          alt: 'dhk-eu-tour',
+          bandSlug: 'dhk',
+        },
+        {
+          src: '/images/events/past/tours/warkrusher.jpg',
+          alt: 'warkrusher-eu-tour',
+          bandSlug: 'warkrusher',
+        },
         { src: '/images/events/past/tours/traume.jpg', alt: 'traume-na-tour' },
         { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },
         {
@@ -264,6 +284,19 @@ export default {
   color: #d8d8d8;
   font-size: 0.95rem;
   text-align: center;
+}
+.modal-caption-content {
+  display: inline-flex;
+}
+.modal-caption-link {
+  color: #b6f500;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.modal-caption-link:hover,
+.modal-caption-link:focus-visible {
+  color: #d9ff70;
 }
 
 /* mobile tweaks */
