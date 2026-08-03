@@ -56,16 +56,34 @@
         </h4>
         <h4 class="text-lg md:text-xl">
           Things to
-          <router-link to="/things">
-            <a target="_blank" class="underline">do</a>
-          </router-link>
+          <router-link to="/things" class="underline">do</router-link>
           in Montreal
         </h4>
-        <!-- <h4 class="text-lg md:text-xl">
+        <h4 class="text-lg md:text-xl">
           <router-link to="/festival-lineup" class="underline">Lineup</router-link>
           <span aria-hidden="true"> · </span>
           <router-link to="/bands" class="underline">Bands</router-link>
-        </h4> -->
+        </h4>
+        <div class="festival-poster-wrap">
+          <picture class="festival-poster">
+            <source
+              srcset="/images/festival/current/varning-fest-poster.avif"
+              type="image/avif"
+            />
+            <source
+              srcset="/images/festival/current/varning-fest-poster.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/festival/current/varning-fest-poster.jpg"
+              alt="A Varning From Montreal Festival 2026 poster"
+              width="839"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
       </div>
       <!-- COUNTDOWN -->
 
@@ -199,6 +217,24 @@ const festivalFlyers = []
   display: block;
   width: min(76vw, 630px);
   height: auto;
+}
+
+.festival-poster-wrap {
+  width: 100%;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.festival-poster {
+  display: block;
+  width: min(68vw, 430px);
+  margin: 0 auto;
+}
+
+.festival-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .festival-countdown {
@@ -376,6 +412,10 @@ const festivalFlyers = []
 }
 
 @media (max-width: 640px) {
+  .festival-poster {
+    width: min(82vw, 360px);
+  }
+
   .festival-countdown-hero {
     gap: 2.25rem;
   }
@@ -424,9 +464,20 @@ const festivalFlyers = []
   margin-right: 2rem;
 }
 
-.band-font,
+.band-font {
+  color: #fbfbfb;
+}
+
 .underline {
   color: #fbfbfb;
+  text-decoration-color: #b6f500;
+  text-underline-offset: 0.18em;
+}
+
+.underline:hover,
+.underline:focus-visible {
+  color: #fbfbfb;
+  text-decoration-color: #d9ff70;
 }
 
 .festival-lineup a {

@@ -9,11 +9,19 @@ const SOCIAL_ICONS = {
   spotify: 'fa fa-spotify',
   website: 'fa fa-link',
   youtube: 'fa fa-youtube',
+  youtubeMusic: 'fa fa-youtube',
+  youtubeVideo: 'fa fa-youtube',
+}
+
+const SOCIAL_LABELS = {
+  youtube: 'YouTube',
+  youtubeMusic: 'YouTube Music',
+  youtubeVideo: 'YouTube Video',
 }
 
 const createSocials = (links = {}) =>
   Object.entries(links).map(([platform, href]) => ({
-    label: platform.charAt(0).toUpperCase() + platform.slice(1),
+    label: SOCIAL_LABELS[platform] || platform.charAt(0).toUpperCase() + platform.slice(1),
     icon: SOCIAL_ICONS[platform],
     href,
   }))
@@ -179,6 +187,7 @@ const BAND_PROFILES = {
     slug: 'eulogy',
     name: 'Eulogy',
     logo: 'eulogy-logo.webp',
+    hero: 'eulogy.webp',
     meta: ['CRUST PUNK / D-BEAT', 'Montreal-Canada'],
     links: {
       bandcamp: 'https://eulogy-crust.bandcamp.com/album/eulogy-demo-25',
@@ -297,6 +306,18 @@ const BAND_PROFILES = {
       bandcamp: 'https://plektani.bandcamp.com/album/-',
     },
     bio: 'Πλεκτάνη, or Plektani, meaning plot or scheme, is a hard-hitting DIY hardcore and D-beat punk band based in Athens, Greece. Formed by veterans of the local underground scene, with members from Chain Cult, Lifewreck, and Χωρίς Οίκτο, the band delivers fast, guitar-driven käng punk with nimble twin-guitar attacks, a heavy rhythm section, hoarse vocals, and desperate shouts.',
+  }),
+  'p-t-d-s': createFestivalProfile({
+    slug: 'p-t-d-s',
+    name: 'Psycho Terrorist Despair System',
+    logo: 'ptds-logo.webp',
+    hero: 'ptds.webp',
+    meta: ['DIY CRUST / HARDCORE PUNK', 'New York City-USA'],
+    links: {
+      youtubeVideo: 'https://www.youtube.com/watch?v=hDoFlqDN5Vk',
+      youtubeMusic: 'https://www.youtube.com/watch?v=ND2mV60A7Oo',
+    },
+    bio: 'Psycho Terrorist Despair System (P.T.D.S.) is a DIY crust and hardcore punk band from New York City. Delivering relentless walls of Konton Crasher-style guitar distortion, pummeling D-beats, and raw, screaming, pissed-off vocals, the band channels uncompromising noise and aggression. Their self-titled debut demo cassette was released in 2026.',
   }),
   'portal-tomb': createFestivalProfile({
     slug: 'portal-tomb',

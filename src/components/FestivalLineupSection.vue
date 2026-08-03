@@ -10,6 +10,7 @@
         <article v-for="show in festivalLineupShows" :key="show.id" class="show-card">
           <div class="show-main">
             <picture class="show-flyer">
+              <source :srcset="show.flyer.replace(/\.jpg$/i, '.webp')" type="image/webp" />
               <img :src="show.flyer" :alt="show.flyerAlt" loading="lazy" decoding="async" />
             </picture>
 
