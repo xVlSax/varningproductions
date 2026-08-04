@@ -35,7 +35,7 @@
                   <time class="band-time">{{ band.time }}</time>
                 </li>
               </ul>
-              <p v-else class="no-bands">DIY labels, records, art, merch, and community tables.</p>
+              <p v-else class="no-bands">DIY labels, records, art and merch.</p>
             </div>
           </div>
 

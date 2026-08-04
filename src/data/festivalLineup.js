@@ -45,9 +45,8 @@ export const festivalLineupShows = [
     price: '$35',
     details: 'Doors 6:30 PM · Show 7:30 PM sharp · Dance party after',
     bands: [
-      { name: 'Plektani', time: '1:00–1:45 AM' },
-      { name: 'Dominacion', time: '12:05–12:45 AM' },
-      { name: 'Ultimate Disaster', time: '11:15–11:50 PM' },
+      { name: 'Plektani', time: '12:05–12:45 AM' },
+      { name: 'Dominacion', time: '11:15–11:50 PM' },
       { name: 'Durs Coeurs', time: '10:30–11:00 PM' },
       { name: 'Uniformed Service', time: '9:45–10:15 PM' },
       { name: 'Phantom Rider', time: '9:00–9:30 PM' },
@@ -63,7 +62,7 @@ export const festivalLineupShows = [
     event: 'DIY Punk Market',
     place: 'Piranha Bar · 680 W. Saint-Catherine St. · Outside',
     price: 'Free',
-    details: 'All ages · Starts 1:00 PM',
+    details: 'All ages · Starts 12:00 PM',
     bands: [],
   },
   {
@@ -108,7 +107,7 @@ export const festivalLineupShows = [
     event: 'Saturday Aftershow',
     place: 'Piranha Bar · 680 W. Saint-Catherine St. · Basement',
     price: '$20',
-    details: 'Doors 12:00 AM · Show 12:20 AM sharp',
+    details: 'Doors 12:00 AM · Show 12:15 AM sharp',
     bands: [
       { name: 'Special Guest', time: '2:25–3:00 AM' },
       { name: 'Bastard Idol', time: '1:40–2:10 AM' },
