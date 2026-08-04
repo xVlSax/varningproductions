@@ -307,8 +307,8 @@ const BAND_PROFILES = {
     },
     bio: 'Πλεκτάνη, or Plektani, meaning plot or scheme, is a hard-hitting DIY hardcore and D-beat punk band based in Athens, Greece. Formed by veterans of the local underground scene, with members from Chain Cult, Lifewreck, and Χωρίς Οίκτο, the band delivers fast, guitar-driven käng punk with nimble twin-guitar attacks, a heavy rhythm section, hoarse vocals, and desperate shouts.',
   }),
-  'p-t-d-s': createFestivalProfile({
-    slug: 'p-t-d-s',
+  'psycho-terrorist-despair-system': createFestivalProfile({
+    slug: 'psycho-terrorist-despair-system',
     name: 'Psycho Terrorist Despair System',
     logo: 'ptds-logo.webp',
     hero: 'ptds.webp',
@@ -341,9 +341,9 @@ const BAND_PROFILES = {
     },
     bio: 'Salvaje Punk, often stylized as Salvaje Punx, is a New York City-based hardcore punk band renowned for their pummeling, uncompromising style and fiery Spanish-language vocals. Heavily tied to the NYC DIY and squatted underground scene, they blend intense metallic D-beat with raw, high-energy aggression.',
   }),
-  sis: createFestivalProfile({
-    slug: 'sis',
-    name: 'SIS',
+  'synaptic-isolation-syndrome': createFestivalProfile({
+    slug: 'synaptic-isolation-syndrome',
+    name: 'Synaptic Isolation Syndrome',
     logo: 'sis-logo.webp',
     hero: 'sis.webp',
     meta: ['CRASHER CRUST / HARDCORE PUNK', 'Montreal-Canada'],
@@ -419,9 +419,9 @@ const BAND_PROFILES = {
     },
     bio: 'Warkrusher is a Montreal-based crust punk and stenchcore band formed in 2019. Known for an apocalyptic, heavy sound that merges primitive D-beat with thick death metal-style guitar tones, their punishing style is frequently compared to Bolt Thrower and Deviated Instinct.',
   }),
-  'young-blade': createFestivalProfile({
-    slug: 'young-blade',
-    name: 'Young Blade',
+  'young-blades': createFestivalProfile({
+    slug: 'young-blades',
+    name: 'Young Blades',
     logo: 'young-blade-logo.webp',
     hero: 'young-blade.webp',
     meta: ["STREET PUNK / OI! / ROCK 'N' ROLL", 'Montreal-Canada'],
