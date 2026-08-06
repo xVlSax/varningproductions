@@ -1,4 +1,4 @@
-import { festivalLineupShows } from '@/data/festivalLineup'
+import { festivalLineupShows } from './festivalLineup.js'
 
 const FESTIVAL_ASSET_ROOT = '/images/bands/festival/bandname'
 
@@ -557,5 +557,9 @@ export const festivalArtists = festivalBandNames.map((name) => {
     image: BAND_PROFILES[slug]?.heroImage || '',
   }
 })
+
+export const bandProfileSlugs = [
+  ...new Set([...Object.keys(BAND_PROFILES), ...Object.keys(FESTIVAL_BAND_PROFILES)]),
+].sort()
 
 export const getBandBySlug = (slug) => BAND_PROFILES[slug] || FESTIVAL_BAND_PROFILES[slug]

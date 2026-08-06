@@ -83,5 +83,6 @@ const UPCOMING_TOUR_SLUGS = ['languid-tour']
 
 export const TOUR_HEROES = TOUR_HERO_SLUGS.map(toCard).filter(Boolean)
 export const UPCOMING_TOURS = UPCOMING_TOUR_SLUGS.map(toCard).filter(Boolean)
+export const tourSlugs = Object.keys(TOUR_DETAILS).sort()
 
 export const getTourBySlug = (slug) => TOUR_DETAILS[slug]

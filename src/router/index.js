@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeSection from '@/components/HomeSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
@@ -16,100 +16,66 @@ import ServicesSection from '@/components/ServicesSection.vue'
 import ArtistSection from '@/components/ArtistSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import ThingsToDo from '@/components/ThingsToDo.vue'
+import { PAGE_METADATA } from '@/data/siteMetadata'
+
+const metadataFor = (path) => PAGE_METADATA[path]
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: HomeSection,
-    meta: {
-      title: 'Varning Productions – DIY Punk Shows, Bookings, Tour & Festival',
-      description:
-        'Varning Productions is a DIY punk collective booking shows, tours and A Varning From Montreal Festival since 2007.',
-      canonical: 'https://www.varningproductions.com/',
-    },
+    meta: metadataFor('/'),
   },
   {
     path: '/about',
     name: 'About',
     component: AboutSection,
-    meta: {
-      title: 'About – Varning Productions',
-      description:
-        'Learn about Varning Productions: our history, ethos, and commitment to the DIY punk community.',
-      canonical: 'https://www.varningproductions.com/#/about',
-    },
+    meta: metadataFor('/about'),
   },
   {
     path: '/festival',
     name: 'Festival',
     component: FestivalSection,
-    meta: {
-      title: 'A Varning From Montreal Festival – Varning Productions',
-      description: 'Official lineup, flyers, and ticket info for A Varning From Montreal Festival.',
-      canonical: 'https://www.varningproductions.com/#/festival',
-    },
+    meta: metadataFor('/festival'),
   },
   {
     path: '/current-festival',
     name: 'Current Festival',
     component: CurrentFestivalSection,
-    meta: {
-      title: 'A Varning From Montreal Festival – Varning Productions',
-      description: 'Official lineup, flyers, and ticket info for A Varning From Montreal Festival.',
-      canonical: 'https://www.varningproductions.com/#/festival',
-    },
+    meta: metadataFor('/current-festival'),
   },
   {
     path: '/festival-lineup',
     name: 'Festival Lineup',
     component: FestivalLineupSection,
-    meta: {
-      title: 'Festival 2026 Lineup – Varning Productions',
-      description: 'The 2026 A Varning From Montreal Festival lineup and band information.',
-      canonical: 'https://www.varningproductions.com/#/festival-lineup',
-    },
+    meta: metadataFor('/festival-lineup'),
   },
   {
     path: '/past-festival',
     name: 'Past Festival',
     component: PastFestivalSection,
-    meta: {
-      title: 'A Varning From Montreal Festival – Varning Productions',
-      description: 'Official lineup, flyers, and ticket info for A Varning From Montreal Festival.',
-      canonical: 'https://www.varningproductions.com/#/festival',
-    },
+    meta: metadataFor('/past-festival'),
   },
   {
     path: '/tours',
     name: 'Tours',
     component: ToursSection,
-    meta: {
-      title: 'Tours – Varning Productions',
-      description:
-        'Booking shows, tours, merch & promo with a DIY ethic. Varning Productions helps bands reach audiences worldwide.',
-      canonical: 'https://www.varningproductions.com/#/tours',
-    },
+    meta: metadataFor('/tours'),
   },
   {
     path: '/events',
     name: 'Events',
     component: EventSection,
-    meta: {
-      title: 'Events – Varning Productions',
-      description:
-        'Upcoming punk shows, flyers and festival events organized by Varning Productions.',
-      canonical: 'https://www.varningproductions.com/#/events',
-    },
+    meta: metadataFor('/events'),
   },
   {
     path: '/event-description/:slug',
     name: 'Event Description',
     component: EventDescription,
     meta: {
-      title: 'Event Description – Varning Productions',
-      description: 'Tour routing, flyer details and booking notes from Varning Productions.',
-      canonical: 'https://www.varningproductions.com/#/event-description',
+      title: 'Tour Details – Varning Productions',
+      description: 'Tour routing, dates, flyer details and booking notes from Varning Productions.',
     },
   },
   {
@@ -119,77 +85,57 @@ const routes = [
     meta: {
       title: 'Band Profile – Varning Productions',
       description: 'Band profile, links, booking details, and bio.',
-      canonical: 'https://www.varningproductions.com/#/band-profile',
     },
   },
   {
     path: '/services',
     name: 'Services',
     component: ServicesSection,
-    meta: {
-      title: 'Services – Varning Productions',
-      description:
-        'Booking shows, tours, merch & promo with a DIY ethic. Varning Productions helps bands reach audiences worldwide.',
-      canonical: 'https://www.varningproductions.com/#/services',
-    },
+    meta: metadataFor('/services'),
   },
   {
     path: '/bands',
     name: 'Bands',
     component: ArtistSection,
-    meta: {
-      title: 'Bands – Varning Productions',
-      description:
-        'Get in touch with Varning Productions for bookings, collaborations, and festival info.',
-      canonical: 'https://www.varningproductions.com/#/bands',
-    },
+    meta: metadataFor('/bands'),
   },
   {
     path: '/contact',
     name: 'Contact',
     component: ContactSection,
-    meta: {
-      title: 'Contact – Varning Productions',
-      description:
-        'Get in touch with Varning Productions for bookings, collaborations, and festival info.',
-      canonical: 'https://www.varningproductions.com/#/contact',
-    },
+    meta: metadataFor('/contact'),
   },
   {
     path: '/past-tours',
     name: 'Past Tours',
     component: PastToursSection,
-    meta: {
-      title: 'PastTours – Varning Productions',
-      description: '',
-      canonical: 'https://www.varningproductions.com/#/past-events',
-    },
+    meta: metadataFor('/past-tours'),
   },
   {
     path: '/past-events',
     name: 'Past Events',
     component: PastEventsSection,
-    meta: {
-      title: 'PastEvents – Varning Productions',
-      description: '',
-      canonical: 'https://www.varningproductions.com/#/past-events',
-    },
+    meta: metadataFor('/past-events'),
   },
   {
     path: '/things',
     name: 'Things To Do',
     component: ThingsToDo,
-    meta: {
-      title: 'Things To Do in Montreal – Varning Productions',
-      description:
-        'Bars, restaurants and record stores to check out while attending Varning Festival in Montreal.',
-      canonical: 'https://www.varningproductions.com/#/things',
-    },
+    meta: metadataFor('/things'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/',
   },
 ]
 
+if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
+  const legacyPath = window.location.hash.slice(1)
+  window.history.replaceState(null, '', legacyPath)
+}
+
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to) {
     if (to.hash) {

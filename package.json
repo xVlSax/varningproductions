@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-seo-pages.mjs --dist-only",
+    "generate:sitemap": "node scripts/generate-seo-pages.mjs --sitemap-only",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist -b gh-pages",
     "lint": "eslint . --fix",

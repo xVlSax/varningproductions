@@ -4,6 +4,9 @@ import router from './router'
 import './assets/main.css'
 import './index.css'
 import { initGA } from './plugins/analytics'
+import { getBandBySlug } from './data/bands'
+import { getTourBySlug } from './data/tourEvents'
+import { canonicalUrl, createBandMetadata, createTourMetadata } from './data/siteMetadata'
 
 initGA()
 
@@ -18,8 +21,22 @@ function setMeta(selector, attrName, attrValue) {
   el.setAttribute(attrName, attrValue)
 }
 
+function resolveRouteMetadata(to) {
+  if (to.name === 'Band Profile') {
+    const band = getBandBySlug(to.params.slug)
+    if (band) return createBandMetadata(band)
+  }
+
+  if (to.name === 'Event Description') {
+    const tour = getTourBySlug(to.params.slug)
+    if (tour) return createTourMetadata(tour)
+  }
+
+  return to.meta || {}
+}
+
 router.afterEach((to) => {
-  const meta = to.meta || {}
+  const meta = resolveRouteMetadata(to)
 
   if (meta.title) {
     document.title = meta.title
@@ -33,16 +50,15 @@ router.afterEach((to) => {
     setMeta('meta[name="twitter:description"]', 'content', meta.description)
   }
 
-  if (meta.canonical) {
-    let link = document.querySelector('link[rel="canonical"]')
-    if (!link) {
-      link = document.createElement('link')
-      link.setAttribute('rel', 'canonical')
-      document.head.appendChild(link)
-    }
-    link.setAttribute('href', meta.canonical)
-    setMeta('meta[property="og:url"]', 'content', meta.canonical)
+  const canonical = canonicalUrl(to.path)
+  let link = document.querySelector('link[rel="canonical"]')
+  if (!link) {
+    link = document.createElement('link')
+    link.setAttribute('rel', 'canonical')
+    document.head.appendChild(link)
   }
+  link.setAttribute('href', canonical)
+  setMeta('meta[property="og:url"]', 'content', canonical)
 })
 
 createApp(App).use(router).mount('#app')

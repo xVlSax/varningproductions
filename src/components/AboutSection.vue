@@ -33,7 +33,7 @@
         class="about-img float-slow fade-in-left"
       />
       <div class="about-text fade-in-right">
-        <h4 class="title">ABOUT US</h4>
+        <h4 class="title green-shadow-title">ABOUT US</h4>
         <p class="copy">
           Varning Productions is a booking event project founded by Janick in 2006 with the opening
           of her co-managed venue The Katacombes in Montreal, Canada. Since then, Varning
@@ -57,7 +57,7 @@
 
   <!-- Page 2: About us profile -->
   <section id="profile" class="profile-root min-h-screen relative p-4">
-    <h2 class="title">IN THE SCENE / FOR THE SCENE</h2>
+    <h2 class="title green-shadow-title">IN THE SCENE / FOR THE SCENE</h2>
     <div class="profile-grid">
       <!-- LEFT: Janick -->
       <article class="profile-card fade-in-left">
@@ -187,6 +187,10 @@ export default {
   letter-spacing: 0.02em;
   margin: 0 0 0.5rem 0;
   font-family: 'TypeWriter1', sans-serif;
+}
+
+.green-shadow-title {
+  text-shadow: 2px 2px 0 rgba(182, 245, 0, 0.68);
 }
 
 .sub-title {

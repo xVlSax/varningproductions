@@ -1,93 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.varningproductions.com/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://varningproductions.com/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/about</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://varningproductions.com/about/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/festival</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://varningproductions.com/festival/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/current-festival</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://varningproductions.com/current-festival/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/past-festival</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://varningproductions.com/festival-lineup/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/tours</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://varningproductions.com/past-festival/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/event-description/dhk-tour</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://varningproductions.com/tours/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/band-profile/dhk</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://varningproductions.com/events/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/events</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://varningproductions.com/services/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/past-events</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://varningproductions.com/bands/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/past-tours</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://varningproductions.com/contact/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/services</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://varningproductions.com/past-tours/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/artist</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://varningproductions.com/past-events/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/contact</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://varningproductions.com/things/</loc>
   </url>
   <url>
-    <loc>https://www.varningproductions.com/#/things</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://varningproductions.com/band-profile/abism/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/aneantix/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/armistix/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/bastard-idol/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/black-dog/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/boot/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/bootlicker/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/destruct/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/dhk/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/dominacion/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/durs-coeurs/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/early-grave/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/esprit-de-corps/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/eulogy/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/extrana-humana/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/faze/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/injur/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/languid/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/lumpen/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/military-shadow/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/mob-47/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/mueco/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/nuclear-family/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/phantom-rider/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/plektani/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/portal-tomb/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/psycho-terrorist-despair-system/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/salvaje-punk/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/skullnbone/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/spirokete/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/synaptic-isolation-syndrome/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/total-nada/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/ultimate-disaster/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/uniformed-service/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/warkrusher/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/band-profile/young-blades/</loc>
+  </url>
+  <url>
+    <loc>https://varningproductions.com/event-description/languid-tour/</loc>
   </url>
 </urlset>
