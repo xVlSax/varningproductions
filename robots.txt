@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.varningproductions.com/sitemap.xml
+Sitemap: https://varningproductions.com/sitemap.xml
