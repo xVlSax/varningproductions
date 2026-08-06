@@ -437,7 +437,7 @@ const BAND_PROFILES = {
     name: 'DHK',
     logoImage: '',
     logoAlt: 'DHK',
-    heroImage: '/images/artists/dhk/dhk-profile.jpeg',
+    heroImage: '/images/artists/dhk/dhk-profile.webp',
     heroAlt: 'DHK band profile',
     meta: ['FEROCIOUS D-BEAT HARDCORE PUNK', 'LIMA-PERU'],
     socials: [
@@ -469,7 +469,7 @@ const BAND_PROFILES = {
   languid: {
     slug: 'languid',
     name: 'Languid',
-    heroImage: '/images/artists/languid/languid.jpg',
+    heroImage: '/images/artists/languid/languid.webp',
     heroAlt: 'Languid tour artwork',
     heroObjectPosition: 'center 28%',
     meta: ['RAW FEROCIOUS D-BEAT HARDCORE PUNK', 'EDMONTON-CANADA'],

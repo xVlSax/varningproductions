@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -88,6 +88,57 @@ const createSitemap = () => {
 
 const sitemap = createSitemap()
 
+const pruneDeploymentAssets = async (directory) => {
+  let removedFiles = 0
+  let removedBytes = 0
+
+  const walk = async (currentDirectory) => {
+    const entries = await readdir(currentDirectory, { withFileTypes: true })
+
+    for (const entry of entries) {
+      const filePath = path.join(currentDirectory, entry.name)
+
+      if (entry.isDirectory()) {
+        await walk(filePath)
+        continue
+      }
+
+      const extension = path.extname(entry.name).toLowerCase()
+      const isRedundantOriginal = ['.jpg', '.jpeg', '.png', '.svg'].includes(extension)
+      const webpPath = path.join(currentDirectory, `${path.basename(entry.name, extension)}.webp`)
+      let shouldRemove = entry.name === '.DS_Store'
+
+      if (isRedundantOriginal && !shouldRemove) {
+        try {
+          await stat(webpPath)
+          shouldRemove = true
+        } catch {
+          // Keep originals that do not have a modern-format replacement.
+        }
+      }
+
+      if (!shouldRemove) continue
+
+      removedBytes += (await stat(filePath)).size
+      removedFiles += 1
+      await rm(filePath)
+    }
+  }
+
+  await walk(directory)
+
+  const unusedSourceVideo = path.join(directory, 'videos', 'varningprod.mp4')
+  try {
+    removedBytes += (await stat(unusedSourceVideo)).size
+    removedFiles += 1
+    await rm(unusedSourceVideo)
+  } catch {
+    // The optimized 720p video is the only version required by the app.
+  }
+
+  return { removedFiles, removedBytes }
+}
+
 if (!distOnly) {
   await writeFile(path.join(publicDir, 'sitemap.xml'), sitemap)
 }
@@ -106,6 +157,11 @@ if (!sitemapOnly) {
   const notFoundPage = replaceMeta(template, 'name', 'robots', 'noindex,follow')
   await writeFile(path.join(distDir, '404.html'), notFoundPage)
   await writeFile(path.join(distDir, 'sitemap.xml'), sitemap)
+
+  const { removedFiles, removedBytes } = await pruneDeploymentAssets(distDir)
+  console.log(
+    `Removed ${removedFiles} redundant deployment assets (${(removedBytes / 1024 / 1024).toFixed(1)} MB).`,
+  )
 }
 
 console.log(`Generated sitemap with ${uniquePages.length} canonical URLs.`)
