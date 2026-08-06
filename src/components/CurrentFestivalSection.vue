@@ -258,6 +258,7 @@ const festivalFlyers = []
   margin: 0;
   color: rgba(255, 255, 255, 0.78);
   font-family: 'TypeWriter1', sans-serif;
+  text-shadow: 1px 1px 0 rgba(182, 245, 0, 0.38);
   text-transform: uppercase;
 }
 
@@ -408,7 +409,7 @@ const festivalFlyers = []
 
 .countdown-date {
   margin-top: 1rem;
-  font-size: clamp(0.68rem, 1.2vw, 0.88rem);
+  font-size: clamp(0.82rem, 1.55vw, 1.05rem);
 }
 
 @media (max-width: 640px) {

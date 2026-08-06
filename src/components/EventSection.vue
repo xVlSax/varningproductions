@@ -165,6 +165,7 @@ export default {
 .events-subtitle {
   font-family: 'TypeWriter1', sans-serif;
   letter-spacing: 0.06em;
+  text-shadow: 1px 1px 0 rgba(182, 245, 0, 0.38);
   text-transform: uppercase;
   padding: 1.5rem;
 }
