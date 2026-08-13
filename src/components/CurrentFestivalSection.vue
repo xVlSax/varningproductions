@@ -13,6 +13,18 @@
           class="festival-logo"
         />
 
+        <!-- Festival video -->
+        <div class="festival-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/mEOeXKpcmNM?rel=0"
+            title="A Varning From Montreal Festival 2026 video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
         <!-- Festival countdown -->
         <section class="festival-countdown" :aria-label="countdownAriaLabel">
           <p class="countdown-heading">Festival starts in</p>
@@ -219,6 +231,20 @@ const festivalFlyers = []
   height: auto;
 }
 
+.festival-video {
+  width: min(100%, 660px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050505;
+}
+
+.festival-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .festival-poster-wrap {
   width: 100%;
   padding-top: clamp(1.25rem, 3vw, 2rem);
@@ -423,6 +449,10 @@ const festivalFlyers = []
 
   .festival-logo {
     width: min(72vw, 310px);
+  }
+
+  .festival-video {
+    width: min(92vw, 520px);
   }
 
   .countdown-grid {

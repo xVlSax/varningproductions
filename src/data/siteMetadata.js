@@ -9,7 +9,7 @@ export const PAGE_METADATA = {
   '/about': {
     title: 'About Varning Productions – DIY Punk Since 2007',
     description:
-      'Read the history and ethos of Varning Productions and its commitment to independent punk culture and community.',
+      'Read the history of Varning Productions and its commitment to independent punk culture and community.',
   },
   '/festival': {
     title: 'A Varning From Montreal Festival – Varning Productions',
