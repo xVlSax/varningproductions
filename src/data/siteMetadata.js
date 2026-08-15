@@ -70,6 +70,11 @@ export const PAGE_METADATA = {
     description:
       'A punk focused Montreal guide to bars, food, record stores and attractions near Varning Festival.',
   },
+  '/tickets': {
+    title: 'Event Tickets – Varning Productions',
+    description:
+      'Buy tickets for upcoming Varning Productions punk shows and events in Stockholm.',
+  },
 }
 
 const normalizePath = (path = '/') => {

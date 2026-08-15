@@ -16,6 +16,7 @@ import ServicesSection from '@/components/ServicesSection.vue'
 import ArtistSection from '@/components/ArtistSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import ThingsToDo from '@/components/ThingsToDo.vue'
+import TicketsPage from '@/components/TicketsPage.vue'
 import { PAGE_METADATA } from '@/data/siteMetadata'
 
 const metadataFor = (path) => PAGE_METADATA[path]
@@ -122,6 +123,12 @@ const routes = [
     name: 'Things To Do',
     component: ThingsToDo,
     meta: metadataFor('/things'),
+  },
+  {
+    path: '/tickets',
+    name: 'Tickets',
+    component: TicketsPage,
+    meta: metadataFor('/tickets'),
   },
   {
     path: '/:pathMatch(.*)*',

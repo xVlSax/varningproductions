@@ -9,10 +9,10 @@ export const UPCOMING_EVENTS_FLYERS = [
     modalDetails: {
       title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE + NAGASAKI SUNRISE + CRUTCHES + SEX DWARF',
       subtitle: '@HUS 7 - OCTOBER 2ND 2026',
-      // ticketLink: {
-      //   label: 'BUY TICKET',
-      //   href: 'https://thepointofsale.com/tickets/py4261016001/',
-      // },
+      ticketLink: {
+        label: 'BUY TICKET',
+        href: '/tickets',
+      },
       sections: [
         {
           // title: 'Event Description',
@@ -32,11 +32,19 @@ export const UPCOMING_EVENTS_FLYERS = [
                   name: 'INDIAN NIGHTMARE (BERLIN)',
                   meta: '',
                   href: 'https://indiannightmare.bandcamp.com/',
+                  video: {
+                    src: 'https://www.youtube-nocookie.com/embed/spgOtDPCyQo?rel=0',
+                    title: 'Indian Nightmare video',
+                  },
                 },
                 {
                   name: 'NAGASAKI SUNRISE (PORTUGAL)',
                   meta: '',
                   href: 'https://nagasakisunrise.bandcamp.com/album/distroyer',
+                  video: {
+                    src: 'https://www.youtube-nocookie.com/embed/lubL1nO9gUE?rel=0',
+                    title: 'Nagasaki Sunrise video',
+                  },
                 },
                 {
                   name: 'CRUTCHES (MALMÖ)',

@@ -47,6 +47,9 @@
         @click.self="closeModal"
       >
         <div class="modal-content">
+          <!-- <button class="modal-share" type="button" @click="shareActiveEvent">
+            {{ shareLabel }}
+          </button> -->
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
@@ -82,14 +85,24 @@ export default {
       upcomingEventsFlyers: UPCOMING_EVENTS_FLYERS,
       isModalOpen: false,
       active: { src: '', alt: '' },
+      shareLabel: 'Share event',
+      shareLabelTimer: null,
     }
   },
   methods: {
     openModal(f) {
       this.active = f
       this.isModalOpen = true
+      this.shareLabel = 'Share event'
       document.documentElement.classList.add('no-scroll')
       window.addEventListener('keydown', this.onKey)
+
+      if (f.slug && this.$route.query.event !== f.slug) {
+        this.$router.replace({
+          path: this.$route.path,
+          query: { ...this.$route.query, event: f.slug },
+        })
+      }
     },
     openModalBySlug(slug) {
       if (!slug) return
@@ -104,6 +117,7 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false
+      this.shareLabel = 'Share event'
       document.documentElement.classList.remove('no-scroll')
       window.removeEventListener('keydown', this.onKey)
 
@@ -112,6 +126,52 @@ export default {
         delete query.event
         this.$router.replace({ path: this.$route.path, query })
       }
+    },
+    async shareActiveEvent() {
+      if (!this.active.slug) return
+
+      const route = this.$router.resolve({
+        path: '/events',
+        query: { event: this.active.slug },
+      })
+      const url = new URL(route.href, window.location.origin).href
+      const shareData = {
+        title: this.active.modalDetails?.title || 'Varning Productions event',
+        text: this.active.modalDetails?.subtitle || this.active.alt,
+        url,
+      }
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData)
+          return
+        } catch (error) {
+          if (error?.name === 'AbortError') return
+        }
+      }
+
+      try {
+        await navigator.clipboard.writeText(url)
+        this.showShareConfirmation()
+      } catch {
+        const input = document.createElement('textarea')
+        input.value = url
+        input.setAttribute('readonly', '')
+        input.style.position = 'fixed'
+        input.style.opacity = '0'
+        document.body.appendChild(input)
+        input.select()
+        document.execCommand('copy')
+        input.remove()
+        this.showShareConfirmation()
+      }
+    },
+    showShareConfirmation() {
+      window.clearTimeout(this.shareLabelTimer)
+      this.shareLabel = 'Link copied'
+      this.shareLabelTimer = window.setTimeout(() => {
+        this.shareLabel = 'Share event'
+      }, 2200)
     },
     onKey(e) {
       if (e.key === 'Escape') this.closeModal()
@@ -127,6 +187,7 @@ export default {
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.onKey)
+    window.clearTimeout(this.shareLabelTimer)
     document.documentElement.classList.remove('no-scroll')
   },
 }
@@ -228,7 +289,7 @@ export default {
 }
 
 .past-events-link:hover {
-  color: #ef4444;
+  color: #b6f500;
   transform: translateY(-2px);
 }
 
@@ -316,7 +377,7 @@ export default {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 1100;
   background: rgba(0, 0, 0, 0.75);
   display: grid;
   place-items: center;
@@ -350,6 +411,28 @@ export default {
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
+}
+.modal-share {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.75rem;
+  min-height: 34px;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid #b6f500;
+  color: #b6f500;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal-share:hover,
+.modal-share:focus-visible {
+  background: #b6f500;
+  color: #050505;
 }
 .modal-picture {
   width: 100%;
