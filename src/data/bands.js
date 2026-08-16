@@ -303,9 +303,11 @@ const BAND_PROFILES = {
     hero: 'plektani.webp',
     meta: ['HARDCORE / D-BEAT PUNK', 'Athens-Greece'],
     links: {
+      website: 'https://plektani.com',
       bandcamp: 'https://plektani.bandcamp.com/album/-',
+      youtubeVideo: 'https://www.youtube.com/watch?v=SIgdKqevv7o&list=RDSIgdKqevv7o&start_radio=1',
     },
-    bio: 'Πλεκτάνη, or Plektani, meaning plot or scheme, is a hard-hitting DIY hardcore and D-beat punk band based in Athens, Greece. Formed by veterans of the local underground scene, with members from Chain Cult, Lifewreck, and Χωρίς Οίκτο, the band delivers fast, guitar-driven käng punk with nimble twin-guitar attacks, a heavy rhythm section, hoarse vocals, and desperate shouts.',
+    bio: 'Πλεκτάνη (Plektani) is a DIY hardcore and d-beat punk band from Athens, Greece. Formed by veterans of the local underground scene, the group features members from other notable Greek acts like Chain Cult, Lifewreck, and Χωρίς Οίκτο. With crushing up-tempo rhythms surrounded by highly effective hardcore/crust riffs and blazing but brief guitar solos and leads, their songs create a volcanic atmosphere of pure chaos and revolt. Standing toe to toe with releases from bands like Jalang, Rat Cage, Bootlicker, The Flex, Lasso, Chain Whip, and others, is their ability to map and communicate themes of social injustice and alienation.',
   }),
   'psycho-terrorist-despair-system': createFestivalProfile({
     slug: 'psycho-terrorist-despair-system',
