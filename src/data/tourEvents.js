@@ -75,12 +75,12 @@ const TOUR_DETAILS = {
       {
         date: '17-20.09.2026',
         city: 'Montreal, Canada (A Varning from Montreal Festival)',
-        //flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/festival/current/varning-fest-friday.jpg',
       },
       {
         date: '22.09.2026',
         city: 'Boston, MA',
-        //flyer: '/images/events/upcoming/tours/languid/events/languid-sthml.jpg',
+        flyer: '/images/events/upcoming/tours/plektani/events/plektani-boston.jpg',
       },
       {
         date: '23.09.2026',

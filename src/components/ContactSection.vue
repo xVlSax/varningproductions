@@ -27,8 +27,17 @@
     <!-- Contact Info Grid -->
     <section class="footer-font w-full max-w-screen-md mx-auto px-4 mb-16 contact-grid text-center">
       <div class="space-y-1">
-        <span class="material-icons text-base">phone</span>
-        <p class="text-base"></p>
+        <i class="fa fa-youtube-play" style="font-size: 24px" aria-hidden="true"></i>
+        <p class="text-base">
+          <a
+            href="https://www.youtube.com/@VarningProductions"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Varning Productions on YouTube"
+          >
+            @VarningProductions
+          </a>
+        </p>
       </div>
       <div class="space-y-1">
         <span class="material-icons text-base">email</span>
