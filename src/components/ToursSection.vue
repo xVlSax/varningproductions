@@ -228,7 +228,7 @@ export default {
 }
 
 .past-tours-link:hover {
-  color: #ef4444;
+  color: #b6f500;
   transform: translateY(-2px);
 }
 

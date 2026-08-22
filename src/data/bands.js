@@ -145,8 +145,9 @@ const BAND_PROFILES = {
     meta: ['RAW PUNK / D-BEAT HARDCORE', 'Barcelona-Spain'],
     links: {
       bandcamp: 'https://dominacion.bandcamp.com/',
+      youtubeVideo: 'https://www.youtube.com/watch?v=QOWfC7T25aE&list=RDQOWfC7T25aE&start_radio=1',
     },
-    bio: 'Dominación is a fast-paced raw punk and D-beat hardcore band based in Barcelona, Spain. Known for their unrelenting rhythm, distorted bass, noisepunk guitar riffs, and shouted vocals, they channel the aggressive styles of classic Japanese crasher crust bands and Disclose.',
+    bio: 'Dominación is a raw hardcore punk and crasher crust band based in Barcelona (BCN), Spain. Formed by veterans of the local DIY punk scene (Irreal, Lumpen,++), their aggressive style heavily channels Japanese D-beat and noise-not-music legends like Framtid, D-Clone, and Gloom, merged with a ferocious Spanish hardcore edge topped by aggressive and raw shouted vocals.',
   }),
   'durs-coeurs': createFestivalProfile({
     slug: 'durs-coeurs',
@@ -236,8 +237,9 @@ const BAND_PROFILES = {
     meta: ['UK82 / HARDCORE PUNK', 'Barcelona-Spain'],
     links: {
       bandcamp: 'https://lumpenpunx.bandcamp.com/',
+      youtubeVideo: 'https://www.youtube.com/watch?v=oCOLhJeZMgQ&list=RDoCOLhJeZMgQ&start_radio=1',
     },
-    bio: 'Lumpen is a raw, politically charged UK82-style punk band based in Barcelona, Spain. Primarily composed of Colombian expatriates, their music combines intense Latin American punk aggression with traditional British punk guitar riffs, creating a dark, desperate, and urgent sound.',
+    bio: 'Lumpen is a raw hardcore punk band based in Barcelona, Spain, formed largely by Colombian musicians and sharing members with Dominación. They play a violent, fast, and anthemic style of UK82-style punk that channels the spirit of South American punk dissidence and the gritty desperation of coming up in a corrupt country.',
   }),
   'military-shadow': createFestivalProfile({
     slug: 'military-shadow',

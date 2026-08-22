@@ -253,13 +253,13 @@ onBeforeUnmount(() => {
 }
 
 .routing-city-button:hover {
-  color: #ef4444;
+  color: #b6f500;
 }
 
 .routing-event-link {
   display: inline-block;
   margin-left: 0.75rem;
-  color: #ef4444;
+  color: #b6f500;
   font-family: 'Staatliches', sans-serif;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -279,7 +279,7 @@ onBeforeUnmount(() => {
 }
 
 .event-footnote-link:hover {
-  color: #ef4444;
+  color: #b6f500;
 }
 
 .event-flyer {

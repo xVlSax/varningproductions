@@ -55,6 +55,25 @@
     </div>
   </section>
 
+  <section class="interview-feature" aria-labelledby="interview-title">
+    <a
+      class="interview-link"
+      href="https://diyconspiracy.net/a-varning-from-montreal-festival-2026/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="interview-kicker">FEATURED INTERVIEW · DIY CONSPIRACY</span>
+      <h2 id="interview-title" class="interview-title">
+        A VARNING FROM MONTREAL: BRINGING GLOBAL DIY PUNK TOGETHER SINCE 2007
+      </h2>
+      <p class="interview-copy">
+        Janick talks about Montreal's punk infrastructure, building a scene, and keeping a truly
+        DIY festival alive.
+      </p>
+      <span class="interview-cta">READ THE INTERVIEW</span>
+    </a>
+  </section>
+
   <!-- Page 2: About us profile -->
   <section id="profile" class="profile-root min-h-screen relative p-4">
     <h2 class="title green-shadow-title">IN THE SCENE / FOR THE SCENE</h2>
@@ -232,6 +251,78 @@ export default {
   display: none;
 }
 
+.interview-feature {
+  padding: clamp(1.1rem, 3vw, 2rem) 1rem;
+  background: #000;
+  color: #e9e9e9;
+}
+
+.interview-link {
+  width: min(960px, 100%);
+  margin-inline: auto;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(0.9rem, 3vw, 2rem);
+  display: grid;
+  justify-items: start;
+  gap: 0.65rem;
+  color: inherit;
+  text-decoration: none;
+  border-block: 1px solid rgba(182, 245, 0, 0.58);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.interview-link:hover,
+.interview-link:focus-visible {
+  background: rgba(182, 245, 0, 0.06);
+  border-color: #b6f500;
+}
+
+.interview-link:focus-visible {
+  outline: 2px solid #b6f500;
+  outline-offset: 4px;
+}
+
+.interview-kicker,
+.interview-cta {
+  font-family: 'TypeWriter1', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.interview-kicker {
+  color: #b6f500;
+  font-size: clamp(0.66rem, 0.9vw, 0.8rem);
+}
+
+.interview-title {
+  max-width: 900px;
+  margin: 0;
+  color: #f4f4f4;
+  font-family: 'TypeWriter1', sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.interview-copy {
+  max-width: 760px;
+  margin: 0;
+  color: #cfcfcf;
+  font-family: 'Lucky', sans-serif;
+  font-size: clamp(0.82rem, 1vw, 0.94rem);
+  line-height: 1.55;
+}
+
+.interview-cta {
+  margin-top: 0.25rem;
+  color: #e9e9e9;
+  font-size: 0.74rem;
+  text-decoration: underline;
+  text-decoration-color: #b6f500;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+}
+
 .profile-root {
   background: #000;
   color: #e9e9e9;
@@ -268,13 +359,18 @@ export default {
 }
 
 @media (min-width: 900px) {
+  .about-root {
+    min-height: auto;
+    padding: 5rem 1rem 1.5rem;
+  }
+
   .profile-root {
-    padding: 0.5rem 0.5rem 7rem;
+    padding: 2rem 0.5rem 7rem;
   }
 
   .profile-root > .title,
   .profile-root > .profile-grid {
-    transform: translateY(-4rem);
+    transform: none;
   }
 
   .about-inner {
@@ -295,7 +391,7 @@ export default {
     padding-top: 0.25rem;
   }
   .about-music {
-    top: clamp(4.8rem, 6.2vw, 6rem);
+    top: 3.5rem;
     right: clamp(0.8rem, 4vw, 4.2rem);
     width: clamp(220px, 22vw, 300px);
   }
