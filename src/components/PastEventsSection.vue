@@ -4,7 +4,7 @@
       <!-- Past Events -->
       <h2 class="events-title">Past Events</h2>
       <div class="flyers-grid">
-        <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
+        <article v-for="f in sortedPastEventsFlyers" :key="f.src" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
               <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
@@ -48,30 +48,305 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
-        { src: '/images/events/past/events/varning-benefit-july.jpg', alt: 'varning benefit show' },
-        { src: '/images/events/past/events/dhk-sthlm-june.jpg', alt: 'dhk stockholm show' },
-        { src: '/images/events/past/events/varning-benefit-may.jpg', alt: 'varning benefit show' },
-        { src: '/images/events/past/events/dishonor-stockholm-2026.jpg', alt: 'Dishonor' },
-        { src: '/images/events/past/events/enzyme-agus26-2023.jpg', alt: 'Enzyme' },
-        { src: '/images/events/past/events/absolut-june18-2022.jpg', alt: 'Absolut' },
-        { src: '/images/events/past/events/cartridge-january28-2020.jpg', alt: 'Cartridge' },
-        { src: '/images/events/past/events/varukers-june22-2019.jpg', alt: 'The Varukers' },
-        { src: '/images/events/past/events/decomp-april16-2019.jpg', alt: 'Decomp' },
-        { src: '/images/events/past/events/oipolloi-nov17-2018.jpg', alt: 'OiPolloi' },
-        { src: '/images/events/past/events/subhumanz-nov24-2017.jpg', alt: 'Subhumanz' },
-        { src: '/images/events/past/events/nye-dec31-2016.jpg', alt: 'NYE' },
-        { src: '/images/events/past/events/doa-sept22-2015.jpg', alt: 'DOA' },
+        {
+          src: '/images/events/past/events/varning-benefit-july.jpg',
+          alt: 'Varning XVIII benefit show volume two',
+          date: '2026-07-04',
+        },
+        {
+          src: '/images/events/past/events/dhk-sthlm-june.jpg',
+          alt: 'DHK Stockholm show',
+          date: '2026-06-16',
+        },
+        {
+          src: '/images/events/past/events/varning-benefit-may.jpg',
+          alt: 'Varning XVIII benefit show volume one',
+          date: '2026-05-01',
+        },
+        {
+          src: '/images/events/past/events/dishonor-stockholm-2026.jpg',
+          alt: 'Dishonor Stockholm show',
+          date: '2026-04-21',
+        },
+        {
+          src: '/images/events/past/events/stockholm-gig-flyer.jpg',
+          alt: 'Misanthropic and Dissekerad Stockholm show',
+          date: '2024-04-24',
+        },
+        {
+          src: '/images/events/past/events/enzyme-agus26-2023.jpg',
+          alt: 'Enzyme',
+          date: '2023-08-26',
+        },
+        {
+          src: '/images/events/past/events/la-fraction-june-29th-2023.jpg',
+          alt: 'La Fraction',
+          date: '2023-06-29',
+        },
+        {
+          src: '/images/events/past/events/schedule1-mtlposter-fullres.jpg',
+          alt: 'Schedule 1 Montreal show',
+          date: '2023-05-20',
+        },
+        {
+          src: '/images/events/past/events/lifeless-dark-2023.jpg',
+          alt: 'Lifeless Dark Montreal show',
+          date: '2023-04-15',
+        },
+        {
+          src: '/images/events/past/events/poster-longknife.jpg',
+          alt: 'Long Knife Montreal show',
+          date: '2022-11-12',
+        },
+        {
+          src: '/images/events/past/events/poster-memorial.jpg',
+          alt: 'Dropdead memorial show for Steve',
+          date: '2022-10-22',
+        },
+        {
+          src: '/images/events/past/events/hellshock-poster.jpg',
+          alt: 'Hellshock Montreal show',
+          date: '2022-08-14',
+        },
+        {
+          src: '/images/events/past/events/absolut-june18-2022.jpg',
+          alt: 'Absolut',
+          date: '2022-06-18',
+        },
+        {
+          src: '/images/events/past/events/mtlposter-v3.jpg',
+          alt: 'Napalm Raid Montreal show',
+          date: '2022-05-25',
+        },
+        {
+          src: '/images/events/past/events/restarts-flyer-june-26th-2020.jpg',
+          alt: 'The Restarts Montreal show',
+          date: '2020-06-26',
+        },
+        {
+          src: '/images/events/past/events/cartridge-january28-2020.jpg',
+          alt: 'Cartridge',
+          date: '2020-01-28',
+        },
+        {
+          src: '/images/events/past/events/voivod-katacombes-lowres.jpg',
+          alt: 'Voivod at Katacombes',
+          date: '2019-12-28',
+        },
+        {
+          src: '/images/events/past/events/flyer-metalian-sept-20th-2019.jpg',
+          alt: 'Metalian Montreal show',
+          date: '2019-09-20',
+        },
+        {
+          src: '/images/events/past/events/flyer-swordwielder-aug-24th-2019.jpg',
+          alt: 'Swordwielder Montreal show',
+          date: '2019-08-24',
+        },
+        {
+          src: '/images/events/past/events/flyer-frantic-28-juillet-2019.jpg',
+          alt: 'Frantic Montreal show',
+          date: '2019-07-28',
+        },
+        {
+          src: '/images/events/past/events/varukers-june22-2019.jpg',
+          alt: 'The Varukers',
+          date: '2019-06-22',
+        },
+        {
+          src: '/images/events/past/events/flyer-parasytes-last-show-may-24th-2019.jpg',
+          alt: 'Parasytes last show',
+          date: '2019-05-24',
+        },
+        {
+          src: '/images/events/past/events/decomp-april16-2019.jpg',
+          alt: 'Decomp',
+          date: '2019-04-16',
+        },
+        {
+          src: '/images/events/past/events/flyer-dark-thoughts-march-3rd-2019.jpg',
+          alt: 'Dark Thoughts Montreal show',
+          date: '2019-03-03',
+        },
+        {
+          src: '/images/events/past/events/flyer-last-agony-feb-9th-2019.jpg',
+          alt: 'Last Agony Montreal show',
+          date: '2019-02-09',
+        },
+        {
+          src: '/images/events/past/events/oipolloi-nov17-2018.jpg',
+          alt: 'Oi Polloi',
+          date: '2018-11-17',
+        },
+        {
+          src: '/images/events/past/events/muro-flyer-katacombes-2018.png',
+          alt: 'Muro at Katacombes',
+          date: '2018-10-27',
+        },
+        {
+          src: '/images/events/past/events/flyer-pms-84-aug-22nd-2018.jpg',
+          alt: 'PMS 84 Montreal show',
+          date: '2018-08-22',
+        },
+        {
+          src: '/images/events/past/events/flyer-gs-final-aug-5th-2018.jpg',
+          alt: 'Gasmiasma Montreal show',
+          date: '2018-08-05',
+        },
+        {
+          src: '/images/events/past/events/flyer-fragment-april-21th-2018.jpg',
+          alt: 'Fragment Montreal show',
+          date: '2018-04-21',
+        },
+        {
+          src: '/images/events/past/events/articflowers-march4-2018.jpg',
+          alt: 'Arctic Flowers',
+          date: '2018-03-04',
+        },
+        {
+          src: '/images/events/past/events/flyer-nye-decade-dec-31st-2017.jpg',
+          alt: 'New Year Eve decade show',
+          date: '2017-12-31',
+        },
+        {
+          src: '/images/events/past/events/subhumanz-nov24-2017.jpg',
+          alt: 'Subhumans',
+          date: '2017-11-24',
+        },
+        {
+          src: '/images/events/past/events/flyer-hardcharger-aug-11th-2017.jpg',
+          alt: 'Hard Charger Montreal show',
+          date: '2017-08-11',
+        },
+        {
+          src: '/images/events/past/events/flyer-july-13th-2017.jpg',
+          alt: 'Montreal punk show July 13',
+          date: '2017-07-13',
+        },
+        {
+          src: '/images/events/past/events/flyer-e-n-t-june-29th-2017.jpg',
+          alt: 'Extreme Noise Terror Montreal show',
+          date: '2017-06-29',
+        },
+        {
+          src: '/images/events/past/events/flyer-disterror-may-21st-2017.jpg',
+          alt: 'Dist Error Montreal show',
+          date: '2017-05-21',
+        },
+        {
+          src: '/images/events/past/events/flyer-hatewolf-may-11th-2017.jpg',
+          alt: 'Hatewolf Montreal show',
+          date: '2017-05-11',
+        },
+        {
+          src: '/images/events/past/events/nye-dec31-2016.jpg',
+          alt: 'New Year Eve show',
+          date: '2016-12-31',
+        },
+        {
+          src: '/images/events/past/events/ryuketsu-blizzard-2016.jpg',
+          alt: 'Ryuketsu Blizzard Montreal show',
+          date: '2016-09',
+        },
+        {
+          src: '/images/events/past/events/screamdead-flyer.jpg',
+          alt: 'Screaming Dead Montreal show',
+          date: '2016-06-17',
+        },
+        {
+          src: '/images/events/past/events/flyer-pox-9-avril-2016.jpg',
+          alt: 'Pox Montreal show',
+          date: '2016-04-09',
+        },
+        {
+          src: '/images/events/past/events/sonny-vincent-poster-mtl-tempo.jpg',
+          alt: 'Sonny Vincent at Katacombes',
+          date: '2015-10-17',
+        },
+        {
+          src: '/images/events/past/events/doa-sept22-2015.jpg',
+          alt: 'DOA',
+          date: '2015-09-22',
+        },
+        {
+          src: '/images/events/past/events/warcry-flyer-nov-18th-2014.jpg',
+          alt: 'Warcry Montreal show',
+          date: '2014-11-18',
+        },
+        {
+          src: '/images/events/past/events/flyer-kicker-bon.jpg',
+          alt: 'Kicker at Katacombes',
+          date: '2014-09-26',
+        },
         {
           src: '/images/events/past/events/bellicoseminds-sept13-2014.jpg',
           alt: 'The Bellicose Minds',
+          date: '2014-09-13',
         },
-        { src: '/images/events/past/events/anasazi-june28-2014.jpg', alt: 'Anasazi' },
-        { src: '/images/events/past/events/dclone-oct13-2012.jpg', alt: 'D-clone' },
-        { src: '/images/events/past/events/avengers-aug1-2010.jpg', alt: 'Avengers' },
+        {
+          src: '/images/events/past/events/flyer-gs-august-7th-2014.jpg',
+          alt: 'Gasmiasma Montreal show',
+          date: '2014-08-07',
+        },
+        {
+          src: '/images/events/past/events/flyer-pmma-show-mtl-july-8th-2014.jpg',
+          alt: 'P.M.M.A. Montreal show',
+          date: '2014-07-08',
+        },
+        {
+          src: '/images/events/past/events/flyer-cress-july-5th-2014.jpg',
+          alt: 'Cress Montreal show',
+          date: '2014-07-05',
+        },
+        {
+          src: '/images/events/past/events/cress-april-2014.jpg',
+          alt: 'Cress North American tour',
+          date: '2014-07-05',
+        },
+        {
+          src: '/images/events/past/events/anasazi-june28-2014.jpg',
+          alt: 'Anasazi',
+          date: '2014-06-28',
+        },
+        {
+          src: '/images/events/past/events/flyer-eus-arse-tinted-version.jpg',
+          alt: 'Eus Arse Montreal show',
+          date: '2014-05-18',
+        },
+        {
+          src: '/images/events/past/events/flyer-wankys-new.jpg',
+          alt: 'The Wankys at Katacombes',
+          date: '2014-05-10',
+        },
+        {
+          src: '/images/events/past/events/flyer-the-blood-montreal-dec-1st-bon-2012.jpg',
+          alt: 'The Blood Montreal show',
+          date: '2012-12-01',
+        },
+        {
+          src: '/images/events/past/events/flyer-forward-good.jpg',
+          alt: 'Forward at Katacombes',
+          date: '2012-11-03',
+        },
+        {
+          src: '/images/events/past/events/dclone-oct13-2012.jpg',
+          alt: 'D-Clone',
+          date: '2012-10-13',
+        },
+        {
+          src: '/images/events/past/events/avengers-aug1-2010.jpg',
+          alt: 'Avengers',
+          date: '2010-08-01',
+        },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },
     }
+  },
+  computed: {
+    sortedPastEventsFlyers() {
+      return [...this.pastEventsFlyers].sort((a, b) => b.date.localeCompare(a.date))
+    },
   },
   methods: {
     openModal(f) {
