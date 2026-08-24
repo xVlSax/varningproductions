@@ -151,7 +151,7 @@ const TOUR_DETAILS = {
       {
         date: '25.09.2026',
         city: 'Toronto, ON',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
+        flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-toronto-show.jpg',
       },
       {
         date: '26.09.2026',
