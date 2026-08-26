@@ -14,7 +14,7 @@ const TOUR_DETAILS = {
     routing: [
       {
         date: '17-20.09.2026',
-        city: 'Montreal, Canada (A Varning from Montreal Festival)',
+        city: 'Montreal (Varning Festival)',
         flyer: '/images/festival/current/varning-fest-friday.jpg',
       },
       {
@@ -25,7 +25,7 @@ const TOUR_DETAILS = {
       {
         date: '23.09.2026',
         city: 'Philadelphia, PA',
-        //flyer: '/images/events/upcoming/tours/languid/events/languid-gbg.jpg',
+        flyer: '/images/events/upcoming/tours/plektani/events/plektani-philadelphia.jpg',
       },
       {
         date: '24.09.2026',
@@ -125,7 +125,7 @@ const TOUR_DETAILS = {
     routing: [
       {
         date: '17-19.09.2026',
-        city: 'Montreal (A Varning from Montreal Festival)',
+        city: 'Montreal (Varning Festival)',
         flyer: '/images/festival/current/varning-fest-friday.jpg',
       },
       {
