@@ -5,7 +5,7 @@ export const festivalLineupShows = [
     flyerAlt: 'Thursday festival show flyer',
     day: 'Thursday · September 17',
     event: 'Thursday Show',
-    place: 'Piranha Bar · 680 W. Saint-Catherine St. · Basement',
+    place: 'Piranha Bar · 680 W. Saint-Catherine St. · 2nd floor',
     price: '$35',
     details: 'Doors 6:30 PM · Show 7:30 PM sharp',
     bands: [
