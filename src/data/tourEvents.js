@@ -66,7 +66,7 @@ const TOUR_DETAILS = {
       {
         date: '15.10.2026',
         city: 'Uppsala, Sweden',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.jpg',
+        flyer: '/images/events/upcoming/tours/languid/events/languid-uppsala.jpg',
       },
       {
         date: '16.10.2026',

@@ -16,7 +16,7 @@ export const festivalLineupShows = [
       { name: 'Total Nada', time: '9:45–10:15 PM' },
       { name: 'Esprit de Corps', time: '9:00–9:30 PM' },
       { name: 'Boot', time: '8:10–8:45 PM' },
-      { name: 'Extrana Humana', time: '7:30–7:55 PM' },
+      { name: 'Traumatic State', time: '7:30–7:55 PM' },
     ],
   },
   {
