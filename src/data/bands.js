@@ -390,6 +390,15 @@ const BAND_PROFILES = {
     },
     bio: 'Total Nada is a blistering Spanish-language hardcore punk band based in Montreal, Canada. Led by a Colombian vocalist, they combine the raw, fast, and dark ferocity of 80s Latin American hardcore with the post-punk and anarcho-punk sounds of 80s European and British bands.',
   }),
+  'traumatic-state': createFestivalProfile({
+    slug: 'traumatic-state',
+    name: 'Traumatic State',
+    meta: ['D-BEAT / CRUST PUNK', 'Montreal-Canada / International'],
+    links: {
+      youtubeVideo: 'https://www.youtube.com/watch?v=D74sZmM655Q',
+    },
+    bio: 'Traumatic State is a new D-beat and crust punk band based in Montreal with international ties in its lineup.',
+  }),
   'ultimate-disaster': createFestivalProfile({
     slug: 'ultimate-disaster',
     name: 'Ultimate Disaster',

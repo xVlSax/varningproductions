@@ -55,6 +55,17 @@ export const festivalLineupShows = [
     ],
   },
   {
+    id: 'friday-dance-party',
+    flyer: '/images/festival/current/after-party.jpg',
+    flyerAlt: 'Friday festival dance party flyer featuring DJ Boris',
+    day: 'Friday night · September 18',
+    event: 'Friday Dance Party',
+    place: 'Piranha Bar · 680 W. Saint-Catherine St. · 2nd floor',
+    price: 'Included',
+    details: 'Starts 12:00 AM',
+    bands: [{ name: 'DJ Boris', time: '12:00 AM' }],
+  },
+  {
     id: 'saturday-punk-market',
     flyer: '/images/festival/current/varning-market.jpg',
     flyerAlt: 'Saturday DIY punk market flyer',
