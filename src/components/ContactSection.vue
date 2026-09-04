@@ -79,6 +79,17 @@
   <!-- Footer -->
   <footer class="bg-black/80 py-3 border-t-2 border-red-500 w-full text-center footer-container">
     <div class="container mx-auto px-4">
+      <section class="subscribe-panel footer-font" aria-label="Mailing list subscription">
+        <button
+          type="button"
+          class="subscribe-button"
+          data-eo-form-toggle-id="3824da12-9dbc-11f1-9dac-bb13a95bfc71"
+          aria-haspopup="dialog"
+        >
+          <span class="material-icons" aria-hidden="true">mail_outline</span>
+          <span>Subscribe</span>
+        </button>
+      </section>
       <p class="footer-font font-punk text-sm md:text-base tracking-wider">
         © VARNING PRODUCTIONS 2026 — ALL WRONGS RESERVED — UP THE PUNX TABARNAK!!
       </p>
@@ -123,6 +134,54 @@
 
 .contact-image-wrapper picture {
   width: min(96vw, 1900px);
+}
+
+.subscribe-panel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.subscribe-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-width: min(100%, 15rem);
+  padding: 0.8rem 2.25rem;
+  border: 2px solid #b6f500;
+  color: #b6f500;
+  background: #050505;
+  box-shadow: 5px 5px 0 #b6f500;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.subscribe-button:hover,
+.subscribe-button:focus-visible {
+  color: #050505;
+  background: #b6f500;
+  box-shadow: 2px 2px 0 #fff;
+  transform: translate(3px, 3px);
+}
+
+.subscribe-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.subscribe-button .material-icons {
+  font-size: 1.35rem;
 }
 
 .footer-font {
