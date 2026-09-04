@@ -86,8 +86,8 @@ export const festivalLineupShows = [
     price: '$20',
     details: 'Doors 12:30 PM · Show 1:30 PM sharp',
     bands: [
-      { name: 'Portal Tomb', time: '3:45–4:25 PM' },
-      { name: 'Early Grave', time: '2:55–3:30 PM' },
+      { name: 'Early Grave', time: '3:45–4:25 PM' },
+      { name: 'Motorwolf', time: '2:55–3:30 PM' },
       { name: 'Aneantix', time: '2:10–2:35 PM' },
       { name: 'Armistix', time: '1:30–1:55 PM' },
     ],

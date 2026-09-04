@@ -37,12 +37,12 @@
       aria-hidden="true"
     />
 
-    <!-- <div class="overlay">
-      <router-link to="/festival" class="cta-link">
+    <div class="overlay">
+      <router-link to="/current-festival" class="cta-link">
         <span class="cta-text">ENTER THE FESTIVAL</span>
         <span class="cta-arrow">➜</span>
       </router-link>
-    </div> -->
+    </div>
   </section>
 </template>
 
@@ -177,7 +177,7 @@ export default {
 }
 
 .cta-link:hover {
-  background-color: rgba(255, 0, 0, 0.4);
+  background-color: #9fd402;
   transform: translateY(-1px) scale(1.03);
 }
 

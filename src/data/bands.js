@@ -265,6 +265,19 @@ const BAND_PROFILES = {
     },
     bio: 'Formed in Täby, Stockholm in 1982, Mob 47 is a pioneering Swedish hardcore punk and kängpunk band. Known as one of the fastest D-beat groups, they play ultra-tight, short, and politically charged songs, coining their own frantic style as mangel. They are still active and amazing live.',
   }),
+  motorwolf: createFestivalProfile({
+    slug: 'motorwolf',
+    name: 'Motorwolf',
+    logo: 'motorwolf-logo.webp',
+    // hero: 'mob-47.webp',
+    meta: ["REVIVALIST SPEED METAL / HEAVY METAL / ROCK 'N' ROLL", 'Montreal-Canada'],
+    links: {
+      instagram: 'https://www.instagram.com/motorwolfmtl',
+      facebook: 'https://www.facebook.com/motorwolfesq',
+      bandcamp: 'https://motorwolf.bandcamp.com',
+    },
+    bio: "Originally hailing from Vancouver, British Columbia, recent expat to the metal capital of Canada Alys Stobbart is the sole person behind Motorwolf, a project that has since evolved into a four-piece live band that puts on one hell of a stage show. Dressed in leather and lingerie, the band brings a real old-school '80s vibe to the stage that goes perfectly with their style of revivalist speed metal. Motorwolf offers riff after riff of captivating heavy metal worship. Alys' riff game is just as strong as her vocal chops, and when combined with raw-as-fuck rock 'n' roll drumming, it makes for one hell of a ripping record.",
+  }),
   mueco: createFestivalProfile({
     slug: 'mueco',
     name: 'Mueco',
@@ -323,17 +336,17 @@ const BAND_PROFILES = {
     },
     bio: 'Psycho Terrorist Despair System (P.T.D.S.) is a DIY crust and hardcore punk band from New York City. Delivering relentless walls of Konton Crasher-style guitar distortion, pummeling D-beats, and raw, screaming, pissed-off vocals, the band channels uncompromising noise and aggression. Their self-titled debut demo cassette was released in 2026.',
   }),
-  'portal-tomb': createFestivalProfile({
-    slug: 'portal-tomb',
-    name: 'Portal Tomb',
-    logo: 'portal-tomb-logo.webp',
-    hero: 'portal-tomb.webp',
-    meta: ['STENCHCORE / CRUST PUNK', 'Montreal-Canada'],
-    links: {
-      bandcamp: 'https://portaltomb.bandcamp.com/music',
-    },
-    bio: 'Portal Tomb is a Montreal-based stenchcore punk band formed in early 2024 by scene veterans. Known for a harsh, doomy, and crusty sound, their music pairs rumbling bass tones and sweeping guitars with guttural vocals, tackling themes of societal oppression and anti-capitalism.',
-  }),
+  // 'portal-tomb': createFestivalProfile({
+  //   slug: 'portal-tomb',
+  //   name: 'Portal Tomb',
+  //   logo: 'portal-tomb-logo.webp',
+  //   hero: 'portal-tomb.webp',
+  //   meta: ['STENCHCORE / CRUST PUNK', 'Montreal-Canada'],
+  //   links: {
+  //     bandcamp: 'https://portaltomb.bandcamp.com/music',
+  //   },
+  //   bio: 'Portal Tomb is a Montreal-based stenchcore punk band formed in early 2024 by scene veterans. Known for a harsh, doomy, and crusty sound, their music pairs rumbling bass tones and sweeping guitars with guttural vocals, tackling themes of societal oppression and anti-capitalism.',
+  // }),
   'salvaje-punk': createFestivalProfile({
     slug: 'salvaje-punk',
     name: 'Salvaje Punk',
@@ -522,10 +535,20 @@ const slugifyBandName = (name) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
 
+const additionalFestivalBandNames = ['Motorwolf']
+const excludedFestivalBandNames = new Set(['dj boris'])
+
 const festivalBandNames = [
-  ...new Set(festivalLineupShows.flatMap((show) => show.bands.map((band) => band.name))),
+  ...new Set([
+    ...festivalLineupShows.flatMap((show) => show.bands.map((band) => band.name)),
+    ...additionalFestivalBandNames,
+  ]),
 ]
-  .filter((name) => !name.toLowerCase().startsWith('special guest'))
+  .filter(
+    (name) =>
+      !name.toLowerCase().startsWith('special guest') &&
+      !excludedFestivalBandNames.has(name.toLowerCase()),
+  )
   .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
 
 const FESTIVAL_BAND_PROFILES = Object.fromEntries(

@@ -35,7 +35,7 @@ const TOUR_DETAILS = {
       {
         date: '25.09.2026',
         city: 'Richmond, VA',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
+        flyer: '/images/events/upcoming/tours/plektani/events/plektani-richmond.jpg',
       },
       {
         date: '26.09.2026',
@@ -146,7 +146,7 @@ const TOUR_DETAILS = {
       {
         date: '24.09.2026',
         city: 'Ottawa, ON',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.jpg',
+        flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-ottawa.jpg',
       },
       {
         date: '25.09.2026',
