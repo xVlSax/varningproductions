@@ -18,7 +18,7 @@
       @loadeddata="onVideoReady"
       @error="onVideoReady"
     ></video>
-    <button
+    <!-- <button
       v-if="videoSrc"
       class="video-toggle"
       type="button"
@@ -26,7 +26,7 @@
       :aria-label="videoPlaying ? 'Pause background video' : 'Play background video'"
     >
       {{ videoPlaying ? 'Pause video' : 'Play video' }}
-    </button>
+    </button>-->
 
     <!-- freepalestine svg overlay  -->
     <img
