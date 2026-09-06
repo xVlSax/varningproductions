@@ -2,7 +2,7 @@
   <section id="artists" class="artists-root">
     <div class="artists-wrap">
       <div class="artists-title-wrap">
-        <h3 class="artists-title">Bands</h3>
+        <h1 class="artists-title">Bands</h1>
       </div>
       <div class="artists-grid">
         <RouterLink
@@ -12,12 +12,15 @@
           class="artist-card"
           :aria-label="`Open artist page: ${a.name}`"
         >
-          <div
+          <img
+            v-if="a.image"
             class="artist-bg"
-            :style="a.image ? { backgroundImage: `url(${a.image})` } : undefined"
-            role="img"
-            :aria-label="a.name"
+            :src="a.image"
+            alt=""
+            loading="lazy"
+            decoding="async"
           />
+          <div v-else class="artist-bg" />
 
           <div class="artist-overlay">
             <span class="artist-name">{{ a.name }}</span>
@@ -137,6 +140,9 @@ import { festivalArtists as artists } from '@/data/bands'
 }
 
 .artist-bg {
+  display: block;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
   aspect-ratio: 16 / 10;
   background:

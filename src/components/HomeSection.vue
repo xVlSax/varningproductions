@@ -1,5 +1,6 @@
 <template>
   <section class="hero-full">
+    <h1 class="sr-only">Varning Productions: DIY punk shows, tours and Montreal festival</h1>
     <video
       ref="heroVideo"
       class="bgvid"
@@ -11,9 +12,21 @@
       loop
       playsinline
       preload="none"
+      aria-hidden="true"
+      @play="videoPlaying = true"
+      @pause="videoPlaying = false"
       @loadeddata="onVideoReady"
       @error="onVideoReady"
     ></video>
+    <button
+      v-if="videoSrc"
+      class="video-toggle"
+      type="button"
+      @click="toggleVideo"
+      :aria-label="videoPlaying ? 'Pause background video' : 'Play background video'"
+    >
+      {{ videoPlaying ? 'Pause video' : 'Play video' }}
+    </button>
 
     <!-- freepalestine svg overlay  -->
     <img
@@ -52,6 +65,7 @@ export default {
   data() {
     return {
       videoReady: false,
+      videoPlaying: false,
       videoSrc: '',
       fallbackTimer: null,
       videoStartHandle: null,
@@ -99,6 +113,11 @@ export default {
     }
   },
   methods: {
+    toggleVideo() {
+      const video = this.$refs.heroVideo
+      if (video.paused) video.play().catch(() => {})
+      else video.pause()
+    },
     onVideoReady() {
       this.videoReady = true
       window.clearTimeout(this.fallbackTimer)
@@ -108,6 +127,18 @@ export default {
 </script>
 
 <style scoped>
+.video-toggle {
+  position: absolute;
+  top: calc(var(--header-h, 64px) + 1rem);
+  right: 1rem;
+  z-index: 3;
+  padding: 0.4rem 0.7rem;
+  color: #fff;
+  background: #000c;
+  border: 1px solid #fff8;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
 .hero-full {
   --footer-h: 52px;
   position: relative;

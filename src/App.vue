@@ -1,19 +1,19 @@
 <template>
   <div class="min-h-screen flex flex-col bg-black text-white">
     <Navbar />
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow" tabindex="-1">
       <router-view />
     </main>
-    <Footer v-if="!excludeFooterRoutes.includes($route.path)" />
+    <SiteFooter v-if="!excludeFooterRoutes.includes($route.path.replace(/\/$/, ''))" />
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
-import Footer from './components/Footer.vue'
+import SiteFooter from './components/Footer.vue'
 
 export default {
-  components: { Navbar, Footer },
+  components: { Navbar, SiteFooter },
   data() {
     return {
       excludeFooterRoutes: ['/contact'],

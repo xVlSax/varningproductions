@@ -78,7 +78,8 @@
         <div
           v-if="activeCityFlyer"
           class="city-flyer-modal"
-          role="dialog"
+        role="dialog"
+        v-dialog-focus
           aria-modal="true"
           :aria-label="`${activeCityFlyer.city} flyer`"
           @click.self="closeCityFlyer"

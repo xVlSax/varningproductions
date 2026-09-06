@@ -2,13 +2,13 @@
   <section id="events" class="events-root">
     <div class="events-wrap">
       <!-- Past Tours -->
-      <h2 class="events-title">Past Tours</h2>
+      <h1 class="events-title">Past Tours</h1>
       <div class="flyers-grid">
         <article v-for="(f, i) in pastTourFlyers" :key="i" class="flyer-card">
           <button type="button" class="flyer-btn" @click="openModal(f)">
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
           </button>
@@ -22,6 +22,7 @@
         v-if="isModalOpen"
         class="modal-overlay"
         role="dialog"
+        v-dialog-focus
         aria-modal="true"
         :aria-label="active.alt || 'Flyer preview'"
         @click.self="closeModal"
@@ -30,8 +31,8 @@
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
@@ -61,26 +62,26 @@ export default {
     return {
       pastTourFlyers: [
         {
-          src: '/images/events/past/tours/new-dhk.jpg',
+          src: '/images/events/past/tours/new-dhk.webp',
           alt: 'dhk-eu-tour',
           bandSlug: 'dhk',
         },
         {
-          src: '/images/events/past/tours/warkrusher.jpg',
+          src: '/images/events/past/tours/warkrusher.webp',
           alt: 'warkrusher-eu-tour',
           bandSlug: 'warkrusher',
         },
-        { src: '/images/events/past/tours/traume.jpg', alt: 'traume-na-tour' },
-        { src: '/images/events/past/tours/oipolloi-oct-tour-2018.jpg', alt: 'Oipolloi Tour' },
+        { src: '/images/events/past/tours/traume.webp', alt: 'traume-na-tour' },
+        { src: '/images/events/past/tours/oipolloi-oct-tour-2018.webp', alt: 'Oipolloi Tour' },
         {
-          src: '/images/events/past/tours/gs-agust-tour-2018.jpg',
+          src: '/images/events/past/tours/gs-agust-tour-2018.webp',
           alt: 'Generacion Suicida Tour',
         },
         {
-          src: '/images/events/past/tours/ryuketsublizzard-sep-tour-2016.jpg',
+          src: '/images/events/past/tours/ryuketsublizzard-sep-tour-2016.webp',
           alt: 'Ryuketsu Blizzard Tour',
         },
-        { src: '/images/events/past/tours/deadhero-july-tour-2016.jpg', alt: 'Dead Hero Tour' },
+        { src: '/images/events/past/tours/deadhero-july-tour-2016.webp', alt: 'Dead Hero Tour' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },

@@ -2,7 +2,7 @@
   <section id="tours" class="tours-root">
     <div class="tours-wrap">
       <!-- Tours -->
-      <h2 class="tours-title">Tours</h2>
+      <h1 class="tours-title">Tours</h1>
       <!-- <div class="flyers-grid tours-grid">
         <article v-for="(f, i) in tourFlyers" :key="i" class="flyer-card tours-card">
           <router-link
@@ -10,8 +10,8 @@
             :to="{ name: 'Event Description', params: { slug: f.slug } }"
           >
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
           </router-link>
@@ -27,8 +27,8 @@
             :to="{ name: 'Event Description', params: { slug: f.slug } }"
           >
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img
                 :src="f.src"
                 :alt="f.alt"

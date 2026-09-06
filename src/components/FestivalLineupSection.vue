@@ -36,6 +36,9 @@
                 </li>
               </ul>
               <p v-else class="no-bands">DIY labels, records, art and merch.</p>
+              <p v-if="show.description" class="show-description">
+                {{ show.description }}
+              </p>
             </div>
           </div>
 
@@ -227,6 +230,14 @@ a.band-name:hover {
   font-family: 'TypeWriter1', sans-serif;
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.7;
+}
+
+.show-description {
+  margin: 1.5rem 0 0;
+  color: #cfcfcf;
+  font-family: 'TypeWriter1', sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.65;
 }
 
 .show-details {

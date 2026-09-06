@@ -18,22 +18,25 @@
         title="Bandcamp player"
         loading="lazy"
         seamless
-      >
-        <a :href="aboutMusic.bandcampUrl" target="_blank" rel="noopener noreferrer">
-          {{ aboutMusic.fallbackText }}
-        </a>
-      </iframe>
+      ></iframe>
+      <a class="sr-only" :href="aboutMusic.bandcampUrl" target="_blank" rel="noopener noreferrer">
+        {{ aboutMusic.fallbackText }}
+      </a>
     </div>
     <!-- Text Right side: About us -->
     <div class="about-inner">
       <!-- Bottom-left skulls -->
       <img
-        src="/images/about/AboutImage.svg"
+        src="/images/about/AboutImage.webp"
+        width="1200"
+        height="1200"
+        fetchpriority="high"
+        decoding="async"
         alt="skull punks"
         class="about-img float-slow fade-in-left"
       />
       <div class="about-text fade-in-right">
-        <h4 class="title green-shadow-title">ABOUT US</h4>
+        <h1 class="title green-shadow-title">ABOUT US</h1>
         <p class="copy">
           Varning Productions is a booking event project founded by Janick in 2006 with the opening
           of her co-managed venue The Katacombes in Montreal, Canada. Since then, Varning
@@ -67,8 +70,8 @@
         A VARNING FROM MONTREAL: BRINGING GLOBAL DIY PUNK TOGETHER SINCE 2007
       </h2>
       <p class="interview-copy">
-        Janick talks about Montreal's punk infrastructure, building a scene, and keeping a truly
-        DIY festival alive.
+        Janick talks about Montreal's punk infrastructure, building a scene, and keeping a truly DIY
+        festival alive.
       </p>
       <span class="interview-cta">READ THE INTERVIEW</span>
     </a>
@@ -84,7 +87,7 @@
           <source srcset="/images/about/janick.avif" type="image/avif" />
           <source srcset="/images/about/janick.webp" type="image/webp" />
           <img
-            src="/images/about/janick.jpg"
+            src="/images/about/janick.webp"
             class="profile-img"
             alt="Janick Varning"
             loading="lazy"
@@ -112,7 +115,7 @@
           <source srcset="/images/about/vlad.avif" type="image/avif" />
           <source srcset="/images/about/vlad.webp" type="image/webp" />
           <img
-            src="/images/about/vlad.jpg"
+            src="/images/about/vlad.webp"
             class="profile-img"
             alt="Vlad Sant"
             loading="lazy"
@@ -258,6 +261,7 @@ export default {
 }
 
 .interview-link {
+  box-sizing: border-box;
   width: min(960px, 100%);
   margin-inline: auto;
   padding: clamp(1rem, 2vw, 1.5rem) clamp(0.9rem, 3vw, 2rem);

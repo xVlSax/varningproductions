@@ -2,13 +2,13 @@
   <section id="events" class="events-root">
     <div class="events-wrap">
       <!-- Events -->
-      <h2 class="events-title">Events</h2>
+      <h1 class="events-title">Events</h1>
       <div class="flyers-grid events-main-grid">
         <article v-for="(f, i) in eventsFlyers" :key="i" class="flyer-card events-main-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
           </button>
@@ -21,8 +21,8 @@
         <article v-for="(f, i) in upcomingEventsFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
           </button>
@@ -42,6 +42,7 @@
         v-if="isModalOpen"
         class="modal-overlay"
         role="dialog"
+        v-dialog-focus
         aria-modal="true"
         :aria-label="active.alt || 'Flyer preview'"
         @click.self="closeModal"
@@ -53,8 +54,8 @@
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 

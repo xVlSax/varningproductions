@@ -1,4 +1,5 @@
 <template>
+  <h1 class="sr-only">A Varning From Montreal Festival</h1>
   <section id="festival" class="festival-container snap-start min-h-screen bg-black text-white">
     <div class="container mx-auto py-20 px-4 flex flex-col items-center gap-12">
       <!-- Festival Logo (smaller on desktop) -->
@@ -85,7 +86,7 @@
                 type="image/webp"
               />
               <img
-                src="/images/festival/current/varning-fest-poster.jpg"
+                src="/images/festival/current/varning-fest-poster.webp"
                 alt="Current Festival Poster"
               />
             </picture>
@@ -98,7 +99,7 @@
             <picture class="festival-flyer-picture">
               <source srcset="/images/festival/flyers/MainPoster.avif" type="image/avif" />
               <source srcset="/images/festival/flyers/MainPoster.webp" type="image/webp" />
-              <img src="/images/festival/flyers/MainPoster.jpg" alt="Past Festivals Poster" />
+              <img src="/images/festival/flyers/MainPoster.webp" alt="Past Festivals Poster" />
             </picture>
           </router-link>
         </div>

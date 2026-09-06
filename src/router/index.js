@@ -1,22 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createMemoryHistory } from 'vue-router'
 
-import HomeSection from '@/components/HomeSection.vue'
-import AboutSection from '@/components/AboutSection.vue'
-import FestivalSection from '@/components/FestivalSection.vue'
-import CurrentFestivalSection from '@/components/CurrentFestivalSection.vue'
-import FestivalLineupSection from '@/components/FestivalLineupSection.vue'
-import PastFestivalSection from '@/components/PastFestivalSection.vue'
-import ToursSection from '@/components/ToursSection.vue'
-import PastToursSection from '@/components/PastToursSection.vue'
-import EventSection from '@/components/EventSection.vue'
-import EventDescription from '@/components/EventDescription.vue'
-import BandProfile from '@/components/BandProfile.vue'
-import PastEventsSection from '@/components/PastEventsSection.vue'
-import ServicesSection from '@/components/ServicesSection.vue'
-import ArtistSection from '@/components/ArtistSection.vue'
-import ContactSection from '@/components/ContactSection.vue'
-import ThingsToDo from '@/components/ThingsToDo.vue'
-import TicketsPage from '@/components/TicketsPage.vue'
+const HomeSection = () => import('@/components/HomeSection.vue')
+const AboutSection = () => import('@/components/AboutSection.vue')
+const FestivalSection = () => import('@/components/FestivalSection.vue')
+const CurrentFestivalSection = () => import('@/components/CurrentFestivalSection.vue')
+const FestivalLineupSection = () => import('@/components/FestivalLineupSection.vue')
+const PastFestivalSection = () => import('@/components/PastFestivalSection.vue')
+const ToursSection = () => import('@/components/ToursSection.vue')
+const PastToursSection = () => import('@/components/PastToursSection.vue')
+const EventSection = () => import('@/components/EventSection.vue')
+const EventDescription = () => import('@/components/EventDescription.vue')
+const BandProfile = () => import('@/components/BandProfile.vue')
+const PastEventsSection = () => import('@/components/PastEventsSection.vue')
+const ServicesSection = () => import('@/components/ServicesSection.vue')
+const ArtistSection = () => import('@/components/ArtistSection.vue')
+const ContactSection = () => import('@/components/ContactSection.vue')
+const ThingsToDo = () => import('@/components/ThingsToDo.vue')
+const TicketsPage = () => import('@/components/TicketsPage.vue')
 import { PAGE_METADATA } from '@/data/siteMetadata'
 
 const metadataFor = (path) => PAGE_METADATA[path]
@@ -132,7 +132,13 @@ const routes = [
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/',
+    name: 'Not Found',
+    component: () => import('@/components/NotFoundPage.vue'),
+    meta: {
+      title: 'Page Not Found | Varning Productions',
+      description: 'This page could not be found.',
+      robots: 'noindex,follow',
+    },
   },
 ]
 
@@ -141,16 +147,19 @@ if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
   window.history.replaceState(null, '', legacyPath)
 }
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
-  scrollBehavior(to) {
-    if (to.hash) {
-      return { el: to.hash, top: 72, behavior: 'smooth' }
-    }
+export const createSiteRouter = () =>
+  createRouter({
+    history: import.meta.env.SSR
+      ? createMemoryHistory(import.meta.env.BASE_URL)
+      : createWebHistory(import.meta.env.BASE_URL),
+    routes,
+    scrollBehavior(to) {
+      if (to.hash) {
+        return { el: to.hash, top: 72, behavior: 'smooth' }
+      }
 
-    return { top: 0 }
-  },
-})
+      return { top: 0 }
+    },
+  })
 
-export default router
+export default createSiteRouter

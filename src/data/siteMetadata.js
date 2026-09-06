@@ -1,4 +1,5 @@
 export const SITE_URL = 'https://varningproductions.com'
+export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/social/og-cover.jpg`
 
 export const PAGE_METADATA = {
   '/': {
@@ -19,7 +20,7 @@ export const PAGE_METADATA = {
   '/current-festival': {
     title: 'A Varning From Montreal Festival 2026',
     description:
-      'Festival dates, tickets, poster and essential information for A Varning From Montreal Festival 2026.',
+      'Join A Varning From Montreal Festival, September 17-19, 2026 in Montreal. Explore the punk lineup, daily schedule, venues and festival tickets.',
   },
   '/festival-lineup': {
     title: 'A Varning From Montreal Festival 2026 Lineup',
@@ -72,8 +73,7 @@ export const PAGE_METADATA = {
   },
   '/tickets': {
     title: 'Event Tickets – Varning Productions',
-    description:
-      'Buy tickets for upcoming Varning Productions punk shows and events in Stockholm.',
+    description: 'Buy tickets for upcoming Varning Productions punk shows and events in Stockholm.',
   },
 }
 
@@ -96,7 +96,19 @@ const truncateDescription = (value, limit = 160) => {
   return `${normalized.slice(0, limit - 1).replace(/\s+\S*$/, '')}…`
 }
 
+export const createPageSchema = (metadata, path) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': canonicalUrl(path),
+  url: canonicalUrl(path),
+  name: metadata.title,
+  description: metadata.description,
+  publisher: { '@id': `${SITE_URL}/#organization` },
+})
+
 export const createBandMetadata = (band) => ({
+  image: band.heroImage ? new URL(band.heroImage, SITE_URL).href : DEFAULT_SOCIAL_IMAGE,
+  imageAlt: band.heroAlt || band.name,
   title: `${band.name} – Band Profile | Varning Productions`,
   description: truncateDescription(
     `${band.name}: ${Array.isArray(band.bio) ? band.bio[0] : band.bio || 'band profile, music and links.'}`,
@@ -104,6 +116,8 @@ export const createBandMetadata = (band) => ({
 })
 
 export const createTourMetadata = (tour) => ({
+  image: tour.image ? new URL(tour.image, SITE_URL).href : DEFAULT_SOCIAL_IMAGE,
+  imageAlt: tour.title,
   title: `${tour.title} Tour – Varning Productions`,
   description: truncateDescription(
     `${tour.title} ${tour.subtitle || 'tour dates and routing'}. ${tour.intro || ''}`,

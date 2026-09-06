@@ -8,7 +8,8 @@
           :src="band.heroImage"
           :alt="band.heroAlt || band.name"
           :style="{ objectPosition: band.heroObjectPosition || 'center center' }"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
       </picture>

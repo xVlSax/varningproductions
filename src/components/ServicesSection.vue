@@ -1,5 +1,6 @@
 <template>
   <section id="services" class="services-root">
+    <h1 class="sr-only">Punk tour booking, show production and promotion services</h1>
     <div class="services-grid">
       <!-- Card 1 -->
       <article class="service-card">
@@ -8,7 +9,7 @@
           <source srcset="/images/services/stage.avif" type="image/avif" />
           <source srcset="/images/services/stage.webp" type="image/webp" />
           <!-- Fallback JPG -->
-          <img src="/images/services/stage.jpg" alt="Booking" loading="lazy" class="service-img" />
+          <img src="/images/services/stage.webp" alt="Booking" loading="lazy" class="service-img" />
         </picture>
         <h5 class="service-title">BOOKING YOUR BAND AND/OR YOUR VENUE</h5>
         <p class="service-text">
@@ -28,7 +29,7 @@
           <source srcset="/images/services/endofpollution.webp" type="image/webp" />
           <!-- Fallback JPG -->
           <img
-            src="/images/services/endofpollution.jpg"
+            src="/images/services/endofpollution.webp"
             alt="Varning Festival"
             loading="lazy"
             class="service-img"
@@ -55,7 +56,7 @@
           <source srcset="/images/services/stagecase.webp" type="image/webp" />
           <!-- Fallback JPG -->
           <img
-            src="/images/services/stagecase.jpg"
+            src="/images/services/stagecase.webp"
             alt="Tours"
             loading="lazy"
             class="service-img"
@@ -80,7 +81,7 @@
           <source srcset="/images/services/merch.avif" type="image/avif" />
           <source srcset="/images/services/merch.webp" type="image/webp" />
           <!-- Fallback JPG -->
-          <img src="/images/services/merch.jpg" alt="Merch" loading="lazy" class="service-img" />
+          <img src="/images/services/merch.webp" alt="Merch" loading="lazy" class="service-img" />
         </picture>
         <h5 class="service-title">MERCH & PROMO</h5>
         <p class="service-text">

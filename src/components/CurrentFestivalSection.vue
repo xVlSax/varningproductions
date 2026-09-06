@@ -28,7 +28,11 @@
         <!-- Festival countdown -->
         <section class="festival-countdown" :aria-label="countdownAriaLabel">
           <p class="countdown-heading">Festival starts in</p>
-          <div class="countdown-grid">
+          <div
+            class="countdown-grid"
+            :style="{ visibility: remainingTime === null ? 'hidden' : undefined }"
+            :aria-hidden="remainingTime === null"
+          >
             <div v-for="unit in countdownUnits" :key="unit.label" class="countdown-unit">
               <div class="countdown-value" aria-hidden="true">
                 <span
@@ -56,7 +60,7 @@
 
       <!-- Intro Text -->
       <div class="festival-font text-center text-gray-200 space-y-2">
-        <h3 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2026</h3>
+        <h1 class="text-2xl md:text-4xl font-bold">A Varning From Montreal Festival 2026</h1>
         <h4 class="text-lg md:text-xl">
           Tickets/passes are available
           <a
@@ -78,16 +82,10 @@
         </h4>
         <div class="festival-poster-wrap">
           <picture class="festival-poster">
-            <source
-              srcset="/images/festival/current/varning-fest-poster.avif"
-              type="image/avif"
-            />
-            <source
-              srcset="/images/festival/current/varning-fest-poster.webp"
-              type="image/webp"
-            />
+            <source srcset="/images/festival/current/varning-fest-poster.avif" type="image/avif" />
+            <source srcset="/images/festival/current/varning-fest-poster.webp" type="image/webp" />
             <img
-              src="/images/festival/current/varning-fest-poster.jpg"
+              src="/images/festival/current/varning-fest-poster.webp"
               alt="A Varning From Montreal Festival 2026 poster"
               width="839"
               height="1200"
@@ -108,8 +106,14 @@
         >
           <!-- Flyer Image with modern format fallbacks -->
           <picture>
-            <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-            <source :srcset="flyer.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+            <source
+              :srcset="flyer.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')"
+              type="image/avif"
+            />
+            <source
+              :srcset="flyer.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')"
+              type="image/webp"
+            />
             <img
               :src="flyer.src"
               :alt="flyer.alt"
@@ -154,7 +158,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const FESTIVAL_START = new Date('2026-09-17T18:00:00-04:00').getTime()
-const remainingTime = ref(Math.max(0, FESTIVAL_START - Date.now()))
+const remainingTime = ref(null)
 let countdownInterval
 
 const digitalSegments = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
@@ -192,6 +196,8 @@ const countdownUnits = computed(() => [
 ])
 
 const countdownAriaLabel = computed(() => {
+  if (remainingTime.value === null)
+    return 'Festival starts September 17, 2026 at 6 PM Montreal time'
   const { days, hours, minutes, seconds } = countdown.value
   return `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds until the festival`
 })

@@ -4,7 +4,7 @@ export const UPCOMING_EVENTS_FLYERS = [
   //INDIANNIGHTMARE-NAGASAKI-STHLM
   {
     slug: 'metal-punk-indian-nightmare-nagasaki-sunrise',
-    src: '/images/events/upcoming/events/indian-nagasaki-sthlm.jpg',
+    src: '/images/events/upcoming/events/indian-nagasaki-sthlm.webp',
     alt: 'indian-nightmare-nagasaki-sunrise-crutches-sex-dwarf-stockholm-show',
     modalDetails: {
       title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE + NAGASAKI SUNRISE + CRUTCHES + SEX DWARF',
@@ -92,7 +92,7 @@ export const UPCOMING_EVENTS_FLYERS = [
   //LANGUID-MEANWHILE-STHLM
   {
     slug: 'd-beat-massacre-over-stockholm',
-    src: '/images/events/upcoming/events/languid-sthml.jpg',
+    src: '/images/events/upcoming/events/languid-sthml.webp',
     alt: 'languid-meanwhile-paranoid-dissekerad-svaveldioxid-nagasaki-stockholm-show',
     modalDetails: {
       title: 'D-BEAT MASSACRE OVER STOCKHOLM',

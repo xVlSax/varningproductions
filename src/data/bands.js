@@ -269,14 +269,14 @@ const BAND_PROFILES = {
     slug: 'motorwolf',
     name: 'Motorwolf',
     logo: 'motorwolf-logo.webp',
-    // hero: 'mob-47.webp',
+    hero: 'motorwolf.webp',
     meta: ["REVIVALIST SPEED METAL / HEAVY METAL / ROCK 'N' ROLL", 'Montreal-Canada'],
     links: {
       instagram: 'https://www.instagram.com/motorwolfmtl',
       facebook: 'https://www.facebook.com/motorwolfesq',
       bandcamp: 'https://motorwolf.bandcamp.com',
     },
-    bio: "Originally hailing from Vancouver, British Columbia, recent expat to the metal capital of Canada Alys Stobbart is the sole person behind Motorwolf, a project that has since evolved into a four-piece live band that puts on one hell of a stage show. Dressed in leather and lingerie, the band brings a real old-school '80s vibe to the stage that goes perfectly with their style of revivalist speed metal. Motorwolf offers riff after riff of captivating heavy metal worship. Alys' riff game is just as strong as her vocal chops, and when combined with raw-as-fuck rock 'n' roll drumming, it makes for one hell of a ripping record.",
+    bio: "Originally hailing from Vancouver, British Columbia, the recent expat to the metal capital of Canada Alys Stobbart is the sole person behind this project which has since evolved into a four piece live band that puts on one hell of a stage show. Dressed in leather and lingerie, the band brings a real old school 80's vibe to the stage that goes perfectly in line with their style of revivalist speed metal. Motorwolf offers riff after riff of captivating heavy metal worship. Alys' riff game is just as strong as her vocal chops, and when this is combined with some raw-as-fuck rock n' roll drumming it makes for one hell of a ripping journey.",
   }),
   mueco: createFestivalProfile({
     slug: 'mueco',
@@ -406,11 +406,13 @@ const BAND_PROFILES = {
   'traumatic-state': createFestivalProfile({
     slug: 'traumatic-state',
     name: 'Traumatic State',
+    logo: 'traumatic-state-logo.webp',
+    hero: 'traumatic-state.webp',
     meta: ['D-BEAT / CRUST PUNK', 'Montreal-Canada / International'],
     links: {
       youtubeVideo: 'https://www.youtube.com/watch?v=D74sZmM655Q',
     },
-    bio: 'Traumatic State is a new D-beat and crust punk band based in Montreal with international ties in its lineup.',
+    bio: 'Traumatic State is a crust punk and D-beat band based in Montreal. Their music is characterized by heavy and fast drum rhythms (the famous D-beat pattern popularized by the band Discharge), distorted, saturated guitars, and raw, screamed vocals.',
   }),
   'ultimate-disaster': createFestivalProfile({
     slug: 'ultimate-disaster',

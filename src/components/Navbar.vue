@@ -1,6 +1,6 @@
 <template>
-  <teleport to="body">
-    <nav id="navbar" class="nav-root">
+  <teleport to="#navigation">
+    <nav id="navbar" class="nav-root" aria-label="Main navigation" @keydown.esc="closeMenu">
       <!-- Mobile top bar -->
       <div class="bar-mobile">
         <router-link to="/" class="logo-v" aria-label="Varning Productions home">
@@ -10,12 +10,18 @@
             </text>
           </svg>
         </router-link>
-        <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
-          <i class="fa fa-bars"></i>
+        <button
+          class="hamburger"
+          @click="toggleMenu"
+          aria-label="Toggle menu"
+          :aria-expanded="isMenuOpen"
+          aria-controls="mobile-navigation"
+        >
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
       </div>
       <!-- Mobile dropdown -->
-      <div v-if="isMenuOpen" class="mobile-menu">
+      <div v-if="isMenuOpen" id="mobile-navigation" class="mobile-menu">
         <div v-for="item in navItems" :key="item.id" class="mobile-nav-group">
           <button
             v-if="item.children"
@@ -111,6 +117,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+defineOptions({ name: 'SiteNavbar' })
 
 const isMenuOpen = ref(false)
 const openMobileSubmenu = ref(null)
@@ -160,8 +167,9 @@ const resetDesktopSubmenu = (id) => {
   }
 }
 const isNavItemActive = (item) => {
-  if (route.path === item.path) return true
-  return item.children?.some((child) => route.path === (child.path.path || child.path)) ?? false
+  const currentPath = route.path.replace(/\/$/, '') || '/'
+  if (currentPath === item.path) return true
+  return item.children?.some((child) => currentPath === (child.path.path || child.path)) ?? false
 }
 
 // Close mobile menu on route change

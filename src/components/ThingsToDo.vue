@@ -365,9 +365,7 @@ const visibleCategories = computed(() =>
   overflow: hidden;
   padding: calc(var(--header-h, 64px) + 3.5rem) clamp(1rem, 4vw, 4.5rem) 5rem;
   color: #e9e7df;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.94)),
-    url('/images/bg-texture.png') center / cover fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.94));
 }
 
 .things-page::before {
@@ -572,9 +570,11 @@ const visibleCategories = computed(() =>
 }
 
 .category-heading {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: end;
   gap: clamp(0.85rem, 2vw, 1.5rem);
   margin-bottom: 2rem;
@@ -622,6 +622,7 @@ const visibleCategories = computed(() =>
 }
 
 .category-heading h2 {
+  overflow-wrap: anywhere;
   margin: 0;
   font-family: 'Staatliches', sans-serif;
   font-size: clamp(2.2rem, 5vw, 4.5rem);
@@ -888,7 +889,7 @@ const visibleCategories = computed(() =>
   }
 
   .category-heading {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     min-height: 145px;
     padding: 2.75rem 2.8rem 2.5rem;
   }

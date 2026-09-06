@@ -13,7 +13,7 @@
         <source srcset="/images/contact/framtid.webp" type="image/webp" />
         <!-- Fallback -->
         <img
-          src="/images/contact/framtid.png"
+          src="/images/contact/framtid.webp"
           alt="Framtid at Varning"
           loading="lazy"
           decoding="async"
@@ -137,6 +137,7 @@
 }
 
 .subscribe-panel {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -145,6 +146,7 @@
 }
 
 .subscribe-button {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;

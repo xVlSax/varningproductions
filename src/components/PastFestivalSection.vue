@@ -2,13 +2,13 @@
   <section id="events" class="events-root">
     <div class="events-wrap">
       <!-- Past Events -->
-      <h2 class="events-title">Past Festivals</h2>
+      <h1 class="events-title">Past Festivals</h1>
       <div class="flyers-grid">
         <article v-for="(f, i) in pastEventsFlyers" :key="i" class="flyer-card">
           <button class="flyer-btn" @click="openModal(f)">
             <picture>
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
               <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
             </picture>
           </button>
@@ -22,6 +22,7 @@
         v-if="isModalOpen"
         class="modal-overlay"
         role="dialog"
+        v-dialog-focus
         aria-modal="true"
         :aria-label="active.alt || 'Flyer preview'"
         @click.self="closeModal"
@@ -30,8 +31,8 @@
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpg|png)$/i, '.webp')" type="image/webp" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
+            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
@@ -48,23 +49,23 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
-        { src: '/images/festival/past/avfmf2025XVII.jpg', alt: 'XVII-2025' },
-        { src: '/images/festival/past/avfmf2024.jpg', alt: 'XVI-2024' },
-        { src: '/images/festival/past/avfmfXV2023.jpg', alt: 'XV-2023' },
-        { src: '/images/festival/past/avfmfXIV2022.jpg', alt: 'XIV-2022' },
-        { src: '/images/festival/past/avfmfXIII2019.jpg', alt: 'XIII-2019' },
-        { src: '/images/festival/past/avfmfXII2018.jpg', alt: 'XII-2018' },
-        { src: '/images/festival/past/avfmfXI2017.jpg', alt: 'XI-2017' },
-        { src: '/images/festival/past/avfmfX2016.jpg', alt: 'X-2016' },
-        { src: '/images/festival/past/avfmfIX2015.jpg', alt: 'IX-2015' },
-        { src: '/images/festival/past/avfmfVIII2014.jpg', alt: 'VIII-2014' },
-        { src: '/images/festival/past/avfmfVII2013.jpg', alt: 'VII-2013' },
-        { src: '/images/festival/past/avfmfVI2012.jpg', alt: 'VI-2012' },
-        { src: '/images/festival/past/avfmfV2011.jpg', alt: 'V-2011' },
-        { src: '/images/festival/past/avfmfIV2010.jpg', alt: 'IV-2010' },
-        { src: '/images/festival/past/avfmfIII2009.jpg', alt: 'III-2009' },
-        { src: '/images/festival/past/avfmfII2008.jpg', alt: 'II-2008' },
-        { src: '/images/festival/past/avfmfI2007.jpg', alt: 'I-2007' },
+        { src: '/images/festival/past/avfmf2025XVII.webp', alt: 'XVII-2025' },
+        { src: '/images/festival/past/avfmf2024.webp', alt: 'XVI-2024' },
+        { src: '/images/festival/past/avfmfXV2023.webp', alt: 'XV-2023' },
+        { src: '/images/festival/past/avfmfXIV2022.webp', alt: 'XIV-2022' },
+        { src: '/images/festival/past/avfmfXIII2019.webp', alt: 'XIII-2019' },
+        { src: '/images/festival/past/avfmfXII2018.webp', alt: 'XII-2018' },
+        { src: '/images/festival/past/avfmfXI2017.webp', alt: 'XI-2017' },
+        { src: '/images/festival/past/avfmfX2016.webp', alt: 'X-2016' },
+        { src: '/images/festival/past/avfmfIX2015.webp', alt: 'IX-2015' },
+        { src: '/images/festival/past/avfmfVIII2014.webp', alt: 'VIII-2014' },
+        { src: '/images/festival/past/avfmfVII2013.webp', alt: 'VII-2013' },
+        { src: '/images/festival/past/avfmfVI2012.webp', alt: 'VI-2012' },
+        { src: '/images/festival/past/avfmfV2011.webp', alt: 'V-2011' },
+        { src: '/images/festival/past/avfmfIV2010.webp', alt: 'IV-2010' },
+        { src: '/images/festival/past/avfmfIII2009.webp', alt: 'III-2009' },
+        { src: '/images/festival/past/avfmfII2008.webp', alt: 'II-2008' },
+        { src: '/images/festival/past/avfmfI2007.webp', alt: 'I-2007' },
       ],
       isModalOpen: false,
       active: { src: '', alt: '' },

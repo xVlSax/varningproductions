@@ -1,7 +1,7 @@
 export const festivalLineupShows = [
   {
     id: 'thursday-show',
-    flyer: '/images/festival/current/varning-fest-thursday.jpg',
+    flyer: '/images/festival/current/varning-fest-thursday.webp',
     flyerAlt: 'Thursday festival show flyer',
     day: 'Thursday · September 17',
     event: 'Thursday Show',
@@ -21,7 +21,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'friday-matinee',
-    flyer: '/images/festival/current/varning-fest-matine-friday.jpg',
+    flyer: '/images/festival/current/varning-fest-matine-friday.webp',
     flyerAlt: 'Friday matinee festival show flyer',
     day: 'Friday · September 18',
     event: 'Friday Matinee Show',
@@ -37,7 +37,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'friday-show',
-    flyer: '/images/festival/current/varning-fest-friday.jpg',
+    flyer: '/images/festival/current/varning-fest-friday.webp',
     flyerAlt: 'Friday festival show flyer',
     day: 'Friday · September 18',
     event: 'Friday Show',
@@ -56,21 +56,23 @@ export const festivalLineupShows = [
   },
   {
     id: 'friday-dance-party',
-    flyer: '/images/festival/current/after-party.jpg',
+    flyer: '/images/festival/current/after-party.webp',
     flyerAlt: 'Friday festival dance party flyer featuring DJ Boris',
     day: 'Friday night · September 18',
     event: 'Friday Dance Party',
     place: 'Piranha Bar · 680 W. Saint-Catherine St. · 2nd floor',
     price: 'Included',
-    details: 'Starts 12:00 AM',
-    bands: [{ name: 'DJ Boris', time: '12:00 AM' }],
+    details: 'Starts 1:00 AM',
+    description:
+      'Varning after show dance party will feature DJ Boris, playing a mix of New Wave, some Disco, Latin Music and Punk Classics: Music, Friendship, Dancing and Good times, in the true spirit of Varning Festival.',
+    bands: [{ name: 'DJ Boris', time: '' }],
   },
   {
     id: 'saturday-punk-market',
-    flyer: '/images/festival/current/varning-market.jpg',
+    flyer: '/images/festival/current/varning-market.webp',
     flyerAlt: 'Saturday DIY punk market flyer',
     day: 'Saturday · September 19',
-    event: 'DIY Punk Market',
+    event: 'Saturday DIY Punk Market',
     place: 'Piranha Bar · 680 W. Saint-Catherine St. · Outside',
     price: 'Free',
     details: 'All ages · Starts 12:00 PM',
@@ -78,7 +80,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'saturday-matinee',
-    flyer: '/images/festival/current/varning-fest-matine-saturday.jpg',
+    flyer: '/images/festival/current/varning-fest-matine-saturday.webp',
     flyerAlt: 'Saturday matinee festival show flyer',
     day: 'Saturday · September 19',
     event: 'Saturday Matinee Show + DIY Punk Market',
@@ -94,7 +96,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'saturday-show',
-    flyer: '/images/festival/current/varning-fest-saturday.jpg',
+    flyer: '/images/festival/current/varning-fest-saturday.webp',
     flyerAlt: 'Saturday festival show flyer',
     day: 'Saturday · September 19',
     event: 'Saturday Show',
@@ -112,7 +114,7 @@ export const festivalLineupShows = [
   },
   {
     id: 'saturday-aftershow',
-    flyer: '/images/festival/current/varning-fest-saturday-aftershow.jpg',
+    flyer: '/images/festival/current/varning-fest-saturday-aftershow.webp',
     flyerAlt: 'Saturday festival aftershow flyer',
     day: 'Saturday night · September 19',
     event: 'Saturday Aftershow',

@@ -1,12 +1,19 @@
-import { createApp } from 'vue'
+import { createApp, createSSRApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import dialogFocus from './directives/dialogFocus'
+import createSiteRouter from './router'
 import './assets/main.css'
 import './index.css'
 import { initGA } from './plugins/analytics'
-import { getBandBySlug } from './data/bands'
-import { getTourBySlug } from './data/tourEvents'
-import { canonicalUrl, createBandMetadata, createTourMetadata } from './data/siteMetadata'
+import {
+  canonicalUrl,
+  createBandMetadata,
+  createTourMetadata,
+  createPageSchema,
+  DEFAULT_SOCIAL_IMAGE,
+} from './data/siteMetadata'
+
+const router = createSiteRouter()
 
 initGA()
 
@@ -21,22 +28,55 @@ function setMeta(selector, attrName, attrValue) {
   el.setAttribute(attrName, attrValue)
 }
 
-function resolveRouteMetadata(to) {
+async function resolveRouteMetadata(to) {
   if (to.name === 'Band Profile') {
+    const { getBandBySlug } = await import('./data/bands')
     const band = getBandBySlug(to.params.slug)
     if (band) return createBandMetadata(band)
+    return {
+      title: 'Band Not Found | Varning Productions',
+      description: 'This band profile could not be found.',
+      robots: 'noindex,follow',
+    }
   }
 
   if (to.name === 'Event Description') {
+    const { getTourBySlug } = await import('./data/tourEvents')
     const tour = getTourBySlug(to.params.slug)
     if (tour) return createTourMetadata(tour)
+    return {
+      title: 'Tour Not Found | Varning Productions',
+      description: 'This tour could not be found.',
+      robots: 'noindex,follow',
+    }
   }
 
-  return to.meta || {}
+  return { title: to.meta.title, description: to.meta.description, robots: to.meta.robots }
 }
 
-router.afterEach((to) => {
-  const meta = resolveRouteMetadata(to)
+router.beforeResolve(async (to) => {
+  to.meta.resolvedMetadata = await resolveRouteMetadata(to)
+})
+
+router.afterEach((to, from, failure) => {
+  if (failure) return
+  const meta = to.meta.resolvedMetadata
+  setMeta('meta[name="robots"]', 'content', meta.robots || 'index,follow')
+  const socialImage = meta.image || DEFAULT_SOCIAL_IMAGE
+  setMeta('meta[property="og:image"]', 'content', socialImage)
+  setMeta('meta[name="twitter:image"]', 'content', socialImage)
+  setMeta('meta[property="og:image:alt"]', 'content', meta.imageAlt || meta.title)
+  document
+    .querySelectorAll('meta[property="og:image:width"], meta[property="og:image:height"]')
+    .forEach((el) => el.remove())
+  let schema = document.getElementById('page-schema')
+  if (!schema) {
+    schema = document.createElement('script')
+    schema.id = 'page-schema'
+    schema.type = 'application/ld+json'
+    document.head.appendChild(schema)
+  }
+  schema.textContent = JSON.stringify(createPageSchema(meta, to.path))
 
   if (meta.title) {
     document.title = meta.title
@@ -61,4 +101,12 @@ router.afterEach((to) => {
   setMeta('meta[property="og:url"]', 'content', canonical)
 })
 
-createApp(App).use(router).mount('#app')
+const renderedPath = document.querySelector('#app')?.getAttribute('data-prerendered')
+const shouldHydrate =
+  renderedPath !== null && canonicalUrl(renderedPath) === canonicalUrl(window.location.pathname)
+// Legacy hash links and a host's fallback page can resolve to a different route.
+if (!shouldHydrate) document.getElementById('navigation').replaceChildren()
+const app = (shouldHydrate ? createSSRApp : createApp)(App)
+app.use(router)
+app.directive('dialog-focus', dialogFocus)
+router.isReady().then(() => app.mount('#app'))
