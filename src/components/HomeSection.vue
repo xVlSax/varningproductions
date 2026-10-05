@@ -50,12 +50,12 @@
       aria-hidden="true"
     />
 
-    <div class="overlay">
+    <!-- <div class="overlay">
       <router-link to="/current-festival" class="cta-link">
         <span class="cta-text">ENTER THE FESTIVAL</span>
         <span class="cta-arrow">➜</span>
       </router-link>
-    </div>
+    </div> -->
   </section>
 </template>
 

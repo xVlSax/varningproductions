@@ -90,7 +90,7 @@ const TOUR_DETAILS = {
       {
         date: '18.10.2026',
         city: 'Copenhagen, Denmark',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.webp',
+        flyer: '/images/events/upcoming/tours/languid/events/languid-copenhagen.webp',
       },
       {
         date: '19.10.2026',
@@ -100,7 +100,7 @@ const TOUR_DETAILS = {
       {
         date: '20.10.2026',
         city: 'Berlin, Germany',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.webp',
+        flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
       },
     ],
     footnoteParts: [
@@ -151,7 +151,8 @@ const TOUR_DETAILS = {
       {
         date: '25.09.2026',
         city: 'Toronto, ON',
-        flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-toronto-show.webp',
+        flyer:
+          '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-toronto-show.webp',
       },
       {
         date: '26.09.2026',
@@ -187,7 +188,7 @@ const toCard = (slug) => {
 }
 
 const TOUR_HERO_SLUGS = ['dhk-tour']
-const UPCOMING_TOUR_SLUGS = ['plektani-tour', 'dominacion-tour', 'languid-tour']
+const UPCOMING_TOUR_SLUGS = ['languid-tour']
 
 export const TOUR_HEROES = TOUR_HERO_SLUGS.map(toCard).filter(Boolean)
 export const UPCOMING_TOURS = UPCOMING_TOUR_SLUGS.map(toCard).filter(Boolean)

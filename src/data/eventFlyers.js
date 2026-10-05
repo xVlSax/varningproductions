@@ -2,92 +2,92 @@ export const EVENTS_FLYERS = []
 
 export const UPCOMING_EVENTS_FLYERS = [
   //INDIANNIGHTMARE-NAGASAKI-STHLM
-  {
-    slug: 'metal-punk-indian-nightmare-nagasaki-sunrise',
-    src: '/images/events/upcoming/events/indian-nagasaki-sthlm.webp',
-    alt: 'indian-nightmare-nagasaki-sunrise-crutches-sex-dwarf-stockholm-show',
-    modalDetails: {
-      title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE + NAGASAKI SUNRISE + CRUTCHES + SEX DWARF',
-      subtitle: '@HUS 7 - OCTOBER 2ND 2026',
-      ticketLink: {
-        label: 'BUY TICKET',
-        href: '/tickets',
-      },
-      sections: [
-        {
-          // title: 'Event Description',
-          paragraphs: [
-            `VARNING PRODUCTIONS PRESENT! METAL PUNK NIGHT`,
-            `Varning Productions is super stoked to announce the Stockholm show for Indian Nightmare and Nagasaki Sunrise with Crutches and Sex Dwarf!!`,
-            `Tickets will be on sale on August 15th 2026`,
-          ],
-        },
-        {
-          // title: 'Bands + Links',
-          groups: [
-            {
-              heading: '',
-              items: [
-                {
-                  name: 'INDIAN NIGHTMARE (BERLIN)',
-                  meta: '',
-                  href: 'https://indiannightmare.bandcamp.com/',
-                  video: {
-                    src: 'https://www.youtube-nocookie.com/embed/spgOtDPCyQo?rel=0',
-                    title: 'Indian Nightmare video',
-                  },
-                },
-                {
-                  name: 'NAGASAKI SUNRISE (PORTUGAL)',
-                  meta: '',
-                  href: 'https://nagasakisunrise.bandcamp.com/album/distroyer',
-                  video: {
-                    src: 'https://www.youtube-nocookie.com/embed/lubL1nO9gUE?rel=0',
-                    title: 'Nagasaki Sunrise video',
-                  },
-                },
-                {
-                  name: 'CRUTCHES (MALMÖ)',
-                  meta: '',
-                  href: 'https://crutches666.bandcamp.com/',
-                },
-                {
-                  name: 'SEX DWARF (STOCKHOLM)',
-                  meta: '',
-                  href: 'https://sexdwarf.bandcamp.com/',
-                },
-                {},
-              ],
-            },
-            {
-              heading: '',
-              items: [{}],
-            },
-            {
-              heading: 'FACEBOOK EVENT:',
-              items: [
-                {
-                  name: 'https://fb.me/e/3CB36TqGe',
-                  // meta: ' metal punk ',
-                  href: 'https://fb.me/e/3CB36TqGe',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          // title: 'Location + Price + More Info',
-          paragraphs: [
-            '----------------------------------',
-            'HUS 7 | Styckmästargatan 10, 12162 Stockholm',
-            'DOORS: 7PM',
-            '250 kr',
-            'SHOW 8PM',
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   slug: 'metal-punk-indian-nightmare-nagasaki-sunrise',
+  //   src: '/images/events/upcoming/events/indian-nagasaki-sthlm.webp',
+  //   alt: 'indian-nightmare-nagasaki-sunrise-crutches-sex-dwarf-stockholm-show',
+  //   modalDetails: {
+  //     title: 'METAL PUNK NIGHT - INDIAN NIGHTMARE + NAGASAKI SUNRISE + CRUTCHES + SEX DWARF',
+  //     subtitle: '@HUS 7 - OCTOBER 2ND 2026',
+  //     ticketLink: {
+  //       label: 'BUY TICKET',
+  //       href: '/tickets',
+  //     },
+  //     sections: [
+  //       {
+  //         // title: 'Event Description',
+  //         paragraphs: [
+  //           `VARNING PRODUCTIONS PRESENT! METAL PUNK NIGHT`,
+  //           `Varning Productions is super stoked to announce the Stockholm show for Indian Nightmare and Nagasaki Sunrise with Crutches and Sex Dwarf!!`,
+  //           `Tickets will be on sale on August 15th 2026`,
+  //         ],
+  //       },
+  //       {
+  //         // title: 'Bands + Links',
+  //         groups: [
+  //           {
+  //             heading: '',
+  //             items: [
+  //               {
+  //                 name: 'INDIAN NIGHTMARE (BERLIN)',
+  //                 meta: '',
+  //                 href: 'https://indiannightmare.bandcamp.com/',
+  //                 video: {
+  //                   src: 'https://www.youtube-nocookie.com/embed/spgOtDPCyQo?rel=0',
+  //                   title: 'Indian Nightmare video',
+  //                 },
+  //               },
+  //               {
+  //                 name: 'NAGASAKI SUNRISE (PORTUGAL)',
+  //                 meta: '',
+  //                 href: 'https://nagasakisunrise.bandcamp.com/album/distroyer',
+  //                 video: {
+  //                   src: 'https://www.youtube-nocookie.com/embed/lubL1nO9gUE?rel=0',
+  //                   title: 'Nagasaki Sunrise video',
+  //                 },
+  //               },
+  //               {
+  //                 name: 'CRUTCHES (MALMÖ)',
+  //                 meta: '',
+  //                 href: 'https://crutches666.bandcamp.com/',
+  //               },
+  //               {
+  //                 name: 'SEX DWARF (STOCKHOLM)',
+  //                 meta: '',
+  //                 href: 'https://sexdwarf.bandcamp.com/',
+  //               },
+  //               {},
+  //             ],
+  //           },
+  //           {
+  //             heading: '',
+  //             items: [{}],
+  //           },
+  //           {
+  //             heading: 'FACEBOOK EVENT:',
+  //             items: [
+  //               {
+  //                 name: 'https://fb.me/e/3CB36TqGe',
+  //                 // meta: ' metal punk ',
+  //                 href: 'https://fb.me/e/3CB36TqGe',
+  //               },
+  //             ],
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         // title: 'Location + Price + More Info',
+  //         paragraphs: [
+  //           '----------------------------------',
+  //           'HUS 7 | Styckmästargatan 10, 12162 Stockholm',
+  //           'DOORS: 7PM',
+  //           '250 kr',
+  //           'SHOW 8PM',
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
 
   //LANGUID-MEANWHILE-STHLM
   {

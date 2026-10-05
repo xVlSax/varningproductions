@@ -31,8 +31,14 @@
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
+            <source
+              :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')"
+              type="image/avif"
+            />
+            <source
+              :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')"
+              type="image/webp"
+            />
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
@@ -61,6 +67,16 @@ export default {
   data() {
     return {
       pastTourFlyers: [
+        {
+          src: '/images/events/upcoming/tours/plektani/plektani.webp',
+          alt: 'plektani-na-tour',
+          bandSlug: 'plektani',
+        },
+        {
+          src: '/images/events/upcoming/tours/dominacion/dominacion-lumpen-tour-poster.webp',
+          alt: 'dominacion-canada-tour',
+          bandSlug: 'dominacion',
+        },
         {
           src: '/images/events/past/tours/new-dhk.webp',
           alt: 'dhk-eu-tour',

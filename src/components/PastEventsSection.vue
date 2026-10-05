@@ -31,8 +31,14 @@
           <button class="modal-close" @click="closeModal" aria-label="Close">✕</button>
 
           <picture class="modal-picture">
-            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
-            <source :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
+            <source
+              :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')"
+              type="image/avif"
+            />
+            <source
+              :srcset="active.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')"
+              type="image/webp"
+            />
             <img :src="active.src" :alt="active.alt" class="modal-img" />
           </picture>
 
@@ -49,6 +55,11 @@ export default {
   data() {
     return {
       pastEventsFlyers: [
+        {
+          src: '/images/events/upcoming/events/indian-nagasaki-sthlm.webp',
+          alt: 'Indian Nightmare / Nagasaki Sunrise sthlm show',
+          date: '2026-10-02',
+        },
         {
           src: '/images/events/past/events/varning-benefit-july.webp',
           alt: 'Varning XVIII benefit show volume two',
