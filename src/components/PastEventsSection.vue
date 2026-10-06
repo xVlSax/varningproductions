@@ -393,8 +393,8 @@ export default {
   min-height: 100vh;
   background: #000;
   color: #e9e9e9;
-  padding: calc(var(--header-h) + 3rem) 1rem 3rem;
-  margin-top: 5rem;
+  padding: calc(var(--header-h) + 0.5rem) 1rem 3rem;
+  margin-top: 0;
   scroll-margin-top: var(--header-h);
 }
 .events-wrap {
@@ -417,7 +417,8 @@ export default {
   letter-spacing: 0.06em;
   text-shadow: 1px 1px 0 rgba(182, 245, 0, 0.38);
   text-transform: uppercase;
-  margin: 1.5rem 0 1.5rem;
+  margin: 0 0 1.5rem;
+  padding-top: 0.5rem;
 }
 .events-title {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);

@@ -76,11 +76,11 @@ export default {
   min-height: calc(100vh - 56px);
   background: #000;
   color: #e9e9e9;
-  padding: calc(var(--header-h) + 1rem) 1rem 1.75rem;
+  padding: calc(var(--header-h) + 0.5rem) 1rem 1.75rem;
   margin-top: 0;
   scroll-margin-top: var(--header-h);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .tours-wrap {
   width: 100%;
@@ -106,6 +106,8 @@ export default {
   padding: 0.6rem;
 }
 .tours-title {
+  margin: 0;
+  padding-top: 0.5rem;
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
 }
 .tours-subtitle {

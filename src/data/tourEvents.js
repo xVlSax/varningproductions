@@ -95,7 +95,7 @@ const TOUR_DETAILS = {
       {
         date: '19.10.2026',
         city: 'Bremmen, Germany',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.webp',
+        flyer: '/images/events/upcoming/tours/languid/events/languid-bremen.webp',
       },
       {
         date: '20.10.2026',
