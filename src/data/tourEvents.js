@@ -1,54 +1,4 @@
 const TOUR_DETAILS = {
-  'plektani-tour': {
-    slug: 'plektani-tour',
-    title: 'PLEKTANI',
-    subtitle: 'CANADA / US EAST COAST TOUR',
-    date: 'SEPTEMBER 2026',
-    alt: 'Plektani Tour flyer',
-    image: '/images/events/upcoming/tours/plektani/plektani.webp',
-    intro:
-      'Varning Productions is super stoked to welcome Plektani from Athens, Greece to A Varning from Montreal Festival this fall! We’re also really happy to be part of their tour after the festival, helping them hit the US East Coast.',
-    paragraphs: [
-      'If they’re coming through your city, don’t miss them, they’re gonna blow your fucking mind!',
-    ],
-    routing: [
-      {
-        date: '17-20.09.2026',
-        city: 'Montreal (Varning Festival)',
-        flyer: '/images/festival/current/varning-fest-friday.webp',
-      },
-      {
-        date: '22.09.2026',
-        city: 'Boston, MA',
-        flyer: '/images/events/upcoming/tours/plektani/events/plektani-boston.webp',
-      },
-      {
-        date: '23.09.2026',
-        city: 'Philadelphia, PA',
-        flyer: '/images/events/upcoming/tours/plektani/events/plektani-philadelphia.webp',
-      },
-      {
-        date: '24.09.2026',
-        city: 'Pitsburg, PA',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.webp',
-      },
-      {
-        date: '25.09.2026',
-        city: 'Richmond, VA',
-        flyer: '/images/events/upcoming/tours/plektani/events/plektani-richmond.webp',
-      },
-      {
-        date: '26.09.2026',
-        city: 'New York, NY',
-        // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.webp',
-      },
-    ],
-    footnoteParts: [
-      { type: 'text', text: 'Check more about ' },
-      { type: 'band', label: 'Plektani', slug: 'plektani' },
-      { type: 'text', text: '.' },
-    ],
-  },
   'languid-tour': {
     slug: 'languid-tour',
     title: 'LANGUID',
@@ -109,66 +59,223 @@ const TOUR_DETAILS = {
       { type: 'text', text: '.' },
     ],
   },
-  'dominacion-tour': {
-    slug: 'dominacion-tour',
-    title: 'Dominacion & Lumpen',
-    subtitle: 'CANADA INVASION TOUR',
-    date: 'SEPTEMBER 2026',
-    alt: 'Dominacion/Lumpen Tour flyer',
-    image: '/images/events/upcoming/tours/dominacion/dominacion-lumpen-tour-poster.webp',
+  'voltage-tour': {
+    slug: 'voltage-tour',
+    title: 'VOLTAGE',
+    subtitle: 'EUROPEAN INFERNO TOUR',
+    date: 'NOVEMBER 2026',
+    alt: 'Voltage Tour flyer',
+    image: '/images/events/upcoming/tours/voltage/voltage-tour-poster.webp',
     intro:
-      'Dominación & Lumpen are from Barcelona, Spain and are both playing at A Varning from Montreal Festival this fall.',
-    paragraphs: [
-      'Varning Productions is organizing a mini tour for them after the festival that will take place in Quebec and Ontario. Here´s the dates and venues they will play at',
-      'Thank you to all promoters helping out on this one!! Support your DIY Punk international scene / bands!',
-    ],
+      'In collaboration with Dogma Destroyer records, Varning Productions is stoked to have helped organize this tour across central Europe.',
+    paragraphs: ['', ''],
     routing: [
       {
-        date: '17-19.09.2026',
-        city: 'Montreal (Varning Festival)',
-        flyer: '/images/festival/current/varning-fest-friday.webp',
+        date: '04.11.2026',
+        city: 'Leipzig, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-uppsala.webp',
       },
       {
-        date: '17-19.09.2026',
-        city: 'Montreal (A Varning from Montreal Festival)',
-        flyer: '/images/festival/current/varning-fest-matine-friday.webp',
-      },
-      {
-        date: '22.09.2026',
-        city: 'Quebec city, QC',
-        flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-quebec-show.webp',
-      },
-      {
-        date: '23.09.2026',
-        city: 'Sherbrooke, QC',
+        date: '05.11.2026',
+        city: 'Hamburg, DE',
         // flyer: '/images/events/upcoming/tours/languid/events/languid-gbg.webp',
       },
       {
-        date: '24.09.2026',
-        city: 'Ottawa, ON',
-        flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-ottawa.webp',
+        date: '06.11.2026',
+        city: 'Bremen, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-copenhagen.webp',
       },
       {
-        date: '25.09.2026',
-        city: 'Toronto, ON',
-        flyer:
-          '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-toronto-show.webp',
+        date: '07.11.2026',
+        city: 'Hannover, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-bremen.webp',
       },
       {
-        date: '26.09.2026',
-        city: 'Montreal',
-        flyer:
-          '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-montreal-show.webp',
+        date: '08.11.2026',
+        city: 'Dresden, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Sekowa, PL',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Krakow, PL',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Vienna, AT',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Brno, CZ',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Bratislava, SK',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Budapest, HU',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Belgrade, SRB',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Zagreb, HR',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Rijeka, HR',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Ljubljana, SLO',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Linz, AT',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Berlin, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+      },
+      {
+        date: '08.11.2026',
+        city: 'Berlin, DE',
+        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
       },
     ],
     footnoteParts: [
       { type: 'text', text: 'Check more about ' },
-      { type: 'band', label: 'Dominacion ', slug: 'dominacion' },
-      { type: 'text', text: ' Check more about ' },
-      { type: 'band', label: 'Lumpen', slug: 'lumpen' },
+      { type: 'band', label: 'Voltage', slug: 'voltage' },
+      { type: 'text', text: '.' },
     ],
   },
-}
+  // 'dominacion-tour': {
+  //   slug: 'dominacion-tour',
+  //   title: 'Dominacion & Lumpen',
+  //   subtitle: 'CANADA INVASION TOUR',
+  //   date: 'SEPTEMBER 2026',
+  //   alt: 'Dominacion/Lumpen Tour flyer',
+  //   image: '/images/events/upcoming/tours/dominacion/dominacion-lumpen-tour-poster.webp',
+  //   intro:
+  //     'Dominación & Lumpen are from Barcelona, Spain and are both playing at A Varning from Montreal Festival this fall.',
+  //   paragraphs: [
+  //     'Varning Productions is organizing a mini tour for them after the festival that will take place in Quebec and Ontario. Here´s the dates and venues they will play at',
+  //     'Thank you to all promoters helping out on this one!! Support your DIY Punk international scene / bands!',
+  //   ],
+  //   routing: [
+  //     {
+  //       date: '17-19.09.2026',
+  //       city: 'Montreal (Varning Festival)',
+  //       flyer: '/images/festival/current/varning-fest-friday.webp',
+  //     },
+  //     {
+  //       date: '17-19.09.2026',
+  //       city: 'Montreal (A Varning from Montreal Festival)',
+  //       flyer: '/images/festival/current/varning-fest-matine-friday.webp',
+  //     },
+  //     {
+  //       date: '22.09.2026',
+  //       city: 'Quebec city, QC',
+  //       flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-quebec-show.webp',
+  //     },
+  //     {
+  //       date: '23.09.2026',
+  //       city: 'Sherbrooke, QC',
+  //       // flyer: '/images/events/upcoming/tours/languid/events/languid-gbg.webp',
+  //     },
+  //     {
+  //       date: '24.09.2026',
+  //       city: 'Ottawa, ON',
+  //       flyer: '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-ottawa.webp',
+  //     },
+  //     {
+  //       date: '25.09.2026',
+  //       city: 'Toronto, ON',
+  //       flyer:
+  //         '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-toronto-show.webp',
+  //     },
+  //     {
+  //       date: '26.09.2026',
+  //       city: 'Montreal',
+  //       flyer:
+  //         '/images/events/upcoming/tours/dominacion/events/dominacion-lumpen-montreal-show.webp',
+  //     },
+  //   ],
+  //   footnoteParts: [
+  //     { type: 'text', text: 'Check more about ' },
+  //     { type: 'band', label: 'Dominacion ', slug: 'dominacion' },
+  //     { type: 'text', text: ' Check more about ' },
+  //     { type: 'band', label: 'Lumpen', slug: 'lumpen' },
+  //   ],
+  // },
+} // 'plektani-tour': {
+//   slug: 'plektani-tour',
+//   title: 'PLEKTANI',
+//   subtitle: 'CANADA / US EAST COAST TOUR',
+//   date: 'SEPTEMBER 2026',
+//   alt: 'Plektani Tour flyer',
+//   image: '/images/events/upcoming/tours/plektani/plektani.webp',
+//   intro:
+//     'Varning Productions is super stoked to welcome Plektani from Athens, Greece to A Varning from Montreal Festival this fall! We’re also really happy to be part of their tour after the festival, helping them hit the US East Coast.',
+//   paragraphs: [
+//     'If they’re coming through your city, don’t miss them, they’re gonna blow your fucking mind!',
+//   ],
+//   routing: [
+//     {
+//       date: '17-20.09.2026',
+//       city: 'Montreal (Varning Festival)',
+//       flyer: '/images/festival/current/varning-fest-friday.webp',
+//     },
+//     {
+//       date: '22.09.2026',
+//       city: 'Boston, MA',
+//       flyer: '/images/events/upcoming/tours/plektani/events/plektani-boston.webp',
+//     },
+//     {
+//       date: '23.09.2026',
+//       city: 'Philadelphia, PA',
+//       flyer: '/images/events/upcoming/tours/plektani/events/plektani-philadelphia.webp',
+//     },
+//     {
+//       date: '24.09.2026',
+//       city: 'Pitsburg, PA',
+//       // flyer: '/images/events/upcoming/tours/dhk/events/dhk-denia.webp',
+//     },
+//     {
+//       date: '25.09.2026',
+//       city: 'Richmond, VA',
+//       flyer: '/images/events/upcoming/tours/plektani/events/plektani-richmond.webp',
+//     },
+//     {
+//       date: '26.09.2026',
+//       city: 'New York, NY',
+//       // flyer: '/images/events/upcoming/tours/dhk/events/dhk-madrid.webp',
+//     },
+//   ],
+//   footnoteParts: [
+//     { type: 'text', text: 'Check more about ' },
+//     { type: 'band', label: 'Plektani', slug: 'plektani' },
+//     { type: 'text', text: '.' },
+//   ],
+// },
 
 const toCard = (slug) => {
   const tour = TOUR_DETAILS[slug]
@@ -187,8 +294,8 @@ const toCard = (slug) => {
   }
 }
 
-const TOUR_HERO_SLUGS = ['dhk-tour']
-const UPCOMING_TOUR_SLUGS = ['languid-tour']
+const TOUR_HERO_SLUGS = ['languid-tour']
+const UPCOMING_TOUR_SLUGS = ['languid-tour', 'voltage-tour']
 
 export const TOUR_HEROES = TOUR_HERO_SLUGS.map(toCard).filter(Boolean)
 export const UPCOMING_TOURS = UPCOMING_TOUR_SLUGS.map(toCard).filter(Boolean)

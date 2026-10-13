@@ -498,7 +498,7 @@ const BAND_PROFILES = {
     slug: 'languid',
     name: 'Languid',
     heroImage: '/images/artists/languid/languid.webp',
-    heroAlt: 'Languid tour artwork',
+    heroAlt: 'Languid band pic',
     heroObjectPosition: 'center 28%',
     meta: ['RAW FEROCIOUS D-BEAT HARDCORE PUNK', 'EDMONTON-CANADA'],
     socials: [
@@ -524,6 +524,43 @@ const BAND_PROFILES = {
       'Languid is a highly-regarded Canadian D-beat/hardcore punk band from Edmonton, Canada',
       'Known for their raw, ferocious, yet melodic sound, highlighting their powerful D-beat rhythms, heavy riffs, and political/nihilistic themes',
       'They are often compared to classic Swedish D-beat bands like Dischange and Disfear and live its a complete earth-destroying-bomb performance!',
+    ],
+  },
+  // voltage band
+  voltage: {
+    slug: 'voltage',
+    name: 'Voltage',
+    heroImage: '/images/artists/voltage/voltage-pic.webp',
+    heroAlt: 'Voltage band pic',
+    heroObjectPosition: 'center 28%',
+    meta: ['CRUST D-BEAT PUNK', 'KAMLOOPS-BC-CANADA'],
+    socials: [
+      { label: 'Facebook', icon: 'fa fa-facebook', href: '' },
+      {
+        label: 'Instagram',
+        icon: 'fa fa-instagram',
+        href: 'https://www.instagram.com/voltage.punk',
+      },
+      {
+        label: 'Spotify',
+        icon: 'fa fa-spotify',
+        href: '',
+      },
+      {
+        label: 'Bandcamp',
+        icon: 'fa fa-bandcamp',
+        href: 'https://voltagepunk.bandcamp.com/album/voltage',
+      },
+    ],
+    // details: [
+    //   { label: 'Classification', value: 'TOURING BAND' },
+    //   { label: 'Territory', value: 'EUROPE 2026' },
+    //   { label: 'Booking', value: 'Varning Productions' },
+    // ],
+    bio: [
+      'From Kamloops, British Columbia, Canada crust/D-beat punk band formed around the raw, driving sound of classic Discharge-style hardcore.',
+      'Their own Bandcamp describes them as “charged rock ’n’ roll” D-beat punk, combining D-beat, crust, street punk and rock ’n’ roll.',
+      'Voltage rings true to bands like Avskum, Meanwhile, Anti-Cimex and Discharge, while offering its own unique edge. Welcome to the inferno!',
     ],
   },
 }
