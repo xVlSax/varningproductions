@@ -3,17 +3,7 @@
     <div class="events-wrap">
       <!-- Past Events -->
       <h1 class="events-title">Past Events</h1>
-      <div class="flyers-grid">
-        <article v-for="f in sortedPastEventsFlyers" :key="f.src" class="flyer-card">
-          <button class="flyer-btn" @click="openModal(f)">
-            <picture>
-              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
-              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
-            </picture>
-          </button>
-        </article>
-      </div>
+      <PastFlyerGallery :flyers="sortedPastEventsFlyers" @select="openModal" />
     </div>
 
     <!-- Lightbox modal -->
@@ -50,11 +40,19 @@
 </template>
 
 <script>
+import PastFlyerGallery from './PastFlyerGallery.vue'
+
 export default {
   name: 'EventSection',
+  components: { PastFlyerGallery },
   data() {
     return {
       pastEventsFlyers: [
+        {
+          src: '/images/events/upcoming/events/languid-sthml.webp',
+          alt: 'languid-meanwhile-paranoid-dissekerad-svaveldioxid-nagasaki-stockholm-show',
+          date: '2026-10-16',
+        },
         {
           src: '/images/events/upcoming/events/indian-nagasaki-sthlm.webp',
           alt: 'Indian Nightmare / Nagasaki Sunrise sthlm show',
@@ -490,7 +488,7 @@ export default {
 .flyer-img {
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -510,7 +508,7 @@ export default {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 1100;
   background: rgba(0, 0, 0, 0.75);
   display: grid;
   place-items: center;
@@ -522,7 +520,7 @@ export default {
   background: rgba(20, 20, 20, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  overflow: hidden;
+  overflow-y: auto;
   width: min(50vw, 555px);
   max-height: 90vh;
   display: flex;
@@ -545,16 +543,20 @@ export default {
 }
 .modal-picture {
   width: 100%;
-  flex: 1 1 auto;
+  min-height: 0;
+  flex: 0 0 auto;
   display: block;
 }
 .modal-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: calc(100dvh - 10rem);
   object-fit: contain;
   display: block;
 }
 .modal-caption {
+  flex-shrink: 0;
+  overflow-wrap: anywhere;
   margin: 0.5rem 0.9rem 0.9rem;
   color: #d8d8d8;
   font-size: 0.95rem;

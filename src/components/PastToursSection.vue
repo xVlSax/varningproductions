@@ -3,17 +3,7 @@
     <div class="events-wrap">
       <!-- Past Tours -->
       <h1 class="events-title">Past Tours</h1>
-      <div class="flyers-grid">
-        <article v-for="(f, i) in pastTourFlyers" :key="i" class="flyer-card">
-          <button type="button" class="flyer-btn" @click="openModal(f)">
-            <picture>
-              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.avif')" type="image/avif" />
-              <source :srcset="f.src.replace(/\.(jpe?g|png|webp)$/i, '.webp')" type="image/webp" />
-              <img :src="f.src" :alt="f.alt" loading="lazy" decoding="async" class="flyer-img" />
-            </picture>
-          </button>
-        </article>
-      </div>
+      <PastFlyerGallery :flyers="pastTourFlyers" @select="openModal" />
     </div>
 
     <!-- Lightbox modal -->
@@ -62,11 +52,19 @@
   </section>
 </template>
 <script>
+import PastFlyerGallery from './PastFlyerGallery.vue'
+
 export default {
   name: 'EventSection',
+  components: { PastFlyerGallery },
   data() {
     return {
       pastTourFlyers: [
+        {
+          src: '/images/events/upcoming/tours/languid/languid-tour-poster.webp',
+          alt: 'langui-tour',
+          bandSlug: 'languid',
+        },
         {
           src: '/images/events/upcoming/tours/plektani/plektani.webp',
           alt: 'plektani-na-tour',
@@ -233,7 +231,7 @@ export default {
 .flyer-img {
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -253,7 +251,7 @@ export default {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 1100;
   background: rgba(0, 0, 0, 0.75);
   display: grid;
   place-items: center;
@@ -265,7 +263,7 @@ export default {
   background: rgba(20, 20, 20, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  overflow: hidden;
+  overflow-y: auto;
   width: min(50vw, 555px);
   max-height: 90vh;
   display: flex;
@@ -288,16 +286,20 @@ export default {
 }
 .modal-picture {
   width: 100%;
-  flex: 1 1 auto;
+  min-height: 0;
+  flex: 0 0 auto;
   display: block;
 }
 .modal-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: calc(100dvh - 10rem);
   object-fit: contain;
   display: block;
 }
 .modal-caption {
+  flex-shrink: 0;
+  overflow-wrap: anywhere;
   margin: 0.5rem 0.9rem 0.9rem;
   color: #d8d8d8;
   font-size: 0.95rem;
@@ -305,6 +307,9 @@ export default {
 }
 .modal-caption-content {
   display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 }
 .modal-caption-link {
   color: #b6f500;
