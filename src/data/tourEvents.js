@@ -13,12 +13,12 @@ const TOUR_DETAILS = {
       {
         date: '04.11.2026',
         city: 'Leipzig, DE',
-        // flyer: '/images/events/upcoming/tours/languid/events/languid-uppsala.webp',
+        flyer: '/images/events/upcoming/tours/voltage/events/voltage-berlin2.webp',
       },
       {
         date: '05.11.2026',
         city: 'Hamburg, DE',
-        // flyer: '/images/events/upcoming/tours/languid/events/languid-gbg.webp',
+        flyer: '/images/events/upcoming/tours/voltage/events/voltage-hamburg-05.webp',
       },
       {
         date: '06.11.2026',
@@ -27,8 +27,8 @@ const TOUR_DETAILS = {
       },
       {
         date: '07.11.2026',
-        city: 'Hannover, DE',
-        // flyer: '/images/events/upcoming/tours/languid/events/languid-bremen.webp',
+        city: 'Hamburg, DE',
+        flyer: '/images/events/upcoming/tours/voltage/events/voltage-hamburg.webp',
       },
       {
         date: '08.11.2026',
@@ -68,7 +68,7 @@ const TOUR_DETAILS = {
       {
         date: '16.11.2026',
         city: 'Belgrade, SRB',
-        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+        flyer: '/images/events/upcoming/tours/voltage/events/voltage-belgrade.webp',
       },
       {
         date: '17.11.2026',
@@ -94,11 +94,6 @@ const TOUR_DETAILS = {
         date: '21.11.2026',
         city: 'Berlin, DE',
         flyer: '/images/events/upcoming/tours/voltage/events/voltage-berlin1.webp',
-      },
-      {
-        date: '22.11.2026',
-        city: 'Berlin, DE',
-        flyer: '/images/events/upcoming/tours/voltage/events/voltage-berlin2.webp',
       },
     ],
     footnoteParts: [
