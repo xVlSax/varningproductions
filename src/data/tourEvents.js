@@ -38,7 +38,7 @@ const TOUR_DETAILS = {
       {
         date: '10.11.2026',
         city: 'Sekowa, PL',
-        // flyer: '/images/events/upcoming/tours/languid/events/languid-berlin.webp',
+        flyer: '/images/events/upcoming/tours/voltage/events/voltage-sekowa-10.webp',
       },
       {
         date: '11.11.2026',
